@@ -1067,25 +1067,319 @@ document
 
 /* ================= BOOKING ================= */
 
-const bookingForm =
-    const message =
-  "🌿 طلب حجز جديد - مزارع الغيث\n\n" +
-  "الاسم: " + name + "\n" +
-  "رقم الهاتف: " + phone + "\n" +
-  "تاريخ الحجز: " + date + "\n" +
-  "الفترة: " + shift + "\n\n" +
-  "تم إرسال الطلب من موقع مزارع الغيث.";
+/* ===================== نظام الحجز الجديد ===================== */
 
 const whatsappNumber = "9647736735730";
 
-const whatsappURL =
-  "https://wa.me/" + whatsappNumber +
-  "?text=" + encodeURIComponent(message);
+const calendar = document.getElementById("calendar");
+const monthTitle = document.getElementById("monthTitle");
+const prevMonth = document.getElementById("prevMonth");
+const nextMonth = document.getElementById("nextMonth");
 
-window.location.assign(
-  "https://api.whatsapp.com/send?phone=9647736735730&text=" +
-  encodeURIComponent(message)
+const bookingModal = document.getElementById("bookingModal");
+const closeBooking = document.getElementById("closeBooking");
+const selectedShift = document.getElementById("selectedShift");
+const newBookingForm = document.getElementById("newBookingForm");
+
+let currentDate = new Date();
+
+let selectedDate = "";
+let selectedShiftName = "";
+
+/* الحجوزات */
+let bookedShifts = JSON.parse(
+  localStorage.getItem("alghaithBookings") || "{}"
 );
+
+/* أسماء الأشهر */
+const monthNames = [
+  "يناير",
+  "فبراير",
+  "مارس",
+  "أبريل",
+  "مايو",
+  "يونيو",
+  "يوليو",
+  "أغسطس",
+  "سبتمبر",
+  "أكتوبر",
+  "نوفمبر",
+  "ديسمبر"
+];
+
+/* ================= عرض التقويم ================= */
+
+function renderCalendar() {
+
+  if (!calendar || !monthTitle) return;
+
+  calendar.innerHTML = "";
+
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+
+  monthTitle.textContent =
+    monthNames[month] + " " + year;
+
+  const firstDay =
+    new Date(year, month, 1).getDay();
+
+  const daysInMonth =
+    new Date(year, month + 1, 0).getDate();
+
+  /* الأيام الفارغة */
+  for (let i = 0; i < firstDay; i++) {
+
+    const emptyDay = document.createElement("div");
+
+    emptyDay.className = "day empty-day";
+
+    calendar.appendChild(emptyDay);
+  }
+
+  /* أيام الشهر */
+  for (let day = 1; day <= daysInMonth; day++) {
+
+    const dayBox = document.createElement("div");
+
+    dayBox.className = "day";
+
+    const dateKey =
+      year + "-" +
+      String(month + 1).padStart(2, "0") + "-" +
+      String(day).padStart(2, "0");
+
+    dayBox.innerHTML = `
+      <div class="day-number">${day}</div>
+
+      <button
+        type="button"
+        class="shift-btn morning"
+        data-date="${dateKey}"
+        data-shift="صباحي">
+        ☀️ صباحي
+      </button>
+
+      <button
+        type="button"
+        class="shift-btn evening"
+        data-date="${dateKey}"
+        data-shift="مسائي">
+        🌙 مسائي
+      </button>
+    `;
+
+    calendar.appendChild(dayBox);
+  }
+
+  /* أزرار الشفتات */
+  document.querySelectorAll(".shift-btn").forEach(button => {
+
+    const date = button.dataset.date;
+    const shift = button.dataset.shift;
+
+    const bookingKey =
+      date + "_" + shift;
+
+    if (bookedShifts[bookingKey]) {
+
+      button.textContent = "محجوز";
+      button.classList.add("shift-booked");
+      button.disabled = true;
+
+    } else {
+
+      button.addEventListener("click", function () {
+
+        openBooking(date, shift);
+
+      });
+
+    }
+
+  });
+
+}
+
+/* ================= فتح الحجز ================= */
+
+function openBooking(date, shift) {
+
+  selectedDate = date;
+
+  selectedShiftName = shift;
+
+  if (selectedShift) {
+
+    selectedShift.textContent =
+      "📅 التاريخ: " +
+      formatDate(date) +
+      " | 🕐 الشفت: " +
+      shift;
+
+  }
+
+  if (bookingModal) {
+
+    bookingModal.classList.add("active");
+
+  }
+
+}
+
+/* ================= إغلاق الحجز ================= */
+
+if (closeBooking) {
+
+  closeBooking.addEventListener("click", function () {
+
+    bookingModal.classList.remove("active");
+
+  });
+
+}
+
+if (bookingModal) {
+
+  bookingModal.addEventListener("click", function (event) {
+
+    if (event.target === bookingModal) {
+
+      bookingModal.classList.remove("active");
+
+    }
+
+  });
+
+}
+
+/* ================= إرسال إلى واتساب ================= */
+
+if (newBookingForm) {
+
+  newBookingForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("bookingName").value.trim();
+
+    const phone =
+      document.getElementById("bookingPhone").value.trim();
+
+    const people =
+      document.getElementById("bookingPeople").value.trim();
+
+    const notes =
+      document.getElementById("bookingNotes").value.trim();
+
+    if (!name || !phone || !people) {
+
+      alert("يرجى إكمال جميع معلومات الحجز");
+
+      return;
+
+    }
+
+    const message =
+`🌿 حجز جديد - مزارع الغيث
+
+📅 التاريخ: ${formatDate(selectedDate)}
+
+🕐 الشفت: ${selectedShiftName}
+
+👤 الاسم: ${name}
+
+📱 رقم الهاتف: ${phone}
+
+👥 عدد الأشخاص: ${people}
+
+📝 الملاحظات:
+${notes || "لا توجد ملاحظات"}
+
+❤️ شكراً لاختياركم مزارع الغيث`;
+
+    /* حفظ الحجز */
+    const bookingKey =
+      selectedDate + "_" + selectedShiftName;
+
+    bookedShifts[bookingKey] = {
+
+      name: name,
+      phone: phone,
+      people: people,
+      date: selectedDate,
+      shift: selectedShiftName
+
+    };
+
+    localStorage.setItem(
+      "alghaithBookings",
+      JSON.stringify(bookedShifts)
+    );
+
+    /* فتح واتساب */
+    const whatsappURL =
+      "https://wa.me/" +
+      whatsappNumber +
+      "?text=" +
+      encodeURIComponent(message);
+
+    window.location.href = whatsappURL;
+
+  });
+
+}
+
+/* ================= تغيير الشهر ================= */
+
+if (prevMonth) {
+
+  prevMonth.addEventListener("click", function () {
+
+    currentDate.setMonth(
+      currentDate.getMonth() - 1
+    );
+
+    renderCalendar();
+
+  });
+
+}
+
+if (nextMonth) {
+
+  nextMonth.addEventListener("click", function () {
+
+    currentDate.setMonth(
+      currentDate.getMonth() + 1
+    );
+
+    renderCalendar();
+
+  });
+
+}
+
+/* ================= تنسيق التاريخ ================= */
+
+function formatDate(dateString) {
+
+  const parts = dateString.split("-");
+
+  return (
+    parts[2] +
+    "-" +
+    parts[1] +
+    "-" +
+    parts[0]
+  );
+
+}
+
+/* ================= تشغيل التقويم ================= */
+
+renderCalendar();
             "شكراً لاختياركم مزارع الغيث ❤️"
 
         );
