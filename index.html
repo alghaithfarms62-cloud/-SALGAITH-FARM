@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مزرعة الدازع | Farm</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f3ed;
+      color: #1f2a20;
+      line-height: 1.7;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #315b3a;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #26372b;
+      margin-right: 22px;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 100px 20px 40px;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #d4a84f;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 85px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      color: #315b3a;
+    }
+
+    .section-title p {
+      color: #777;
+      margin-top: 8px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+
+    .about-text h2 {
+      color: #315b3a;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,.08);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card h3 {
+      color: #315b3a;
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      color: #b08427;
+      font-size: 21px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .booking {
+      background: #315b3a;
+      color: white;
+      max-width: none;
+    }
+
+    .booking-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .booking h2 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 35px;
+    }
+
+    form {
+      background: white;
+      color: #222;
+      padding: 30px;
+      border-radius: 20px;
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-top: 6px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .submit {
+      background: #d4a84f;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    }
+
+    footer {
+      background: #1d2c20;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 800px) {
+      nav a {
+        display: none;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <div class="logo">🌿 مزرعة الدازع</div>
+
+    <div>
+      <a href="#home">الرئيسية</a>
+      <a href="#about">عن المزرعة</a>
+      <a href="#places">الخانات</a>
+      <a href="#booking">الحجز</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- الرئيسية -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <h1>مزرعة الدازع</h1>
+
+    <p>
+      مكانك المثالي للراحة والاستجمام وقضاء أجمل الأوقات
+      وسط الطبيعة والهدوء
+    </p>
+
+    <a href="#booking" class="btn">
+      احجز الآن
+    </a>
+  </div>
+</div>
+
+
+<!-- عن المزرعة -->
+<section id="about">
+
+  <div class="about">
+
+    <img
+      src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=85"
+      alt="المزرعة">
+
+    <div class="about-text">
+
+      <h2>عن المزرعة</h2>
+
+      <p>
+        أهلاً وسهلاً بكم في مزرعة الدازع.
+        مكان مصمم حتى تستمتع بأجواء هادئة وجميلة
+        بعيداً عن ضوضاء المدينة.
+      </p>
+
+      <br>
+
+      <p>
+        نوفر لكم خانات وأماكن خاصة للعوائل والأصدقاء
+        مع أجواء مميزة ومساحات واسعة للراحة والاستمتاع.
+      </p>
+
+      <br>
+
+      <a href="#places" class="btn">
+        شوف الخانات
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- الخانات -->
+<section id="places">
+
+  <div class="section-title">
+    <h2>الخانات المتوفرة</h2>
+    <p>اختار الخانة المناسبة إلك واحجز موعدك</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <img
+        src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=85"
+        alt="الخانة الأولى">
+
+      <div class="card-content">
+
+        <h3>الخانة الملكية</h3>
+
+        <p>
+          خانة خاصة ومريحة، مناسبة للعوائل
+          والجلسات الخاصة.
+        </p>
+
+        <div class="price">
+          150,000 د.ع
+        </div>
+
+        <a href="#booking" class="btn">
+          احجز هذه الخانة
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <img
+        src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1000&q=85"
+        alt="الخانة الثانية">
+
+      <div class="card-content">
+
+        <h3>الخانة العائلية</h3>
+
+        <p>
+          مساحة واسعة ومناسبة للعوائل
+          والمناسبات الصغيرة.
+        </p>
+
+        <div class="price">
+          100,000 د.ع
+        </div>
+
+        <a href="#booking" class="btn">
+          احجز هذه الخانة
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <img
+        src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1000&q=85"
+        alt="الخانة الثالثة">
+
+      <div class="card-content">
+
+        <h3>خانة الأصدقاء</h3>
+
+        <p>
+          جلسة جميلة للأصدقاء والشباب
+          مع أجواء طبيعية هادئة.
+        </p>
+
+        <div class="price">
+          75,000 د.ع
+        </div>
+
+        <a href="#booking" class="btn">
+          احجز هذه الخانة
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- الحجز -->
+<section class="booking" id="booking">
+
+  <div class="booking-inner">
+
+    <h2>احجز الآن 📅</h2>
+
+    <form id="bookingForm">
+
+      <div>
+        <label>الاسم الكامل</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="اكتب اسمك"
+          required>
+      </div>
+
+      <div>
+        <label>رقم الهاتف</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="07XXXXXXXXX"
+          required>
+      </div>
+
+      <div>
+        <label>اختار الخانة</label>
+
+        <select id="place" required>
+
+          <option value="">
+            اختر الخانة
+          </option>
+
+          <option>
+            الخانة الملكية
+          </option>
+
+          <option>
+            الخانة العائلية
+          </option>
+
+          <option>
+            خانة الأصدقاء
+          </option>
+
+        </select>
+
+      </div>
+
+      <div>
+        <label>تاريخ الحجز</label>
+
+        <input
+          type="date"
+          id="date"
+          required>
+
+      </div>
+
+      <div>
+        <label>وقت الحجز</label>
+
+        <input
+          type="time"
+          id="time"
+          required>
+
+      </div>
+
+      <div>
+        <label>عدد الأشخاص</label>
+
+        <input
+          type="number"
+          id="people"
+          min="1"
+          max="100"
+          placeholder="عدد الأشخاص"
+          required>
+
+      </div>
+
+      <div>
+
+        <label>ملاحظات</label>
+
+        <textarea
+          id="notes"
+          placeholder="أي ملاحظات إضافية..."></textarea>
+
+      </div>
+
+      <button
+        type="submit"
+        class="submit">
+
+        إرسال طلب الحجز عبر واتساب
+
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- التواصل -->
+<section id="contact">
+
+  <div class="section-title">
+    <h2>تواصل معنا</h2>
+    <p>نحن جاهزون لاستقبال استفساراتكم وحجوزاتكم</p>
+  </div>
+
+  <div class="contact-box">
+
+    <h3>📞 الهاتف</h3>
+
+    <p>
+      07XXXXXXXXX
+    </p>
+
+    <br>
+
+    <h3>📍 الموقع</h3>
+
+    <p>
+      العراق
+    </p>
+
+    <br>
+
+    <a
+      href="#booking"
+      class="btn">
+
+      احجز الآن
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <p>
+    © 2026 مزرعة الدازع - جميع الحقوق محفوظة
+  </p>
+
+</footer>
+
+
+<script>
+
+  document
+    .getElementById("bookingForm")
+    .addEventListener("submit", function(e) {
+
+      e.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const phone =
+        document.getElementById("phone").value;
+
+      const place =
+        document.getElementById("place").value;
+
+      const date =
+        document.getElementById("date").value;
+
+      const time =
+        document.getElementById("time").value;
+
+      const people =
+        document.getElementById("people").value;
+
+      const notes =
+        document.getElementById("notes").value;
+
+
+      /*
+        مهم جداً:
+        غير الرقم أدناه إلى رقم واتساب المزرعة
+        بدون علامة + وبدون الصفر الأول.
+        
+        مثال:
+        العراق 9647XXXXXXXXX
+      */
+
+      const whatsappNumber = "9647XXXXXXXXX";
+
+
+      const message =
+        "🌿 *طلب حجز - مزرعة الدازع*%0A%0A" +
+
+        "👤 الاسم: " + name + "%0A" +
+
+        "📞 الهاتف: " + phone + "%0A" +
+
+        "🏡 الخانة: " + place + "%0A" +
+
+        "📅 التاريخ: " + date + "%0A" +
+
+        "⏰ الوقت: " + time + "%0A" +
+
+        "👥 عدد الأشخاص: " + people + "%0A" +
+
+        "📝 ملاحظات: " + notes;
+
+
+      const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+
+
+      window.open(url, "_blank");
+
+    });
+
+</script>
+
+</body>
+</html>
