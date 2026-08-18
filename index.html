@@ -1,1201 +1,1119 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>الغيث | Alghaith Farms</title>
-  <meta name="description" content="الغيث - مكانك المثالي للراحة والاستجمام وقضاء أجمل الأوقات وسط الطبيعة والهدوء.">
+<title>مزارع الغيث | Alghaith Farms</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+<meta name="description"
+content="مزارع الغيث | Alghaith Farms - مكانك المثالي للراحة والاستجمام وقضاء أجمل الأوقات وسط الطبيعة والهدوء">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f5f1e8;
+    color:#183426;
+    line-height:1.8;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid #ddd5c5;
+    backdrop-filter:blur(12px);
+}
+
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    min-height:78px;
+    padding:10px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-area img{
+    width:54px;
+    height:54px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid #c89d42;
+}
+
+.logo-name{
+    color:#28583b;
+    font-size:21px;
+    font-weight:900;
+}
+
+.logo-name small{
+    display:block;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#9b772e;
+    direction:ltr;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#28583b;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#bd8d2f;
+}
+
+.menu-button{
+    display:none;
+    background:none;
+    border:none;
+    font-size:31px;
+    color:#28583b;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:calc(100vh - 78px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:white;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(204,160,68,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0b1d13,
+            #173627,
+            #0b1911
+        );
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-logo{
+    width:min(330px,75vw);
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:2px solid #cda54c;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.55);
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,72px);
+    line-height:1.2;
+    color:#e3bb63;
+}
+
+.english-title{
+    font-size:clamp(20px,4vw,31px);
+    letter-spacing:3px;
+    color:#fff;
+
+    direction:ltr;
+}
+
+.hero-description{
+    max-width:700px;
+    margin:20px auto 30px;
+
+    font-size:20px;
+    color:#f1f1f1;
+}
+
+.main-button{
+    display:inline-block;
+
+    background:#d4a642;
+    color:#14291c;
+
+    padding:15px 38px;
+
+    border-radius:14px;
+
+    font-size:18px;
+    font-weight:900;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+    transition:.3s;
+}
+
+.main-button:hover{
+    background:#e7c36d;
+    transform:translateY(-2px);
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    color:#28583b;
+    font-size:36px;
+}
+
+.section-title p{
+    color:#737970;
+    margin-top:5px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.card{
+    background:#fff;
+
+    border:1px solid #e1d9c9;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:
+        0 10px 35px rgba(44,54,43,.07);
+}
+
+.card h3{
+    color:#28583b;
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#5f665f;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.feature-card{
+    text-align:center;
+}
+
+.feature-icon{
+    font-size:45px;
+    margin-bottom:8px;
+}
+
+.feature-card h3{
+    color:#28583b;
+    margin-bottom:5px;
+}
+
+/* ================= BOOKING ================= */
+
+.booking-section{
+    background:#173627;
+    color:white;
+}
+
+.booking-section .section-title h2{
+    color:#e3bb63;
+}
+
+.booking-section .section-title p{
+    color:#d6ddd8;
+}
+
+.booking-box{
+    max-width:720px;
+    margin:auto;
+
+    background:#fff;
+
+    color:#183426;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+.form-group{
+    margin-bottom:17px;
+}
+
+.form-group label{
+    display:block;
+
+    font-weight:900;
+
+    margin-bottom:6px;
+}
+
+input{
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #d7cfbf;
+
+    background:#faf8f3;
+
+    font-size:16px;
+
+    outline:none;
+}
+
+input:focus{
+    border-color:#c79b3e;
+}
+
+/* ================= SHIFTS ================= */
+
+.shift-title{
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.shift-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.shift-option input{
+    display:none;
+}
+
+.shift-option label{
+    display:block;
+
+    text-align:center;
+
+    padding:18px 10px;
+
+    border:2px solid #ddd5c5;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    background:#faf8f3;
+
+    transition:.25s;
+}
+
+.shift-option label strong{
+    display:block;
+    font-size:18px;
+}
+
+.shift-option label span{
+    font-size:14px;
+    color:#777;
+}
+
+.shift-option input:checked + label{
+    border-color:#c79b3e;
+    background:#fff5d9;
+    color:#8a651d;
+}
+
+/* ================= SUBMIT ================= */
+
+.submit-button{
+    width:100%;
+
+    border:none;
+
+    cursor:pointer;
+
+    margin-top:10px;
+
+    font-size:17px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-box p{
+    margin:7px 0;
+    color:#626961;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0b1c12;
+
+    color:#dce3dd;
+
+    text-align:center;
+
+    padding:30px 20px;
+}
+
+footer strong{
+    color:#e1b95e;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:750px){
+
+    .navbar{
+        min-height:68px;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .logo-area img{
+        width:46px;
+        height:46px;
     }
 
-    body {
-      background: #f5f3ed;
-      color: #1f2a20;
-      line-height: 1.7;
+    .logo-name{
+        font-size:18px;
     }
 
-    /* ===== HEADER ===== */
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #ddd;
+    .logo-name small{
+        font-size:9px;
     }
 
-    nav {
-      max-width: 1150px;
-      height: 75px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .menu-button{
+        display:block;
     }
 
-    .logo {
-      font-size: 26px;
-      font-weight: bold;
-      color: #315b3a;
-      white-space: nowrap;
+    .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:68px;
+        right:0;
+        left:0;
+
+        background:#fff;
+
+        flex-direction:column;
+
+        gap:0;
+
+        border-bottom:1px solid #ddd;
+
+        box-shadow:0 10px 25px rgba(0,0,0,.08);
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+    .nav-links.open{
+        display:flex;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #26372b;
-      font-weight: bold;
+    .nav-links a{
+        width:100%;
+        text-align:center;
+
+        padding:15px;
+
+        border-bottom:1px solid #eee;
     }
 
-    nav a:hover {
-      color: #b08427;
+    .hero{
+        min-height:calc(100vh - 68px);
     }
 
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 30px;
-      cursor: pointer;
-      color: #315b3a;
+    .hero-logo{
+        width:250px;
     }
 
-    /* ===== HERO ===== */
-
-    .hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.58)),
-        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85")
-        center/cover;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 110px 20px 50px;
+    .hero-description{
+        font-size:17px;
     }
 
-    .hero-content {
-      max-width: 800px;
+    section{
+        padding:60px 16px;
     }
 
-    .hero h1 {
-      font-size: clamp(48px, 9vw, 85px);
-      margin-bottom: 12px;
+    .section-title h2{
+        font-size:30px;
     }
 
-    .hero p {
-      font-size: clamp(18px, 3vw, 23px);
-      margin-bottom: 32px;
+    .about-grid{
+        grid-template-columns:1fr;
     }
 
-    .btn {
-      display: inline-block;
-      background: #d4a84f;
-      color: white;
-      padding: 14px 30px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-size: 17px;
-      transition: .25s;
+    .features{
+        grid-template-columns:1fr;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #bd9137;
+    .shift-options{
+        grid-template-columns:1fr 1fr;
     }
 
-    /* ===== SECTIONS ===== */
+}
 
-    section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 90px 20px;
+/* ================= SMALL PHONES ================= */
+
+@media(max-width:420px){
+
+    .hero-logo{
+        width:210px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
+    .hero h1{
+        font-size:42px;
     }
 
-    .section-title h2 {
-      font-size: 38px;
-      color: #315b3a;
-      margin-bottom: 8px;
+    .english-title{
+        font-size:20px;
     }
 
-    .section-title p {
-      color: #777;
+    .shift-options{
+        grid-template-columns:1fr;
     }
 
-    /* ===== ABOUT ===== */
+}
 
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 25px;
-    }
-
-    .about-text h2 {
-      color: #315b3a;
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      color: #555;
-      font-size: 18px;
-    }
-
-    /* ===== FEATURES ===== */
-
-    .features {
-      background: #fff;
-      max-width: none;
-    }
-
-    .features-inner {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .feature {
-      background: #f8f7f2;
-      padding: 30px 20px;
-      text-align: center;
-      border-radius: 20px;
-      transition: .25s;
-    }
-
-    .feature:hover {
-      transform: translateY(-5px);
-    }
-
-    .feature-icon {
-      font-size: 42px;
-      margin-bottom: 12px;
-    }
-
-    .feature h3 {
-      color: #315b3a;
-      margin-bottom: 7px;
-    }
-
-    .feature p {
-      color: #777;
-      font-size: 15px;
-    }
-
-    /* ===== PLACES ===== */
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,.08);
-      transition: .3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 22px;
-    }
-
-    .card h3 {
-      color: #315b3a;
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #666;
-    }
-
-    .price {
-      color: #b08427;
-      font-size: 21px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
-
-    /* ===== BOOKING ===== */
-
-    .booking {
-      background: #315b3a;
-      color: white;
-      max-width: none;
-    }
-
-    .booking-inner {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .booking h2 {
-      text-align: center;
-      font-size: 38px;
-      margin-bottom: 35px;
-    }
-
-    form {
-      background: white;
-      color: #222;
-      padding: 30px;
-      border-radius: 20px;
-      display: grid;
-      gap: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,.12);
-    }
-
-    label {
-      font-weight: bold;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 16px;
-      margin-top: 6px;
-      outline: none;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #315b3a;
-    }
-
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    .submit {
-      background: #d4a84f;
-      color: white;
-      border: none;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .submit:hover {
-      background: #bd9137;
-    }
-
-    .booking-note {
-      text-align: center;
-      margin-top: 15px;
-      color: #eee;
-      font-size: 14px;
-    }
-
-    /* ===== CONTACT ===== */
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact-box {
-      background: white;
-      padding: 40px 25px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.06);
-    }
-
-    .contact-box h3 {
-      color: #315b3a;
-      margin-bottom: 5px;
-    }
-
-    .contact-item {
-      margin-bottom: 25px;
-    }
-
-    /* ===== FOOTER ===== */
-
-    footer {
-      background: #1d2c20;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer strong {
-      color: #d4a84f;
-    }
-
-    /* ===== MOBILE ===== */
-
-    @media (max-width: 900px) {
-
-      .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-      }
-
-      .about img {
-        height: 330px;
-      }
-    }
-
-    @media (max-width: 700px) {
-
-      nav {
-        height: 68px;
-      }
-
-      .logo {
-        font-size: 23px;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        right: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-        flex-direction: column;
-        gap: 18px;
-        border-bottom: 1px solid #ddd;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hero {
-        min-height: 90vh;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      section {
-        padding: 70px 18px;
-      }
-
-      .section-title h2 {
-        font-size: 31px;
-      }
-
-      .about-text h2 {
-        font-size: 31px;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-
-      .feature {
-        padding: 22px 12px;
-      }
-
-      form {
-        padding: 22px;
-      }
-    }
-
-    @media (max-width: 430px) {
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .card .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-  <nav>
+<div class="navbar">
 
-    <div class="logo">
-      🌿 الغيث
-    </div>
+    <a href="#home" class="logo-area">
 
-    <button class="menu-btn" id="menuBtn">
-      ☰
+        <img
+            src="logo.png"
+            alt="شعار مزارع الغيث"
+        >
+
+        <div class="logo-name">
+
+            مزارع الغيث
+
+            <small>
+                ALGAITH FARMS
+            </small>
+
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="القائمة"
+    >
+        ☰
     </button>
 
-    <div class="nav-links" id="navLinks">
 
-      <a href="#home">الرئيسية</a>
-      <a href="#about">عن الغيث</a>
-      <a href="#features">المميزات</a>
-      <a href="#places">الخانات</a>
-      <a href="#booking">الحجز</a>
-      <a href="#contact">تواصل معنا</a>
+    <nav
+        class="nav-links"
+        id="navLinks"
+    >
 
-    </div>
+        <a href="#home">
+            الرئيسية
+        </a>
 
-  </nav>
+        <a href="#about">
+            عن المزرعة
+        </a>
+
+        <a href="#features">
+            المميزات
+        </a>
+
+        <a href="#booking">
+            الحجز
+        </a>
+
+        <a href="#contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+</div>
 
 </header>
 
 
-<!-- ===== HERO ===== -->
+<!-- ================= HOME ================= -->
 
-<div class="hero" id="home">
+<main>
 
-  <div class="hero-content">
+<section
+    class="hero"
+    id="home"
+>
 
-    <h1>الغيث</h1>
+<div class="hero-content">
 
-    <p>
-      مكانك المثالي للراحة والاستجمام
-      وقضاء أجمل الأوقات وسط الطبيعة والهدوء
+    <img
+        src="logo.png"
+        class="hero-logo"
+        alt="مزارع الغيث"
+    >
+
+    <h1>
+        مزارع الغيث
+    </h1>
+
+    <div class="english-title">
+        ALGAITH FARMS
+    </div>
+
+    <p class="hero-description">
+
+        مكانك المثالي للراحة والاستجمام
+        وقضاء أجمل الأوقات وسط الطبيعة والهدوء.
+
     </p>
 
-    <a href="#booking" class="btn">
-      احجز الآن
+    <a
+        href="#booking"
+        class="main-button"
+    >
+        احجز الآن
     </a>
 
-  </div>
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>
+        عن مزارع الغيث
+    </h2>
+
+    <p>
+        خصوصية • راحة • طبيعة
+    </p>
 
 </div>
 
 
-<!-- ===== ABOUT ===== -->
+<div class="about-grid">
 
-<section id="about">
+<div class="card">
 
-  <div class="about">
-
-    <img
-      src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=85"
-      alt="الغيث">
-
-    <div class="about-text">
-
-      <h2>عن الغيث</h2>
-
-      <p>
-        أهلاً وسهلاً بكم في الغيث 🌿
-      </p>
-
-      <br>
-
-      <p>
-        مكان مصمم حتى تستمتع بأجواء هادئة
-        وجميلة بعيداً عن ضوضاء المدينة،
-        مع مساحات مريحة تناسب العوائل
-        والأصدقاء.
-      </p>
-
-      <br>
-
-      <p>
-        هدفنا أن تكون زيارتكم للغيث
-        تجربة جميلة تستحق التكرار.
-      </p>
-
-      <br>
-
-      <a href="#places" class="btn">
-        شوف الخانات
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ===== FEATURES ===== -->
-
-<section class="features" id="features">
-
-  <div class="features-inner">
-
-    <div class="section-title">
-
-      <h2>ليش تختار الغيث؟</h2>
-
-      <p>
-        كل شيء تحتاجه حتى تستمتع بيوم جميل
-      </p>
-
-    </div>
-
-    <div class="feature-grid">
-
-      <div class="feature">
-
-        <div class="feature-icon">🌳</div>
-
-        <h3>أجواء طبيعية</h3>
-
-        <p>
-          مكان هادئ بعيد عن الزحام
-        </p>
-
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">🏡</div>
-
-        <h3>خانات خاصة</h3>
-
-        <p>
-          أماكن مناسبة للعوائل والأصدقاء
-        </p>
-
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">🏊</div>
-
-        <h3>ترفيه واستجمام</h3>
-
-        <p>
-          مساحة مناسبة لقضاء يوم ممتع
-        </p>
-
-      </div>
-
-
-      <div class="feature">
-
-        <div class="feature-icon">👨‍👩‍👧‍👦</div>
-
-        <h3>مناسب للعوائل</h3>
-
-        <p>
-          أجواء مريحة للجميع
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ===== PLACES ===== -->
-
-<section id="places">
-
-  <div class="section-title">
-
-    <h2>الخانات المتوفرة</h2>
+    <h3>
+        🌿 أجواء هادئة
+    </h3>
 
     <p>
-      اختار الخانة المناسبة إلك واحجز موعدك
+
+        مساحة خاصة لقضاء يوم جميل
+        بعيداً عن الزحام،
+        والاستمتاع بالطبيعة والهدوء.
+
     </p>
 
-  </div>
+</div>
 
 
-  <div class="cards">
+<div class="card">
 
+    <h3>
+        🏡 وقتك على راحتك
+    </h3>
 
-    <!-- الخانة الملكية -->
+    <p>
 
-    <div class="card">
+        اختر الوقت المناسب لك
+        من خلال الشفت الصباحي
+        أو الشفت المسائي.
 
-      <img
-        src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=85"
-        alt="الخانة الملكية">
+    </p>
 
-      <div class="card-content">
+</div>
 
-        <h3>الخانة الملكية</h3>
+</div>
 
-        <p>
-          خانة خاصة ومريحة، مناسبة للعوائل
-          والجلسات الخاصة.
-        </p>
-
-        <div class="price">
-          150,000 د.ع
-        </div>
-
-        <button
-          class="btn"
-          onclick="selectPlace('الخانة الملكية')">
-
-          احجز هذه الخانة
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- الخانة العائلية -->
-
-    <div class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1000&q=85"
-        alt="الخانة العائلية">
-
-      <div class="card-content">
-
-        <h3>الخانة العائلية</h3>
-
-        <p>
-          مساحة واسعة ومناسبة للعوائل
-          والمناسبات الصغيرة.
-        </p>
-
-        <div class="price">
-          100,000 د.ع
-        </div>
-
-        <button
-          class="btn"
-          onclick="selectPlace('الخانة العائلية')">
-
-          احجز هذه الخانة
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <!-- خانة الأصدقاء -->
-
-    <div class="card">
-
-      <img
-        src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?auto=format&fit=crop&w=1000&q=85"
-        alt="خانة الأصدقاء">
-
-      <div class="card-content">
-
-        <h3>خانة الأصدقاء</h3>
-
-        <p>
-          جلسة جميلة للأصدقاء والشباب
-          مع أجواء طبيعية هادئة.
-        </p>
-
-        <div class="price">
-          75,000 د.ع
-        </div>
-
-        <button
-          class="btn"
-          onclick="selectPlace('خانة الأصدقاء')">
-
-          احجز هذه الخانة
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- ===== BOOKING ===== -->
+<!-- ================= FEATURES ================= -->
 
-<section class="booking" id="booking">
+<section id="features">
 
-  <div class="booking-inner">
+<div class="container">
+
+<div class="section-title">
 
     <h2>
-      احجز موعدك 📅
+        مميزات المزرعة
     </h2>
 
-    <form id="bookingForm">
-
-
-      <div>
-
-        <label>
-          الاسم الكامل
-        </label>
-
-        <input
-          type="text"
-          id="name"
-          placeholder="اكتب اسمك"
-          required>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          رقم الهاتف
-        </label>
-
-        <input
-          type="tel"
-          id="phone"
-          placeholder="07XXXXXXXXX"
-          required>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          اختار الخانة
-        </label>
-
-        <select id="place" required>
-
-          <option value="">
-            اختر الخانة
-          </option>
-
-          <option value="الخانة الملكية">
-            الخانة الملكية
-          </option>
-
-          <option value="الخانة العائلية">
-            الخانة العائلية
-          </option>
-
-          <option value="خانة الأصدقاء">
-            خانة الأصدقاء
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          تاريخ الحجز
-        </label>
-
-        <input
-          type="date"
-          id="date"
-          required>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          وقت الحجز
-        </label>
-
-        <input
-          type="time"
-          id="time"
-          required>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          عدد الأشخاص
-        </label>
-
-        <input
-          type="number"
-          id="people"
-          min="1"
-          max="100"
-          placeholder="عدد الأشخاص"
-          required>
-
-      </div>
-
-
-      <div>
-
-        <label>
-          ملاحظات
-        </label>
-
-        <textarea
-          id="notes"
-          placeholder="أي ملاحظات إضافية..."></textarea>
-
-      </div>
-
-
-      <button
-        type="submit"
-        class="submit">
-
-        إرسال طلب الحجز عبر واتساب
-
-      </button>
-
-
-    </form>
-
-    <p class="booking-note">
-      بعد الضغط على الزر سيتم فتح واتساب وإرسال تفاصيل طلب الحجز.
+    <p>
+        كل ما تحتاجه لقضاء وقت ممتع
     </p>
 
-  </div>
+</div>
+
+
+<div class="features">
+
+<div class="card feature-card">
+
+    <div class="feature-icon">
+        🏡
+    </div>
+
+    <h3>
+        استراحة
+    </h3>
+
+    <p>
+        مكان مريح ومناسب لقضاء الوقت.
+    </p>
+
+</div>
+
+
+<div class="card feature-card">
+
+    <div class="feature-icon">
+        🏊
+    </div>
+
+    <h3>
+        مسبح
+    </h3>
+
+    <p>
+        مساحة للسباحة والاستمتاع.
+    </p>
+
+</div>
+
+
+<div class="card feature-card">
+
+    <div class="feature-icon">
+        🌳
+    </div>
+
+    <h3>
+        مساحات خضراء
+    </h3>
+
+    <p>
+        طبيعة وأجواء هادئة ومريحة.
+    </p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ===== CONTACT ===== -->
+<!-- ================= BOOKING ================= -->
+
+<section
+    class="booking-section"
+    id="booking"
+>
+
+<div class="container">
+
+<div class="section-title">
+
+    <h2>
+        الحجز
+    </h2>
+
+    <p>
+        اختر الشفت المناسب لك
+    </p>
+
+</div>
+
+
+<div class="booking-box">
+
+<form id="bookingForm">
+
+
+<div class="form-group">
+
+<label for="name">
+    الاسم
+</label>
+
+<input
+    id="name"
+    type="text"
+    placeholder="اكتب الاسم"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="phone">
+    رقم الهاتف
+</label>
+
+<input
+    id="phone"
+    type="tel"
+    placeholder="07XXXXXXXXX"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="date">
+    تاريخ الحجز
+</label>
+
+<input
+    id="date"
+    type="date"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<div class="shift-title">
+    اختر الشفت
+</div>
+
+
+<div class="shift-options">
+
+
+<div class="shift-option">
+
+<input
+    type="radio"
+    name="shift"
+    id="morning"
+    value="شفت صباحي"
+    required
+>
+
+<label for="morning">
+
+    🌅
+
+    <strong>
+        شفت صباحي
+    </strong>
+
+    <span>
+        صباحاً
+    </span>
+
+</label>
+
+</div>
+
+
+<div class="shift-option">
+
+<input
+    type="radio"
+    name="shift"
+    id="evening"
+    value="شفت مسائي"
+>
+
+<label for="evening">
+
+    🌙
+
+    <strong>
+        شفت مسائي
+    </strong>
+
+    <span>
+        مساءً
+    </span>
+
+</label>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<button
+    type="submit"
+    class="main-button submit-button"
+>
+    إرسال طلب الحجز
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
-  <div class="contact">
+<div class="container contact">
 
-    <div class="section-title">
+<div class="section-title">
 
-      <h2>
+    <h2>
         تواصل معنا
-      </h2>
+    </h2>
 
-      <p>
-        نحن جاهزون لاستقبال استفساراتكم وحجوزاتكم
-      </p>
+    <p>
+        مزارع الغيث | Alghaith Farms
+    </p>
 
-    </div>
-
-
-    <div class="contact-box">
-
-      <div class="contact-item">
-
-        <h3>
-          📞 الهاتف
-        </h3>
-
-        <p>
-          07XXXXXXXXX
-        </p>
-
-      </div>
+</div>
 
 
-      <div class="contact-item">
+<div class="card contact-box">
 
-        <h3>
-          📍 الموقع
-        </h3>
+<h3>
+    مزارع الغيث
+</h3>
 
-        <p>
-          العراق
-        </p>
+<p>
+    📍 بغداد، العراق
+</p>
 
-      </div>
+<p>
+    🌿 نرحب بكم وننتظر زيارتكم
+</p>
 
+</div>
 
-      <a
-        href="#booking"
-        class="btn">
-
-        احجز الآن
-
-      </a>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
+</main>
 
-<!-- ===== FOOTER ===== -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-  <p>
-    © 2026 <strong>الغيث</strong> - جميع الحقوق محفوظة
-  </p>
+<p>
+
+© 2026
+
+<strong>
+    مزارع الغيث | Alghaith Farms
+</strong>
+
+</p>
 
 </footer>
 
 
-<!-- ===== JAVASCRIPT ===== -->
-
 <script>
 
-  /* =========================
-     قائمة الموبايل
-  ========================= */
+/* ================= MENU ================= */
 
-  const menuBtn =
-    document.getElementById("menuBtn");
+const menuButton =
+    document.getElementById("menuButton");
 
-  const navLinks =
+const navLinks =
     document.getElementById("navLinks");
 
 
-  menuBtn.addEventListener("click", function() {
+menuButton.addEventListener(
+    "click",
+    function(){
 
-    navLinks.classList.toggle("active");
+        navLinks.classList.toggle("open");
 
-  });
+    }
+);
 
 
-  document
+document
     .querySelectorAll(".nav-links a")
-    .forEach(function(link) {
+    .forEach(function(link){
 
-      link.addEventListener("click", function() {
+        link.addEventListener(
+            "click",
+            function(){
 
-        navLinks.classList.remove("active");
+                navLinks.classList.remove("open");
 
-      });
-
-    });
-
-
-  /* =========================
-     اختيار الخانة
-  ========================= */
-
-  function selectPlace(placeName) {
-
-    document
-      .getElementById("place")
-      .value = placeName;
-
-    document
-      .getElementById("booking")
-      .scrollIntoView({
-        behavior: "smooth"
-      });
-
-  }
-
-
-  /* =========================
-     منع التاريخ السابق
-  ========================= */
-
-  const dateInput =
-    document.getElementById("date");
-
-
-  const today =
-    new Date();
-
-
-  const year =
-    today.getFullYear();
-
-
-  const month =
-    String(today.getMonth() + 1)
-      .padStart(2, "0");
-
-
-  const day =
-    String(today.getDate())
-      .padStart(2, "0");
-
-
-  const todayString =
-    `${year}-${month}-${day}`;
-
-
-  dateInput.min =
-    todayString;
-
-
-  /* =========================
-     إرسال الحجز للواتساب
-  ========================= */
-
-  document
-    .getElementById("bookingForm")
-    .addEventListener("submit", function(e) {
-
-      e.preventDefault();
-
-
-      const name =
-        document.getElementById("name").value.trim();
-
-
-      const phone =
-        document.getElementById("phone").value.trim();
-
-
-      const place =
-        document.getElementById("place").value;
-
-
-      const date =
-        document.getElementById("date").value;
-
-
-      const time =
-        document.getElementById("time").value;
-
-
-      const people =
-        document.getElementById("people").value;
-
-
-      const notes =
-        document.getElementById("notes").value.trim();
-
-
-      /*
-        مهم جداً:
-        غيّر الرقم أدناه إلى رقم واتساب الغيث.
-
-        مثال العراق:
-        9647XXXXXXXXX
-
-        بدون +
-        وبدون الصفر الأول.
-      */
-
-      const whatsappNumber =
-        "9647XXXXXXXXX";
-
-
-      const message =
-        `🌿 *طلب حجز - الغيث*
-
-👤 الاسم: ${name}
-
-📞 الهاتف: ${phone}
-
-🏡 الخانة: ${place}
-
-📅 التاريخ: ${date}
-
-⏰ الوقت: ${time}
-
-👥 عدد الأشخاص: ${people}
-
-📝 الملاحظات: ${notes || "لا توجد ملاحظات"}
-
-أرغب بتأكيد الحجز.`;
-
-      
-      const url =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-      window.open(
-        url,
-        "_blank"
-      );
+            }
+        );
 
     });
+
+
+/* ================= BOOKING ================= */
+
+const bookingForm =
+    document.getElementById("bookingForm");
+
+
+bookingForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name").value.trim();
+
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+
+        const date =
+            document.getElementById("date").value;
+
+
+        const shift =
+            document.querySelector(
+                'input[name="shift"]:checked'
+            ).value;
+
+
+        alert(
+
+            "تم تجهيز طلب الحجز 🌿\n\n" +
+
+            "الاسم: " + name + "\n" +
+
+            "رقم الهاتف: " + phone + "\n" +
+
+            "تاريخ الحجز: " + date + "\n" +
+
+            "الشفت: " + shift + "\n\n" +
+
+            "شكراً لاختياركم مزارع الغيث ❤️"
+
+        );
+
+    }
+);
 
 </script>
 
