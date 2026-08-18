@@ -1686,16 +1686,136 @@ document.getElementById(
 "bookingModal"
 ).addEventListener(
 "click",
-function(event){
+async function sendBooking(){
 
-if(event.target === this){
+const name =
+document.getElementById(
+"customerName"
+).value.trim();
+
+const phone =
+document.getElementById(
+"customerPhone"
+).value.trim();
+
+
+if(!name){
+
+alert(
+"يرجى كتابة الاسم"
+);
+
+return;
+
+}
+
+
+if(!phone){
+
+alert(
+"يرجى كتابة رقم الهاتف"
+);
+
+return;
+
+}
+
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxlGhvg-zLaMyBbt5-Kukles_D04eEKwcvpvy9az5tSEP2L99LeoNO6rGUgHjGdz2x1Rw/exec";
+
+
+const bookingData = {
+
+date: selectedDate,
+
+shift: selectedShift,
+
+name: name,
+
+phone: phone
+
+};
+
+
+try{
+
+await fetch(
+GOOGLE_SCRIPT_URL,
+{
+method:"POST",
+
+mode:"no-cors",
+
+headers:{
+"Content-Type":"text/plain;charset=utf-8"
+},
+
+body:JSON.stringify(
+bookingData
+)
+
+}
+);
+
+}catch(error){
+
+console.log(
+"تعذر إرسال البيانات إلى Google Sheets:",
+error
+);
+
+}
+
+
+const message =
+
+`🌿 مزارع الغيث
+ALGAITH FARMS
+
+📋 طلب حجز جديد
+
+👤 الاسم:
+${name}
+
+📱 رقم الهاتف:
+${phone}
+
+📅 تاريخ الحجز:
+${selectedDate}
+
+⏰ الفترة:
+${selectedShift}
+
+شكراً لاختياركم مزارع الغيث 🌿`;
+
+
+const whatsappURL =
+
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+
+document.getElementById(
+"customerName"
+).value = "";
+
+document.getElementById(
+"customerPhone"
+).value = "";
+
 
 closeModal();
 
 }
-
-}
-);
 
 /* =========================
    تشغيل التقويم
