@@ -1082,7 +1082,10 @@ const whatsappURL =
   "https://wa.me/" + whatsappNumber +
   "?text=" + encodeURIComponent(message);
 
-window.location.href = whatsappURL;
+window.location.assign(
+  "https://api.whatsapp.com/send?phone=9647736735730&text=" +
+  encodeURIComponent(message)
+);
             "شكراً لاختياركم مزارع الغيث ❤️"
 
         );
