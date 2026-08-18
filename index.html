@@ -1068,46 +1068,21 @@ document
 /* ================= BOOKING ================= */
 
 const bookingForm =
-    document.getElementById("bookingForm");
+    const message =
+  "🌿 طلب حجز جديد - مزارع الغيث\n\n" +
+  "الاسم: " + name + "\n" +
+  "رقم الهاتف: " + phone + "\n" +
+  "تاريخ الحجز: " + date + "\n" +
+  "الفترة: " + shift + "\n\n" +
+  "تم إرسال الطلب من موقع مزارع الغيث.";
 
+const whatsappNumber = "9647736735730";
 
-bookingForm.addEventListener(
-    "submit",
-    function(event){
+const whatsappURL =
+  "https://wa.me/" + whatsappNumber +
+  "?text=" + encodeURIComponent(message);
 
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById("name").value.trim();
-
-
-        const phone =
-            document.getElementById("phone").value.trim();
-
-
-        const date =
-            document.getElementById("date").value;
-
-
-        const shift =
-            document.querySelector(
-                'input[name="shift"]:checked'
-            ).value;
-
-
-        alert(
-
-            "تم تجهيز طلب الحجز 🌿\n\n" +
-
-            "الاسم: " + name + "\n" +
-
-            "رقم الهاتف: " + phone + "\n" +
-
-            "تاريخ الحجز: " + date + "\n" +
-
-            "الشفت: " + shift + "\n\n" +
-
+window.open(whatsappURL, "_blank");
             "شكراً لاختياركم مزارع الغيث ❤️"
 
         );
