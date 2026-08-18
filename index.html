@@ -1613,32 +1613,37 @@ document.getElementById(
 
 function sendBooking(){
 
-    const name =
-        document.getElementById("customerName")
-        .value.trim();
+const name =
+document.getElementById(
+"customerName"
+).value.trim();
 
-    const phone =
-        document.getElementById("customerPhone")
-        .value.trim();
+const phone =
+document.getElementById(
+"customerPhone"
+).value.trim();
 
+if(!name){
 
-    if(!name){
+alert(
+"يرجى كتابة الاسم"
+);
 
-        alert("يرجى كتابة الاسم");
+return;
 
-        return;
-    }
+}
 
+if(!phone){
 
-    if(!phone){
+alert(
+"يرجى كتابة رقم الهاتف"
+);
 
-        alert("يرجى كتابة رقم الهاتف");
+return;
 
-        return;
-    }
+}
 
-
-    const message =
+const message =
 
 `🌿 مزارع الغيث
 ALGAITH FARMS
@@ -1659,31 +1664,20 @@ ${selectedShift}
 
 شكراً لاختياركم مزارع الغيث 🌿`;
 
+const whatsappURL =
 
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
 
+window.open(
+whatsappURL,
+"_blank"
+);
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
+}
 
-
-    document.getElementById(
-        "customerName"
-    ).value = "";
-
-
-    document.getElementById(
-        "customerPhone"
-    ).value = "";
-
-
-    closeModal();
 /* =========================
    إغلاق عند الضغط خارج النافذة
 ========================= */
@@ -1699,6 +1693,9 @@ if(event.target === this){
 closeModal();
 
 }
+
+}
+);
 
 /* =========================
    تشغيل التقويم
