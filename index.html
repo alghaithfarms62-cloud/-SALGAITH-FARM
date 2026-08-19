@@ -3,19 +3,12 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>مزارع الغيث | ALGAITH FARMS</title>
 
 <style>
-
-/* =========================
-   عام
-========================= */
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -33,28 +26,18 @@ body{
     line-height:1.8;
 }
 
-
-/* =========================
-   الهيدر
-========================= */
-
+/* الهيدر */
 header{
     position:sticky;
     top:0;
     z-index:1000;
-
     height:80px;
-
     background:white;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     padding:8px 5%;
-
     border-bottom:2px solid #e3dccb;
-
     box-shadow:0 3px 15px rgba(0,0,0,.08);
 }
 
@@ -93,26 +76,17 @@ header{
     font-weight:bold;
 }
 
-
-/* =========================
-   الرئيسية
-========================= */
-
+/* الرئيسية */
 .hero{
     min-height:650px;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         rgba(5,48,31,.84),
         rgba(5,48,31,.94)
     );
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
     padding:60px 20px;
 }
 
@@ -125,11 +99,8 @@ header{
     width:150px;
     height:150px;
     object-fit:contain;
-
     border-radius:50%;
-
     margin-bottom:20px;
-
     background:white;
     padding:7px;
 }
@@ -154,31 +125,19 @@ header{
 
 .main-button{
     display:inline-block;
-
     background:#d8ac3e;
     color:#173f2c;
-
     padding:13px 38px;
-
     border-radius:13px;
-
     text-decoration:none;
-
     font-size:20px;
     font-weight:bold;
-
     border:none;
-
     cursor:pointer;
-
     box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
-
-/* =========================
-   الأقسام
-========================= */
-
+/* الأقسام */
 section{
     padding:70px 5%;
 }
@@ -198,11 +157,7 @@ section{
     font-size:18px;
 }
 
-
-/* =========================
-   عن المزرعة
-========================= */
-
+/* عن المزرعة */
 .about{
     background:#f5f1e7;
 }
@@ -210,15 +165,10 @@ section{
 .about-box{
     max-width:900px;
     margin:auto;
-
     background:white;
-
     border-radius:22px;
-
     padding:35px;
-
     border:2px solid #e2dac8;
-
     text-align:center;
 }
 
@@ -233,11 +183,7 @@ section{
     font-size:18px;
 }
 
-
-/* =========================
-   المميزات
-========================= */
-
+/* المميزات */
 .features{
     background:#f5f1e7;
 }
@@ -245,28 +191,18 @@ section{
 .features-grid{
     max-width:1050px;
     margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
+    grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
 .feature{
     background:white;
-
     border:2px solid #e2dac8;
-
     border-radius:22px;
-
     padding:25px 15px;
-
     text-align:center;
-
     min-height:220px;
-
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -289,11 +225,7 @@ section{
     font-size:15px;
 }
 
-
-/* =========================
-   جاهز للحجز
-========================= */
-
+/* جاهز للحجز */
 .ready{
     background:#0d3b29;
     color:white;
@@ -310,11 +242,7 @@ section{
     margin-bottom:22px;
 }
 
-
-/* =========================
-   الحجز
-========================= */
-
+/* الحجز */
 #booking{
     background:#0d3b29;
     padding-top:25px;
@@ -337,27 +265,17 @@ section{
 .booking-container{
     max-width:900px;
     margin:auto;
-
     background:#f8f5ed;
-
     border-radius:22px;
-
     padding:18px;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.25);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
-
-/* =========================
-   عنوان الشهر
-========================= */
-
+/* الشهر */
 .month-header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     margin-bottom:15px;
 }
 
@@ -369,17 +287,11 @@ section{
 .month-button{
     width:42px;
     height:42px;
-
     border:none;
-
     border-radius:50%;
-
     background:#d8ac3e;
-
     color:#173f2c;
-
     font-size:19px;
-
     cursor:pointer;
 }
 
@@ -389,84 +301,50 @@ section{
     cursor:not-allowed;
 }
 
-
-/* =========================
-   أيام الأسبوع
-========================= */
-
+/* أيام الأسبوع */
 .week-days{
     display:grid;
-
-    grid-template-columns:
-    repeat(7,1fr);
-
+    grid-template-columns:repeat(7,1fr);
     gap:5px;
-
     margin-bottom:5px;
 }
 
 .week-days div{
     text-align:center;
-
     color:#99752e;
-
     font-weight:bold;
-
     padding:5px 1px;
-
     font-size:13px;
 }
 
-
-/* =========================
-   التقويم
-========================= */
-
+/* التقويم */
 .calendar-grid{
     display:grid;
-
-    grid-template-columns:
-    repeat(7,1fr);
-
+    grid-template-columns:repeat(7,1fr);
     gap:5px;
 }
 
 .day-box{
     background:white;
-
     border:2px solid #ddd6c5;
-
     border-radius:10px;
-
     padding:5px;
-
     min-height:135px;
-
     transition:.2s;
 }
 
 .day-number{
     text-align:center;
-
     color:#245b40;
-
     font-size:18px;
-
     font-weight:bold;
-
     margin-bottom:5px;
 }
 
-
-/* =========================
-   الأيام القديمة
-========================= */
-
+/* الأيام القديمة */
 .day-box.past-day{
     background:#e5e3de;
-
     border-color:#cbc7bd;
-
     opacity:.72;
 }
 
@@ -476,74 +354,44 @@ section{
 
 .locked-box{
     text-align:center;
-
     color:#999;
-
     font-size:12px;
-
     padding-top:20px;
 }
 
 .lock-icon{
     display:block;
-
     font-size:25px;
-
     margin-bottom:3px;
 }
 
-
-/* =========================
-   اليوم الحالي
-========================= */
-
+/* اليوم الحالي */
 .day-box.today{
     border-color:#d8ac3e;
-
-    box-shadow:
-    0 0 0 2px rgba(216,172,62,.15);
+    box-shadow:0 0 0 2px rgba(216,172,62,.15);
 }
 
 .today-label{
     text-align:center;
-
     color:#a17b2f;
-
     font-size:10px;
-
     font-weight:bold;
-
     margin-top:-5px;
-
     margin-bottom:4px;
 }
 
-
-/* =========================
-   أزرار الشفت
-========================= */
-
+/* أزرار الشفت */
 .shift-button{
     width:100%;
-
     border:1px solid #d8ac3e;
-
     background:#fffdf8;
-
     color:#17472f;
-
     border-radius:8px;
-
     padding:6px 2px;
-
     margin-bottom:5px;
-
     cursor:pointer;
-
     font-weight:bold;
-
     font-size:11px;
-
     transition:.15s;
 }
 
@@ -553,13 +401,9 @@ section{
 
 .shift-button:disabled{
     background:#dedbd3;
-
     border-color:#c9c5bc;
-
     color:#888;
-
     cursor:not-allowed;
-
     opacity:.9;
 }
 
@@ -569,7 +413,6 @@ section{
 
 .shift-icon{
     display:block;
-
     font-size:18px;
 }
 
@@ -577,26 +420,15 @@ section{
     font-size:9px;
 }
 
-
-/* =========================
-   نافذة الحجز
-========================= */
-
+/* نافذة الحجز */
 .modal{
     position:fixed;
-
     inset:0;
-
     background:rgba(0,0,0,.65);
-
     z-index:99999;
-
     display:none;
-
     align-items:center;
-
     justify-content:center;
-
     padding:15px;
 }
 
@@ -606,40 +438,26 @@ section{
 
 .modal-box{
     width:100%;
-
     max-width:450px;
-
     background:white;
-
     border-radius:20px;
-
     padding:25px;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.3);
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
 }
 
 .modal-box h2{
     text-align:center;
-
     color:#17472f;
-
     margin-bottom:18px;
 }
 
 .selected-info{
     background:#f5f1e7;
-
     border-radius:12px;
-
     padding:12px;
-
     text-align:center;
-
     color:#245b40;
-
     font-weight:bold;
-
     margin-bottom:18px;
 }
 
@@ -649,94 +467,58 @@ section{
 
 .form-group label{
     display:block;
-
     color:#17472f;
-
     font-weight:bold;
-
     margin-bottom:5px;
 }
 
 .form-group input{
     width:100%;
-
     padding:12px;
-
     border-radius:10px;
-
     border:2px solid #ddd6c5;
-
     font-size:16px;
-
     outline:none;
 }
 
 .send-button{
     width:100%;
-
     background:#d8ac3e;
-
     color:#173f2c;
-
     border:none;
-
     border-radius:12px;
-
     padding:14px;
-
     font-size:17px;
-
     font-weight:bold;
-
     cursor:pointer;
 }
 
 .close-button{
     width:100%;
-
     background:white;
-
     color:#17472f;
-
     border:2px solid #17472f;
-
     border-radius:12px;
-
     padding:11px;
-
     font-size:16px;
-
     margin-top:9px;
-
     cursor:pointer;
 }
 
-
-/* =========================
-   الفوتر
-========================= */
-
+/* الفوتر */
 footer{
     background:#082d20;
-
     color:white;
-
     text-align:center;
-
     padding:30px 20px;
 }
 
 footer h3{
     color:#d8ac3e;
-
     margin-bottom:5px;
 }
 
-
-/* =========================
-   الموبايل
-========================= */
-
+/* الموبايل */
 @media(max-width:800px){
 
     header{
@@ -828,7 +610,6 @@ footer h3{
 
     .booking-container{
         padding:10px;
-
         overflow-x:auto;
     }
 
@@ -844,19 +625,12 @@ footer h3{
     .month-header h3{
         font-size:21px;
     }
-
 }
-
 </style>
 
 </head>
 
 <body>
-
-
-<!-- =========================
-     الهيدر
-========================= -->
 
 <header>
 
@@ -869,33 +643,20 @@ class="logo"
 >
 
 <div class="brand">
-
 <h1>مزارع الغيث</h1>
-
 <p>ALGAITH FARMS</p>
-
 </div>
 
 </div>
 
 <nav class="menu">
-
 <a href="#home">الرئيسية</a>
-
 <a href="#about">عن المزرعة</a>
-
 <a href="#features">المميزات</a>
-
 <a href="#booking">الحجز</a>
-
 </nav>
 
 </header>
-
-
-<!-- =========================
-     الرئيسية
-========================= -->
 
 <section id="home" class="hero">
 
@@ -929,19 +690,11 @@ class="main-button"
 
 </section>
 
-
-<!-- =========================
-     عن المزرعة
-========================= -->
-
 <section id="about" class="about">
 
 <div class="section-title">
-
 <h2>عن مزارع الغيث</h2>
-
 <p>خصوصية • راحة • طبيعة</p>
-
 </div>
 
 <div class="about-box">
@@ -967,110 +720,56 @@ class="main-button"
 
 </section>
 
-
-<!-- =========================
-     المميزات
-========================= -->
-
 <section id="features" class="features">
 
 <div class="section-title">
 
 <h2>مميزات المزرعة</h2>
-
 <p>كل ما تحتاجه لقضاء وقت ممتع</p>
 
 </div>
 
 <div class="features-grid">
 
-
 <div class="feature">
-
 <div class="feature-icon">🏡</div>
-
 <h3>استراحة</h3>
-
-<p>
-مكان مريح ومناسب لقضاء أجمل الأوقات.
-</p>
-
+<p>مكان مريح ومناسب لقضاء أجمل الأوقات.</p>
 </div>
 
-
 <div class="feature">
-
 <div class="feature-icon">🏊</div>
-
 <h3>مسبح</h3>
-
-<p>
-مساحة للسباحة والاستمتاع.
-</p>
-
+<p>مساحة للسباحة والاستمتاع.</p>
 </div>
 
-
 <div class="feature">
-
 <div class="feature-icon">🌳</div>
-
 <h3>مساحات خضراء</h3>
-
-<p>
-طبيعة وأجواء هادئة ومريحة.
-</p>
-
+<p>طبيعة وأجواء هادئة ومريحة.</p>
 </div>
 
-
 <div class="feature">
-
 <div class="feature-icon">🥕</div>
-
 <h3>خضار ومزرعة</h3>
-
-<p>
-أجواء ريفية وطبيعة جميلة.
-</p>
-
+<p>أجواء ريفية وطبيعة جميلة.</p>
 </div>
 
-
 <div class="feature">
-
 <div class="feature-icon">🎮</div>
-
 <h3>ألعاب وترفيه</h3>
-
-<p>
-أجواء ممتعة للأطفال والعائلة.
-</p>
-
+<p>أجواء ممتعة للأطفال والعائلة.</p>
 </div>
-
 
 <div class="feature">
-
 <div class="feature-icon">🌅</div>
-
 <h3>جلسات مريحة</h3>
-
-<p>
-مكان مناسب للعائلة والأصدقاء.
-</p>
-
+<p>مكان مناسب للعائلة والأصدقاء.</p>
 </div>
-
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     جاهز للحجز
-========================= -->
 
 <section class="ready">
 
@@ -1089,11 +788,6 @@ class="main-button"
 
 </section>
 
-
-<!-- =========================
-     الحجز
-========================= -->
-
 <section id="booking">
 
 <h2 class="booking-title">
@@ -1104,9 +798,7 @@ class="main-button"
 الأيام السابقة مقفولة — والشفت المحجوز يظهر مقفولاً
 </p>
 
-
 <div class="booking-container">
-
 
 <div class="month-header">
 
@@ -1118,11 +810,9 @@ onclick="changeMonth(-1)"
 ❮
 </button>
 
-
 <h3 id="monthTitle">
 الشهر
 </h3>
-
 
 <button
 class="month-button"
@@ -1132,7 +822,6 @@ onclick="changeMonth(1)"
 </button>
 
 </div>
-
 
 <div class="week-days">
 
@@ -1146,21 +835,14 @@ onclick="changeMonth(1)"
 
 </div>
 
-
 <div
 id="calendar"
 class="calendar-grid"
 ></div>
 
-
 </div>
 
 </section>
-
-
-<!-- =========================
-     نافذة الحجز
-========================= -->
 
 <div
 id="bookingModal"
@@ -1173,12 +855,10 @@ class="modal"
 إكمال الحجز
 </h2>
 
-
 <div
 id="selectedInfo"
 class="selected-info"
 ></div>
-
 
 <div class="form-group">
 
@@ -1194,7 +874,6 @@ placeholder="اكتب اسمك الكامل"
 
 </div>
 
-
 <div class="form-group">
 
 <label>
@@ -1209,14 +888,12 @@ placeholder="07XXXXXXXXX"
 
 </div>
 
-
 <button
 class="send-button"
 onclick="sendBooking()"
 >
 تأكيد الحجز وإرسال عبر واتساب
 </button>
-
 
 <button
 class="close-button"
@@ -1229,11 +906,6 @@ onclick="closeModal()"
 
 </div>
 
-
-<!-- =========================
-     الفوتر
-========================= -->
-
 <footer>
 
 <h3>مزارع الغيث</h3>
@@ -1244,28 +916,24 @@ onclick="closeModal()"
 
 </footer>
 
-
 <script>
 
 /* =========================
    رقم الواتساب
 ========================= */
 
-const whatsappNumber =
-"9647736735730";
+const whatsappNumber = "9647736735730";
 
 
 /* =========================
-   الشهر الحالي
+   التاريخ
 ========================= */
 
 const today = new Date();
 
 today.setHours(0,0,0,0);
 
-
-let currentDate =
-new Date(
+let currentDate = new Date(
     today.getFullYear(),
     today.getMonth(),
     1
@@ -1273,25 +941,35 @@ new Date(
 
 
 /* =========================
-   بيانات الحجز
+   الحجز المختار
 ========================= */
 
 let selectedDate = "";
-
 let selectedShift = "";
 
 
 /* =========================
-   الحجوزات
-   محفوظة داخل المتصفح
+   تخزين الحجوزات
 ========================= */
 
-let bookedShifts =
-JSON.parse(
-    localStorage.getItem(
-        "algaithBookings"
-    ) || "[]"
-);
+const STORAGE_KEY = "algaith_farms_bookings";
+
+let bookedShifts = [];
+
+try {
+
+    bookedShifts =
+        JSON.parse(
+            localStorage.getItem(
+                STORAGE_KEY
+            )
+        ) || [];
+
+} catch(error){
+
+    bookedShifts = [];
+
+}
 
 
 /* =========================
@@ -1301,7 +979,7 @@ JSON.parse(
 function saveBookings(){
 
     localStorage.setItem(
-        "algaithBookings",
+        STORAGE_KEY,
         JSON.stringify(
             bookedShifts
         )
@@ -1311,7 +989,7 @@ function saveBookings(){
 
 
 /* =========================
-   فحص هل الشفت محجوز
+   فحص الحجز
 ========================= */
 
 function isShiftBooked(
@@ -1320,11 +998,11 @@ function isShiftBooked(
 ){
 
     return bookedShifts.some(
-        function(booking){
+        function(item){
 
             return (
-                booking.date === date &&
-                booking.shift === shift
+                item.date === date &&
+                item.shift === shift
             );
 
         }
@@ -1334,23 +1012,23 @@ function isShiftBooked(
 
 
 /* =========================
-   أسماء الأشهر
+   الأشهر
 ========================= */
 
 const months = [
 
-    "يناير",
-    "فبراير",
-    "مارس",
-    "أبريل",
-    "مايو",
-    "يونيو",
-    "يوليو",
-    "أغسطس",
-    "سبتمبر",
-    "أكتوبر",
-    "نوفمبر",
-    "ديسمبر"
+"يناير",
+"فبراير",
+"مارس",
+"أبريل",
+"مايو",
+"يونيو",
+"يوليو",
+"أغسطس",
+"سبتمبر",
+"أكتوبر",
+"نوفمبر",
+"ديسمبر"
 
 ];
 
@@ -1376,23 +1054,18 @@ function renderCalendar(){
             "prevMonth"
         );
 
-
     calendar.innerHTML = "";
-
 
     const year =
         currentDate.getFullYear();
 
-
     const month =
         currentDate.getMonth();
-
 
     monthTitle.textContent =
         months[month] +
         " " +
         year;
-
 
     const currentMonthStart =
         new Date(
@@ -1401,11 +1074,9 @@ function renderCalendar(){
             1
         );
 
-
     previousButton.disabled =
         currentDate <=
         currentMonthStart;
-
 
     const firstDay =
         new Date(
@@ -1413,7 +1084,6 @@ function renderCalendar(){
             month,
             1
         ).getDay();
-
 
     const daysInMonth =
         new Date(
@@ -1423,9 +1093,7 @@ function renderCalendar(){
         ).getDate();
 
 
-    /* =========================
-       الخانات الفارغة
-    ========================= */
+    /* الخانات الفارغة */
 
     for(
         let i = 0;
@@ -1448,9 +1116,7 @@ function renderCalendar(){
     }
 
 
-    /* =========================
-       إنشاء الأيام
-    ========================= */
+    /* الأيام */
 
     for(
         let day = 1;
@@ -1463,10 +1129,8 @@ function renderCalendar(){
                 "div"
             );
 
-
         dayBox.className =
             "day-box";
-
 
         const thisDate =
             new Date(
@@ -1475,7 +1139,6 @@ function renderCalendar(){
                 day
             );
 
-
         thisDate.setHours(
             0,
             0,
@@ -1483,38 +1146,30 @@ function renderCalendar(){
             0
         );
 
-
         const isPast =
             thisDate < today;
-
 
         const isToday =
             thisDate.getTime() ===
             today.getTime();
-
 
         const dayNumber =
             document.createElement(
                 "div"
             );
 
-
         dayNumber.className =
             "day-number";
 
-
         dayNumber.textContent =
             day;
-
 
         dayBox.appendChild(
             dayNumber
         );
 
 
-        /* =========================
-           اليوم الحالي
-        ========================= */
+        /* اليوم */
 
         if(isToday){
 
@@ -1522,20 +1177,16 @@ function renderCalendar(){
                 "today"
             );
 
-
             const todayLabel =
                 document.createElement(
                     "div"
                 );
 
-
             todayLabel.className =
                 "today-label";
 
-
             todayLabel.textContent =
                 "اليوم";
-
 
             dayBox.appendChild(
                 todayLabel
@@ -1544,9 +1195,7 @@ function renderCalendar(){
         }
 
 
-        /* =========================
-           اليوم الماضي
-        ========================= */
+        /* الأيام القديمة */
 
         if(isPast){
 
@@ -1554,27 +1203,20 @@ function renderCalendar(){
                 "past-day"
             );
 
-
             const locked =
                 document.createElement(
                     "div"
                 );
 
-
             locked.className =
                 "locked-box";
 
-
             locked.innerHTML = `
-
                 <span class="lock-icon">
                     🔒
                 </span>
-
                 مغلق
-
             `;
-
 
             dayBox.appendChild(
                 locked
@@ -1583,9 +1225,7 @@ function renderCalendar(){
         }
 
 
-        /* =========================
-           اليوم المتاح
-        ========================= */
+        /* الأيام المتاحة */
 
         else{
 
@@ -1593,19 +1233,15 @@ function renderCalendar(){
                 `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
 
-            /* =========================
-               الشفت الصباحي
-            ========================= */
+            /* الصباح */
 
             const morningButton =
                 document.createElement(
                     "button"
                 );
 
-
             morningButton.className =
                 "shift-button";
-
 
             if(
                 isShiftBooked(
@@ -1617,72 +1253,54 @@ function renderCalendar(){
                 morningButton.disabled =
                     true;
 
-
                 morningButton.innerHTML = `
-
                     <span class="shift-icon">
                         🔒
                     </span>
-
                     محجوز
-
                     <br>
-
                     <small>
                         شفت صباحي
                     </small>
-
                 `;
 
-            }
-
-            else{
+            } else {
 
                 morningButton.innerHTML = `
-
                     <span class="shift-icon">
                         ☀️
                     </span>
-
                     شفت صباحي
-
                     <br>
-
                     <small>
                         صباحاً
                     </small>
-
                 `;
 
-
                 morningButton.onclick =
-                function(){
+                    function(){
 
-                    openBooking(
-                        day,
-                        year,
-                        month,
-                        "شفت صباحي"
-                    );
+                        openBooking(
+                            day,
+                            year,
+                            month,
+                            "شفت صباحي"
+                        );
 
-                };
+                    };
 
             }
 
 
-            /* =========================
-               الشفت المسائي
-            ========================= */
+            /* المساء */
 
             const eveningButton =
                 document.createElement(
                     "button"
                 );
 
-
             eveningButton.className =
                 "shift-button";
-
 
             if(
                 isShiftBooked(
@@ -1694,55 +1312,41 @@ function renderCalendar(){
                 eveningButton.disabled =
                     true;
 
-
                 eveningButton.innerHTML = `
-
                     <span class="shift-icon">
                         🔒
                     </span>
-
                     محجوز
-
                     <br>
-
                     <small>
                         شفت مسائي
                     </small>
-
                 `;
 
-            }
-
-            else{
+            } else {
 
                 eveningButton.innerHTML = `
-
                     <span class="shift-icon">
                         🌙
                     </span>
-
                     شفت مسائي
-
                     <br>
-
                     <small>
                         مساءً
                     </small>
-
                 `;
 
-
                 eveningButton.onclick =
-                function(){
+                    function(){
 
-                    openBooking(
-                        day,
-                        year,
-                        month,
-                        "شفت مسائي"
-                    );
+                        openBooking(
+                            day,
+                            year,
+                            month,
+                            "شفت مسائي"
+                        );
 
-                };
+                    };
 
             }
 
@@ -1751,13 +1355,11 @@ function renderCalendar(){
                 morningButton
             );
 
-
             dayBox.appendChild(
                 eveningButton
             );
 
         }
-
 
         calendar.appendChild(
             dayBox
@@ -1784,14 +1386,12 @@ function changeMonth(
             1
         );
 
-
     const currentMonthStart =
         new Date(
             today.getFullYear(),
             today.getMonth(),
             1
         );
-
 
     if(
         newDate <
@@ -1802,10 +1402,8 @@ function changeMonth(
 
     }
 
-
     currentDate =
         newDate;
-
 
     renderCalendar();
 
@@ -1813,7 +1411,7 @@ function changeMonth(
 
 
 /* =========================
-   فتح نافذة الحجز
+   فتح الحجز
 ========================= */
 
 function openBooking(
@@ -1831,25 +1429,20 @@ function openBooking(
             "0"
         );
 
-
     const formattedDay =
-        String(day).padStart(
+        String(
+            day
+        ).padStart(
             2,
             "0"
         );
 
-
     selectedDate =
         `${year}-${formattedMonth}-${formattedDay}`;
-
 
     selectedShift =
         shift;
 
-
-    /* =========================
-       فحص إضافي
-    ========================= */
 
     if(
         isShiftBooked(
@@ -1862,9 +1455,7 @@ function openBooking(
             "هذا الشفت محجوز مسبقاً 🔒"
         );
 
-
         renderCalendar();
-
 
         return;
 
@@ -1874,17 +1465,12 @@ function openBooking(
     document.getElementById(
         "selectedInfo"
     ).innerHTML = `
-
         📅 التاريخ:
         ${selectedDate}
-
         <br>
-
         ⏰ الفترة:
         ${selectedShift}
-
     `;
-
 
     document.getElementById(
         "bookingModal"
@@ -1896,7 +1482,7 @@ function openBooking(
 
 
 /* =========================
-   إغلاق نافذة الحجز
+   إغلاق النافذة
 ========================= */
 
 function closeModal(){
@@ -1920,7 +1506,6 @@ function sendBooking(){
         document.getElementById(
             "customerName"
         ).value.trim();
-
 
     const phone =
         document.getElementById(
@@ -1950,9 +1535,7 @@ function sendBooking(){
     }
 
 
-    /* =========================
-       منع الحجز المكرر
-    ========================= */
+    /* منع الحجز المكرر */
 
     if(
         isShiftBooked(
@@ -1965,35 +1548,26 @@ function sendBooking(){
             "عذراً، هذا الشفت محجوز مسبقاً 🔒"
         );
 
-
         closeModal();
 
-
         renderCalendar();
-
 
         return;
 
     }
 
 
-    /* =========================
-       حفظ الحجز
-    ========================= */
+    /* حفظ الحجز */
 
     bookedShifts.push({
 
-        name:
-            name,
+        name:name,
 
-        phone:
-            phone,
+        phone:phone,
 
-        date:
-            selectedDate,
+        date:selectedDate,
 
-        shift:
-            selectedShift,
+        shift:selectedShift,
 
         createdAt:
             new Date().toISOString()
@@ -2004,19 +1578,14 @@ function sendBooking(){
     saveBookings();
 
 
-    /* =========================
-       قفل الشفت مباشرة
-    ========================= */
+    /* قفل الشفت */
 
     renderCalendar();
 
 
-    /* =========================
-       إرسال واتساب
-    ========================= */
+    /* رسالة واتساب */
 
     const message =
-
 `🌿 مزارع الغيث
 ALGAITH FARMS
 
@@ -2052,19 +1621,15 @@ ${selectedShift}
     );
 
 
-    /* =========================
-       تنظيف النموذج
-    ========================= */
+    /* تنظيف */
 
     document.getElementById(
         "customerName"
     ).value = "";
 
-
     document.getElementById(
         "customerPhone"
     ).value = "";
-
 
     closeModal();
 
@@ -2072,7 +1637,7 @@ ${selectedShift}
 
 
 /* =========================
-   إغلاق عند الضغط خارج النافذة
+   الضغط خارج النافذة
 ========================= */
 
 document.getElementById(
@@ -2094,21 +1659,13 @@ document.getElementById(
 
 
 /* =========================
-   تشغيل التقويم
+   تشغيل الموقع
 ========================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        renderCalendar();
-
-    }
-);
+renderCalendar();
 
 </script>
 
 </body>
-
 </html>
 ```
