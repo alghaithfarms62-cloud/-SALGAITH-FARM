@@ -1283,34 +1283,21 @@ let selectedShift = "";
 /* =========================
    تخزين الحجوزات
 ========================= */
+async function saveBookedShift(date, shift){
 
-function isShiftBooked(date, shift){
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
 
-    const key =
-        "algaith_booking_" +
-        date +
-        "_" +
-        shift;
-
-    return localStorage.getItem(key) === "booked";
-
-}
-
-
-function saveBookedShift(date, shift){
-
-    const key =
-        "algaith_booking_" +
-        date +
-        "_" +
-        shift;
-
-    localStorage.setItem(
-        key,
-        "booked"
-    );
+    await addDoc(collection(db, "booking"), {
+        name: name,
+        phone: phone,
+        date: date,
+        shift: shift,
+        createdAt: new Date()
+    });
 
 }
+
 
 
 /* =========================
