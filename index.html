@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
@@ -827,6 +828,7 @@ footer h3{
 
     .booking-container{
         padding:10px;
+
         overflow-x:auto;
     }
 
@@ -1243,93 +1245,31 @@ onclick="closeModal()"
 </footer>
 
 
-<!-- =====================================================
-     Firebase + نظام الحجوزات
-===================================================== -->
-
-<script type="module">
-
-/* =========================
-   Firebase
-========================= */
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-app.js";
-
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    getDocs
-}
-from "https://www.gstatic.com/firebasejs/12.17.1/firebase-firestore.js";
-
-
-const firebaseConfig = {
-
-    apiKey:
-    "AIzaSyBsS6evLb0AX79vzrhYpCAIqwfgBnA05U4",
-
-    authDomain:
-    "alghaith-farms.firebaseapp.com",
-
-    projectId:
-    "alghaith-farms",
-
-    storageBucket:
-    "alghaith-farms.firebasestorage.app",
-
-    messagingSenderId:
-    "247777240312",
-
-    appId:
-    "1:247777240312:web:1d7b4b0a2fba609616870d",
-
-    measurementId:
-    "G-6TRRB1KP4H"
-
-};
-
-
-const app =
-    initializeApp(
-        firebaseConfig
-    );
-
-
-const db =
-    getFirestore(app);
-
+<script>
 
 /* =========================
    رقم الواتساب
 ========================= */
 
 const whatsappNumber =
-    "9647736735730";
+"9647736735730";
 
 
 /* =========================
    الشهر الحالي
 ========================= */
 
-const today =
-    new Date();
+const today = new Date();
 
-today.setHours(
-    0,
-    0,
-    0,
-    0
-);
+today.setHours(0,0,0,0);
 
 
 let currentDate =
-    new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        1
-    );
+new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    1
+);
 
 
 /* =========================
@@ -1342,84 +1282,36 @@ let selectedShift = "";
 
 
 /* =========================
-   الحجوزات من Firebase
+   الحجوزات
+   محفوظة داخل المتصفح
 ========================= */
 
-let bookedShifts = [];
+let bookedShifts =
+JSON.parse(
+    localStorage.getItem(
+        "algaithBookings"
+    ) || "[]"
+);
 
 
 /* =========================
-   تحميل الحجوزات
+   حفظ الحجوزات
 ========================= */
 
-async function loadBookings(){
+function saveBookings(){
 
-    try{
-
-        const snapshot =
-            await getDocs(
-                collection(
-                    db,
-                    "booking"
-                )
-            );
-
-
-        bookedShifts = [];
-
-
-        snapshot.forEach(
-            function(doc){
-
-                const data =
-                    doc.data();
-
-
-                if(
-                    data.date &&
-                    data.shift
-                ){
-
-                    bookedShifts.push({
-
-                        date:
-                            data.date,
-
-                        shift:
-                            data.shift
-
-                    });
-
-                }
-
-            }
-        );
-
-
-        renderCalendar();
-
-    }
-
-    catch(error){
-
-        console.error(
-            "Firebase error:",
-            error
-        );
-
-        console.error(
-            "تأكدي أن Firestore مفعّل وأن Rules تسمح بالقراءة."
-        );
-
-        renderCalendar();
-
-    }
+    localStorage.setItem(
+        "algaithBookings",
+        JSON.stringify(
+            bookedShifts
+        )
+    );
 
 }
 
 
 /* =========================
-   فحص الحجز
+   فحص هل الشفت محجوز
 ========================= */
 
 function isShiftBooked(
@@ -1474,12 +1366,10 @@ function renderCalendar(){
             "calendar"
         );
 
-
     const monthTitle =
         document.getElementById(
             "monthTitle"
         );
-
 
     const previousButton =
         document.getElementById(
@@ -1487,19 +1377,7 @@ function renderCalendar(){
         );
 
 
-    if(
-        !calendar ||
-        !monthTitle ||
-        !previousButton
-    ){
-
-        return;
-
-    }
-
-
-    calendar.innerHTML =
-        "";
+    calendar.innerHTML = "";
 
 
     const year =
@@ -1560,10 +1438,8 @@ function renderCalendar(){
                 "div"
             );
 
-
         empty.className =
             "day-box empty-day";
-
 
         calendar.appendChild(
             empty
@@ -1780,16 +1656,16 @@ function renderCalendar(){
 
 
                 morningButton.onclick =
-                    function(){
+                function(){
 
-                        openBooking(
-                            day,
-                            year,
-                            month,
-                            "شفت صباحي"
-                        );
+                    openBooking(
+                        day,
+                        year,
+                        month,
+                        "شفت صباحي"
+                    );
 
-                    };
+                };
 
             }
 
@@ -1857,16 +1733,16 @@ function renderCalendar(){
 
 
                 eveningButton.onclick =
-                    function(){
+                function(){
 
-                        openBooking(
-                            day,
-                            year,
-                            month,
-                            "شفت مسائي"
-                        );
+                    openBooking(
+                        day,
+                        year,
+                        month,
+                        "شفت مسائي"
+                    );
 
-                    };
+                };
 
             }
 
@@ -1896,8 +1772,9 @@ function renderCalendar(){
    تغيير الشهر
 ========================= */
 
-window.changeMonth =
-function(direction){
+function changeMonth(
+    direction
+){
 
     const newDate =
         new Date(
@@ -1932,15 +1809,14 @@ function(direction){
 
     renderCalendar();
 
-};
+}
 
 
 /* =========================
    فتح نافذة الحجز
 ========================= */
 
-window.openBooking =
-function(
+function openBooking(
     day,
     year,
     month,
@@ -1970,6 +1846,10 @@ function(
     selectedShift =
         shift;
 
+
+    /* =========================
+       فحص إضافي
+    ========================= */
 
     if(
         isShiftBooked(
@@ -2012,15 +1892,14 @@ function(
         "show"
     );
 
-};
+}
 
 
 /* =========================
    إغلاق نافذة الحجز
 ========================= */
 
-window.closeModal =
-function(){
+function closeModal(){
 
     document.getElementById(
         "bookingModal"
@@ -2028,15 +1907,14 @@ function(){
         "show"
     );
 
-};
+}
 
 
 /* =========================
    إرسال الحجز
 ========================= */
 
-window.sendBooking =
-async function(){
+function sendBooking(){
 
     const name =
         document.getElementById(
@@ -2073,7 +1951,7 @@ async function(){
 
 
     /* =========================
-       فحص قبل الحفظ
+       منع الحجز المكرر
     ========================= */
 
     if(
@@ -2100,63 +1978,44 @@ async function(){
 
 
     /* =========================
-       الحجز في Firebase
+       حفظ الحجز
     ========================= */
 
-    try{
+    bookedShifts.push({
 
-        const bookingData = {
+        name:
+            name,
 
-            name:
-                name,
+        phone:
+            phone,
 
-            phone:
-                phone,
+        date:
+            selectedDate,
 
-            date:
-                selectedDate,
+        shift:
+            selectedShift,
 
-            shift:
-                selectedShift,
+        createdAt:
+            new Date().toISOString()
 
-            createdAt:
-                new Date()
-
-        };
+    });
 
 
-        await addDoc(
-            collection(
-                db,
-                "booking"
-            ),
-            bookingData
-        );
+    saveBookings();
 
 
-        /* =========================
-           قفل الشفت مباشرة
-        ========================= */
+    /* =========================
+       قفل الشفت مباشرة
+    ========================= */
 
-        bookedShifts.push({
-
-            date:
-                selectedDate,
-
-            shift:
-                selectedShift
-
-        });
+    renderCalendar();
 
 
-        renderCalendar();
+    /* =========================
+       إرسال واتساب
+    ========================= */
 
-
-        /* =========================
-           رسالة واتساب
-        ========================= */
-
-        const message =
+    const message =
 
 `🌿 مزارع الغيث
 ALGAITH FARMS
@@ -2178,56 +2037,38 @@ ${selectedShift}
 شكراً لاختياركم مزارع الغيث 🌿`;
 
 
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(
-                message
-            );
-
-
-        window.open(
-            whatsappURL,
-            "_blank"
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(
+            message
         );
 
 
-        /* =========================
-           تنظيف
-        ========================= */
-
-        document.getElementById(
-            "customerName"
-        ).value =
-            "";
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
 
 
-        document.getElementById(
-            "customerPhone"
-        ).value =
-            "";
+    /* =========================
+       تنظيف النموذج
+    ========================= */
+
+    document.getElementById(
+        "customerName"
+    ).value = "";
 
 
-        closeModal();
-
-    }
-
-    catch(error){
-
-        console.error(
-            "Booking error:",
-            error
-        );
+    document.getElementById(
+        "customerPhone"
+    ).value = "";
 
 
-        alert(
-            "ما قدرنا نحفظ الحجز. تأكدي من تشغيل Firestore."
-        );
+    closeModal();
 
-    }
-
-};
+}
 
 
 /* =========================
@@ -2253,7 +2094,7 @@ document.getElementById(
 
 
 /* =========================
-   تشغيل الموقع
+   تشغيل التقويم
 ========================= */
 
 document.addEventListener(
@@ -2261,8 +2102,6 @@ document.addEventListener(
     function(){
 
         renderCalendar();
-
-        loadBookings();
 
     }
 );
@@ -2272,3 +2111,4 @@ document.addEventListener(
 </body>
 
 </html>
+```
