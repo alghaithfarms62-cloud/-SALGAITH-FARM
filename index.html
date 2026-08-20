@@ -566,7 +566,7 @@ section{
     margin:auto;
     background:#f8f4f5;
     border-radius:20px;
-    padding:17px;
+    padding:14px;
     box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
@@ -579,23 +579,23 @@ section{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    margin-bottom:14px;
+    margin-bottom:12px;
 }
 
 .month-header h3{
     color:#704052;
-    font-size:23px;
+    font-size:22px;
     font-weight:800;
 }
 
 .month-button{
-    width:40px;
-    height:40px;
+    width:36px;
+    height:36px;
     border:none;
     border-radius:50%;
     background:#a9657d;
     color:white;
-    font-size:18px;
+    font-size:16px;
     cursor:pointer;
 }
 
@@ -617,43 +617,43 @@ section{
 .week-days{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:5px;
-    margin-bottom:5px;
+    gap:4px;
+    margin-bottom:4px;
 }
 
 .week-days div{
     text-align:center;
     color:#9b5d74;
     font-weight:700;
-    padding:5px 1px;
-    font-size:12px;
+    padding:4px 1px;
+    font-size:11px;
 }
 
 
 /* =========================
-   التقويم
+   التقويم - تم تصغير الخانات
 ========================= */
 
 .calendar-grid{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:5px;
+    gap:4px;
 }
 
 .day-box{
     background:white;
-    border:2px solid #dfcbd2;
-    border-radius:9px;
-    padding:5px;
-    min-height:130px;
+    border:1.5px solid #dfcbd2;
+    border-radius:7px;
+    padding:4px;
+    min-height:105px;
 }
 
 .day-number{
     text-align:center;
     color:#704052;
-    font-size:17px;
+    font-size:14px;
     font-weight:800;
-    margin-bottom:5px;
+    margin-bottom:3px;
 }
 
 
@@ -674,8 +674,8 @@ section{
 .locked-box{
     text-align:center;
     color:#999;
-    font-size:11px;
-    padding-top:20px;
+    font-size:9px;
+    padding-top:15px;
 }
 
 
@@ -685,35 +685,36 @@ section{
 
 .day-box.today{
     border-color:#a9657d;
-    box-shadow:0 0 0 2px rgba(169,101,125,.15);
+    box-shadow:0 0 0 1.5px rgba(169,101,125,.15);
 }
 
 .today-label{
     text-align:center;
     color:#a35f77;
-    font-size:9px;
+    font-size:8px;
     font-weight:800;
-    margin-top:-5px;
-    margin-bottom:4px;
+    margin-top:-3px;
+    margin-bottom:3px;
 }
 
 
 /* =========================
-   الشفت المتاح
+   الشفت المتاح - تم تصغيره
 ========================= */
 
 .shift-button{
     width:100%;
-    border:2px solid #238b55;
+    border:1.5px solid #238b55;
     background:#dff5e7;
     color:#146638;
-    border-radius:8px;
-    padding:6px 2px;
-    margin-bottom:5px;
+    border-radius:6px;
+    padding:4px 1px;
+    margin-bottom:3px;
     cursor:pointer;
     font-family:"Tajawal",Arial,sans-serif;
     font-weight:700;
-    font-size:10px;
+    font-size:9px;
+    line-height:1.15;
     transition:.15s;
 }
 
@@ -741,11 +742,12 @@ section{
 
 .shift-icon{
     display:block;
-    font-size:17px;
+    font-size:13px;
+    line-height:1.1;
 }
 
 .shift-button small{
-    font-size:8px;
+    font-size:7px;
 }
 
 
@@ -1008,17 +1010,45 @@ footer p{
     }
 
     .booking-container{
-        padding:10px;
+        padding:8px;
         overflow-x:auto;
     }
 
     .week-days,
     .calendar-grid{
-        min-width:600px;
+        min-width:540px;
     }
 
+    /* خانات أصغر بالموبايل */
     .day-box{
-        min-height:120px;
+        min-height:95px;
+        padding:3px;
+        border-radius:6px;
+    }
+
+    .day-number{
+        font-size:13px;
+        margin-bottom:2px;
+    }
+
+    .shift-button{
+        padding:3px 1px;
+        margin-bottom:2px;
+        font-size:8px;
+        border-radius:5px;
+    }
+
+    .shift-icon{
+        font-size:11px;
+    }
+
+    .shift-button small{
+        font-size:6px;
+    }
+
+    .locked-box{
+        font-size:8px;
+        padding-top:13px;
     }
 
     .month-header h3{
@@ -1058,6 +1088,20 @@ footer p{
     .hero-logo{
         width:105px;
         height:105px;
+    }
+
+    /* تصغير إضافي بسيط للشاشات الصغيرة */
+    .booking-container{
+        padding:7px;
+    }
+
+    .week-days,
+    .calendar-grid{
+        min-width:520px;
+    }
+
+    .day-box{
+        min-height:92px;
     }
 
 }
