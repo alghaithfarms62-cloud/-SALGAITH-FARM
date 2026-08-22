@@ -8,7 +8,6 @@
 <title>مزارع الغيث | ALGAITH FARMS</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -89,17 +88,14 @@ header{
 
 .hero{
     min-height:650px;
-
     background:
         linear-gradient(
             rgba(15,13,16,.63),
             rgba(15,13,16,.82)
         ),
         url("Farms.1.PNG");
-
     background-size:cover;
     background-position:center;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -275,7 +271,7 @@ section{
 }
 
 /* =========================
-   المميزات الجديدة
+   المميزات
 ========================= */
 
 .features{
@@ -994,7 +990,6 @@ footer p{
         font-size:16px;
     }
 }
-
 </style>
 </head>
 
@@ -1036,6 +1031,7 @@ class="logo"
 
 </header>
 
+
 <!-- =========================
      الرئيسية
 ========================= -->
@@ -1068,6 +1064,7 @@ ALGAITH FARMS
 </div>
 
 </section>
+
 
 <!-- =========================
      عن المزرعة
@@ -1106,6 +1103,7 @@ ALGAITH FARMS
 
 </section>
 
+
 <!-- =========================
      الصور
 ========================= -->
@@ -1116,7 +1114,9 @@ ALGAITH FARMS
 
 <h2>صور المزرعة</h2>
 
-<p>تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار</p>
+<p>
+تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار
+</p>
 
 </div>
 
@@ -1166,8 +1166,9 @@ ALGAITH FARMS
 
 </section>
 
+
 <!-- =========================
-     المميزات الجديدة
+     المميزات
 ========================= -->
 
 <section id="features" class="features">
@@ -1234,6 +1235,7 @@ ALGAITH FARMS
 
 </section>
 
+
 <!-- =========================
      الشروط
 ========================= -->
@@ -1259,6 +1261,7 @@ onclick="openRules()"
 
 </section>
 
+
 <!-- =========================
      جاهز للحجز
 ========================= -->
@@ -1276,6 +1279,7 @@ onclick="openRules()"
 </a>
 
 </section>
+
 
 <!-- =========================
      اختيار المزرعة
@@ -1312,6 +1316,7 @@ onclick="selectFarm('المزرعة الأولى')"
 
 </div>
 
+
 <div class="farm-card">
 
 <h3>المزرعة الثانية</h3>
@@ -1332,6 +1337,7 @@ onclick="selectFarm('المزرعة الثانية')"
 </div>
 
 </section>
+
 
 <!-- =========================
      الحجز
@@ -1404,6 +1410,7 @@ class="calendar-grid"
 </div>
 
 </section>
+
 
 <!-- =========================
      نافذة الشروط
@@ -1491,6 +1498,7 @@ onclick="closeRules()"
 
 </div>
 
+
 <!-- =========================
      نافذة الحجز
 ========================= -->
@@ -1558,6 +1566,7 @@ onclick="closeModal()"
 
 </div>
 
+
 <!-- =========================
      الفوتر
 ========================= -->
@@ -1572,6 +1581,7 @@ onclick="closeModal()"
 
 </footer>
 
+
 <script>
 
 /* =====================================================
@@ -1584,14 +1594,13 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 "sb_publishable_v_vOawF0sNtyj2YavPT6xw_u_zESPoI";
 
-
-/* اسم جدول الحجوزات */
-
 const BOOKINGS_TABLE =
 "bookings";
 
 
-/* رقم الواتساب */
+/* =====================================================
+   رقم الواتساب
+===================================================== */
 
 const whatsappNumber =
 "9647736735730";
@@ -1610,8 +1619,7 @@ today.setHours(
     0
 );
 
-let currentDate =
-new Date(
+let currentDate = new Date(
     today.getFullYear(),
     today.getMonth(),
     1
@@ -1638,36 +1646,34 @@ let selectedShift =
 
 
 /* =====================================================
-   الحجوزات القادمة من Supabase
+   الحجوزات
 ===================================================== */
 
 let bookings = [];
 
 
 /* =====================================================
-   أسماء الأشهر
+   الأشهر
 ===================================================== */
 
 const months = [
-
-"يناير",
-"فبراير",
-"مارس",
-"أبريل",
-"مايو",
-"يونيو",
-"يوليو",
-"أغسطس",
-"سبتمبر",
-"أكتوبر",
-"نوفمبر",
-"ديسمبر"
-
+    "يناير",
+    "فبراير",
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر"
 ];
 
 
 /* =====================================================
-   إعدادات Supabase
+   Headers
 ===================================================== */
 
 const supabaseHeaders = {
@@ -1685,7 +1691,7 @@ const supabaseHeaders = {
 
 
 /* =====================================================
-   إظهار رسالة
+   رسالة الحالة
 ===================================================== */
 
 function showStatus(
@@ -1708,10 +1714,6 @@ function showStatus(
 }
 
 
-/* =====================================================
-   إخفاء الرسالة
-===================================================== */
-
 function hideStatus(){
 
     const box =
@@ -1729,7 +1731,7 @@ function hideStatus(){
 
 
 /* =====================================================
-   جلب الحجوزات من Supabase
+   جلب الحجوزات
 ===================================================== */
 
 async function loadBookings(){
@@ -1740,7 +1742,7 @@ async function loadBookings(){
             SUPABASE_URL +
             "/rest/v1/" +
             BOOKINGS_TABLE +
-            "?select=farm,name,phone,date,shift,created_at";
+            "?select=id,farm,customer_name,customer_phone,booking_date,shift,created_at";
 
 
         const response =
@@ -1765,7 +1767,8 @@ async function loadBookings(){
             );
 
             showStatus(
-                "حدث خطأ في تحميل الحجوزات",
+                "حدث خطأ في تحميل الحجوزات: " +
+                errorText,
                 "error"
             );
 
@@ -1779,6 +1782,7 @@ async function loadBookings(){
 
 
         renderCalendar();
+
 
     }catch(error){
 
@@ -1798,7 +1802,7 @@ async function loadBookings(){
 
 
 /* =====================================================
-   فحص إذا الشفت محجوز
+   فحص الحجز
 ===================================================== */
 
 function isShiftBooked(
@@ -1811,7 +1815,7 @@ function isShiftBooked(
 
             return (
                 item.farm === currentFarm &&
-                item.date === date &&
+                item.booking_date === date &&
                 item.shift === shift
             );
 
@@ -2069,7 +2073,7 @@ function renderCalendar(){
         }
 
 
-        /* الأيام الحالية والقادمة */
+        /* الأيام المتاحة */
 
         else{
 
@@ -2077,17 +2081,17 @@ function renderCalendar(){
                 `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
 
-            /* الشفت الصباحي */
+            /* =========================
+               الشفت الصباحي
+            ========================= */
 
             const morningButton =
                 document.createElement(
                     "button"
                 );
 
-
             morningButton.className =
                 "shift-button";
-
 
             morningButton.innerHTML = `
                 <span class="shift-icon">☀️</span>
@@ -2128,17 +2132,17 @@ function renderCalendar(){
             }
 
 
-            /* الشفت المسائي */
+            /* =========================
+               الشفت المسائي
+            ========================= */
 
             const eveningButton =
                 document.createElement(
                     "button"
                 );
 
-
             eveningButton.className =
                 "shift-button";
-
 
             eveningButton.innerHTML = `
                 <span class="shift-icon">🌙</span>
@@ -2280,7 +2284,7 @@ function openBooking(
         shift;
 
 
-    /* فحص مباشر قبل فتح النافذة */
+    /* فحص محلي */
 
     if(
         isShiftBooked(
@@ -2323,7 +2327,7 @@ function openBooking(
 
 
 /* =====================================================
-   إرسال الحجز إلى Supabase
+   إرسال الحجز
 ===================================================== */
 
 async function sendBooking(){
@@ -2379,9 +2383,7 @@ async function sendBooking(){
     }
 
 
-    /* =================================================
-       فحص أولي من البيانات الموجودة حالياً
-    ================================================= */
+    /* فحص محلي */
 
     if(
         isShiftBooked(
@@ -2414,7 +2416,6 @@ async function sendBooking(){
 
         /* =============================================
            فحص مباشر من Supabase
-           حتى لو شخص آخر حجز قبلنا بثواني
         ============================================= */
 
         const checkUrl =
@@ -2426,7 +2427,7 @@ async function sendBooking(){
             encodeURIComponent(
                 currentFarm
             ) +
-            "&date=eq." +
+            "&booking_date=eq." +
             encodeURIComponent(
                 selectedDate
             ) +
@@ -2449,7 +2450,16 @@ async function sendBooking(){
 
         if(!checkResponse.ok){
 
+            const errorText =
+                await checkResponse.text();
+
+            console.error(
+                "Supabase CHECK Error:",
+                errorText
+            );
+
             throw new Error(
+                errorText ||
                 "تعذر فحص الحجز"
             );
 
@@ -2478,31 +2488,39 @@ async function sendBooking(){
 
 
         /* =============================================
-           إنشاء الحجز
-        ============================================= */
+           بيانات الحجز
+           
+           أسماء الأعمدة مطابقة لجدول Supabase:
+           farm
+           customer_name
+           customer_phone
+           booking_date
+           shift
+           ============================================= */
 
         const booking = {
 
             farm:
                 currentFarm,
 
-            name:
+            customer_name:
                 name,
 
-            phone:
+            customer_phone:
                 phone,
 
-            date:
+            booking_date:
                 selectedDate,
 
             shift:
-                selectedShift,
-
-            created_at:
-                new Date().toISOString()
+                selectedShift
 
         };
 
+
+        /* =============================================
+           إرسال الحجز
+        ============================================= */
 
         const insertResponse =
             await fetch(
@@ -2528,29 +2546,37 @@ async function sendBooking(){
 
 
         /* =============================================
-           إذا Supabase رفض الحجز
-           بسبب unique constraint مثلاً
+           معالجة الخطأ
         ============================================= */
 
         if(!insertResponse.ok){
 
-            const errorData =
-                await insertResponse.json()
-                .catch(
-                    () => ({})
-                );
-
+            const errorText =
+                await insertResponse.text();
 
             console.error(
                 "Supabase INSERT Error:",
-                errorData
+                errorText
             );
 
 
-            /*
-              23505 = duplicate key
-              يعني شخص آخر سبقنا بالحجز
-            */
+            let errorData = {};
+
+            try{
+
+                errorData =
+                    JSON.parse(
+                        errorText
+                    );
+
+            }catch(e){
+
+                errorData = {};
+
+            }
+
+
+            /* حجز مكرر */
 
             if(
                 errorData.code ===
@@ -2570,8 +2596,12 @@ async function sendBooking(){
             }
 
 
+            /* عرض الخطأ الحقيقي للمطور */
+
             throw new Error(
                 errorData.message ||
+                errorData.details ||
+                errorText ||
                 "فشل تثبيت الحجز"
             );
 
@@ -2579,14 +2609,20 @@ async function sendBooking(){
 
 
         /* =============================================
-           الحجز تم بنجاح
+           نجاح الحجز
         ============================================= */
 
         const insertedBooking =
             await insertResponse.json();
 
 
-        /* نضيفه محلياً مباشرة */
+        console.log(
+            "Booking inserted:",
+            insertedBooking
+        );
+
+
+        /* إضافة الحجز محلياً */
 
         bookings.push(
             booking
@@ -2646,6 +2682,7 @@ ${selectedShift}
         ).value =
             "";
 
+
         document.getElementById(
             "customerPhone"
         ).value =
@@ -2669,8 +2706,11 @@ ${selectedShift}
         );
 
 
+        /* إظهار الخطأ الحقيقي */
+
         alert(
-            "حدث خطأ أثناء تثبيت الحجز. تأكد من اتصال الإنترنت وحاول مرة أخرى."
+            "حدث خطأ أثناء تثبيت الحجز:\n\n" +
+            error.message
         );
 
 
@@ -2729,7 +2769,7 @@ function closeRules(){
 
 
 /* =====================================================
-   إغلاق النوافذ عند الضغط بالخارج
+   إغلاق عند الضغط خارج النافذة
 ===================================================== */
 
 document.getElementById(
@@ -2788,5 +2828,4 @@ startApp();
 </script>
 
 </body>
-
 </html>
