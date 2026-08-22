@@ -2,14 +2,21 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>إدارة حجوزات مزارع الغيث</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 *{
     box-sizing:border-box;
@@ -38,17 +45,22 @@ body{
 .login-box{
     width:100%;
     max-width:420px;
-    background:white;
+    background:#fff;
     padding:35px;
     border-radius:22px;
-    box-shadow:0 10px 35px rgba(0,0,0,.12);
     border:2px solid #dfcbd2;
+    box-shadow:0 10px 35px rgba(0,0,0,.12);
     text-align:center;
+}
+
+.login-logo{
+    font-size:50px;
+    margin-bottom:10px;
 }
 
 .login-box h1{
     color:#704052;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .login-box p{
@@ -64,6 +76,11 @@ body{
     border-radius:10px;
     font-family:inherit;
     font-size:15px;
+    outline:none;
+}
+
+.login-box input:focus{
+    border-color:#a35f77;
 }
 
 .login-btn{
@@ -72,7 +89,7 @@ body{
     border:0;
     border-radius:10px;
     background:#704052;
-    color:white;
+    color:#fff;
     font-family:inherit;
     font-weight:bold;
     font-size:16px;
@@ -90,6 +107,7 @@ body{
     border-radius:10px;
     background:#f8d7da;
     color:#842029;
+    font-size:14px;
 }
 
 .login-error.show{
@@ -106,7 +124,7 @@ body{
 
 header{
     background:#171318;
-    color:white;
+    color:#fff;
     padding:22px 5%;
     display:flex;
     justify-content:space-between;
@@ -116,7 +134,7 @@ header{
 
 header h1{
     color:#e2a4b7;
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 header p{
@@ -125,7 +143,7 @@ header p{
 
 .logout-btn{
     background:#c62828;
-    color:white;
+    color:#fff;
     border:0;
     border-radius:10px;
     padding:11px 18px;
@@ -133,6 +151,14 @@ header p{
     font-weight:bold;
     cursor:pointer;
 }
+
+.logout-btn:hover{
+    background:#a51f1f;
+}
+
+/* =========================
+   CONTAINER
+========================= */
 
 .container{
     width:94%;
@@ -152,7 +178,7 @@ header p{
 }
 
 .stat{
-    background:white;
+    background:#fff;
     border:2px solid #dfcbd2;
     border-radius:18px;
     padding:22px;
@@ -201,7 +227,7 @@ header p{
 ========================= */
 
 .filters{
-    background:white;
+    background:#fff;
     border:2px solid #dfcbd2;
     border-radius:18px;
     padding:20px;
@@ -219,11 +245,17 @@ header p{
     border:2px solid #dfcbd2;
     border-radius:10px;
     font-family:inherit;
+    outline:none;
+}
+
+.filters input:focus,
+.filters select:focus{
+    border-color:#a35f77;
 }
 
 .refresh{
     background:#704052;
-    color:white;
+    color:#fff;
     border:0;
     border-radius:10px;
     padding:12px;
@@ -237,7 +269,7 @@ header p{
 ========================= */
 
 .table-box{
-    background:white;
+    background:#fff;
     border-radius:18px;
     border:2px solid #dfcbd2;
     overflow:auto;
@@ -274,7 +306,7 @@ tr:hover{
 
 .delete-btn{
     background:#c62828;
-    color:white;
+    color:#fff;
     border:0;
     border-radius:8px;
     padding:8px 13px;
@@ -292,6 +324,10 @@ tr:hover{
     padding:40px;
     color:#777;
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
@@ -326,16 +362,20 @@ tr:hover{
 <body>
 
 
-<!-- =========================
+<!-- =====================================================
      LOGIN PAGE
-========================= -->
+===================================================== -->
 
 <div id="loginPage">
 
     <div class="login-box">
 
+        <div class="login-logo">
+            🌿
+        </div>
+
         <h1>
-            🔐 مزارع الغيث
+            مزارع الغيث
         </h1>
 
         <p>
@@ -373,9 +413,9 @@ tr:hover{
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      ADMIN PAGE
-========================= -->
+===================================================== -->
 
 <div id="adminPage">
 
@@ -406,7 +446,9 @@ tr:hover{
     <div class="container">
 
 
-        <!-- الإحصائيات -->
+        <!-- =========================
+             STATS
+        ========================= -->
 
         <div class="stats">
 
@@ -454,13 +496,17 @@ tr:hover{
         </div>
 
 
+        <!-- MESSAGE -->
+
         <div
             id="message"
             class="message"
         ></div>
 
 
-        <!-- الفلاتر -->
+        <!-- =========================
+             FILTERS
+        ========================= -->
 
         <div class="filters">
 
@@ -529,7 +575,9 @@ tr:hover{
         </div>
 
 
-        <!-- الجدول -->
+        <!-- =========================
+             BOOKINGS TABLE
+        ========================= -->
 
         <div class="table-box">
 
@@ -539,7 +587,9 @@ tr:hover{
 
                     <tr>
 
-                        <th>#</th>
+                        <th>
+                            #
+                        </th>
 
                         <th>
                             التاريخ
@@ -574,9 +624,7 @@ tr:hover{
                 </thead>
 
 
-                <tbody
-                    id="bookingTable"
-                >
+                <tbody id="bookingTable">
 
                 </tbody>
 
@@ -592,22 +640,19 @@ tr:hover{
 <script>
 
 /* =====================================================
-   SUPABASE SETTINGS
+   SUPABASE
 ===================================================== */
 
-/*
-   مهم جداً:
-
-   حط هنا نفس SUPABASE_URL
-   ونفس SUPABASE_KEY الموجودين
-   بكود موقعك الأصلي.
-*/
-
 const SUPABASE_URL =
-"https://YOUR-PROJECT.supabase.co";
+    "https://xhyuqruymtengguoyaie.supabase.co";
+
 
 const SUPABASE_KEY =
-"YOUR-SUPABASE-PUBLISHABLE-KEY";
+    "sb_publishable_v_vOawF0sNtyj2YavPT6xw_u_zESPoI";
+
+
+const BOOKINGS_TABLE =
+    "BookingFarms";
 
 
 const supabaseClient =
@@ -615,10 +660,6 @@ const supabaseClient =
         SUPABASE_URL,
         SUPABASE_KEY
     );
-
-
-const BOOKINGS_TABLE =
-    "BookingFarms";
 
 
 let bookings = [];
@@ -635,6 +676,7 @@ async function login(){
         .getElementById("email")
         .value
         .trim();
+
 
     const password =
         document
@@ -665,33 +707,72 @@ async function login(){
     }
 
 
-    const {
-        data,
-        error
-    } =
-        await supabaseClient.auth
-        .signInWithPassword({
-            email:email,
-            password:password
-        });
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.auth
+            .signInWithPassword({
+
+                email:email,
+
+                password:password
+
+            });
 
 
-    if(error){
+        if(error){
+
+            console.error(
+                "LOGIN ERROR:",
+                error
+            );
+
+            errorBox.textContent =
+                error.message ||
+                "بيانات الدخول غير صحيحة.";
+
+            errorBox.className =
+                "login-error show";
+
+            return;
+
+        }
+
+
+        if(
+            !data ||
+            !data.session
+        ){
+
+            errorBox.textContent =
+                "لم يتم إنشاء جلسة دخول.";
+
+            errorBox.className =
+                "login-error show";
+
+            return;
+
+        }
+
+
+        showAdmin();
+
+    }
+
+    catch(error){
 
         console.error(error);
 
         errorBox.textContent =
-            "بيانات الدخول غير صحيحة.";
+            "حدث خطأ أثناء تسجيل الدخول.";
 
         errorBox.className =
             "login-error show";
 
-        return;
-
     }
-
-
-    showAdmin();
 
 }
 
@@ -702,21 +783,46 @@ async function login(){
 
 async function checkSession(){
 
-    const {
-        data
-    } =
-        await supabaseClient.auth
-        .getSession();
+    try{
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.auth
+            .getSession();
 
 
-    if(
-        data &&
-        data.session
-    ){
+        if(error){
 
-        showAdmin();
+            console.error(error);
 
-    }else{
+            showLogin();
+
+            return;
+
+        }
+
+
+        if(
+            data &&
+            data.session
+        ){
+
+            showAdmin();
+
+        }
+        else{
+
+            showLogin();
+
+        }
+
+    }
+
+    catch(error){
+
+        console.error(error);
 
         showLogin();
 
@@ -843,7 +949,10 @@ async function loadBookings(){
 
     if(error){
 
-        console.error(error);
+        console.error(
+            "LOAD ERROR:",
+            error
+        );
 
         showMessage(
             "حدث خطأ أثناء تحميل الحجوزات: " +
@@ -876,7 +985,7 @@ async function loadBookings(){
 
 
 /* =====================================================
-   GET FIELD
+   GET CUSTOMER NAME
 ===================================================== */
 
 function getCustomerName(
@@ -892,6 +1001,10 @@ function getCustomerName(
 }
 
 
+/* =====================================================
+   GET FARM
+===================================================== */
+
 function getFarm(
     booking
 ){
@@ -904,6 +1017,10 @@ function getFarm(
 
 }
 
+
+/* =====================================================
+   GET SHIFT
+===================================================== */
 
 function getShift(
     booking
@@ -928,12 +1045,14 @@ function getPrice(
 ){
 
     if(!date){
+
         return 0;
+
     }
 
 
     const parts =
-        date.split("-");
+        String(date).split("-");
 
 
     const dateObject =
@@ -949,9 +1068,9 @@ function getPrice(
 
 
     /*
-       الخميس = 4
-       الجمعة = 5
-       السبت = 6
+        الخميس = 4
+        الجمعة = 5
+        السبت = 6
     */
 
     const expensiveDays =
@@ -962,16 +1081,49 @@ function getPrice(
 
     if(expensiveDays){
 
-        return shift === "شفت صباحي"
-            ? 350000
-            : 400000;
+        if(
+            shift ===
+            "شفت صباحي"
+        ){
+
+            return 350000;
+
+        }
+
+
+        if(
+            shift ===
+            "شفت مسائي"
+        ){
+
+            return 400000;
+
+        }
 
     }
 
 
-    return shift === "شفت صباحي"
-        ? 250000
-        : 300000;
+    if(
+        shift ===
+        "شفت صباحي"
+    ){
+
+        return 250000;
+
+    }
+
+
+    if(
+        shift ===
+        "شفت مسائي"
+    ){
+
+        return 300000;
+
+    }
+
+
+    return 0;
 
 }
 
@@ -1062,35 +1214,32 @@ function renderTable(){
                     );
 
 
+                const matchSearch =
+                    !search ||
+                    name.includes(search) ||
+                    phone.includes(search);
+
+
+                const matchDate =
+                    !date ||
+                    booking.booking_date === date;
+
+
+                const matchFarm =
+                    !farm ||
+                    bookingFarm === farm;
+
+
+                const matchShift =
+                    !shift ||
+                    bookingShift === shift;
+
+
                 return (
-
-                    (
-                        !search ||
-                        name.includes(search) ||
-                        phone.includes(search)
-                    )
-
-                    &&
-
-                    (
-                        !date ||
-                        booking.booking_date === date
-                    )
-
-                    &&
-
-                    (
-                        !farm ||
-                        bookingFarm === farm
-                    )
-
-                    &&
-
-                    (
-                        !shift ||
-                        bookingShift === shift
-                    )
-
+                    matchSearch &&
+                    matchDate &&
+                    matchFarm &&
+                    matchShift
                 );
 
             }
@@ -1100,7 +1249,9 @@ function renderTable(){
     tbody.innerHTML = "";
 
 
-    if(filtered.length === 0){
+    if(
+        filtered.length === 0
+    ){
 
         tbody.innerHTML = `
 
@@ -1123,7 +1274,10 @@ function renderTable(){
 
 
     filtered.forEach(
-        function(booking,index){
+        function(
+            booking,
+            index
+        ){
 
             const bookingShift =
                 getShift(
@@ -1162,7 +1316,9 @@ function renderTable(){
                     ${
                         bookingShift ===
                         "شفت صباحي"
+
                         ? "☀️ صباحي"
+
                         : "🌙 مسائي"
                     }
                 </td>
@@ -1204,7 +1360,7 @@ function renderTable(){
 
 
 /* =====================================================
-   STATS
+   UPDATE STATS
 ===================================================== */
 
 function updateStats(){
@@ -1251,8 +1407,9 @@ async function cancelBooking(
         bookings.find(
             function(item){
 
-                return String(item.id)
-                    === String(id);
+                return String(
+                    item.id
+                ) === String(id);
 
             }
         );
@@ -1261,7 +1418,7 @@ async function cancelBooking(
     if(!booking){
 
         alert(
-            "الحجز غير موجود."
+            "لم يتم العثور على الحجز."
         );
 
         return;
@@ -1269,7 +1426,7 @@ async function cancelBooking(
     }
 
 
-    const customerName =
+    const name =
         getCustomerName(
             booking
         );
@@ -1293,7 +1450,7 @@ async function cancelBooking(
 `هل أنت متأكد من إلغاء الحجز؟
 
 الاسم:
-${customerName}
+${name}
 
 المزرعة:
 ${farm}
@@ -1328,7 +1485,10 @@ ${shift}`
 
     if(error){
 
-        console.error(error);
+        console.error(
+            "DELETE ERROR:",
+            error
+        );
 
         showMessage(
             "فشل إلغاء الحجز: " +
@@ -1345,8 +1505,9 @@ ${shift}`
         bookings.filter(
             function(item){
 
-                return String(item.id)
-                    !== String(id);
+                return String(
+                    item.id
+                ) !== String(id);
 
             }
         );
@@ -1370,7 +1531,6 @@ ${shift}`
 ===================================================== */
 
 checkSession();
-
 
 </script>
 
