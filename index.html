@@ -2,10 +2,16 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>مزارع الغيث | ALGAITH FARMS</title>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <style>
 
@@ -285,7 +291,7 @@ section{
 
 
 /* =========================
-   المميزات الجديدة
+   المميزات
 ========================= */
 
 .features{
@@ -293,7 +299,7 @@ section{
 }
 
 .features-grid{
-    max-width:1100px;
+    max-width:1050px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -312,12 +318,6 @@ section{
     align-items:center;
     justify-content:center;
     box-shadow:0 7px 20px rgba(0,0,0,.06);
-    transition:.2s;
-}
-
-.feature:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .feature-icon{
@@ -812,6 +812,11 @@ section{
     background:#bc7890;
 }
 
+.send-button:disabled{
+    background:#aaa;
+    cursor:wait;
+}
+
 .close-button{
     width:100%;
     background:white;
@@ -970,10 +975,6 @@ footer p{
 }
 
 
-/* =========================
-   تحسين عرض الصورة الرئيسية
-========================= */
-
 @media(max-width:500px){
 
     .hero{
@@ -997,6 +998,7 @@ footer p{
 </style>
 
 </head>
+
 
 <body>
 
@@ -1124,7 +1126,9 @@ class="main-button"
 
 <h2>صور المزرعة</h2>
 
-<p>تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار</p>
+<p>
+تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار
+</p>
 
 </div>
 
@@ -1132,96 +1136,41 @@ class="main-button"
 
 <div class="gallery-scroll">
 
-
 <div class="gallery-item">
-
-<img
-src="Farms.1.PNG"
-alt="صورة مزرعة الغيث"
->
-
+<img src="Farms.1.PNG" alt="صورة مزرعة الغيث">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm1-1.jpg"
-alt="المزرعة الأولى"
->
-
+<img src="farm1-1.jpg" alt="المزرعة الأولى">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm1-2.jpg"
-alt="المزرعة الأولى"
->
-
+<img src="farm1-2.jpg" alt="المزرعة الأولى">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm1-3.jpg"
-alt="المزرعة الأولى"
->
-
+<img src="farm1-3.jpg" alt="المزرعة الأولى">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm1-4.jpg"
-alt="المزرعة الأولى"
->
-
+<img src="farm1-4.jpg" alt="المزرعة الأولى">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm2-1.jpg"
-alt="المزرعة الثانية"
->
-
+<img src="farm2-1.jpg" alt="المزرعة الثانية">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm2-2.jpg"
-alt="المزرعة الثانية"
->
-
+<img src="farm2-2.jpg" alt="المزرعة الثانية">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm2-3.jpg"
-alt="المزرعة الثانية"
->
-
+<img src="farm2-3.jpg" alt="المزرعة الثانية">
 </div>
 
-
 <div class="gallery-item">
-
-<img
-src="farm2-4.jpg"
-alt="المزرعة الثانية"
->
-
+<img src="farm2-4.jpg" alt="المزرعة الثانية">
 </div>
-
 
 </div>
 
@@ -1231,7 +1180,7 @@ alt="المزرعة الثانية"
 
 
 <!-- =========================
-     المميزات الجديدة
+     المميزات
 ========================= -->
 
 <section id="features" class="features">
@@ -1240,7 +1189,7 @@ alt="المزرعة الثانية"
 
 <h2>مميزات المزرعة</h2>
 
-<p>كل ما تحتاجه لقضاء وقت ممتع ومريح</p>
+<p>كل ما تحتاجه لقضاء وقت ممتع</p>
 
 </div>
 
@@ -1249,12 +1198,12 @@ alt="المزرعة الثانية"
 
 <div class="feature">
 
-<div class="feature-icon">🏊</div>
+<div class="feature-icon">🏡</div>
 
-<h3>مسبح</h3>
+<h3>استراحة</h3>
 
 <p>
-مسبح نظيف ومناسب للاستمتاع والراحة.
+مكان مريح ومناسب لقضاء أجمل الأوقات.
 </p>
 
 </div>
@@ -1262,12 +1211,12 @@ alt="المزرعة الثانية"
 
 <div class="feature">
 
-<div class="feature-icon">🛝</div>
+<div class="feature-icon">🌳</div>
 
-<h3>ألعاب أطفال</h3>
+<h3>مساحات خضراء</h3>
 
 <p>
-مجموعة ألعاب مناسبة للأطفال والعائلة.
+طبيعة وأجواء هادئة ومريحة.
 </p>
 
 </div>
@@ -1275,12 +1224,12 @@ alt="المزرعة الثانية"
 
 <div class="feature">
 
-<div class="feature-icon">🛋️</div>
+<div class="feature-icon">🥕</div>
 
-<h3>صالة ضيوف</h3>
+<h3>خضار ومزرعة</h3>
 
 <p>
-صالة واسعة ومريحة لاستقبال الضيوف.
+أجواء ريفية وطبيعة جميلة.
 </p>
 
 </div>
@@ -1288,12 +1237,12 @@ alt="المزرعة الثانية"
 
 <div class="feature">
 
-<div class="feature-icon">📺</div>
+<div class="feature-icon">🌅</div>
 
-<h3>تلفزيون كبير</h3>
+<h3>جلسات مريحة</h3>
 
 <p>
-تلفزيون كبير مع طاولة للورق والدومنة.
+مكان مناسب للعائلة والأصدقاء.
 </p>
 
 </div>
@@ -1301,12 +1250,12 @@ alt="المزرعة الثانية"
 
 <div class="feature">
 
-<div class="feature-icon">🏓</div>
+<div class="feature-icon">☕</div>
 
-<h3>صالة ألعاب</h3>
+<h3>أجواء عائلية</h3>
 
 <p>
-صالة ألعاب وتنس طاولة وأجواء ممتعة.
+مكان مناسب للاسترخاء وقضاء الوقت.
 </p>
 
 </div>
@@ -1314,51 +1263,12 @@ alt="المزرعة الثانية"
 
 <div class="feature">
 
-<div class="feature-icon">🍳</div>
+<div class="feature-icon">🌿</div>
 
-<h3>مطبخ مجهز بالكامل</h3>
-
-<p>
-مطبخ متكامل للطبخ والفرن والثلاجة.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🛏️</div>
-
-<h3>غرفة نوم كبار</h3>
+<h3>طبيعة وهدوء</h3>
 
 <p>
-غرفة نوم مؤثثة ومجهزة بالكامل.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">📶</div>
-
-<h3>إنترنت 24 ساعة</h3>
-
-<p>
-خدمة إنترنت متوفرة على مدار 24 ساعة.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">🔥</div>
-
-<h3>محطة متكاملة للشتاء</h3>
-
-<p>
-تجهيزات متكاملة للاستمتاع بأجواء الشتاء.
+استمتعوا بالهدوء والطبيعة بعيداً عن الزحام.
 </p>
 
 </div>
@@ -1729,20 +1639,44 @@ onclick="closeModal()"
 
 <script>
 
-/* =========================
+/* =========================================================
+   إعداد Supabase
+========================================================= */
+
+/*
+   مهم:
+   ضع بيانات مشروعك هنا
+*/
+
+const SUPABASE_URL =
+    "ضع_رابط_مشروعك_هنا";
+
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "ضع_PUBLISHABLE_KEY_هنا";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+/* =========================================================
    رقم الواتساب
-========================= */
+========================================================= */
 
 const whatsappNumber =
-"9647736735730";
+    "9647736735730";
 
 
-/* =========================
+/* =========================================================
    التاريخ
-========================= */
+========================================================= */
 
 const today =
-new Date();
+    new Date();
 
 today.setHours(
     0,
@@ -1753,146 +1687,185 @@ today.setHours(
 
 
 let currentDate =
-new Date(
-    today.getFullYear(),
-    today.getMonth(),
-    1
-);
+    new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        1
+    );
 
 
-/* =========================
+/* =========================================================
    المزرعة الحالية
-========================= */
+========================================================= */
 
 let currentFarm =
-"المزرعة الأولى";
+    "المزرعة الأولى";
 
 
-/* =========================
+/* =========================================================
    الحجز المختار
-========================= */
+========================================================= */
 
 let selectedDate =
-"";
+    "";
 
 let selectedShift =
-"";
+    "";
 
 
-/* =========================
-   مفاتيح التخزين
-========================= */
+/* =========================================================
+   الحجوزات القادمة من Supabase
+========================================================= */
 
-const STORAGE_KEY_FARM1 =
-"algaith_farm1_bookings";
-
-const STORAGE_KEY_FARM2 =
-"algaith_farm2_bookings";
+let serverBookings =
+    [];
 
 
-/* =========================
-   الحجوزات
-========================= */
+/* =========================================================
+   الأشهر
+========================================================= */
 
-let bookingsFarm1 = [];
+const months = [
 
-let bookingsFarm2 = [];
+    "يناير",
+    "فبراير",
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر"
+
+];
 
 
-try{
+/* =========================================================
+   تحويل التاريخ إلى YYYY-MM-DD
+========================================================= */
 
-    bookingsFarm1 =
-        JSON.parse(
-            localStorage.getItem(
-                STORAGE_KEY_FARM1
-            )
-        ) || [];
+function formatDate(
+    year,
+    month,
+    day
+){
 
-    bookingsFarm2 =
-        JSON.parse(
-            localStorage.getItem(
-                STORAGE_KEY_FARM2
-            )
-        ) || [];
-
-}catch(error){
-
-    bookingsFarm1 = [];
-
-    bookingsFarm2 = [];
+    return `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
 }
 
 
-/* =========================
-   الحصول على حجوزات المزرعة
-========================= */
+/* =========================================================
+   تحميل الحجوزات من Supabase
+========================================================= */
 
-function getCurrentBookings(){
+async function loadBookings(){
 
-    if(
-        currentFarm ===
-        "المزرعة الأولى"
-    ){
+    try{
 
-        return bookingsFarm1;
+        const year =
+            currentDate.getFullYear();
+
+        const month =
+            currentDate.getMonth();
+
+
+        const startDate =
+            formatDate(
+                year,
+                month,
+                1
+            );
+
+
+        const lastDay =
+            new Date(
+                year,
+                month + 1,
+                0
+            ).getDate();
+
+
+        const endDate =
+            formatDate(
+                year,
+                month,
+                lastDay
+            );
+
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "get_booked_shifts",
+                {
+
+                    p_farm:
+                        currentFarm,
+
+                    p_start_date:
+                        startDate,
+
+                    p_end_date:
+                        endDate
+
+                }
+            );
+
+
+        if(error){
+
+            console.error(
+                "Supabase load error:",
+                error
+            );
+
+            serverBookings =
+                [];
+
+            return;
+
+        }
+
+
+        serverBookings =
+            data || [];
+
+
+    }catch(error){
+
+        console.error(
+            "خطأ في تحميل الحجوزات:",
+            error
+        );
+
+        serverBookings =
+            [];
 
     }
 
-    return bookingsFarm2;
-
 }
 
 
-/* =========================
-   حفظ الحجوزات
-========================= */
-
-function saveCurrentBookings(){
-
-    if(
-        currentFarm ===
-        "المزرعة الأولى"
-    ){
-
-        localStorage.setItem(
-            STORAGE_KEY_FARM1,
-            JSON.stringify(
-                bookingsFarm1
-            )
-        );
-
-    }else{
-
-        localStorage.setItem(
-            STORAGE_KEY_FARM2,
-            JSON.stringify(
-                bookingsFarm2
-            )
-        );
-
-    }
-
-}
-
-
-/* =========================
+/* =========================================================
    فحص الحجز
-========================= */
+========================================================= */
 
 function isShiftBooked(
     date,
     shift
 ){
 
-    const bookings =
-        getCurrentBookings();
-
-    return bookings.some(
+    return serverBookings.some(
         function(item){
 
             return (
-                item.date === date &&
+                item.booking_date === date &&
                 item.shift === shift
             );
 
@@ -1902,82 +1875,48 @@ function isShiftBooked(
 }
 
 
-/* =========================
-   اختيار المزرعة
-========================= */
-
-function selectFarm(
-    farmName
-){
-
-    currentFarm =
-        farmName;
-
-    document.getElementById(
-        "currentFarmTitle"
-    ).textContent =
-        farmName;
-
-    currentDate =
-        new Date(
-            today.getFullYear(),
-            today.getMonth(),
-            1
-        );
-
-    renderCalendar();
-
-    document.getElementById(
-        "booking"
-    ).scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =========================
-   الأشهر
-========================= */
-
-const months = [
-
-"يناير",
-"فبراير",
-"مارس",
-"أبريل",
-"مايو",
-"يونيو",
-"يوليو",
-"أغسطس",
-"سبتمبر",
-"أكتوبر",
-"نوفمبر",
-"ديسمبر"
-
-];
-
-
-/* =========================
+/* =========================================================
    رسم التقويم
-========================= */
+========================================================= */
 
-function renderCalendar(){
+async function renderCalendar(){
 
     const calendar =
         document.getElementById(
             "calendar"
         );
 
+
     const monthTitle =
         document.getElementById(
             "monthTitle"
         );
 
+
     const previousButton =
         document.getElementById(
             "prevMonth"
         );
+
+
+    calendar.innerHTML = `
+
+        <div style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:30px;
+            color:#704052;
+            font-weight:bold;
+        ">
+
+            جاري تحميل الحجوزات...
+
+        </div>
+
+    `;
+
+
+    await loadBookings();
 
 
     calendar.innerHTML =
@@ -1986,6 +1925,7 @@ function renderCalendar(){
 
     const year =
         currentDate.getFullYear();
+
 
     const month =
         currentDate.getMonth();
@@ -2026,7 +1966,9 @@ function renderCalendar(){
         ).getDate();
 
 
-    /* الخانات الفارغة */
+    /* =====================================================
+       الخانات الفارغة
+    ===================================================== */
 
     for(
         let i = 0;
@@ -2039,8 +1981,10 @@ function renderCalendar(){
                 "div"
             );
 
+
         empty.className =
             "day-box empty-day";
+
 
         calendar.appendChild(
             empty
@@ -2049,7 +1993,9 @@ function renderCalendar(){
     }
 
 
-    /* الأيام */
+    /* =====================================================
+       الأيام
+    ===================================================== */
 
     for(
         let day = 1;
@@ -2062,6 +2008,7 @@ function renderCalendar(){
                 "div"
             );
 
+
         dayBox.className =
             "day-box";
 
@@ -2072,6 +2019,7 @@ function renderCalendar(){
                 month,
                 day
             );
+
 
         thisDate.setHours(
             0,
@@ -2091,13 +2039,25 @@ function renderCalendar(){
             today.getTime();
 
 
+        const dateKey =
+            formatDate(
+                year,
+                month,
+                day
+            );
+
+
+        /* رقم اليوم */
+
         const dayNumber =
             document.createElement(
                 "div"
             );
 
+
         dayNumber.className =
             "day-number";
+
 
         dayNumber.textContent =
             day;
@@ -2122,8 +2082,10 @@ function renderCalendar(){
                     "div"
                 );
 
+
             todayLabel.className =
                 "today-label";
+
 
             todayLabel.textContent =
                 "اليوم";
@@ -2150,11 +2112,14 @@ function renderCalendar(){
                     "div"
                 );
 
+
             locked.className =
                 "locked-box";
 
+
             locked.textContent =
                 "غير متاح";
+
 
             dayBox.appendChild(
                 locked
@@ -2163,17 +2128,14 @@ function renderCalendar(){
         }
 
 
-        /* الأيام الحالية والقادمة */
+        /* الأيام المتاحة */
 
         else{
 
-            const dateKey =
-                `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
-
-            /* =========================
-               الشفت الصباحي
-            ========================= */
+            /* =============================================
+               الصباحي
+            ============================================= */
 
             const morningButton =
                 document.createElement(
@@ -2186,14 +2148,19 @@ function renderCalendar(){
 
 
             morningButton.innerHTML = `
+
                 <span class="shift-icon">
                     ☀️
                 </span>
+
                 شفت صباحي
+
                 <br>
+
                 <small>
                     صباحاً
                 </small>
+
             `;
 
 
@@ -2207,6 +2174,7 @@ function renderCalendar(){
                 morningButton.classList.add(
                     "booked"
                 );
+
 
                 morningButton.disabled =
                     true;
@@ -2230,9 +2198,9 @@ function renderCalendar(){
             }
 
 
-            /* =========================
-               الشفت المسائي
-            ========================= */
+            /* =============================================
+               المسائي
+            ============================================= */
 
             const eveningButton =
                 document.createElement(
@@ -2245,14 +2213,19 @@ function renderCalendar(){
 
 
             eveningButton.innerHTML = `
+
                 <span class="shift-icon">
                     🌙
                 </span>
+
                 شفت مسائي
+
                 <br>
+
                 <small>
                     مساءً
                 </small>
+
             `;
 
 
@@ -2266,6 +2239,7 @@ function renderCalendar(){
                 eveningButton.classList.add(
                     "booked"
                 );
+
 
                 eveningButton.disabled =
                     true;
@@ -2310,11 +2284,49 @@ function renderCalendar(){
 }
 
 
-/* =========================
-   تغيير الشهر
-========================= */
+/* =========================================================
+   اختيار المزرعة
+========================================================= */
 
-function changeMonth(
+async function selectFarm(
+    farmName
+){
+
+    currentFarm =
+        farmName;
+
+
+    document.getElementById(
+        "currentFarmTitle"
+    ).textContent =
+        farmName;
+
+
+    currentDate =
+        new Date(
+            today.getFullYear(),
+            today.getMonth(),
+            1
+        );
+
+
+    await renderCalendar();
+
+
+    document.getElementById(
+        "booking"
+    ).scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================================================
+   تغيير الشهر
+========================================================= */
+
+async function changeMonth(
     direction
 ){
 
@@ -2349,14 +2361,14 @@ function changeMonth(
         newDate;
 
 
-    renderCalendar();
+    await renderCalendar();
 
 }
 
 
-/* =========================
+/* =========================================================
    فتح نافذة الحجز
-========================= */
+========================================================= */
 
 function openBooking(
     day,
@@ -2365,31 +2377,19 @@ function openBooking(
     shift
 ){
 
-    const formattedMonth =
-        String(
-            month + 1
-        ).padStart(
-            2,
-            "0"
-        );
-
-
-    const formattedDay =
-        String(
-            day
-        ).padStart(
-            2,
-            "0"
-        );
-
-
     selectedDate =
-        `${year}-${formattedMonth}-${formattedDay}`;
+        formatDate(
+            year,
+            month,
+            day
+        );
 
 
     selectedShift =
         shift;
 
+
+    /* فحص سريع */
 
     if(
         isShiftBooked(
@@ -2402,7 +2402,9 @@ function openBooking(
             "هذا الشفت محجوز مسبقاً"
         );
 
+
         renderCalendar();
+
 
         return;
 
@@ -2412,13 +2414,19 @@ function openBooking(
     document.getElementById(
         "selectedInfo"
     ).innerHTML = `
+
         🏡 ${currentFarm}
+
         <br>
+
         📅 التاريخ:
         ${selectedDate}
+
         <br>
+
         ⏰ الفترة:
         ${selectedShift}
+
     `;
 
 
@@ -2431,11 +2439,11 @@ function openBooking(
 }
 
 
-/* =========================
+/* =========================================================
    إرسال الحجز
-========================= */
+========================================================= */
 
-function sendBooking(){
+async function sendBooking(){
 
     const name =
         document.getElementById(
@@ -2472,77 +2480,113 @@ function sendBooking(){
 
 
     if(
-        isShiftBooked(
-            selectedDate,
-            selectedShift
-        )
+        !selectedDate ||
+        !selectedShift
     ){
 
         alert(
-            "عذراً، هذا الشفت محجوز مسبقاً"
+            "يرجى اختيار التاريخ والفترة"
         );
-
-        closeModal();
-
-        renderCalendar();
 
         return;
 
     }
 
 
-    const booking = {
-
-        farm:
-            currentFarm,
-
-        name:
-            name,
-
-        phone:
-            phone,
-
-        date:
-            selectedDate,
-
-        shift:
-            selectedShift,
-
-        createdAt:
-            new Date().toISOString()
-
-    };
-
-
-    if(
-        currentFarm ===
-        "المزرعة الأولى"
-    ){
-
-        bookingsFarm1.push(
-            booking
+    const sendButton =
+        document.querySelector(
+            ".send-button"
         );
 
-    }else{
 
-        bookingsFarm2.push(
-            booking
-        );
-
-    }
+    sendButton.disabled =
+        true;
 
 
-    saveCurrentBookings();
+    sendButton.textContent =
+        "جاري تثبيت الحجز...";
 
 
-    /* إعادة رسم التقويم */
+    try{
 
-    renderCalendar();
+        /*
+          هنا الحجز يروح مباشرة إلى Supabase
+          وليس localStorage
+        */
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient.rpc(
+                "create_booking",
+                {
+
+                    p_farm:
+                        currentFarm,
+
+                    p_customer_name:
+                        name,
+
+                    p_customer_phone:
+                        phone,
+
+                    p_booking_date:
+                        selectedDate,
+
+                    p_shift:
+                        selectedShift
+
+                }
+            );
 
 
-    /* رسالة واتساب */
+        if(error){
 
-    const message =
+            console.error(
+                "Booking error:",
+                error
+            );
+
+
+            alert(
+                "حدث خطأ أثناء تثبيت الحجز. حاول مرة أخرى."
+            );
+
+
+            return;
+
+        }
+
+
+        /* ================================================
+           إذا كان الشفت محجوز من شخص آخر
+        ================================================ */
+
+        if(
+            !data ||
+            data.success !== true
+        ){
+
+            alert(
+                data?.message ||
+                "تعذر تثبيت الحجز"
+            );
+
+
+            await renderCalendar();
+
+
+            return;
+
+        }
+
+
+        /* ================================================
+           الحجز نجح
+        ================================================ */
+
+        const message =
 `🌿 مزارع الغيث
 ALGAITH FARMS
 
@@ -2566,42 +2610,77 @@ ${selectedShift}
 شكراً لاختياركم مزارع الغيث 🌿`;
 
 
-    const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(
-            message
+        const whatsappURL =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(
+                message
+            );
+
+
+        /* تنظيف البيانات */
+
+        document.getElementById(
+            "customerName"
+        ).value =
+            "";
+
+
+        document.getElementById(
+            "customerPhone"
+        ).value =
+            "";
+
+
+        closeModal();
+
+
+        /* تحديث التقويم */
+
+        await renderCalendar();
+
+
+        /* واتساب */
+
+        window.open(
+            whatsappURL,
+            "_blank"
         );
 
 
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
+    }catch(error){
+
+        console.error(
+            "Unexpected error:",
+            error
+        );
 
 
-    /* تنظيف النموذج */
+        alert(
+            "حدث خطأ غير متوقع. حاول مرة أخرى."
+        );
 
-    document.getElementById(
-        "customerName"
-    ).value =
-        "";
-
-    document.getElementById(
-        "customerPhone"
-    ).value =
-        "";
+    }
 
 
-    closeModal();
+    finally{
+
+        sendButton.disabled =
+            false;
+
+
+        sendButton.textContent =
+            "تأكيد الحجز وإرسال عبر واتساب";
+
+    }
 
 }
 
 
-/* =========================
+/* =========================================================
    إغلاق نافذة الحجز
-========================= */
+========================================================= */
 
 function closeModal(){
 
@@ -2614,9 +2693,9 @@ function closeModal(){
 }
 
 
-/* =========================
+/* =========================================================
    الشروط
-========================= */
+========================================================= */
 
 function openRules(){
 
@@ -2640,9 +2719,9 @@ function closeRules(){
 }
 
 
-/* =========================
-   إغلاق النوافذ بالخارج
-========================= */
+/* =========================================================
+   إغلاق بالنقر خارج النافذة
+========================================================= */
 
 document.getElementById(
     "bookingModal"
@@ -2680,9 +2759,44 @@ document.getElementById(
 );
 
 
-/* =========================
+/* =========================================================
+   تحديث الحجوزات تلقائياً كل 10 ثواني
+========================================================= */
+
+setInterval(
+    function(){
+
+        renderCalendar();
+
+    },
+    10000
+);
+
+
+/* =========================================================
+   إذا رجع المستخدم للصفحة
+========================================================= */
+
+document.addEventListener(
+    "visibilitychange",
+    function(){
+
+        if(
+            document.visibilityState ===
+            "visible"
+        ){
+
+            renderCalendar();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
    تشغيل الموقع
-========================= */
+========================================================= */
 
 renderCalendar();
 
