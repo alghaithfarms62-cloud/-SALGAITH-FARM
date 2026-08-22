@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إدارة حجوزات مزارع الغيث</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#f4eeee;
+    color:#241d22;
+}
+
+header{
+    background:#171318;
+    color:white;
+    padding:25px 5%;
+    border-bottom:2px solid #704052;
+}
+
+header h1{
+    color:#e2a4b7;
+    margin-bottom:5px;
+}
+
+header p{
+    color:#ddd;
+}
+
+.container{
+    width:94%;
+    max-width:1300px;
+    margin:30px auto;
+}
+
+/* الإحصائيات */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat{
+    background:white;
+    border:2px solid #dfcbd2;
+    border-radius:18px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+}
+
+.stat h3{
+    color:#704052;
+    margin-bottom:8px;
+}
+
+.stat strong{
+    font-size:28px;
+    color:#a35f77;
+}
+
+/* الفلاتر */
+
+.filters{
+    background:white;
+    border:2px solid #dfcbd2;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.filters input,
+.filters select{
+    width:100%;
+    padding:12px;
+    border:2px solid #dfcbd2;
+    border-radius:10px;
+    font-family:inherit;
+}
+
+button{
+    font-family:inherit;
+    cursor:pointer;
+}
+
+.refresh{
+    background:#704052;
+    color:white;
+    border:0;
+    border-radius:10px;
+    padding:12px;
+    font-weight:bold;
+}
+
+/* الجدول */
+
+.table-box{
+    background:white;
+    border-radius:18px;
+    border:2px solid #dfcbd2;
+    overflow:auto;
+    box-shadow:0 6px 20px rgba(0,0,0,.07);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:900px;
+}
+
+th{
+    background:#211b20;
+    color:#e2a4b7;
+    padding:15px;
+    white-space:nowrap;
+}
+
+td{
+    padding:13px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+tr:hover{
+    background:#fff7fa;
+}
+
+.price{
+    color:#a35f77;
+    font-weight:bold;
+}
+
+.delete-btn{
+    background:#c62828;
+    color:white;
+    border:0;
+    border-radius:8px;
+    padding:8px 13px;
+    font-weight:bold;
+}
+
+.delete-btn:hover{
+    background:#a51f1f;
+}
+
+.empty{
+    text-align:center;
+    padding:40px;
+    color:#777;
+}
+
+/* رسالة */
+
+.message{
+    display:none;
+    margin-bottom:15px;
+    padding:13px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.message.show{
+    display:block;
+}
+
+.success{
+    background:#d1e7dd;
+    color:#0f5132;
+}
+
+.error{
+    background:#f8d7da;
+    color:#842029;
+}
+
+@media(max-width:800px){
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>
+        📋 إدارة حجوزات مزارع الغيث
+    </h1>
+
+    <p>
+        لوحة التحكم بالحجوزات
+    </p>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- الإحصائيات -->
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <h3>
+                عدد الحجوزات
+            </h3>
+
+            <strong id="bookingCount">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>
+                قيمة الحجوزات
+            </h3>
+
+            <strong id="totalAmount">
+                0 د.ع
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <h3>
+                آخر تحديث
+            </h3>
+
+            <strong
+                id="lastUpdate"
+                style="font-size:18px"
+            >
+                -
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="message"
+        class="message"
+    ></div>
+
+
+    <!-- الفلاتر -->
+
+    <div class="filters">
+
+        <input
+            id="search"
+            type="text"
+            placeholder="🔎 ابحث بالاسم أو رقم الهاتف"
+            oninput="renderTable()"
+        >
+
+
+        <input
+            id="dateFilter"
+            type="date"
+            onchange="renderTable()"
+        >
+
+
+        <select
+            id="farmFilter"
+            onchange="renderTable()"
+        >
+
+            <option value="">
+                كل المزارع
+            </option>
+
+            <option value="المزرعة الأولى">
+                المزرعة الأولى
+            </option>
+
+            <option value="المزرعة الثانية">
+                المزرعة الثانية
+            </option>
+
+        </select>
+
+
+        <select
+            id="shiftFilter"
+            onchange="renderTable()"
+        >
+
+            <option value="">
+                كل الشفتات
+            </option>
+
+            <option value="شفت صباحي">
+                ☀️ شفت صباحي
+            </option>
+
+            <option value="شفت مسائي">
+                🌙 شفت مسائي
+            </option>
+
+        </select>
+
+
+        <button
+            class="refresh"
+            onclick="loadBookings()"
+        >
+            🔄 تحديث الحجوزات
+        </button>
+
+    </div>
+
+
+    <!-- جدول الحجوزات -->
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        #
+                    </th>
+
+                    <th>
+                        التاريخ
+                    </th>
+
+                    <th>
+                        المزرعة
+                    </th>
+
+                    <th>
+                        الشفت
+                    </th>
+
+                    <th>
+                        الاسم
+                    </th>
+
+                    <th>
+                        رقم الهاتف
+                    </th>
+
+                    <th>
+                        السعر
+                    </th>
+
+                    <th>
+                        إلغاء
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody
+                id="bookingTable"
+            >
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+"https://xhyuqruymtengguoyaie.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_v_vOawF0sNtyj2YavPT6xw_u_zESPoI";
+
+const BOOKINGS_TABLE =
+"BookingFarms";
+
+
+let bookings = [];
+
+
+/* =====================================================
+   Headers
+===================================================== */
+
+const headers = {
+
+    "apikey":
+        SUPABASE_KEY,
+
+    "Authorization":
+        "Bearer " + SUPABASE_KEY,
+
+    "Content-Type":
+        "application/json"
+
+};
+
+
+/* =====================================================
+   الرسائل
+===================================================== */
+
+function showMessage(
+    text,
+    type
+){
+
+    const box =
+        document.getElementById(
+            "message"
+        );
+
+    box.textContent =
+        text;
+
+    box.className =
+        "message show " +
+        type;
+
+}
+
+
+/* =====================================================
+   تحميل الحجوزات
+===================================================== */
+
+async function loadBookings(){
+
+    try{
+
+        const url =
+            SUPABASE_URL +
+            "/rest/v1/" +
+            BOOKINGS_TABLE +
+            "?select=id,created_at,customer_phone,booking_date,customer_name,farm,shift" +
+            "&order=booking_date.asc";
+
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    headers:headers,
+                    cache:"no-store"
+                }
+            );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(
+                error
+            );
+
+        }
+
+
+        bookings =
+            await response.json();
+
+
+        renderTable();
+
+        updateStats();
+
+
+        document.getElementById(
+            "lastUpdate"
+        ).textContent =
+            new Date().toLocaleTimeString(
+                "ar-IQ"
+            );
+
+
+        showMessage(
+            "تم تحديث الحجوزات بنجاح ✅",
+            "success"
+        );
+
+
+        setTimeout(
+            function(){
+
+                document
+                    .getElementById(
+                        "message"
+                    )
+                    .className =
+                    "message";
+
+            },
+            2500
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "حدث خطأ أثناء تحميل الحجوزات: " +
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   السعر
+===================================================== */
+
+function getPrice(
+    date,
+    shift
+){
+
+    const parts =
+        date.split("-");
+
+
+    const year =
+        Number(parts[0]);
+
+    const month =
+        Number(parts[1]) - 1;
+
+    const day =
+        Number(parts[2]);
+
+
+    const dateObject =
+        new Date(
+            year,
+            month,
+            day
+        );
+
+
+    const dayOfWeek =
+        dateObject.getDay();
+
+
+    const highPrice =
+        dayOfWeek === 4 ||
+        dayOfWeek === 5 ||
+        dayOfWeek === 6;
+
+
+    if(highPrice){
+
+        return shift ===
+            "شفت صباحي"
+            ? 350000
+            : 400000;
+
+    }
+
+
+    return shift ===
+        "شفت صباحي"
+        ? 250000
+        : 300000;
+
+}
+
+
+/* =====================================================
+   تنسيق السعر
+===================================================== */
+
+function formatPrice(
+    price
+){
+
+    return price.toLocaleString(
+        "en-US"
+    ) + " د.ع";
+
+}
+
+
+/* =====================================================
+   عرض الجدول
+===================================================== */
+
+function renderTable(){
+
+    const tbody =
+        document.getElementById(
+            "bookingTable"
+        );
+
+
+    const search =
+        document.getElementById(
+            "search"
+        ).value
+        .trim()
+        .toLowerCase();
+
+
+    const date =
+        document.getElementById(
+            "dateFilter"
+        ).value;
+
+
+    const farm =
+        document.getElementById(
+            "farmFilter"
+        ).value;
+
+
+    const shift =
+        document.getElementById(
+            "shiftFilter"
+        ).value;
+
+
+    const filtered =
+        bookings.filter(
+            function(booking){
+
+                const name =
+                    (
+                        booking.customer_name ||
+                        ""
+                    ).toLowerCase();
+
+
+                const phone =
+                    (
+                        booking.customer_phone ||
+                        ""
+                    ).toLowerCase();
+
+
+                const matchSearch =
+                    !search ||
+                    name.includes(search) ||
+                    phone.includes(search);
+
+
+                const matchDate =
+                    !date ||
+                    booking.booking_date === date;
+
+
+                const matchFarm =
+                    !farm ||
+                    booking.farm === farm;
+
+
+                const matchShift =
+                    !shift ||
+                    booking.shift === shift;
+
+
+                return (
+                    matchSearch &&
+                    matchDate &&
+                    matchFarm &&
+                    matchShift
+                );
+
+            }
+        );
+
+
+    tbody.innerHTML =
+        "";
+
+
+    if(filtered.length === 0){
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="8"
+                    class="empty"
+                >
+
+                    لا توجد حجوزات مطابقة 🔎
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    filtered.forEach(
+        function(booking,index){
+
+            const price =
+                getPrice(
+                    booking.booking_date,
+                    booking.shift
+                );
+
+
+            const tr =
+                document.createElement(
+                    "tr"
+                );
+
+
+            tr.innerHTML = `
+
+                <td>
+                    ${index + 1}
+                </td>
+
+                <td>
+                    ${booking.booking_date || "-"}
+                </td>
+
+                <td>
+                    ${booking.farm || "-"}
+                </td>
+
+                <td>
+                    ${
+                        booking.shift ===
+                        "شفت صباحي"
+                        ? "☀️ صباحي"
+                        : "🌙 مسائي"
+                    }
+                </td>
+
+                <td>
+                    ${booking.customer_name || "-"}
+                </td>
+
+                <td>
+                    ${booking.customer_phone || "-"}
+                </td>
+
+                <td class="price">
+                    ${formatPrice(price)}
+                </td>
+
+                <td>
+
+                    <button
+                        class="delete-btn"
+                        onclick="cancelBooking('${booking.id}')"
+                    >
+                        إلغاء الحجز
+                    </button>
+
+                </td>
+
+            `;
+
+
+            tbody.appendChild(
+                tr
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   الإحصائيات
+===================================================== */
+
+function updateStats(){
+
+    document.getElementById(
+        "bookingCount"
+    ).textContent =
+        bookings.length;
+
+
+    let total = 0;
+
+
+    bookings.forEach(
+        function(booking){
+
+            total +=
+                getPrice(
+                    booking.booking_date,
+                    booking.shift
+                );
+
+        }
+    );
+
+
+    document.getElementById(
+        "totalAmount"
+    ).textContent =
+        formatPrice(total);
+
+}
+
+
+/* =====================================================
+   إلغاء الحجز
+===================================================== */
+
+async function cancelBooking(
+    id
+){
+
+    const booking =
+        bookings.find(
+            function(item){
+
+                return String(
+                    item.id
+                ) === String(id);
+
+            }
+        );
+
+
+    if(!booking){
+
+        alert(
+            "لم يتم العثور على الحجز"
+        );
+
+        return;
+
+    }
+
+
+    const confirmDelete =
+        confirm(
+
+`هل أنت متأكد من إلغاء هذا الحجز؟
+
+المزرعة:
+${booking.farm}
+
+التاريخ:
+${booking.booking_date}
+
+الشفت:
+${booking.shift}
+
+الاسم:
+${booking.customer_name}`
+
+        );
+
+
+    if(!confirmDelete){
+
+        return;
+
+    }
+
+
+    try{
+
+        const url =
+            SUPABASE_URL +
+            "/rest/v1/" +
+            BOOKINGS_TABLE +
+            "?id=eq." +
+            encodeURIComponent(
+                id
+            );
+
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"DELETE",
+
+                    headers:{
+                        ...headers,
+
+                        "Prefer":
+                            "return=minimal"
+                    }
+                }
+            );
+
+
+        if(!response.ok){
+
+            const error =
+                await response.text();
+
+            throw new Error(
+                error
+            );
+
+        }
+
+
+        bookings =
+            bookings.filter(
+                function(item){
+
+                    return String(
+                        item.id
+                    ) !== String(id);
+
+                }
+            );
+
+
+        renderTable();
+
+        updateStats();
+
+
+        showMessage(
+            "تم إلغاء الحجز بنجاح، والشفت أصبح متاحاً ✅",
+            "success"
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "فشل إلغاء الحجز: " +
+            error.message,
+            "error"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   التشغيل
+===================================================== */
+
+loadBookings();
+
+</script>
+
+</body>
+
+</html>
