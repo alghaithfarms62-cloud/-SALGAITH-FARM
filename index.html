@@ -33,11 +33,6 @@ body{
     line-height:1.8;
 }
 
-button,
-input{
-    font-family:inherit;
-}
-
 
 /* =====================================================
    الهيدر
@@ -47,14 +42,21 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
+
     height:80px;
+
     background:#111014;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     padding:8px 5%;
+
     border-bottom:2px solid #6f4656;
-    box-shadow:0 3px 18px rgba(0,0,0,.35);
+
+    box-shadow:
+        0 3px 18px rgba(0,0,0,.35);
 }
 
 .logo-area{
@@ -102,6 +104,7 @@ header{
 ===================================================== */
 
 .hero{
+
     min-height:650px;
 
     background:
@@ -129,60 +132,91 @@ header{
 }
 
 .hero-logo{
+
     width:150px;
     height:150px;
+
     object-fit:contain;
+
     border-radius:50%;
+
     margin-bottom:20px;
+
     background:white;
+
     padding:7px;
-    box-shadow:0 8px 35px rgba(0,0,0,.4);
+
+    box-shadow:
+        0 8px 35px rgba(0,0,0,.4);
 }
 
 .hero h2{
+
     color:#e4a9bb;
+
     font-size:48px;
+
     margin-bottom:5px;
-    text-shadow:0 3px 12px rgba(0,0,0,.5);
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.5);
 }
 
 .hero .english{
+
     font-size:21px;
+
     letter-spacing:6px;
+
     margin-bottom:20px;
+
     color:#f5e8ed;
 }
 
 .hero p{
+
     font-size:20px;
+
     color:#fff;
+
     margin-bottom:30px;
-    text-shadow:0 2px 8px rgba(0,0,0,.6);
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.6);
 }
 
 .main-button{
+
     display:inline-block;
+
     background:#b86f88;
+
     color:white;
 
     padding:13px 38px;
 
     border-radius:13px;
+
     text-decoration:none;
 
     font-size:20px;
+
     font-weight:bold;
 
     border:none;
+
     cursor:pointer;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.35);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.35);
 
     transition:.2s;
 }
 
 .main-button:hover{
+
     background:#ca8199;
+
     transform:translateY(-2px);
 }
 
@@ -196,17 +230,23 @@ section{
 }
 
 .section-title{
+
     text-align:center;
+
     margin-bottom:40px;
 }
 
 .section-title h2{
+
     font-size:38px;
+
     color:#5b3545;
 }
 
 .section-title p{
+
     color:#806e75;
+
     font-size:18px;
 }
 
@@ -220,35 +260,44 @@ section{
 }
 
 .about-box{
+
     max-width:900px;
+
     margin:auto;
 
     background:#fff;
 
     border-radius:22px;
+
     padding:35px;
 
     border:2px solid #dfcbd2;
 
     text-align:center;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.07);
 }
 
 .about-box h3{
+
     color:#704052;
+
     font-size:28px;
+
     margin-bottom:12px;
 }
 
 .about-box p{
+
     color:#665b60;
+
     font-size:18px;
 }
 
 
 /* =====================================================
-   الصور الرئيسية
+   الصور العامة
 ===================================================== */
 
 .gallery{
@@ -264,12 +313,16 @@ section{
 }
 
 .gallery-container{
+
     max-width:1100px;
+
     margin:auto;
 }
 
 .gallery-scroll{
+
     display:flex;
+
     gap:15px;
 
     overflow-x:auto;
@@ -286,15 +339,20 @@ section{
 }
 
 .gallery-scroll::-webkit-scrollbar-thumb{
+
     background:#a9657d;
+
     border-radius:20px;
 }
 
 .gallery-item{
+
     flex:0 0 320px;
+
     height:220px;
 
     border-radius:18px;
+
     overflow:hidden;
 
     border:2px solid #704052;
@@ -303,11 +361,14 @@ section{
 
     background:#222;
 
-    box-shadow:0 8px 25px rgba(0,0,0,.35);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
 }
 
 .gallery-item img{
+
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -317,7 +378,7 @@ section{
 
 
 /* =====================================================
-   المميزات
+   المميزات الجديدة
 ===================================================== */
 
 .features{
@@ -325,7 +386,9 @@ section{
 }
 
 .features-grid{
-    max-width:1050px;
+
+    max-width:1100px;
+
     margin:auto;
 
     display:grid;
@@ -337,64 +400,97 @@ section{
 }
 
 .feature{
+
     background:#fff;
 
-    border:2px solid #dfcbd2;
+    border:2px solid #ead4da;
 
-    border-radius:22px;
+    border-radius:24px;
 
-    padding:25px 15px;
+    padding:28px 18px;
 
     text-align:center;
 
     min-height:210px;
 
     display:flex;
+
     flex-direction:column;
 
     align-items:center;
+
     justify-content:center;
 
-    box-shadow:0 7px 20px rgba(0,0,0,.06);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.06);
 
     transition:.2s;
 }
 
 .feature:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.12);
 }
 
 .feature-icon{
-    font-size:45px;
-    margin-bottom:10px;
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:50%;
+
+    background:#f7f1e7;
+
+    border:2px solid #d5a63d;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:43px;
+
+    margin-bottom:15px;
 }
 
 .feature h3{
-    font-size:21px;
-    color:#704052;
+
+    font-size:22px;
+
+    color:#7d1720;
+
     margin-bottom:7px;
 }
 
 .feature p{
-    color:#777;
-    font-size:14px;
+
+    color:#9b8980;
+
+    font-size:15px;
 }
 
 
 /* =====================================================
-   شروط المزرعة
+   الشروط
 ===================================================== */
 
 .rules-section{
+
     background:#fff;
 }
 
 .rules-button{
+
     display:block;
 
     width:100%;
-    max-width:900px;
+
+    max-width:750px;
 
     margin:auto;
 
@@ -406,20 +502,24 @@ section{
 
     border-radius:16px;
 
-    padding:20px 22px;
+    padding:18px 22px;
 
-    font-size:22px;
+    font-size:20px;
+
     font-weight:bold;
 
     cursor:pointer;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.12);
 
     transition:.2s;
 }
 
 .rules-button:hover{
+
     background:#704052;
+
     transform:translateY(-2px);
 }
 
@@ -429,7 +529,9 @@ section{
 ===================================================== */
 
 .rules-modal{
+
     position:fixed;
+
     inset:0;
 
     background:rgba(0,0,0,.75);
@@ -439,17 +541,21 @@ section{
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     padding:15px;
 }
 
 .rules-modal.show{
+
     display:flex;
 }
 
 .rules-box{
+
     width:100%;
+
     max-width:700px;
 
     max-height:90vh;
@@ -464,30 +570,39 @@ section{
 }
 
 .rules-box h2{
+
     text-align:center;
+
     color:#5b3545;
+
     margin-bottom:20px;
 }
 
 .rules-box h3{
+
     color:#a35f77;
 
     margin-top:18px;
+
     margin-bottom:8px;
 
     font-size:22px;
 }
 
 .rules-box ul{
+
     padding-right:25px;
 }
 
 .rules-box li{
+
     margin-bottom:10px;
+
     color:#555;
 }
 
 .rules-close{
+
     width:100%;
 
     background:#211b20;
@@ -509,69 +624,55 @@ section{
 
 
 /* =====================================================
-   احجز الآن
+   جاهز للحجز
 ===================================================== */
 
-.booking-start{
+.ready{
+
     background:#171318;
-
-    text-align:center;
-
-    padding:45px 20px;
-
-    border-top:1px solid #704052;
-    border-bottom:1px solid #704052;
-}
-
-.booking-start-button{
-    display:block;
-
-    width:100%;
-    max-width:900px;
-
-    margin:auto;
-
-    background:#b86f88;
 
     color:white;
 
-    border:none;
+    text-align:center;
 
-    border-radius:16px;
+    border-top:1px solid #704052;
 
-    padding:22px;
-
-    font-size:28px;
-
-    font-weight:bold;
-
-    text-decoration:none;
-
-    cursor:pointer;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.35);
-
-    transition:.2s;
+    border-bottom:1px solid #704052;
 }
 
-.booking-start-button:hover{
-    background:#ca8199;
-    transform:translateY(-2px);
+.ready h2{
+
+    font-size:40px;
+
+    margin-bottom:8px;
+
+    color:#e2a4b7;
+}
+
+.ready p{
+
+    font-size:19px;
+
+    margin-bottom:22px;
 }
 
 
 /* =====================================================
-   اختيار المزرعة
+   قسم اختيار المزرعة
 ===================================================== */
 
 .farms-section{
+
     background:#f4eeee;
 
-    padding-top:55px;
+    padding-top:65px;
+
+    padding-bottom:65px;
 }
 
 .farms-grid{
-    max-width:1000px;
+
+    max-width:900px;
 
     margin:auto;
 
@@ -580,122 +681,136 @@ section{
     grid-template-columns:
         1fr 1fr;
 
-    gap:25px;
+    gap:22px;
 }
 
-
-/*
-   بسبب RTL:
-   أول بطاقة تظهر باليمين
-   والثانية باليسار
-*/
-
 .farm-card{
-    min-height:220px;
 
     background:#fff;
 
     border:2px solid #dfcbd2;
 
-    border-radius:25px;
+    border-radius:24px;
 
     padding:35px 20px;
 
     text-align:center;
 
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.08);
-
     transition:.25s;
 
-    display:flex;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.07);
 
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
+    cursor:pointer;
 }
 
 .farm-card:hover{
+
     transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.13);
+
+    border-color:#a9657d;
+}
+
+.farm-card.active{
 
     border-color:#a9657d;
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,.15);
+        0 0 0 4px rgba(169,101,125,.12);
 }
 
-.farm-card.active{
-    background:#211b20;
+.farm-icon{
 
-    border-color:#b86f88;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.25);
-}
-
-.farm-card h3{
-    color:#704052;
-
-    font-size:30px;
+    font-size:55px;
 
     margin-bottom:10px;
 }
 
+.farm-card h3{
+
+    color:#704052;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
 .farm-card p{
+
     color:#777;
 
-    font-size:16px;
+    margin-bottom:20px;
 }
 
-.farm-card.active h3{
-    color:#e4a9bb;
+.farm-button{
+
+    background:#a9657d;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px 30px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    width:100%;
 }
 
-.farm-card.active p{
-    color:#ddd;
+.farm-button:hover{
+
+    background:#bc7890;
 }
 
 
 /* =====================================================
-   منطقة المزرعة المختارة
+   تفاصيل المزرعة
+   مخفية بالبداية
 ===================================================== */
 
-.farm-booking-area{
+.farm-details{
+
     display:none;
 
     background:#171318;
 
-    padding:65px 5%;
-
-    border-top:1px solid #704052;
+    padding:55px 5%;
 }
 
-.farm-booking-area.show{
+.farm-details.show{
+
     display:block;
 }
 
 .selected-farm-title{
+
     text-align:center;
 
     color:#e2a4b7;
 
-    font-size:38px;
+    font-size:36px;
 
     margin-bottom:10px;
 }
 
 .selected-farm-subtitle{
+
     text-align:center;
 
     color:#eadde2;
 
-    margin-bottom:30px;
-
     font-size:17px;
+
+    margin-bottom:35px;
 }
 
 
@@ -704,19 +819,21 @@ section{
 ===================================================== */
 
 .farm-gallery{
+
     max-width:1050px;
 
-    margin:0 auto 45px;
+    margin:0 auto 40px;
 
     display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:15px;
+    gap:12px;
 }
 
 .farm-gallery-item{
+
     height:190px;
 
     border-radius:18px;
@@ -728,22 +845,25 @@ section{
     background:#222;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,.35);
+        0 8px 20px rgba(0,0,0,.35);
 }
 
 .farm-gallery-item img{
+
     width:100%;
+
     height:100%;
 
     object-fit:cover;
 
     display:block;
 
-    transition:.3s;
+    transition:.25s;
 }
 
 .farm-gallery-item:hover img{
-    transform:scale(1.05);
+
+    transform:scale(1.04);
 }
 
 
@@ -751,8 +871,93 @@ section{
    الحجز
 ===================================================== */
 
+.booking-area{
+
+    max-width:950px;
+
+    margin:auto;
+}
+
+.booking-title{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:32px;
+
+    margin-bottom:8px;
+}
+
+.booking-subtitle{
+
+    text-align:center;
+
+    color:#eadde2;
+
+    font-size:16px;
+
+    margin-bottom:22px;
+}
+
+.current-farm-title{
+
+    text-align:center;
+
+    color:#dfa0b5;
+
+    font-size:29px;
+
+    margin-bottom:18px;
+}
+
+
+/* =====================================================
+   رسائل الحالة
+===================================================== */
+
+.status-message{
+
+    text-align:center;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:12px;
+
+    display:none;
+
+    font-weight:bold;
+}
+
+.status-message.show{
+
+    display:block;
+}
+
+.status-message.error{
+
+    background:#f8d7da;
+
+    color:#842029;
+}
+
+.status-message.success{
+
+    background:#d1e7dd;
+
+    color:#0f5132;
+}
+
+
+/* =====================================================
+   صندوق التقويم
+===================================================== */
+
 .booking-container{
-    max-width:900px;
+
+    max-width:950px;
 
     margin:auto;
 
@@ -772,6 +977,7 @@ section{
 ===================================================== */
 
 .month-header{
+
     display:flex;
 
     align-items:center;
@@ -782,13 +988,16 @@ section{
 }
 
 .month-header h3{
+
     color:#704052;
 
     font-size:25px;
 }
 
 .month-button{
+
     width:42px;
+
     height:42px;
 
     border:none;
@@ -805,10 +1014,12 @@ section{
 }
 
 .month-button:hover{
+
     background:#bc7890;
 }
 
 .month-button:disabled{
+
     background:#d8d3d5;
 
     color:#888;
@@ -822,6 +1033,7 @@ section{
 ===================================================== */
 
 .week-days{
+
     display:grid;
 
     grid-template-columns:
@@ -833,6 +1045,7 @@ section{
 }
 
 .week-days div{
+
     text-align:center;
 
     color:#9b5d74;
@@ -850,6 +1063,7 @@ section{
 ===================================================== */
 
 .calendar-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -859,6 +1073,7 @@ section{
 }
 
 .day-box{
+
     background:white;
 
     border:2px solid #dfcbd2;
@@ -871,12 +1086,14 @@ section{
 }
 
 .empty-day{
+
     background:transparent;
 
     border:none;
 }
 
 .day-number{
+
     text-align:center;
 
     color:#704052;
@@ -894,6 +1111,7 @@ section{
 ===================================================== */
 
 .day-box.past-day{
+
     background:#e5e1e3;
 
     border-color:#cbc5c8;
@@ -902,10 +1120,12 @@ section{
 }
 
 .day-box.past-day .day-number{
+
     color:#888;
 }
 
 .locked-box{
+
     text-align:center;
 
     color:#999;
@@ -921,6 +1141,7 @@ section{
 ===================================================== */
 
 .day-box.today{
+
     border-color:#a9657d;
 
     box-shadow:
@@ -929,6 +1150,7 @@ section{
 }
 
 .today-label{
+
     text-align:center;
 
     color:#a35f77;
@@ -944,10 +1166,11 @@ section{
 
 
 /* =====================================================
-   الشفتات
+   الشفت
 ===================================================== */
 
 .shift-button{
+
     width:100%;
 
     border:2px solid #238b55;
@@ -972,12 +1195,14 @@ section{
 }
 
 .shift-button:hover{
+
     background:#c9eed6;
 
     transform:scale(1.02);
 }
 
 .shift-button.booked{
+
     background:#dc3545;
 
     border-color:#b51f2f;
@@ -988,56 +1213,22 @@ section{
 }
 
 .shift-button.booked:hover{
+
     background:#dc3545;
 
     transform:none;
 }
 
 .shift-icon{
+
     display:block;
 
     font-size:18px;
 }
 
 .shift-button small{
+
     font-size:9px;
-}
-
-
-/* =====================================================
-   رسالة الحالة
-===================================================== */
-
-.status-message{
-    max-width:900px;
-
-    margin:0 auto 15px;
-
-    text-align:center;
-
-    padding:12px;
-
-    border-radius:10px;
-
-    display:none;
-
-    font-weight:bold;
-}
-
-.status-message.show{
-    display:block;
-}
-
-.status-message.error{
-    background:#f8d7da;
-
-    color:#842029;
-}
-
-.status-message.success{
-    background:#d1e7dd;
-
-    color:#0f5132;
 }
 
 
@@ -1046,6 +1237,7 @@ section{
 ===================================================== */
 
 .modal{
+
     position:fixed;
 
     inset:0;
@@ -1064,10 +1256,12 @@ section{
 }
 
 .modal.show{
+
     display:flex;
 }
 
 .modal-box{
+
     width:100%;
 
     max-width:450px;
@@ -1083,6 +1277,7 @@ section{
 }
 
 .modal-box h2{
+
     text-align:center;
 
     color:#704052;
@@ -1091,6 +1286,7 @@ section{
 }
 
 .selected-info{
+
     background:#f5e9ed;
 
     border-radius:12px;
@@ -1107,10 +1303,12 @@ section{
 }
 
 .form-group{
+
     margin-bottom:13px;
 }
 
 .form-group label{
+
     display:block;
 
     color:#5b3545;
@@ -1121,6 +1319,7 @@ section{
 }
 
 .form-group input{
+
     width:100%;
 
     padding:12px;
@@ -1135,10 +1334,12 @@ section{
 }
 
 .form-group input:focus{
+
     border-color:#a9657d;
 }
 
 .send-button{
+
     width:100%;
 
     background:#a9657d;
@@ -1159,16 +1360,19 @@ section{
 }
 
 .send-button:hover{
+
     background:#bc7890;
 }
 
 .send-button:disabled{
+
     opacity:.6;
 
     cursor:not-allowed;
 }
 
 .close-button{
+
     width:100%;
 
     background:white;
@@ -1194,6 +1398,7 @@ section{
 ===================================================== */
 
 footer{
+
     background:#0d0b0e;
 
     color:white;
@@ -1204,12 +1409,14 @@ footer{
 }
 
 footer h3{
+
     color:#d99caf;
 
     margin-bottom:5px;
 }
 
 footer p{
+
     color:#d8cdd1;
 }
 
@@ -1218,134 +1425,164 @@ footer p{
    الموبايل
 ===================================================== */
 
+@media(max-width:900px){
+
+    .features-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .farm-gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
 @media(max-width:800px){
 
     header{
+
         height:70px;
 
         padding:7px 15px;
     }
 
     .logo{
+
         width:50px;
         height:50px;
     }
 
     .brand h1{
+
         font-size:18px;
     }
 
     .brand p{
+
         font-size:8px;
     }
 
     .menu{
+
         display:none;
     }
 
     .hero{
+
         min-height:580px;
 
         background-position:center;
     }
 
     .hero-logo{
+
         width:125px;
         height:125px;
     }
 
     .hero h2{
+
         font-size:38px;
     }
 
     .hero .english{
+
         font-size:17px;
 
         letter-spacing:4px;
     }
 
     .hero p{
+
         font-size:17px;
     }
 
     section{
+
         padding:55px 15px;
     }
 
     .section-title h2{
+
         font-size:30px;
     }
 
-    .features-grid{
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:12px;
-    }
-
     .feature{
-        min-height:180px;
 
-        padding:18px 8px;
+        min-height:190px;
 
-        border-radius:18px;
+        padding:20px 8px;
+
+        border-radius:20px;
     }
 
     .feature-icon{
-        font-size:38px;
+
+        width:70px;
+        height:70px;
+
+        font-size:36px;
     }
 
     .feature h3{
+
         font-size:18px;
     }
 
     .feature p{
+
         font-size:12px;
     }
 
-    .booking-start-button{
-        font-size:23px;
+    .ready h2{
 
-        padding:18px;
+        font-size:32px;
     }
 
     .farms-grid{
-        grid-template-columns:
-            1fr 1fr;
 
-        gap:10px;
+        grid-template-columns:1fr;
     }
 
     .farm-card{
-        min-height:170px;
 
-        padding:20px 8px;
-    }
-
-    .farm-card h3{
-        font-size:22px;
-    }
-
-    .farm-card p{
-        font-size:12px;
+        padding:30px 18px;
     }
 
     .selected-farm-title{
+
         font-size:29px;
     }
 
     .farm-gallery{
+
         grid-template-columns:
             1fr 1fr;
 
-        gap:10px;
+        gap:8px;
     }
 
     .farm-gallery-item{
+
         height:150px;
     }
 
+    .booking-title{
+
+        font-size:27px;
+    }
+
+    .booking-subtitle{
+
+        font-size:14px;
+    }
+
     .booking-container{
+
         padding:10px;
 
         overflow-x:auto;
@@ -1353,18 +1590,22 @@ footer p{
 
     .week-days,
     .calendar-grid{
+
         min-width:600px;
     }
 
     .day-box{
+
         min-height:125px;
     }
 
     .month-header h3{
+
         font-size:21px;
     }
 
     .gallery-item{
+
         flex-basis:280px;
 
         height:200px;
@@ -1375,36 +1616,61 @@ footer p{
 @media(max-width:500px){
 
     .hero{
+
         background-position:center center;
     }
 
     .hero-content{
+
         width:100%;
     }
 
     .hero h2{
+
         font-size:34px;
     }
 
     .hero p{
+
         font-size:16px;
     }
 
-    .farms-grid{
+    .features-grid{
+
         grid-template-columns:
             1fr 1fr;
+
+        gap:10px;
     }
 
-    .farm-card h3{
-        font-size:20px;
+    .feature{
+
+        min-height:175px;
     }
 
-    .farm-card p{
-        display:none;
+    .feature-icon{
+
+        width:62px;
+        height:62px;
+
+        font-size:31px;
+
+        margin-bottom:9px;
+    }
+
+    .feature h3{
+
+        font-size:16px;
+    }
+
+    .feature p{
+
+        font-size:11px;
     }
 
     .farm-gallery-item{
-        height:130px;
+
+        height:125px;
     }
 }
 
@@ -1422,41 +1688,50 @@ footer p{
 
 <header>
 
-    <div class="logo-area">
+<div class="logo-area">
 
-        <img
-            src="Logo-farms.PNG"
-            alt="مزارع الغيث"
-            class="logo"
-        >
+<img
+src="Logo-farms.PNG"
+alt="مزارع الغيث"
+class="logo"
+>
 
-        <div class="brand">
+<div class="brand">
 
-            <h1>مزارع الغيث</h1>
+<h1>مزارع الغيث</h1>
 
-            <p>ALGAITH FARMS</p>
+<p>ALGAITH FARMS</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 
-    <nav class="menu">
+<nav class="menu">
 
-        <a href="#home">الرئيسية</a>
+<a href="#home">
+الرئيسية
+</a>
 
-        <a href="#about">عن المزرعة</a>
+<a href="#about">
+عن المزرعة
+</a>
 
-        <a href="#gallery">الصور</a>
+<a href="#gallery">
+الصور
+</a>
 
-        <a href="#features">المميزات</a>
+<a href="#features">
+المميزات
+</a>
 
-        <a href="#booking-start">الحجز</a>
+<a href="#booking">
+الحجز
+</a>
 
-    </nav>
+</nav>
 
 </header>
-
 
 
 <!-- =====================================================
@@ -1464,42 +1739,41 @@ footer p{
 ===================================================== -->
 
 <section
-    id="home"
-    class="hero"
+id="home"
+class="hero"
 >
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <img
-            src="Logo-farms.PNG"
-            alt="شعار مزارع الغيث"
-            class="hero-logo"
-        >
+<img
+src="Logo-farms.PNG"
+alt="شعار مزارع الغيث"
+class="hero-logo"
+>
 
-        <h2>
-            مزارع الغيث
-        </h2>
+<h2>
+مزارع الغيث
+</h2>
 
-        <div class="english">
-            ALGAITH FARMS
-        </div>
+<div class="english">
+ALGAITH FARMS
+</div>
 
-        <p>
-            مكانك المثالي للراحة والاستجمام
-            وقضاء أجمل الأوقات وسط الطبيعة والهدوء.
-        </p>
+<p>
+مكانك المثالي للراحة والاستجمام
+وقضاء أجمل الأوقات وسط الطبيعة والهدوء.
+</p>
 
-        <a
-            href="#booking-start"
-            class="main-button"
-        >
-            احجز الآن
-        </a>
+<a
+href="#booking"
+class="main-button"
+>
+احجز الآن
+</a>
 
-    </div>
+</div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1507,365 +1781,427 @@ footer p{
 ===================================================== -->
 
 <section
-    id="about"
-    class="about"
+id="about"
+class="about"
 >
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            عن مزارع الغيث
-        </h2>
+<h2>
+عن مزارع الغيث
+</h2>
 
-        <p>
-            خصوصية • راحة • طبيعة
-        </p>
+<p>
+خصوصية • راحة • طبيعة
+</p>
 
-    </div>
+</div>
 
 
-    <div class="about-box">
+<div class="about-box">
 
-        <h3>
-            أجواء هادئة 🌿
-        </h3>
+<h3>
+أجواء هادئة 🌿
+</h3>
 
-        <p>
-            مساحة خاصة لقضاء يوم جميل بعيداً
-            عن الزحام، والاستمتاع بالطبيعة
-            والهدوء والأجواء العائلية.
-        </p>
+<p>
+مساحة خاصة لقضاء يوم جميل بعيداً
+عن الزحام، والاستمتاع بالطبيعة
+والهدوء والأجواء العائلية.
+</p>
 
-        <br>
+<br>
 
-        <h3>
-            وقتكم على راحتكم 🏡
-        </h3>
+<h3>
+وقتكم على راحتكم 🏡
+</h3>
 
-        <p>
-            اختاروا المزرعة واليوم والفترة المناسبة لكم
-            واحجزوا بسهولة من خلال الموقع.
-        </p>
+<p>
+اختاروا المزرعة واليوم والفترة المناسبة لكم
+واحجزوا بسهولة من خلال الموقع.
+</p>
 
-    </div>
+</div>
 
 </section>
-
 
 
 <!-- =====================================================
-     الصور
+     الصور العامة
 ===================================================== -->
 
 <section
-    id="gallery"
-    class="gallery"
+id="gallery"
+class="gallery"
 >
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            صور المزرعة
-        </h2>
+<h2>
+صور المزرعة
+</h2>
 
-        <p>
-            تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار
-        </p>
+<p>
+تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار
+</p>
 
-    </div>
+</div>
 
 
-    <div class="gallery-container">
+<div class="gallery-container">
 
-        <div class="gallery-scroll">
+<div class="gallery-scroll">
 
-            <div class="gallery-item">
-                <img
-                    src="Farms.1.PNG"
-                    alt="مزارع الغيث"
-                >
-            </div>
 
-            <div class="gallery-item">
-                <img
-                    src="farm1-1.jpg"
-                    alt="المزرعة الأولى"
-                >
-            </div>
+<div class="gallery-item">
 
-            <div class="gallery-item">
-                <img
-                    src="farm1-2.jpg"
-                    alt="المزرعة الأولى"
-                >
-            </div>
+<img
+src="Farms.1.PNG"
+alt="مزارع الغيث"
+>
 
-            <div class="gallery-item">
-                <img
-                    src="farm1-3.jpg"
-                    alt="المزرعة الأولى"
-                >
-            </div>
+</div>
 
-            <div class="gallery-item">
-                <img
-                    src="farm1-4.jpg"
-                    alt="المزرعة الأولى"
-                >
-            </div>
 
-            <div class="gallery-item">
-                <img
-                    src="farm2-1.jpg"
-                    alt="المزرعة الثانية"
-                >
-            </div>
+<div class="gallery-item">
 
-            <div class="gallery-item">
-                <img
-                    src="farm2-2.jpg"
-                    alt="المزرعة الثانية"
-                >
-            </div>
+<img
+src="farm1-1.jpg"
+alt="المزرعة الأولى"
+>
 
-            <div class="gallery-item">
-                <img
-                    src="farm2-3.jpg"
-                    alt="المزرعة الثانية"
-                >
-            </div>
+</div>
 
-            <div class="gallery-item">
-                <img
-                    src="farm2-4.jpg"
-                    alt="المزرعة الثانية"
-                >
-            </div>
 
-        </div>
+<div class="gallery-item">
 
-    </div>
+<img
+src="farm1-2.jpg"
+alt="المزرعة الأولى"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="farm1-3.jpg"
+alt="المزرعة الأولى"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="farm1-4.jpg"
+alt="المزرعة الأولى"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="farm2-1.jpg"
+alt="المزرعة الثانية"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="farm2-2.jpg"
+alt="المزرعة الثانية"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="farm2-3.jpg"
+alt="المزرعة الثانية"
+>
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="farm2-4.jpg"
+alt="المزرعة الثانية"
+>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
-
 
 
 <!-- =====================================================
-     المميزات
+     المميزات الجديدة
 ===================================================== -->
 
 <section
-    id="features"
-    class="features"
+id="features"
+class="features"
 >
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            مميزات المزرعة
-        </h2>
+<h2>
+مميزات المزرعة
+</h2>
 
-        <p>
-            كل ما تحتاجه لقضاء وقت ممتع
-        </p>
+<p>
+كل ما تحتاجه لقضاء وقت ممتع
+</p>
 
-    </div>
-
-
-    <div class="features-grid">
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🏡
-            </div>
-
-            <h3>
-                استراحة
-            </h3>
-
-            <p>
-                مكان مريح ومناسب لقضاء أجمل الأوقات.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="feature">
-
-            <div class="feature-icon">
-                🌿
-            </div>
-
-            <h3>
-                مساحات خضراء
-            </h3>
-
-            <p>
-                طبيعة وأجواء هادئة ومريحة.
-            </p>
-
-        </div>
+<div class="features-grid">
 
 
-        <div class="feature">
+<!-- 1 -->
 
-            <div class="feature-icon">
-                🥕
-            </div>
+<div class="feature">
 
-            <h3>
-                خضار ومزرعة
-            </h3>
+<div class="feature-icon">
+🏊
+</div>
 
-            <p>
-                أجواء ريفية وطبيعة جميلة.
-            </p>
+<h3>
+مسبح
+</h3>
 
-        </div>
+<p>
+مسبح خاص للاستمتاع والراحة.
+</p>
 
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🏊
-            </div>
-
-            <h3>
-                مسبح نصيفة
-            </h3>
-
-            <p>
-                مساحة للسباحة والاستمتاع.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="feature">
+<!-- 2 -->
 
-            <div class="feature-icon">
-                🎾
-            </div>
+<div class="feature">
 
-            <h3>
-                ملعب تنس
-            </h3>
+<div class="feature-icon">
+🛝
+</div>
 
-            <p>
-                مساحة مخصصة لمحبي لعبة التنس.
-            </p>
+<h3>
+ألعاب أطفال
+</h3>
 
-        </div>
+<p>
+مجموعة ألعاب وترفيه للأطفال.
+</p>
 
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🏀
-            </div>
-
-            <h3>
-                ملعب كرة سلة
-            </h3>
-
-            <p>
-                ملعب مناسب للاستمتاع باللعبة.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="feature">
+<!-- 3 -->
 
-            <div class="feature-icon">
-                🏐
-            </div>
+<div class="feature">
 
-            <h3>
-                ملعب كرة طائرة
-            </h3>
+<div class="feature-icon">
+🛋️
+</div>
 
-            <p>
-                أجواء رياضية ممتعة للعائلة والأصدقاء.
-            </p>
+<h3>
+صالة ضيوف
+</h3>
 
-        </div>
+<p>
+صالة واسعة ومريحة بديكور مميز.
+</p>
+
+</div>
 
 
-        <div class="feature">
+<!-- 4 -->
 
-            <div class="feature-icon">
-                🏛️
-            </div>
+<div class="feature">
 
-            <h3>
-                متحف سوفيتي
-            </h3>
+<div class="feature-icon">
+🏓
+</div>
 
-            <p>
-                مساحة مميزة لمحبي التاريخ والأجواء القديمة.
-            </p>
+<h3>
+صالة ألعاب
+</h3>
 
-        </div>
+<p>
+تنس طاولة وبيبي فوت لأجواء ممتعة.
+</p>
 
-    </div>
+</div>
+
+
+<!-- 5 -->
+
+<div class="feature">
+
+<div class="feature-icon">
+📺
+</div>
+
+<h3>
+تلفزيون كبير
+</h3>
+
+<p>
+مع طاولة لورق والدومنة.
+</p>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="feature">
+
+<div class="feature-icon">
+🍳
+</div>
+
+<h3>
+مطبخ مجهز بالكامل
+</h3>
+
+<p>
+طبخ وفرن وثلاجة وجميع الاحتياجات.
+</p>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="feature">
+
+<div class="feature-icon">
+🛏️
+</div>
+
+<h3>
+غرفة نوم كبار
+</h3>
+
+<p>
+غرفة مؤثثة بالكامل للراحة.
+</p>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="feature">
+
+<div class="feature-icon">
+❄️
+</div>
+
+<h3>
+محطة متكاملة للشتاء
+</h3>
+
+<p>
+أجواء وتجهيزات مناسبة لفصل الشتاء.
+</p>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="feature">
+
+<div class="feature-icon">
+🌐
+</div>
+
+<h3>
+إنترنت 24 ساعة
+</h3>
+
+<p>
+إنترنت متوفر طوال اليوم.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
-
 
 
 <!-- =====================================================
-     شروط المزرعة
+     الشروط
 ===================================================== -->
 
-<section
-    id="rules"
-    class="rules-section"
+<section class="rules-section">
+
+<div class="section-title">
+
+<h2>
+شروط الحجز والاستخدام
+</h2>
+
+<p>
+يرجى الاطلاع على الشروط قبل تأكيد الحجز
+</p>
+
+</div>
+
+
+<button
+class="rules-button"
+onclick="openRules()"
 >
-
-    <div class="section-title">
-
-        <h2>
-            شروط المزرعة
-        </h2>
-
-        <p>
-            يرجى الاطلاع على الشروط قبل الحجز
-        </p>
-
-    </div>
-
-
-    <button
-        class="rules-button"
-        onclick="openRules()"
-    >
-        شروط المزرعة
-    </button>
+عرض شروط الحجز والاستخدام
+</button>
 
 </section>
-
 
 
 <!-- =====================================================
      احجز الآن
 ===================================================== -->
 
-<section
-    id="booking-start"
-    class="booking-start"
->
+<section class="ready">
 
-    <a
-        href="#farms"
-        class="booking-start-button"
-    >
-        احجز الآن
-    </a>
+<h2>
+جاهز للحجز؟
+</h2>
+
+<p>
+اختر المزرعة المناسبة لك للانتقال إلى الصور والحجوزات
+</p>
+
+<a
+href="#booking"
+class="main-button"
+>
+احجز الآن
+</a>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1873,166 +2209,207 @@ footer p{
 ===================================================== -->
 
 <section
-    id="farms"
-    class="farms-section"
+id="booking"
+class="farms-section"
 >
 
-    <div class="section-title">
+<div class="section-title">
 
-        <h2>
-            اختر المزرعة
-        </h2>
+<h2>
+اختر المزرعة
+</h2>
 
-        <p>
-            اختر المزرعة التي ترغب بالحجز فيها
-        </p>
+<p>
+اختر المزرعة التي ترغب بالحجز فيها
+</p>
 
-    </div>
-
-
-    <div class="farms-grid">
-
-        <!-- المزرعة الأولى - باليمين بسبب RTL -->
-
-        <div
-            id="farmCard1"
-            class="farm-card"
-            onclick="selectFarm('المزرعة الأولى')"
-        >
-
-            <h3>
-                المزرعة الأولى
-            </h3>
-
-            <p>
-                اضغط لعرض الصور وجدول الحجوزات
-            </p>
-
-        </div>
+</div>
 
 
-        <!-- المزرعة الثانية - باليسار -->
+<div class="farms-grid">
 
-        <div
-            id="farmCard2"
-            class="farm-card"
-            onclick="selectFarm('المزرعة الثانية')"
-        >
 
-            <h3>
-                المزرعة الثانية
-            </h3>
+<!-- المزرعة الأولى -->
 
-            <p>
-                اضغط لعرض الصور وجدول الحجوزات
-            </p>
+<div
+id="farmCard1"
+class="farm-card"
+onclick="selectFarm('المزرعة الأولى')"
+>
 
-        </div>
+<div class="farm-icon">
+🏡
+</div>
 
-    </div>
+<h3>
+المزرعة الأولى
+</h3>
+
+<p>
+شاهد صور المزرعة واختر اليوم والشفت المناسب لك.
+</p>
+
+<button
+class="farm-button"
+onclick="event.stopPropagation(); selectFarm('المزرعة الأولى')"
+>
+اختيار المزرعة الأولى
+</button>
+
+</div>
+
+
+<!-- المزرعة الثانية -->
+
+<div
+id="farmCard2"
+class="farm-card"
+onclick="selectFarm('المزرعة الثانية')"
+>
+
+<div class="farm-icon">
+🌿
+</div>
+
+<h3>
+المزرعة الثانية
+</h3>
+
+<p>
+شاهد صور المزرعة واختر اليوم والشفت المناسب لك.
+</p>
+
+<button
+class="farm-button"
+onclick="event.stopPropagation(); selectFarm('المزرعة الثانية')"
+>
+اختيار المزرعة الثانية
+</button>
+
+</div>
+
+
+</div>
 
 </section>
-
 
 
 <!-- =====================================================
-     منطقة المزرعة المختارة
-     
-     مخفية بالبداية بالكامل
+     تفاصيل المزرعة
+     مخفية إلى أن يختار المستخدم مزرعة
 ===================================================== -->
 
 <section
-    id="farmBookingArea"
-    class="farm-booking-area"
+id="farmDetails"
+class="farm-details"
 >
 
-    <h2
-        id="selectedFarmTitle"
-        class="selected-farm-title"
-    >
-        المزرعة الأولى
-    </h2>
+<h2
+id="selectedFarmTitle"
+class="selected-farm-title"
+>
+المزرعة الأولى
+</h2>
+
+<p class="selected-farm-subtitle">
+صور المزرعة والحجوزات المتاحة
+</p>
 
 
-    <p class="selected-farm-subtitle">
-        صور المزرعة وجدول الحجز
-    </p>
+<!-- =====================================================
+     صور المزرعة المختارة
+===================================================== -->
+
+<div
+id="farmGallery"
+class="farm-gallery"
+>
+</div>
 
 
-    <!-- =================================================
-         صور المزرعة المختارة
-    ================================================= -->
+<!-- =====================================================
+     منطقة الحجز
+===================================================== -->
 
-    <div
-        id="farmGallery"
-        class="farm-gallery"
-    ></div>
+<div class="booking-area">
 
+<h2 class="booking-title">
+اختر اليوم والشفت المناسب لك
+</h2>
 
-    <!-- =================================================
-         رسالة الحالة
-    ================================================= -->
+<p class="booking-subtitle">
+🟢 متاح &nbsp;&nbsp;&nbsp; 🔴 محجوز
+</p>
 
-    <div
-        id="statusMessage"
-        class="status-message"
-    ></div>
-
-
-    <!-- =================================================
-         جدول الحجز
-    ================================================= -->
-
-    <div class="booking-container">
-
-        <div class="month-header">
-
-            <button
-                id="prevMonth"
-                class="month-button"
-                onclick="changeMonth(-1)"
-            >
-                ❮
-            </button>
+<div
+id="currentFarmTitle"
+class="current-farm-title"
+>
+المزرعة الأولى
+</div>
 
 
-            <h3 id="monthTitle">
-                الشهر
-            </h3>
+<div
+id="statusMessage"
+class="status-message"
+>
+</div>
 
 
-            <button
-                class="month-button"
-                onclick="changeMonth(1)"
-            >
-                ❯
-            </button>
-
-        </div>
+<div class="booking-container">
 
 
-        <div class="week-days">
+<div class="month-header">
 
-            <div>الأحد</div>
-            <div>الإثنين</div>
-            <div>الثلاثاء</div>
-            <div>الأربعاء</div>
-            <div>الخميس</div>
-            <div>الجمعة</div>
-            <div>السبت</div>
-
-        </div>
+<button
+id="prevMonth"
+class="month-button"
+onclick="changeMonth(-1)"
+>
+❮
+</button>
 
 
-        <div
-            id="calendar"
-            class="calendar-grid"
-        ></div>
+<h3 id="monthTitle">
+الشهر
+</h3>
 
-    </div>
+
+<button
+class="month-button"
+onclick="changeMonth(1)"
+>
+❯
+</button>
+
+</div>
+
+
+<div class="week-days">
+
+<div>الأحد</div>
+<div>الإثنين</div>
+<div>الثلاثاء</div>
+<div>الأربعاء</div>
+<div>الخميس</div>
+<div>الجمعة</div>
+<div>السبت</div>
+
+</div>
+
+
+<div
+id="calendar"
+class="calendar-grid"
+>
+</div>
+
+
+</div>
+
+</div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -2040,106 +2417,89 @@ footer p{
 ===================================================== -->
 
 <div
-    id="rulesModal"
-    class="rules-modal"
+id="rulesModal"
+class="rules-modal"
 >
 
-    <div class="rules-box">
+<div class="rules-box">
 
-        <h2>
-            شروط الحجز والاستخدام
-        </h2>
-
-
-        <h3>
-            شروط الحجز
-        </h3>
-
-        <ul>
-
-            <li>
-                لتثبيت الحجز يُدفع عربون قدره
-                100,000 دينار للأيام الاعتيادية،
-                و200,000 دينار ليومي الخميس والجمعة —
-                لا يمكن تثبيت أي حجز مسبق بدونه.
-            </li>
-
-            <li>
-                في حال عدم الالتزام بموعد الحجز
-                لا يُسترجع العربون.
-            </li>
-
-            <li>
-                طلب الإلغاء للظروف القاهرة يجب أن يكون
-                خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.
-            </li>
-
-            <li>
-                تُدفع تأمينات قدرها 100,000 دينار عند الدخول
-                وتُسترجع عند المغادرة بعد التأكد من عدم فقدان
-                أو تلف أي شيء داخل المنتجع.
-            </li>
-
-        </ul>
+<h2>
+شروط الحجز والاستخدام
+</h2>
 
 
-        <h3>
-            قوانين المنتجع
-        </h3>
+<h3>
+شروط الحجز
+</h3>
 
-        <ul>
+<ul>
 
-            <li>
-                الحجز للعوائل أو شباب فقط أو نساء فقط —
-                يمنع الاختلاط إلا بعقد زواج.
-            </li>
+<li>
+لتثبيت الحجز يُدفع عربون قدره 100,000 دينار للأيام الاعتيادية، و200,000 دينار ليومي الخميس والجمعة — لا يمكن تثبيت أي حجز مسبق بدونه.
+</li>
 
-            <li>
-                يمنع منعاً باتاً إدخال السلاح أو المشروبات
-                الكحولية أو الممنوعات، وبخلافه يتم تبليغ
-                الجهات المختصة.
-            </li>
+<li>
+في حال عدم الالتزام بموعد الحجز لا يُسترجع العربون.
+</li>
 
-            <li>
-                يمنع إطلاق العيارات النارية والألعاب النارية
-                داخل المنتجع.
-            </li>
+<li>
+طلب الإلغاء للظروف القاهرة يجب أن يكون خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.
+</li>
 
-            <li>
-                يمنع رمي الأوساخ في المسبح أو في الأماكن
-                غير المخصصة، وبخلافه يتحمل المستأجر
-                كافة المسؤولية.
-            </li>
+<li>
+تُدفع تأمينات قدرها 100,000 دينار عند الدخول وتُسترجع عند المغادرة بعد التأكد من عدم فقدان أو تلف أي شيء داخل المنتجع.
+</li>
 
-            <li>
-                الالتزام بأوقات بداية ونهاية الشفت —
-                التأخير في المغادرة تُحتسب عليه رسوم إضافية.
-            </li>
-
-            <li>
-                عدد الأشخاص يجب أن يطابق العدد المتفق عليه
-                عند الحجز.
-            </li>
-
-            <li>
-                السباحة على مسؤولية المستأجر،
-                مع ضرورة مراقبة الأطفال قرب المسبح.
-            </li>
-
-        </ul>
+</ul>
 
 
-        <button
-            class="rules-close"
-            onclick="closeRules()"
-        >
-            إغلاق
-        </button>
+<h3>
+قوانين المنتجع
+</h3>
 
-    </div>
+<ul>
+
+<li>
+الحجز للعوائل أو شباب فقط أو نساء فقط — يمنع الاختلاط إلا بعقد زواج.
+</li>
+
+<li>
+يمنع منعاً باتاً إدخال السلاح أو المشروبات الكحولية أو الممنوعات، وبخلافه يتم تبليغ الجهات المختصة.
+</li>
+
+<li>
+يمنع إطلاق العيارات النارية والألعاب النارية داخل المنتجع.
+</li>
+
+<li>
+يمنع رمي الأوساخ في المسبح أو في الأماكن غير المخصصة، وبخلافه يتحمل المستأجر كافة المسؤولية.
+</li>
+
+<li>
+الالتزام بأوقات بداية ونهاية الشفت — التأخير في المغادرة تُحتسب عليه رسوم إضافية.
+</li>
+
+<li>
+عدد الأشخاص يجب أن يطابق العدد المتفق عليه عند الحجز.
+</li>
+
+<li>
+السباحة على مسؤولية المستأجر، مع ضرورة مراقبة الأطفال قرب المسبح.
+</li>
+
+</ul>
+
+
+<button
+class="rules-close"
+onclick="closeRules()"
+>
+إغلاق
+</button>
 
 </div>
 
+</div>
 
 
 <!-- =====================================================
@@ -2147,73 +2507,73 @@ footer p{
 ===================================================== -->
 
 <div
-    id="bookingModal"
-    class="modal"
+id="bookingModal"
+class="modal"
 >
 
-    <div class="modal-box">
+<div class="modal-box">
 
-        <h2>
-            إكمال الحجز
-        </h2>
-
-
-        <div
-            id="selectedInfo"
-            class="selected-info"
-        ></div>
+<h2>
+إكمال الحجز
+</h2>
 
 
-        <div class="form-group">
-
-            <label>
-                الاسم
-            </label>
-
-            <input
-                id="customerName"
-                type="text"
-                placeholder="اكتب اسمك الكامل"
-            >
-
-        </div>
+<div
+id="selectedInfo"
+class="selected-info"
+>
+</div>
 
 
-        <div class="form-group">
+<div class="form-group">
 
-            <label>
-                رقم الهاتف
-            </label>
+<label>
+الاسم
+</label>
 
-            <input
-                id="customerPhone"
-                type="tel"
-                placeholder="07XXXXXXXXX"
-            >
-
-        </div>
-
-
-        <button
-            id="sendButton"
-            class="send-button"
-            onclick="sendBooking()"
-        >
-            تأكيد الحجز وإرسال عبر واتساب
-        </button>
-
-
-        <button
-            class="close-button"
-            onclick="closeModal()"
-        >
-            إلغاء
-        </button>
-
-    </div>
+<input
+id="customerName"
+type="text"
+placeholder="اكتب اسمك الكامل"
+>
 
 </div>
 
+
+<div class="form-group">
+
+<label>
+رقم الهاتف
+</label>
+
+<input
+id="customerPhone"
+type="tel"
+placeholder="07XXXXXXXXX"
+>
+
+</div>
+
+
+<button
+id="sendButton"
+class="send-button"
+onclick="sendBooking()"
+>
+تأكيد الحجز وإرسال عبر واتساب
+</button>
+
+
+<button
+class="close-button"
+onclick="closeModal()"
+>
+إلغاء
+</button>
+
+</div>
+
+</div>
 
 
 <!-- =====================================================
@@ -2222,20 +2582,19 @@ footer p{
 
 <footer>
 
-    <h3>
-        مزارع الغيث
-    </h3>
+<h3>
+مزارع الغيث
+</h3>
 
-    <p>
-        ALGAITH FARMS
-    </p>
+<p>
+ALGAITH FARMS
+</p>
 
-    <p>
-        راحتك تبدأ من هنا 🌿
-    </p>
+<p>
+راحتك تبدأ من هنا 🌿
+</p>
 
 </footer>
-
 
 
 <script>
@@ -2276,6 +2635,7 @@ today.setHours(
     0
 );
 
+
 let currentDate =
 new Date(
     today.getFullYear(),
@@ -2312,7 +2672,7 @@ let bookings =
 
 
 /* =====================================================
-   أسماء الأشهر
+   الأشهر
 ===================================================== */
 
 const months = [
@@ -2334,7 +2694,7 @@ const months = [
 
 
 /* =====================================================
-   صور كل مزرعة
+   صور المزارع
 ===================================================== */
 
 const farmImages = {
@@ -2427,6 +2787,7 @@ async function loadBookings(){
     try{
 
         const url =
+
             SUPABASE_URL +
             "/rest/v1/" +
             BOOKINGS_TABLE +
@@ -2434,6 +2795,7 @@ async function loadBookings(){
 
 
         const response =
+
             await fetch(
                 url,
                 {
@@ -2471,11 +2833,8 @@ async function loadBookings(){
             await response.json();
 
 
-        if(currentFarm){
+        renderCalendar();
 
-            renderCalendar();
-
-        }
 
     }catch(error){
 
@@ -2495,7 +2854,7 @@ async function loadBookings(){
 
 
 /* =====================================================
-   فحص هل الشفت محجوز
+   فحص الحجز
 ===================================================== */
 
 function isShiftBooked(
@@ -2541,36 +2900,7 @@ function selectFarm(
         farmName;
 
 
-    /* تحديد البطاقة النشطة */
-
-    document
-        .getElementById("farmCard1")
-        .classList.remove("active");
-
-    document
-        .getElementById("farmCard2")
-        .classList.remove("active");
-
-
-    if(
-        farmName ===
-        "المزرعة الأولى"
-    ){
-
-        document
-            .getElementById("farmCard1")
-            .classList.add("active");
-
-    }else{
-
-        document
-            .getElementById("farmCard2")
-            .classList.add("active");
-
-    }
-
-
-    /* عنوان المزرعة */
+    /* تغيير العنوان */
 
     document.getElementById(
         "selectedFarmTitle"
@@ -2578,21 +2908,57 @@ function selectFarm(
         farmName;
 
 
-    /* إظهار الصور */
+    document.getElementById(
+        "currentFarmTitle"
+    ).textContent =
+        farmName;
 
-    renderFarmImages(
+
+    /* تحديد الكارد */
+
+    document.getElementById(
+        "farmCard1"
+    ).classList.remove(
+        "active"
+    );
+
+    document.getElementById(
+        "farmCard2"
+    ).classList.remove(
+        "active"
+    );
+
+
+    if(
+        farmName ===
+        "المزرعة الأولى"
+    ){
+
+        document.getElementById(
+            "farmCard1"
+        ).classList.add(
+            "active"
+        );
+
+    }else{
+
+        document.getElementById(
+            "farmCard2"
+        ).classList.add(
+            "active"
+        );
+
+    }
+
+
+    /* عرض الصور */
+
+    renderFarmGallery(
         farmName
     );
 
 
-    /* إظهار منطقة الحجز */
-
-    document
-        .getElementById("farmBookingArea")
-        .classList.add("show");
-
-
-    /* بدء الشهر من الشهر الحالي */
+    /* إرجاع الشهر للحالي */
 
     currentDate =
         new Date(
@@ -2605,24 +2971,32 @@ function selectFarm(
     hideStatus();
 
 
-    /* رسم الجدول */
+    /* إظهار قسم التفاصيل */
+
+    const details =
+        document.getElementById(
+            "farmDetails"
+        );
+
+    details.classList.add(
+        "show"
+    );
+
+
+    /* رسم التقويم */
 
     renderCalendar();
 
 
-    /* نزول تلقائي لمنطقة الحجز */
+    /* النزول للقسم */
 
     setTimeout(
         function(){
 
-            document
-                .getElementById(
-                    "farmBookingArea"
-                )
-                .scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
+            details.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
 
         },
         100
@@ -2632,10 +3006,10 @@ function selectFarm(
 
 
 /* =====================================================
-   صور المزرعة المختارة
+   عرض صور المزرعة
 ===================================================== */
 
-function renderFarmImages(
+function renderFarmGallery(
     farmName
 ){
 
@@ -2650,7 +3024,9 @@ function renderFarmImages(
 
 
     const images =
-        farmImages[farmName] || [];
+        farmImages[
+            farmName
+        ] || [];
 
 
     images.forEach(
@@ -2714,10 +3090,7 @@ function renderCalendar(){
         );
 
 
-    if(
-        !calendar ||
-        !currentFarm
-    ){
+    if(!calendar){
 
         return;
 
@@ -2728,6 +3101,15 @@ function renderCalendar(){
         "";
 
 
+    /* إذا لم يتم اختيار مزرعة */
+
+    if(!currentFarm){
+
+        return;
+
+    }
+
+
     const year =
         currentDate.getFullYear();
 
@@ -2736,12 +3118,14 @@ function renderCalendar(){
 
 
     monthTitle.textContent =
+
         months[month] +
         " " +
         year;
 
 
     const currentMonthStart =
+
         new Date(
             today.getFullYear(),
             today.getMonth(),
@@ -2750,11 +3134,13 @@ function renderCalendar(){
 
 
     previousButton.disabled =
+
         currentDate <=
         currentMonthStart;
 
 
     const firstDay =
+
         new Date(
             year,
             month,
@@ -2763,6 +3149,7 @@ function renderCalendar(){
 
 
     const daysInMonth =
+
         new Date(
             year,
             month + 1,
@@ -2770,7 +3157,9 @@ function renderCalendar(){
         ).getDate();
 
 
-    /* الخانات الفارغة */
+    /* =================================================
+       الأيام الفارغة
+    ================================================= */
 
     for(
         let i = 0;
@@ -2793,7 +3182,9 @@ function renderCalendar(){
     }
 
 
-    /* الأيام */
+    /* =================================================
+       الأيام
+    ================================================= */
 
     for(
         let day = 1;
@@ -2811,11 +3202,13 @@ function renderCalendar(){
 
 
         const thisDate =
+
             new Date(
                 year,
                 month,
                 day
             );
+
 
         thisDate.setHours(
             0,
@@ -2826,11 +3219,13 @@ function renderCalendar(){
 
 
         const isPast =
+
             thisDate <
             today;
 
 
         const isToday =
+
             thisDate.getTime() ===
             today.getTime();
 
@@ -2854,7 +3249,9 @@ function renderCalendar(){
         );
 
 
-        /* اليوم الحالي */
+        /* =================================================
+           اليوم الحالي
+        ================================================= */
 
         if(isToday){
 
@@ -2882,7 +3279,9 @@ function renderCalendar(){
         }
 
 
-        /* الأيام القديمة */
+        /* =================================================
+           الأيام القديمة
+        ================================================= */
 
         if(isPast){
 
@@ -2910,22 +3309,27 @@ function renderCalendar(){
         }
 
 
-        /* الأيام الحالية والقادمة */
+        /* =================================================
+           الأيام المتاحة
+        ================================================= */
 
         else{
 
             const dateKey =
+
                 `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
 
-            /* ===============================
-               صباحي
-            =============================== */
+            /* =============================================
+               الشفت الصباحي
+            ============================================= */
 
             const morningButton =
+
                 document.createElement(
                     "button"
                 );
+
 
             morningButton.className =
                 "shift-button";
@@ -2979,14 +3383,16 @@ function renderCalendar(){
             }
 
 
-            /* ===============================
-               مسائي
-            =============================== */
+            /* =============================================
+               الشفت المسائي
+            ============================================= */
 
             const eveningButton =
+
                 document.createElement(
                     "button"
                 );
+
 
             eveningButton.className =
                 "shift-button";
@@ -3044,6 +3450,7 @@ function renderCalendar(){
                 morningButton
             );
 
+
             dayBox.appendChild(
                 eveningButton
             );
@@ -3069,6 +3476,7 @@ function changeMonth(
 ){
 
     const newDate =
+
         new Date(
             currentDate.getFullYear(),
             currentDate.getMonth() +
@@ -3078,6 +3486,7 @@ function changeMonth(
 
 
     const currentMonthStart =
+
         new Date(
             today.getFullYear(),
             today.getMonth(),
@@ -3116,6 +3525,7 @@ function openBooking(
 ){
 
     const formattedMonth =
+
         String(
             month + 1
         ).padStart(
@@ -3125,6 +3535,7 @@ function openBooking(
 
 
     const formattedDay =
+
         String(
             day
         ).padStart(
@@ -3134,6 +3545,7 @@ function openBooking(
 
 
     selectedDate =
+
         `${year}-${formattedMonth}-${formattedDay}`;
 
 
@@ -3141,7 +3553,7 @@ function openBooking(
         shift;
 
 
-    /* فحص الحجز */
+    /* فحص محلي */
 
     if(
         isShiftBooked(
@@ -3180,13 +3592,11 @@ function openBooking(
     `;
 
 
-    document
-        .getElementById(
-            "bookingModal"
-        )
-        .classList.add(
-            "show"
-        );
+    document.getElementById(
+        "bookingModal"
+    ).classList.add(
+        "show"
+    );
 
 }
 
@@ -3198,24 +3608,21 @@ function openBooking(
 async function sendBooking(){
 
     const name =
-        document
-            .getElementById(
-                "customerName"
-            )
-            .value
-            .trim();
+
+        document.getElementById(
+            "customerName"
+        ).value.trim();
 
 
     const phone =
-        document
-            .getElementById(
-                "customerPhone"
-            )
-            .value
-            .trim();
+
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
 
 
     const sendButton =
+
         document.getElementById(
             "sendButton"
         );
@@ -3283,17 +3690,20 @@ async function sendBooking(){
     sendButton.disabled =
         true;
 
+
     sendButton.textContent =
         "جاري تثبيت الحجز...";
 
 
     try{
 
-        /* =============================================
+
+        /* =================================================
            فحص مباشر من Supabase
-        ============================================= */
+        ================================================= */
 
         const checkUrl =
+
             SUPABASE_URL +
             "/rest/v1/" +
             BOOKINGS_TABLE +
@@ -3313,6 +3723,7 @@ async function sendBooking(){
 
 
         const checkResponse =
+
             await fetch(
                 checkUrl,
                 {
@@ -3331,6 +3742,11 @@ async function sendBooking(){
             const errorText =
                 await checkResponse.text();
 
+            console.error(
+                "Supabase CHECK Error:",
+                errorText
+            );
+
             throw new Error(
                 errorText ||
                 "تعذر فحص الحجز"
@@ -3340,6 +3756,7 @@ async function sendBooking(){
 
 
         const existingBookings =
+
             await checkResponse.json();
 
 
@@ -3360,9 +3777,9 @@ async function sendBooking(){
         }
 
 
-        /* =============================================
+        /* =================================================
            بيانات الحجز
-        ============================================= */
+        ================================================= */
 
         const booking = {
 
@@ -3384,17 +3801,20 @@ async function sendBooking(){
         };
 
 
-        /* =============================================
-           إدخال الحجز
-        ============================================= */
+        /* =================================================
+           إرسال إلى Supabase
+        ================================================= */
 
         const insertResponse =
+
             await fetch(
+
                 SUPABASE_URL +
                 "/rest/v1/" +
                 BOOKINGS_TABLE,
 
                 {
+
                     method:"POST",
 
                     headers:{
@@ -3412,8 +3832,13 @@ async function sendBooking(){
                         )
 
                 }
+
             );
 
+
+        /* =================================================
+           معالجة الخطأ
+        ================================================= */
 
         if(!insertResponse.ok){
 
@@ -3421,8 +3846,14 @@ async function sendBooking(){
                 await insertResponse.text();
 
 
-            let errorData =
-                {};
+            console.error(
+                "Supabase INSERT Error:",
+                errorText
+            );
+
+
+            let errorData = {};
+
 
             try{
 
@@ -3433,8 +3864,7 @@ async function sendBooking(){
 
             }catch(e){
 
-                errorData =
-                    {};
+                errorData = {};
 
             }
 
@@ -3458,20 +3888,26 @@ async function sendBooking(){
 
 
             throw new Error(
+
                 errorData.message ||
+
                 errorData.details ||
+
                 errorText ||
+
                 "فشل تثبيت الحجز"
+
             );
 
         }
 
 
-        /* =============================================
-           تحديث الحجوزات
-        ============================================= */
+        /* =================================================
+           نجاح الحجز
+        ================================================= */
 
         const insertedBooking =
+
             await insertResponse.json();
 
 
@@ -3481,6 +3917,8 @@ async function sendBooking(){
         );
 
 
+        /* إضافة الحجز محلياً */
+
         bookings.push(
             booking
         );
@@ -3489,11 +3927,12 @@ async function sendBooking(){
         renderCalendar();
 
 
-        /* =============================================
-           واتساب
-        ============================================= */
+        /* =================================================
+           رسالة واتساب
+        ================================================= */
 
         const message =
+
 `🌿 مزارع الغيث
 ALGAITH FARMS
 
@@ -3518,6 +3957,7 @@ ${selectedShift}
 
 
         const whatsappURL =
+
             "https://wa.me/" +
             whatsappNumber +
             "?text=" +
@@ -3564,8 +4004,10 @@ ${selectedShift}
 
 
         alert(
+
             "حدث خطأ أثناء تثبيت الحجز:\n\n" +
             error.message
+
         );
 
 
@@ -3573,6 +4015,7 @@ ${selectedShift}
 
         sendButton.disabled =
             false;
+
 
         sendButton.textContent =
             "تأكيد الحجز وإرسال عبر واتساب";
@@ -3588,13 +4031,11 @@ ${selectedShift}
 
 function closeModal(){
 
-    document
-        .getElementById(
-            "bookingModal"
-        )
-        .classList.remove(
-            "show"
-        );
+    document.getElementById(
+        "bookingModal"
+    ).classList.remove(
+        "show"
+    );
 
 }
 
@@ -3605,26 +4046,22 @@ function closeModal(){
 
 function openRules(){
 
-    document
-        .getElementById(
-            "rulesModal"
-        )
-        .classList.add(
-            "show"
-        );
+    document.getElementById(
+        "rulesModal"
+    ).classList.add(
+        "show"
+    );
 
 }
 
 
 function closeRules(){
 
-    document
-        .getElementById(
-            "rulesModal"
-        )
-        .classList.remove(
-            "show"
-        );
+    document.getElementById(
+        "rulesModal"
+    ).classList.remove(
+        "show"
+    );
 
 }
 
@@ -3633,46 +4070,40 @@ function closeRules(){
    إغلاق النوافذ عند الضغط خارجها
 ===================================================== */
 
-document
-    .getElementById(
-        "bookingModal"
-    )
-    .addEventListener(
-        "click",
-        function(event){
+document.getElementById(
+    "bookingModal"
+).addEventListener(
+    "click",
+    function(event){
 
-            if(
-                event.target ===
-                this
-            ){
+        if(
+            event.target === this
+        ){
 
-                closeModal();
-
-            }
+            closeModal();
 
         }
-    );
+
+    }
+);
 
 
-document
-    .getElementById(
-        "rulesModal"
-    )
-    .addEventListener(
-        "click",
-        function(event){
+document.getElementById(
+    "rulesModal"
+).addEventListener(
+    "click",
+    function(event){
 
-            if(
-                event.target ===
-                this
-            ){
+        if(
+            event.target === this
+        ){
 
-                closeRules();
-
-            }
+            closeRules();
 
         }
-    );
+
+    }
+);
 
 
 /* =====================================================
@@ -3682,9 +4113,8 @@ document
 async function startApp(){
 
     /*
-       مهم:
-       لا نعرض الجدول بالبداية.
-       فقط نجهز البيانات.
+       التقويم لا يظهر بالبداية
+       لذلك ما نرسمه إلا بعد اختيار المزرعة
     */
 
     await loadBookings();
@@ -3692,10 +4122,11 @@ async function startApp(){
 }
 
 
+/* تشغيل */
+
 startApp();
 
 </script>
 
 </body>
-
 </html>
