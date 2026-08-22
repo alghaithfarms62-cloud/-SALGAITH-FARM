@@ -3640,34 +3640,35 @@ async function sendBooking(){
 
 
     if(!name){
+
         alert("يرجى كتابة الاسم");
+
         return;
+
     }
 
 
     if(!phone){
+
         alert("يرجى كتابة رقم الهاتف");
+
         return;
+
     }
 
 
-    if(!selectedDate || !selectedShift || !currentFarm){
-        alert("يرجى اختيار المزرعة والتاريخ والشفت");
-        return;
-    }
+    if(
+        !selectedDate ||
+        !selectedShift ||
+        !currentFarm
+    ){
 
-
-    /* فحص إذا الشفت محجوز */
-
-    if(isShiftBooked(selectedDate, selectedShift)){
-
-        alert("عذراً، هذا الشفت محجوز مسبقاً");
-
-        closeModal();
-
-        renderCalendar();
+        alert(
+            "يرجى اختيار المزرعة والتاريخ والشفت"
+        );
 
         return;
+
     }
 
 
@@ -3678,64 +3679,6 @@ async function sendBooking(){
 
 
     try{
-
-        /* =========================================
-           فحص مباشر من Supabase
-        ========================================= */
-
-        const checkUrl =
-            SUPABASE_URL +
-            "/rest/v1/" +
-            BOOKINGS_TABLE +
-            "?select=id" +
-            "&Farm=eq." +
-            encodeURIComponent(currentFarm) +
-            "&Booking%20date=eq." +
-            encodeURIComponent(selectedDate) +
-            "&Shift=eq." +
-            encodeURIComponent(selectedShift);
-
-
-        const checkResponse =
-            await fetch(
-                checkUrl,
-                {
-                    method:"GET",
-                    headers:supabaseHeaders,
-                    cache:"no-store"
-                }
-            );
-
-
-        if(!checkResponse.ok){
-
-            const errorText =
-                await checkResponse.text();
-
-            throw new Error(
-                errorText ||
-                "تعذر فحص الحجز"
-            );
-        }
-
-
-        const existingBookings =
-            await checkResponse.json();
-
-
-        if(existingBookings.length > 0){
-
-            alert(
-                "عذراً، هذا الشفت محجوز مسبقاً"
-            );
-
-            await loadBookings();
-
-            closeModal();
-
-            return;
-        }
-
 
         /* =========================================
            بيانات الحجز
@@ -3775,47 +3718,48 @@ async function sendBooking(){
                     method:"POST",
 
                     headers:{
+
                         ...supabaseHeaders,
-                        "Prefer":"return=representation"
+
+                        "Prefer":
+                            "return=representation"
+
                     },
 
                     body:
-                        JSON.stringify(booking)
+                        JSON.stringify(
+                            booking
+                        )
+
                 }
             );
 
 
+        /* قراءة نتيجة Supabase */
+
+        const responseText =
+            await insertResponse.text();
+
+
+        console.log(
+            "Supabase response:",
+            responseText
+        );
+
+
         if(!insertResponse.ok){
 
-            const errorText =
-                await insertResponse.text();
-
-            console.error(
-                "Supabase Insert Error:",
-                errorText
-            );
-
             throw new Error(
-                errorText ||
-                "فشل تثبيت الحجز"
+                responseText ||
+                "فشل حفظ الحجز في قاعدة البيانات"
             );
+
         }
 
 
         /* =========================================
-           الحجز تم حفظه
+           تحديث الجدول بالموقع
         ========================================= */
-
-        const insertedBooking =
-            await insertResponse.json();
-
-        console.log(
-            "Booking saved:",
-            insertedBooking
-        );
-
-
-        /* تحديث الجدول بالموقع */
 
         bookings.push({
 
@@ -3866,7 +3810,9 @@ ${selectedShift}
             "https://wa.me/" +
             whatsappNumber +
             "?text=" +
-            encodeURIComponent(message);
+            encodeURIComponent(
+                message
+            );
 
 
         window.open(
@@ -3875,7 +3821,7 @@ ${selectedShift}
         );
 
 
-        /* تنظيف الحقول */
+        /* تنظيف الخانات */
 
         document.getElementById(
             "customerName"
