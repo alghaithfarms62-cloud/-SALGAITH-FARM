@@ -348,50 +348,52 @@ section{
 
 
 /* =====================================================
-   الخرائط
+   الموقع
 ===================================================== */
 
-.location-section{
+.location-boxes{
     max-width:1050px;
-    margin:35px auto 0;
-}
+    margin:30px auto 0;
 
-.location-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:20px;
 }
 
 .location-card{
-    background:#211b20;
-    border:2px solid #704052;
+    background:#fff;
+    border:2px solid #dfcbd2;
     border-radius:22px;
-    padding:25px;
+    padding:28px 20px;
+
     text-align:center;
+
     text-decoration:none;
-    color:white;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+
     transition:.2s;
 }
 
 .location-card:hover{
     transform:translateY(-4px);
-    background:#704052;
+    border-color:#a9657d;
+    box-shadow:0 12px 30px rgba(0,0,0,.14);
 }
 
 .location-icon{
-    font-size:45px;
-    margin-bottom:8px;
+    font-size:48px;
+    margin-bottom:10px;
 }
 
 .location-card h3{
-    color:#e4a9bb;
+    color:#704052;
     font-size:23px;
-    margin-bottom:5px;
 }
 
 .location-card p{
-    color:#ddd;
+    color:#777;
     font-size:14px;
 }
 
@@ -400,22 +402,24 @@ section{
    الأسعار
 ===================================================== */
 
-.prices-section{
-    max-width:1050px;
-    margin:35px auto 0;
-}
-
 .prices-box{
-    background:white;
-    border:2px solid #dfcbd2;
+    max-width:900px;
+    margin:35px auto 0;
+
+    background:#211b20;
+
+    border:2px solid #704052;
+
     border-radius:22px;
+
     padding:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.07);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
 }
 
-.prices-title{
+.prices-box h3{
     text-align:center;
-    color:#704052;
+    color:#e4a9bb;
     font-size:28px;
     margin-bottom:20px;
 }
@@ -423,32 +427,26 @@ section{
 .prices-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:18px;
+    gap:15px;
 }
 
 .price-card{
-    background:#f8f1f3;
-    border:2px solid #dfcbd2;
-    border-radius:18px;
-    padding:20px;
+    background:#fff;
+    border-radius:16px;
+    padding:18px;
     text-align:center;
+    border:2px solid #dfcbd2;
 }
 
-.price-card h3{
+.price-card h4{
     color:#704052;
-    font-size:22px;
-    margin-bottom:12px;
+    font-size:21px;
+    margin-bottom:8px;
 }
 
 .price-card p{
-    color:#555;
-    margin:7px 0;
-    font-weight:bold;
-}
-
-.price-number{
-    color:#a9657d;
-    font-size:25px;
+    color:#a35f77;
+    font-size:22px;
     font-weight:bold;
 }
 
@@ -465,16 +463,23 @@ section{
     display:block;
     width:100%;
     max-width:900px;
-    margin:30px auto 0;
+    margin:35px auto 0;
+
     background:#211b20;
     color:#f5e8ed;
+
     border:2px solid #704052;
     border-radius:16px;
+
     padding:20px 22px;
+
     font-size:22px;
     font-weight:bold;
+
     cursor:pointer;
+
     box-shadow:0 8px 20px rgba(0,0,0,.12);
+
     transition:.2s;
 }
 
@@ -491,11 +496,16 @@ section{
 .rules-modal{
     position:fixed;
     inset:0;
+
     background:rgba(0,0,0,.75);
+
     z-index:100000;
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     padding:15px;
 }
 
@@ -506,10 +516,15 @@ section{
 .rules-box{
     width:100%;
     max-width:700px;
+
     max-height:90vh;
+
     overflow-y:auto;
+
     background:#fff;
+
     border-radius:22px;
+
     padding:25px;
 }
 
@@ -537,13 +552,20 @@ section{
 
 .rules-close{
     width:100%;
+
     background:#211b20;
     color:white;
+
     border:none;
+
     border-radius:12px;
+
     padding:13px;
+
     margin-top:20px;
+
     font-size:17px;
+
     cursor:pointer;
 }
 
@@ -554,27 +576,43 @@ section{
 
 .booking-start{
     background:#171318;
+
     text-align:center;
+
     padding:45px 20px;
+
     border-top:1px solid #704052;
     border-bottom:1px solid #704052;
 }
 
 .booking-start-button{
     display:block;
+
     width:100%;
     max-width:900px;
+
     margin:auto;
+
     background:#b86f88;
+
     color:white;
+
     border:none;
+
     border-radius:16px;
+
     padding:22px;
+
     font-size:28px;
+
     font-weight:bold;
+
     text-decoration:none;
+
     cursor:pointer;
+
     box-shadow:0 10px 30px rgba(0,0,0,.35);
+
     transition:.2s;
 }
 
@@ -595,48 +633,71 @@ section{
 
 .farms-grid{
     max-width:1000px;
+
     margin:auto;
+
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:25px;
 }
 
 .farm-card{
     min-height:220px;
+
     background:#fff;
+
     border:2px solid #dfcbd2;
+
     border-radius:25px;
+
     padding:35px 20px;
+
     text-align:center;
+
     cursor:pointer;
+
     box-shadow:0 8px 25px rgba(0,0,0,.08);
+
     transition:.25s;
+
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
 }
 
 .farm-card:hover{
     transform:translateY(-5px);
+
     border-color:#a9657d;
+
     box-shadow:0 12px 30px rgba(0,0,0,.15);
 }
 
 .farm-card.active{
     background:#211b20;
+
     border-color:#b86f88;
+
     box-shadow:0 12px 35px rgba(0,0,0,.25);
 }
 
 .farm-card h3{
     color:#704052;
+
     font-size:30px;
+
     margin-bottom:10px;
 }
 
 .farm-card p{
     color:#777;
+
     font-size:16px;
 }
 
@@ -655,8 +716,11 @@ section{
 
 .farm-booking-area{
     display:none;
+
     background:#171318;
+
     padding:65px 5%;
+
     border-top:1px solid #704052;
 }
 
@@ -666,15 +730,21 @@ section{
 
 .selected-farm-title{
     text-align:center;
+
     color:#e2a4b7;
+
     font-size:38px;
+
     margin-bottom:10px;
 }
 
 .selected-farm-subtitle{
     text-align:center;
+
     color:#eadde2;
+
     margin-bottom:30px;
+
     font-size:17px;
 }
 
@@ -685,26 +755,38 @@ section{
 
 .farm-gallery{
     max-width:1050px;
+
     margin:0 auto 45px;
+
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:15px;
 }
 
 .farm-gallery-item{
     height:190px;
+
     border-radius:18px;
+
     overflow:hidden;
+
     border:2px solid #704052;
+
     background:#222;
+
     box-shadow:0 8px 25px rgba(0,0,0,.35);
 }
 
 .farm-gallery-item img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
+
     transition:.3s;
 }
 
@@ -719,10 +801,15 @@ section{
 
 .booking-container{
     max-width:900px;
+
     margin:auto;
+
     background:#f8f4f5;
+
     border-radius:22px;
+
     padding:18px;
+
     box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
@@ -733,24 +820,34 @@ section{
 
 .month-header{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     margin-bottom:15px;
 }
 
 .month-header h3{
     color:#704052;
+
     font-size:25px;
 }
 
 .month-button{
     width:42px;
     height:42px;
+
     border:none;
+
     border-radius:50%;
+
     background:#a9657d;
+
     color:white;
+
     font-size:19px;
+
     cursor:pointer;
 }
 
@@ -760,7 +857,9 @@ section{
 
 .month-button:disabled{
     background:#d8d3d5;
+
     color:#888;
+
     cursor:not-allowed;
 }
 
@@ -771,16 +870,23 @@ section{
 
 .week-days{
     display:grid;
+
     grid-template-columns:repeat(7,1fr);
+
     gap:5px;
+
     margin-bottom:5px;
 }
 
 .week-days div{
     text-align:center;
+
     color:#9b5d74;
+
     font-weight:bold;
+
     padding:5px 1px;
+
     font-size:13px;
 }
 
@@ -791,28 +897,39 @@ section{
 
 .calendar-grid{
     display:grid;
+
     grid-template-columns:repeat(7,1fr);
+
     gap:5px;
 }
 
 .day-box{
     background:white;
+
     border:2px solid #dfcbd2;
+
     border-radius:10px;
+
     padding:5px;
-    min-height:155px;
+
+    min-height:145px;
 }
 
 .empty-day{
     background:transparent;
+
     border:none;
 }
 
 .day-number{
     text-align:center;
+
     color:#704052;
+
     font-size:18px;
+
     font-weight:bold;
+
     margin-bottom:5px;
 }
 
@@ -823,7 +940,9 @@ section{
 
 .day-box.past-day{
     background:#e5e1e3;
+
     border-color:#cbc5c8;
+
     opacity:.72;
 }
 
@@ -833,8 +952,11 @@ section{
 
 .locked-box{
     text-align:center;
+
     color:#999;
+
     font-size:12px;
+
     padding-top:20px;
 }
 
@@ -845,15 +967,23 @@ section{
 
 .day-box.today{
     border-color:#a9657d;
-    box-shadow:0 0 0 2px rgba(169,101,125,.15);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(169,101,125,.15);
 }
 
 .today-label{
     text-align:center;
+
     color:#a35f77;
+
     font-size:10px;
+
     font-weight:bold;
+
     margin-top:-5px;
+
     margin-bottom:4px;
 }
 
@@ -864,49 +994,59 @@ section{
 
 .shift-button{
     width:100%;
+
     border:2px solid #238b55;
+
     background:#dff5e7;
+
     color:#146638;
+
     border-radius:8px;
-    padding:5px 2px;
+
+    padding:6px 2px;
+
     margin-bottom:5px;
+
     cursor:pointer;
+
     font-weight:bold;
-    font-size:10px;
+
+    font-size:11px;
+
     transition:.15s;
 }
 
 .shift-button:hover{
     background:#c9eed6;
+
     transform:scale(1.02);
 }
 
 .shift-button.booked{
     background:#dc3545;
+
     border-color:#b51f2f;
+
     color:white;
+
     cursor:not-allowed;
 }
 
 .shift-button.booked:hover{
     background:#dc3545;
+
     transform:none;
 }
 
 .shift-icon{
     display:block;
-    font-size:17px;
-}
 
-.shift-price{
-    display:block;
-    font-size:13px;
-    font-weight:bold;
-    margin-top:2px;
+    font-size:18px;
 }
 
 .shift-button small{
-    font-size:8px;
+    font-size:10px;
+    font-weight:bold;
 }
 
 
@@ -916,11 +1056,17 @@ section{
 
 .status-message{
     max-width:900px;
+
     margin:0 auto 15px;
+
     text-align:center;
+
     padding:12px;
+
     border-radius:10px;
+
     display:none;
+
     font-weight:bold;
 }
 
@@ -930,11 +1076,13 @@ section{
 
 .status-message.error{
     background:#f8d7da;
+
     color:#842029;
 }
 
 .status-message.success{
     background:#d1e7dd;
+
     color:#0f5132;
 }
 
@@ -945,12 +1093,19 @@ section{
 
 .modal{
     position:fixed;
+
     inset:0;
+
     background:rgba(0,0,0,.75);
+
     z-index:99999;
+
     display:none;
+
     align-items:center;
+
     justify-content:center;
+
     padding:15px;
 }
 
@@ -960,26 +1115,39 @@ section{
 
 .modal-box{
     width:100%;
+
     max-width:450px;
+
     background:white;
+
     border-radius:20px;
+
     padding:25px;
+
     box-shadow:0 20px 50px rgba(0,0,0,.4);
 }
 
 .modal-box h2{
     text-align:center;
+
     color:#704052;
+
     margin-bottom:18px;
 }
 
 .selected-info{
     background:#f5e9ed;
+
     border-radius:12px;
+
     padding:12px;
+
     text-align:center;
+
     color:#704052;
+
     font-weight:bold;
+
     margin-bottom:18px;
 }
 
@@ -989,17 +1157,25 @@ section{
 
 .form-group label{
     display:block;
+
     color:#5b3545;
+
     font-weight:bold;
+
     margin-bottom:5px;
 }
 
 .form-group input{
     width:100%;
+
     padding:12px;
+
     border-radius:10px;
+
     border:2px solid #dfcbd2;
+
     font-size:16px;
+
     outline:none;
 }
 
@@ -1013,51 +1189,70 @@ section{
 ===================================================== */
 
 .agreement-box{
-    background:#f8f1f3;
+    background:#f5e9ed;
+
     border:2px solid #dfcbd2;
+
     border-radius:12px;
-    padding:12px;
-    margin:15px 0;
+
+    padding:13px;
+
+    margin-bottom:14px;
 }
 
 .agreement-label{
     display:flex;
-    align-items:flex-start;
+
+    align-items:center;
+
     gap:10px;
+
     cursor:pointer;
+
     color:#5b3545;
+
     font-weight:bold;
-    font-size:14px;
 }
 
 .agreement-label input{
     width:20px;
     height:20px;
-    min-width:20px;
-    margin-top:2px;
-    accent-color:#a9657d;
     cursor:pointer;
 }
 
-.agreement-label span{
-    flex:1;
-}
+.rules-link{
+    margin-top:8px;
 
-.agreement-link{
-    color:#a9657d;
+    background:none;
+
+    border:none;
+
+    color:#a35f77;
+
     text-decoration:underline;
+
     cursor:pointer;
+
+    font-weight:bold;
 }
 
 .send-button{
     width:100%;
+
     background:#a9657d;
+
     color:white;
+
     border:none;
+
     border-radius:12px;
+
     padding:14px;
+
     font-size:17px;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
@@ -1067,18 +1262,27 @@ section{
 
 .send-button:disabled{
     opacity:.6;
+
     cursor:not-allowed;
 }
 
 .close-button{
     width:100%;
+
     background:white;
+
     color:#704052;
+
     border:2px solid #704052;
+
     border-radius:12px;
+
     padding:11px;
+
     font-size:16px;
+
     margin-top:9px;
+
     cursor:pointer;
 }
 
@@ -1089,13 +1293,17 @@ section{
 
 footer{
     background:#0d0b0e;
+
     color:white;
+
     text-align:center;
+
     padding:30px 20px;
 }
 
 footer h3{
     color:#d99caf;
+
     margin-bottom:5px;
 }
 
@@ -1186,21 +1394,21 @@ footer p{
         font-size:12px;
     }
 
-    .location-grid{
+    .location-boxes{
         grid-template-columns:1fr 1fr;
         gap:10px;
     }
 
     .location-card{
-        padding:15px 8px;
+        padding:20px 8px;
     }
 
     .location-icon{
-        font-size:35px;
+        font-size:38px;
     }
 
     .location-card h3{
-        font-size:18px;
+        font-size:17px;
     }
 
     .location-card p{
@@ -1208,7 +1416,20 @@ footer p{
     }
 
     .prices-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .price-card{
+        padding:14px 6px;
+    }
+
+    .price-card h4{
+        font-size:16px;
+    }
+
+    .price-card p{
+        font-size:17px;
     }
 
     .booking-start-button{
@@ -1258,7 +1479,7 @@ footer p{
     }
 
     .day-box{
-        min-height:145px;
+        min-height:135px;
     }
 
     .month-header h3{
@@ -1305,11 +1526,6 @@ footer p{
     .farm-gallery-item{
         height:130px;
     }
-
-    .location-card h3{
-        font-size:16px;
-    }
-
 }
 
 </style>
@@ -1362,12 +1578,14 @@ footer p{
 </header>
 
 
-
 <!-- =====================================================
      الرئيسية
 ===================================================== -->
 
-<section id="home" class="hero">
+<section
+    id="home"
+    class="hero"
+>
 
     <div class="hero-content">
 
@@ -1402,12 +1620,14 @@ footer p{
 </section>
 
 
-
 <!-- =====================================================
      عن المزرعة
 ===================================================== -->
 
-<section id="about" class="about">
+<section
+    id="about"
+    class="about"
+>
 
     <div class="section-title">
 
@@ -1450,12 +1670,14 @@ footer p{
 </section>
 
 
-
 <!-- =====================================================
      الصور
 ===================================================== -->
 
-<section id="gallery" class="gallery">
+<section
+    id="gallery"
+    class="gallery"
+>
 
     <div class="section-title">
 
@@ -1475,39 +1697,66 @@ footer p{
         <div class="gallery-scroll">
 
             <div class="gallery-item">
-                <img src="Farms.1.PNG" alt="مزارع الغيث">
+                <img
+                    src="Farms.1.PNG"
+                    alt="مزارع الغيث"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm1-1.jpg" alt="المزرعة الأولى">
+                <img
+                    src="farm1-1.jpg"
+                    alt="المزرعة الأولى"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm1-2.jpg" alt="المزرعة الأولى">
+                <img
+                    src="farm1-2.jpg"
+                    alt="المزرعة الأولى"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm1-3.jpg" alt="المزرعة الأولى">
+                <img
+                    src="farm1-3.jpg"
+                    alt="المزرعة الأولى"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm1-4.jpg" alt="المزرعة الأولى">
+                <img
+                    src="farm1-4.jpg"
+                    alt="المزرعة الأولى"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm2-1.jpg" alt="المزرعة الثانية">
+                <img
+                    src="farm2-1.jpg"
+                    alt="المزرعة الثانية"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm2-2.jpg" alt="المزرعة الثانية">
+                <img
+                    src="farm2-2.jpg"
+                    alt="المزرعة الثانية"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm2-3.jpg" alt="المزرعة الثانية">
+                <img
+                    src="farm2-3.jpg"
+                    alt="المزرعة الثانية"
+                >
             </div>
 
             <div class="gallery-item">
-                <img src="farm2-4.jpg" alt="المزرعة الثانية">
+                <img
+                    src="farm2-4.jpg"
+                    alt="المزرعة الثانية"
+                >
             </div>
 
         </div>
@@ -1517,98 +1766,94 @@ footer p{
 </section>
 
 
-
 <!-- =====================================================
      المميزات
 ===================================================== -->
 
-<section id="features" class="features">
+<section
+    id="features"
+    class="features"
+>
 
-<div class="features-grid">
+    <div class="features-grid">
 
-    <div class="feature">
-        <div class="feature-icon">🌲</div>
-        <h3>مساحات خضراء</h3>
-        <p>هواء نقي وجلسات مميزة</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">🛝</div>
-        <h3>ألعاب أطفال</h3>
-        <p>مجمع ألعاب وترفيه للأطفال.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">📸</div>
-        <h3>جلسات تصوير</h3>
-        <p>اماكن مناسبة للتصوير واقامة المناسبات</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">🛋️</div>
-        <h3>صالة ضيوف</h3>
-        <p>صالة واسعة بديكور مميز.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">📺</div>
-        <h3>تلفزيون كبير</h3>
-        <p>مع طاولة للورق والدومنة.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">🏓</div>
-        <h3>صالة ألعاب</h3>
-        <p>تنس طاولة بلياردو وplay station.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">🍳</div>
-        <h3>مطبخ مجهز بالكامل</h3>
-        <p>طبخ وفرن وثلاجة.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">🛏️</div>
-        <h3>غرف نوم كبار</h3>
-        <p>مؤثثة بالكامل.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">📶</div>
-        <h3>إنترنت 24 ساعة</h3>
-        <p>اتصال بالإنترنت طوال اليوم.</p>
-    </div>
-
-    <div class="feature">
-        <div class="feature-icon">🔥</div>
-        <h3>محطة متكاملة للشواء</h3>
-        <p>أجواء مميزة ومتكاملة للشواء.</p>
-    </div>
-
-</div>
+        <div class="feature">
+            <div class="feature-icon">🌲</div>
+            <h3>مساحات خضراء</h3>
+            <p>هواء نقي وجلسات مميزة</p>
+        </div>
 
 
-<!-- =====================================================
-     الخرائط
-===================================================== -->
+        <div class="feature">
+            <div class="feature-icon">🛝</div>
+            <h3>ألعاب أطفال</h3>
+            <p>مجمع ألعاب وترفيه للأطفال.</p>
+        </div>
 
-<div class="location-section">
 
-    <div class="section-title">
+        <div class="feature">
+            <div class="feature-icon">📸</div>
+            <h3>جلسات تصوير</h3>
+            <p>اماكن مناسبة للتصوير واقامة المناسبات</p>
+        </div>
 
-        <h2>
-            موقع المزارع
-        </h2>
 
-        <p>
-            اضغط على التطبيق لفتح الموقع مباشرة
-        </p>
+        <div class="feature">
+            <div class="feature-icon">🛋️</div>
+            <h3>صالة ضيوف</h3>
+            <p>صالة واسعة بديكور مميز.</p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">📺</div>
+            <h3>تلفزيون كبير</h3>
+            <p>مع طاولة للورق والدومنة.</p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🏓</div>
+            <h3>صالة ألعاب</h3>
+            <p>تنس طاولة بلياردو وplay station.</p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🍳</div>
+            <h3>مطبخ مجهز بالكامل</h3>
+            <p>طبخ وفرن وثلاجة.</p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🛏️</div>
+            <h3>غرف نوم كبار</h3>
+            <p>مؤثثة بالكامل.</p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">📶</div>
+            <h3>إنترنت 24 ساعة</h3>
+            <p>اتصال بالإنترنت طوال اليوم.</p>
+        </div>
+
+
+        <div class="feature">
+            <div class="feature-icon">🔥</div>
+            <h3>محطة متكاملة للشواء</h3>
+            <p>أجواء مميزة ومتكاملة للشواء.</p>
+        </div>
 
     </div>
 
 
-    <div class="location-grid">
+    <!-- =================================================
+         الموقع
+    ================================================= -->
+
+    <div class="location-boxes">
 
         <a
             class="location-card"
@@ -1626,7 +1871,7 @@ footer p{
             </h3>
 
             <p>
-                فتح موقع المزارع على خرائط Google
+                اضغط لفتح موقع المزارع
             </p>
 
         </a>
@@ -1648,77 +1893,56 @@ footer p{
             </h3>
 
             <p>
-                فتح الموقع على تطبيق Waze
+                اضغط لفتح الموقع عبر Waze
             </p>
 
         </a>
 
     </div>
 
-</div>
 
-
-<!-- =====================================================
-     الأسعار
-===================================================== -->
-
-<div class="prices-section">
+    <!-- =================================================
+         الأسعار
+    ================================================= -->
 
     <div class="prices-box">
 
-        <div class="prices-title">
-            💰 أسعار التأجير
-        </div>
-
+        <h3>
+            أسعار تأجير المزارع 💰
+        </h3>
 
         <div class="prices-grid">
 
             <div class="price-card">
 
-                <h3>
-                    الأحد إلى الأربعاء
-                </h3>
+                <h4>
+                    الأحد – الأربعاء
+                </h4>
 
                 <p>
-                    ☀️ الشفت الصباحي
+                    صباحي: ٢٥٠,٠٠٠ د.ع
                 </p>
-
-                <div class="price-number">
-                    250,000 د.ع
-                </div>
 
                 <p>
-                    🌙 الشفت المسائي
+                    مسائي: ٣٠٠,٠٠٠ د.ع
                 </p>
-
-                <div class="price-number">
-                    300,000 د.ع
-                </div>
 
             </div>
 
 
             <div class="price-card">
 
-                <h3>
-                    الخميس والجمعة والسبت
-                </h3>
+                <h4>
+                    الخميس – السبت
+                </h4>
 
                 <p>
-                    ☀️ الشفت الصباحي
+                    صباحي: ٣٥٠,٠٠٠ د.ع
                 </p>
-
-                <div class="price-number">
-                    350,000 د.ع
-                </div>
 
                 <p>
-                    🌙 الشفت المسائي
+                    مسائي: ٤٠٠,٠٠٠ د.ع
                 </p>
-
-                <div class="price-number">
-                    400,000 د.ع
-                </div>
 
             </div>
 
@@ -1726,18 +1950,19 @@ footer p{
 
     </div>
 
-</div>
 
+    <!-- =================================================
+         شروط المزرعة
+    ================================================= -->
 
-<button
-    class="rules-button"
-    onclick="openRules()"
->
-    شروط المزرعة
-</button>
+    <button
+        class="rules-button"
+        onclick="openRules()"
+    >
+        شروط المزرعة
+    </button>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1757,7 +1982,6 @@ footer p{
     </a>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1820,7 +2044,6 @@ footer p{
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1906,7 +2129,6 @@ footer p{
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -2015,7 +2237,6 @@ footer p{
 </div>
 
 
-
 <!-- =====================================================
      نافذة الحجز
 ===================================================== -->
@@ -2070,30 +2291,31 @@ footer p{
 
         <!-- =================================================
              الموافقة على الشروط
-        ================================================== -->
+        ================================================= -->
 
         <div class="agreement-box">
 
             <label class="agreement-label">
 
                 <input
-                    id="termsAgreement"
+                    id="agreeRules"
                     type="checkbox"
-                    onchange="updateSendButton()"
                 >
 
                 <span>
-                    أوافق على
-                    <span
-                        class="agreement-link"
-                        onclick="openRules()"
-                    >
-                        شروط الحجز والاستخدام
-                    </span>
-                    وأتعهد بالالتزام بها.
+                    أوافق على شروط الحجز والاستخدام
                 </span>
 
             </label>
+
+
+            <button
+                type="button"
+                class="rules-link"
+                onclick="openRules()"
+            >
+                قراءة الشروط كاملة
+            </button>
 
         </div>
 
@@ -2102,7 +2324,6 @@ footer p{
             id="sendButton"
             class="send-button"
             onclick="sendBooking()"
-            disabled
         >
             تأكيد الحجز وإرسال عبر واتساب
         </button>
@@ -2118,7 +2339,6 @@ footer p{
     </div>
 
 </div>
-
 
 
 <!-- =====================================================
@@ -2142,7 +2362,6 @@ footer p{
 </footer>
 
 
-
 <script>
 
 /* =====================================================
@@ -2154,6 +2373,11 @@ const SUPABASE_URL =
 
 const SUPABASE_KEY =
 "sb_publishable_v_vOawF0sNtyj2YavPT6xw_u_zESPoI";
+
+
+/*
+   اسم الجدول الصحيح عندك
+*/
 
 const BOOKINGS_TABLE =
 "BookingFarms";
@@ -2284,32 +2508,6 @@ const supabaseHeaders = {
 
 
 /* =====================================================
-   أسماء أعمدة Supabase
-===================================================== */
-
-const COL_ID =
-"ID";
-
-const COL_CREATED =
-"created_at";
-
-const COL_PHONE =
-"Customer_phone";
-
-const COL_DATE =
-"Booking_date";
-
-const COL_NAME =
-"Customer name";
-
-const COL_FARM =
-"Farms";
-
-const COL_SHIFT =
-"Shift";
-
-
-/* =====================================================
    رسالة الحالة
 ===================================================== */
 
@@ -2402,12 +2600,6 @@ async function loadBookings(){
             await response.json();
 
 
-        console.log(
-            "Supabase bookings:",
-            bookings
-        );
-
-
         if(currentFarm){
 
             renderCalendar();
@@ -2445,98 +2637,23 @@ function isShiftBooked(
 
             return (
 
-                String(
-                    item[COL_FARM]
-                ) ===
-                String(
-                    currentFarm
-                )
+                item.Farm ===
+                currentFarm
 
                 &&
 
-                String(
-                    item[COL_DATE]
-                ).substring(0,10) ===
-                String(
-                    date
-                )
+                item.Booking_date ===
+                date
 
                 &&
 
-                String(
-                    item[COL_SHIFT]
-                ) ===
-                String(
-                    shift
-                )
+                item.Shift ===
+                shift
 
             );
 
         }
     );
-
-}
-
-
-/* =====================================================
-   سعر الشفت
-===================================================== */
-
-function getShiftPrice(
-    year,
-    month,
-    day,
-    shift
-){
-
-    const date =
-        new Date(
-            year,
-            month,
-            day
-        );
-
-    const weekday =
-        date.getDay();
-
-    /*
-       الخميس = 4
-       الجمعة = 5
-       السبت = 6
-    */
-
-    const weekend =
-        weekday === 4 ||
-        weekday === 5 ||
-        weekday === 6;
-
-
-    if(weekend){
-
-        if(
-            shift ===
-            "شفت صباحي"
-        ){
-
-            return "350,000";
-
-        }
-
-        return "400,000";
-
-    }
-
-
-    if(
-        shift ===
-        "شفت صباحي"
-    ){
-
-        return "250,000";
-
-    }
-
-    return "300,000";
 
 }
 
@@ -2605,6 +2722,7 @@ function selectFarm(
 
 
     hideStatus();
+
 
     renderCalendar();
 
@@ -2690,116 +2808,59 @@ function renderFarmImages(
 
 
 /* =====================================================
-   إنشاء زر الشفت
+   السعر حسب اليوم
 ===================================================== */
 
-function createShiftButton(
-    day,
-    year,
-    month,
-    dateKey,
-    shift
+function getMorningPrice(
+    dateObject
 ){
 
-    const button =
-        document.createElement(
-            "button"
-        );
-
-    button.className =
-        "shift-button";
+    const day =
+        dateObject.getDay();
 
 
-    const price =
-        getShiftPrice(
-            year,
-            month,
-            day,
-            shift
-        );
-
+    /*
+       الخميس = 4
+       الجمعة = 5
+       السبت = 6
+    */
 
     if(
-        shift ===
-        "شفت صباحي"
+        day === 4 ||
+        day === 5 ||
+        day === 6
     ){
 
-        button.innerHTML = `
-
-            <span class="shift-icon">
-                ☀️
-            </span>
-
-            شفت صباحي
-
-            <span class="shift-price">
-                ${price} د.ع
-            </span>
-
-            <small>
-                صباحاً
-            </small>
-
-        `;
-
-    }else{
-
-        button.innerHTML = `
-
-            <span class="shift-icon">
-                🌙
-            </span>
-
-            شفت مسائي
-
-            <span class="shift-price">
-                ${price} د.ع
-            </span>
-
-            <small>
-                مساءً
-            </small>
-
-        `;
+        return "٣٥٠,٠٠٠";
 
     }
 
 
+    return "٢٥٠,٠٠٠";
+
+}
+
+
+function getEveningPrice(
+    dateObject
+){
+
+    const day =
+        dateObject.getDay();
+
+
     if(
-        isShiftBooked(
-            dateKey,
-            shift
-        )
+        day === 4 ||
+        day === 5 ||
+        day === 6
     ){
 
-        button.classList.add(
-            "booked"
-        );
-
-        button.disabled =
-            true;
-
-        button.innerHTML +=
-            `<small>محجوز</small>`;
-
-    }else{
-
-        button.onclick =
-            function(){
-
-                openBooking(
-                    day,
-                    year,
-                    month,
-                    shift
-                );
-
-            };
+        return "٤٠٠,٠٠٠";
 
     }
 
 
-    return button;
+    return "٣٠٠,٠٠٠";
 
 }
 
@@ -2882,6 +2943,8 @@ function renderCalendar(){
         ).getDate();
 
 
+    /* الخانات الفارغة */
+
     for(
         let i = 0;
         i < firstDay;
@@ -2902,6 +2965,8 @@ function renderCalendar(){
 
     }
 
+
+    /* الأيام */
 
     for(
         let day = 1;
@@ -2986,6 +3051,8 @@ function renderCalendar(){
         }
 
 
+        /* الأيام القديمة */
+
         if(isPast){
 
             dayBox.classList.add(
@@ -3012,30 +3079,146 @@ function renderCalendar(){
         }
 
 
+        /* الأيام الحالية والقادمة */
+
         else{
 
             const dateKey =
                 `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
 
+            /* =========================================
+               الصباحي
+            ========================================= */
+
             const morningButton =
-                createShiftButton(
-                    day,
-                    year,
-                    month,
+                document.createElement(
+                    "button"
+                );
+
+            morningButton.className =
+                "shift-button";
+
+
+            const morningPrice =
+                getMorningPrice(
+                    thisDate
+                );
+
+
+            morningButton.innerHTML = `
+
+                <span class="shift-icon">
+                    ☀️
+                </span>
+
+                شفت صباحي
+
+                <br>
+
+                <small>
+                    ${morningPrice} د.ع
+                </small>
+
+            `;
+
+
+            if(
+                isShiftBooked(
                     dateKey,
                     "شفت صباحي"
+                )
+            ){
+
+                morningButton.classList.add(
+                    "booked"
                 );
 
+                morningButton.disabled =
+                    true;
+
+            }else{
+
+                morningButton.onclick =
+                    function(){
+
+                        openBooking(
+                            day,
+                            year,
+                            month,
+                            "شفت صباحي"
+                        );
+
+                    };
+
+            }
+
+
+            /* =========================================
+               المسائي
+            ========================================= */
 
             const eveningButton =
-                createShiftButton(
-                    day,
-                    year,
-                    month,
+                document.createElement(
+                    "button"
+                );
+
+            eveningButton.className =
+                "shift-button";
+
+
+            const eveningPrice =
+                getEveningPrice(
+                    thisDate
+                );
+
+
+            eveningButton.innerHTML = `
+
+                <span class="shift-icon">
+                    🌙
+                </span>
+
+                شفت مسائي
+
+                <br>
+
+                <small>
+                    ${eveningPrice} د.ع
+                </small>
+
+            `;
+
+
+            if(
+                isShiftBooked(
                     dateKey,
                     "شفت مسائي"
+                )
+            ){
+
+                eveningButton.classList.add(
+                    "booked"
                 );
+
+                eveningButton.disabled =
+                    true;
+
+            }else{
+
+                eveningButton.onclick =
+                    function(){
+
+                        openBooking(
+                            day,
+                            year,
+                            month,
+                            "شفت مسائي"
+                        );
+
+                    };
+
+            }
 
 
             dayBox.appendChild(
@@ -3157,15 +3340,6 @@ function openBooking(
     }
 
 
-    const price =
-        getShiftPrice(
-            year,
-            month,
-            day,
-            shift
-        );
-
-
     document.getElementById(
         "selectedInfo"
     ).innerHTML = `
@@ -3182,26 +3356,22 @@ function openBooking(
         ⏰ الفترة:
         ${selectedShift}
 
-        <br>
-
-        💰 السعر:
-        ${price} د.ع
-
     `;
 
 
-    /*
-       إلغاء الموافقة السابقة
-       عند فتح حجز جديد
-    */
+    document.getElementById(
+        "customerName"
+    ).value = "";
+
 
     document.getElementById(
-        "termsAgreement"
-    ).checked =
-        false;
+        "customerPhone"
+    ).value = "";
 
 
-    updateSendButton();
+    document.getElementById(
+        "agreeRules"
+    ).checked = false;
 
 
     document
@@ -3211,40 +3381,6 @@ function openBooking(
         .classList.add(
             "show"
         );
-
-}
-
-
-/* =====================================================
-   تفعيل / تعطيل زر الحجز
-===================================================== */
-
-function updateSendButton(){
-
-    const checkbox =
-        document.getElementById(
-            "termsAgreement"
-        );
-
-    const button =
-        document.getElementById(
-            "sendButton"
-        );
-
-
-    if(
-        checkbox.checked
-    ){
-
-        button.disabled =
-            false;
-
-    }else{
-
-        button.disabled =
-            true;
-
-    }
 
 }
 
@@ -3273,10 +3409,10 @@ async function sendBooking(){
             .trim();
 
 
-    const agreement =
+    const agreeRules =
         document
             .getElementById(
-                "termsAgreement"
+                "agreeRules"
             )
             .checked;
 
@@ -3287,16 +3423,7 @@ async function sendBooking(){
         );
 
 
-    if(!agreement){
-
-        alert(
-            "يجب الموافقة على شروط الحجز والاستخدام أولاً"
-        );
-
-        return;
-
-    }
-
+    /* الاسم */
 
     if(!name){
 
@@ -3309,6 +3436,8 @@ async function sendBooking(){
     }
 
 
+    /* الهاتف */
+
     if(!phone){
 
         alert(
@@ -3319,6 +3448,21 @@ async function sendBooking(){
 
     }
 
+
+    /* الموافقة */
+
+    if(!agreeRules){
+
+        alert(
+            "يجب الموافقة على شروط الحجز والاستخدام قبل إتمام الحجز"
+        );
+
+        return;
+
+    }
+
+
+    /* التأكد من البيانات */
 
     if(
         !selectedDate ||
@@ -3334,6 +3478,8 @@ async function sendBooking(){
 
     }
 
+
+    /* فحص محلي */
 
     if(
         isShiftBooked(
@@ -3373,18 +3519,21 @@ async function sendBooking(){
             "/rest/v1/" +
             BOOKINGS_TABLE +
             "?select=*" +
-            "&" +
-            encodeURIComponent(COL_FARM) +
-            "=eq." +
-            encodeURIComponent(currentFarm) +
-            "&" +
-            encodeURIComponent(COL_DATE) +
-            "=eq." +
-            encodeURIComponent(selectedDate) +
-            "&" +
-            encodeURIComponent(COL_SHIFT) +
-            "=eq." +
-            encodeURIComponent(selectedShift);
+
+            "&Farm=eq." +
+            encodeURIComponent(
+                currentFarm
+            ) +
+
+            "&Booking_date=eq." +
+            encodeURIComponent(
+                selectedDate
+            ) +
+
+            "&Shift=eq." +
+            encodeURIComponent(
+                selectedShift
+            );
 
 
         const checkResponse =
@@ -3437,30 +3586,36 @@ async function sendBooking(){
 
         /* =============================================
            بيانات الحجز
+           
+           أسماء الأعمدة مطابقة لجدولك:
+           
+           ID
+           created_at
+           Customer_phone
+           Booking_date
+           Customer name
+           Farm
+           Shift
         ============================================= */
 
-        const booking = {};
+        const booking = {
 
-        booking[COL_PHONE] =
-            phone;
+            "Customer name":
+                name,
 
-        booking[COL_DATE] =
-            selectedDate;
+            "Customer_phone":
+                phone,
 
-        booking[COL_NAME] =
-            name;
+            "Booking_date":
+                selectedDate,
 
-        booking[COL_FARM] =
-            currentFarm;
+            "Farm":
+                currentFarm,
 
-        booking[COL_SHIFT] =
-            selectedShift;
+            "Shift":
+                selectedShift
 
-
-        console.log(
-            "Sending booking:",
-            booking
-        );
+        };
 
 
         /* =============================================
@@ -3469,11 +3624,13 @@ async function sendBooking(){
 
         const insertResponse =
             await fetch(
+
                 SUPABASE_URL +
                 "/rest/v1/" +
                 BOOKINGS_TABLE,
 
                 {
+
                     method:"POST",
 
                     headers:{
@@ -3500,12 +3657,6 @@ async function sendBooking(){
                 await insertResponse.text();
 
 
-            console.error(
-                "Supabase INSERT ERROR:",
-                errorText
-            );
-
-
             let errorData =
                 {};
 
@@ -3523,6 +3674,8 @@ async function sendBooking(){
 
             }
 
+
+            /* الحجز موجود */
 
             if(
                 errorData.code ===
@@ -3553,48 +3706,10 @@ async function sendBooking(){
 
 
         /* =============================================
-           قراءة الحجز الجديد
+           تحديث الحجوزات من Supabase
         ============================================= */
 
-        const insertedBooking =
-            await insertResponse.json();
-
-
-        console.log(
-            "Booking inserted:",
-            insertedBooking
-        );
-
-
-        /*
-           نضيف الحجز للذاكرة
-        */
-
-        bookings.push(
-            booking
-        );
-
-
-        renderCalendar();
-
-
-        /* =============================================
-           السعر
-        ============================================= */
-
-        const bookingDateObject =
-            new Date(
-                selectedDate + "T00:00:00"
-            );
-
-
-        const bookingPrice =
-            getShiftPrice(
-                bookingDateObject.getFullYear(),
-                bookingDateObject.getMonth(),
-                bookingDateObject.getDate(),
-                selectedShift
-            );
+        await loadBookings();
 
 
         /* =============================================
@@ -3622,11 +3737,6 @@ ${selectedDate}
 ⏰ الفترة:
 ${selectedShift}
 
-💰 السعر:
-${bookingPrice} د.ع
-
-✅ تمت الموافقة على شروط الحجز والاستخدام.
-
 شكراً لاختياركم مزارع الغيث 🌿`;
 
 
@@ -3645,9 +3755,7 @@ ${bookingPrice} د.ع
         );
 
 
-        /* =============================================
-           تنظيف
-        ============================================= */
+        /* تنظيف */
 
         document.getElementById(
             "customerName"
@@ -3662,12 +3770,9 @@ ${bookingPrice} د.ع
 
 
         document.getElementById(
-            "termsAgreement"
+            "agreeRules"
         ).checked =
             false;
-
-
-        updateSendButton();
 
 
         closeModal();
@@ -3695,32 +3800,11 @@ ${bookingPrice} د.ع
 
     }finally{
 
-        /*
-           إذا النافذة بعدها مفتوحة
-           نرجع حالة الزر
-        */
+        sendButton.disabled =
+            false;
 
-        if(
-            document
-                .getElementById(
-                    "bookingModal"
-                )
-                .classList.contains(
-                    "show"
-                )
-        ){
-
-            sendButton.disabled =
-                !document
-                    .getElementById(
-                        "termsAgreement"
-                    )
-                    .checked;
-
-            sendButton.textContent =
-                "تأكيد الحجز وإرسال عبر واتساب";
-
-        }
+        sendButton.textContent =
+            "تأكيد الحجز وإرسال عبر واتساب";
 
     }
 
@@ -3825,11 +3909,6 @@ document
 ===================================================== */
 
 async function startApp(){
-
-    /*
-       لا نعرض الجدول بالبداية.
-       فقط نحمل الحجوزات.
-    */
 
     await loadBookings();
 
