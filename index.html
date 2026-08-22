@@ -774,7 +774,6 @@ section{
 
 /* =====================================================
    تفاصيل المزرعة
-   مخفية بالبداية
 ===================================================== */
 
 .farm-details{
@@ -1975,8 +1974,6 @@ class="features"
 <div class="features-grid">
 
 
-<!-- 1 -->
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -1993,8 +1990,6 @@ class="features"
 
 </div>
 
-
-<!-- 2 -->
 
 <div class="feature">
 
@@ -2013,8 +2008,6 @@ class="features"
 </div>
 
 
-<!-- 3 -->
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -2031,8 +2024,6 @@ class="features"
 
 </div>
 
-
-<!-- 4 -->
 
 <div class="feature">
 
@@ -2051,8 +2042,6 @@ class="features"
 </div>
 
 
-<!-- 5 -->
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -2069,8 +2058,6 @@ class="features"
 
 </div>
 
-
-<!-- 6 -->
 
 <div class="feature">
 
@@ -2089,8 +2076,6 @@ class="features"
 </div>
 
 
-<!-- 7 -->
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -2108,8 +2093,6 @@ class="features"
 </div>
 
 
-<!-- 8 -->
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -2126,8 +2109,6 @@ class="features"
 
 </div>
 
-
-<!-- 9 -->
 
 <div class="feature">
 
@@ -2229,8 +2210,6 @@ class="farms-section"
 <div class="farms-grid">
 
 
-<!-- المزرعة الأولى -->
-
 <div
 id="farmCard1"
 class="farm-card"
@@ -2258,8 +2237,6 @@ onclick="event.stopPropagation(); selectFarm('المزرعة الأولى')"
 
 </div>
 
-
-<!-- المزرعة الثانية -->
 
 <div
 id="farmCard2"
@@ -2296,7 +2273,6 @@ onclick="event.stopPropagation(); selectFarm('المزرعة الثانية')"
 
 <!-- =====================================================
      تفاصيل المزرعة
-     مخفية إلى أن يختار المستخدم مزرعة
 ===================================================== -->
 
 <section
@@ -2316,20 +2292,12 @@ class="selected-farm-title"
 </p>
 
 
-<!-- =====================================================
-     صور المزرعة المختارة
-===================================================== -->
-
 <div
 id="farmGallery"
 class="farm-gallery"
 >
 </div>
 
-
-<!-- =====================================================
-     منطقة الحجز
-===================================================== -->
 
 <div class="booking-area">
 
@@ -2780,6 +2748,8 @@ function hideStatus(){
 
 /* =====================================================
    تحميل الحجوزات من Supabase
+   تم إصلاح المشكلة:
+   customer_phone غير موجود في جدول bookings
 ===================================================== */
 
 async function loadBookings(){
@@ -2791,7 +2761,7 @@ async function loadBookings(){
             SUPABASE_URL +
             "/rest/v1/" +
             BOOKINGS_TABLE +
-            "?select=id,farm,customer_name,customer_phone,booking_date,shift,created_at";
+            "?select=id,farm,customer_name,booking_date,shift,created_at";
 
 
         const response =
@@ -2900,8 +2870,6 @@ function selectFarm(
         farmName;
 
 
-    /* تغيير العنوان */
-
     document.getElementById(
         "selectedFarmTitle"
     ).textContent =
@@ -2913,8 +2881,6 @@ function selectFarm(
     ).textContent =
         farmName;
 
-
-    /* تحديد الكارد */
 
     document.getElementById(
         "farmCard1"
@@ -2951,14 +2917,10 @@ function selectFarm(
     }
 
 
-    /* عرض الصور */
-
     renderFarmGallery(
         farmName
     );
 
-
-    /* إرجاع الشهر للحالي */
 
     currentDate =
         new Date(
@@ -2971,8 +2933,6 @@ function selectFarm(
     hideStatus();
 
 
-    /* إظهار قسم التفاصيل */
-
     const details =
         document.getElementById(
             "farmDetails"
@@ -2983,12 +2943,8 @@ function selectFarm(
     );
 
 
-    /* رسم التقويم */
-
     renderCalendar();
 
-
-    /* النزول للقسم */
 
     setTimeout(
         function(){
@@ -3101,8 +3057,6 @@ function renderCalendar(){
         "";
 
 
-    /* إذا لم يتم اختيار مزرعة */
-
     if(!currentFarm){
 
         return;
@@ -3157,10 +3111,6 @@ function renderCalendar(){
         ).getDate();
 
 
-    /* =================================================
-       الأيام الفارغة
-    ================================================= */
-
     for(
         let i = 0;
         i < firstDay;
@@ -3181,10 +3131,6 @@ function renderCalendar(){
 
     }
 
-
-    /* =================================================
-       الأيام
-    ================================================= */
 
     for(
         let day = 1;
@@ -3230,8 +3176,6 @@ function renderCalendar(){
             today.getTime();
 
 
-        /* رقم اليوم */
-
         const dayNumber =
             document.createElement(
                 "div"
@@ -3248,10 +3192,6 @@ function renderCalendar(){
             dayNumber
         );
 
-
-        /* =================================================
-           اليوم الحالي
-        ================================================= */
 
         if(isToday){
 
@@ -3279,10 +3219,6 @@ function renderCalendar(){
         }
 
 
-        /* =================================================
-           الأيام القديمة
-        ================================================= */
-
         if(isPast){
 
             dayBox.classList.add(
@@ -3309,20 +3245,12 @@ function renderCalendar(){
         }
 
 
-        /* =================================================
-           الأيام المتاحة
-        ================================================= */
-
         else{
 
             const dateKey =
 
                 `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
-
-            /* =============================================
-               الشفت الصباحي
-            ============================================= */
 
             const morningButton =
 
@@ -3382,10 +3310,6 @@ function renderCalendar(){
 
             }
 
-
-            /* =============================================
-               الشفت المسائي
-            ============================================= */
 
             const eveningButton =
 
@@ -3553,8 +3477,6 @@ function openBooking(
         shift;
 
 
-    /* فحص محلي */
-
     if(
         isShiftBooked(
             selectedDate,
@@ -3664,8 +3586,6 @@ async function sendBooking(){
 
     }
 
-
-    /* فحص محلي */
 
     if(
         isShiftBooked(
@@ -3779,6 +3699,8 @@ async function sendBooking(){
 
         /* =================================================
            بيانات الحجز
+           تم حذف customer_phone من البيانات المرسلة
+           لأن العمود غير موجود في جدول Supabase
         ================================================= */
 
         const booking = {
@@ -3788,9 +3710,6 @@ async function sendBooking(){
 
             customer_name:
                 name,
-
-            customer_phone:
-                phone,
 
             booking_date:
                 selectedDate,
@@ -3916,8 +3835,6 @@ async function sendBooking(){
             insertedBooking
         );
 
-
-        /* إضافة الحجز محلياً */
 
         bookings.push(
             booking
@@ -4112,17 +4029,10 @@ document.getElementById(
 
 async function startApp(){
 
-    /*
-       التقويم لا يظهر بالبداية
-       لذلك ما نرسمه إلا بعد اختيار المزرعة
-    */
-
     await loadBookings();
 
 }
 
-
-/* تشغيل */
 
 startApp();
 
