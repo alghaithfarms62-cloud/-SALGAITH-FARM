@@ -284,6 +284,7 @@ section{
     scroll-snap-align:start;
     background:#222;
     box-shadow:0 8px 25px rgba(0,0,0,.35);
+    cursor:pointer;
 }
 
 .gallery-item img{
@@ -291,6 +292,11 @@ section{
     height:100%;
     object-fit:cover;
     display:block;
+    transition:.3s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.05);
 }
 
 
@@ -796,6 +802,8 @@ section{
 
     box-shadow:
         0 8px 25px rgba(0,0,0,.35);
+
+    cursor:pointer;
 }
 
 .farm-gallery-item img{
@@ -1330,6 +1338,343 @@ section{
 
 
 /* =====================================================
+   ⭐ الإضافات الجديدة - الإحصائيات
+===================================================== */
+
+.stats-section{
+    background:#171318;
+    padding:45px 5%;
+    border-top:1px solid #704052;
+    border-bottom:1px solid #704052;
+}
+
+.stats-grid{
+    max-width:1050px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.stat-card{
+    text-align:center;
+    background:#211b20;
+    border:1px solid #704052;
+    border-radius:18px;
+    padding:22px 10px;
+    transition:.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+    border-color:#b86f88;
+}
+
+.stat-icon{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.stat-card strong{
+    display:block;
+    color:#e4a9bb;
+    font-size:28px;
+}
+
+.stat-card span{
+    color:#d8cdd1;
+    font-size:13px;
+}
+
+
+/* =====================================================
+   ⭐ حالة الحجز
+===================================================== */
+
+.booking-status-guide{
+    max-width:900px;
+    margin:0 auto 18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.status-guide-item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#eadde2;
+    font-size:13px;
+}
+
+.status-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    display:inline-block;
+}
+
+.status-dot.available{
+    background:#238b55;
+    box-shadow:0 0 8px rgba(35,139,85,.5);
+}
+
+.status-dot.booked{
+    background:#dc3545;
+    box-shadow:0 0 8px rgba(220,53,69,.4);
+}
+
+.status-dot.past{
+    background:#888;
+}
+
+
+/* =====================================================
+   ⭐ آراء الزبائن
+===================================================== */
+
+.reviews-section{
+    background:#f4eeee;
+}
+
+.reviews-grid{
+    max-width:1050px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review-card{
+    background:white;
+    border:2px solid #dfcbd2;
+    border-radius:20px;
+    padding:25px 20px;
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    transition:.25s;
+}
+
+.review-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.review-stars{
+    color:#d39a2e;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.review-card p{
+    color:#665b60;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.review-card h4{
+    color:#704052;
+    font-size:16px;
+}
+
+
+/* =====================================================
+   ⭐ التواصل
+===================================================== */
+
+.contact-section{
+    background:#151317;
+    text-align:center;
+}
+
+.contact-section .section-title h2{
+    color:#e2a4b7;
+}
+
+.contact-section .section-title p{
+    color:#cbbac0;
+}
+
+.contact-grid{
+    max-width:900px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.contact-card{
+    display:block;
+    text-decoration:none;
+
+    background:#211b20;
+    border:2px solid #704052;
+    border-radius:18px;
+
+    padding:25px 15px;
+
+    color:white;
+
+    transition:.25s;
+}
+
+.contact-card:hover{
+    background:#704052;
+    transform:translateY(-4px);
+}
+
+.contact-card-icon{
+    font-size:38px;
+    margin-bottom:7px;
+}
+
+.contact-card h3{
+    color:#e4a9bb;
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.contact-card p{
+    color:#ddd;
+    font-size:14px;
+}
+
+
+/* =====================================================
+   ⭐ أزرار ثابتة
+===================================================== */
+
+.floating-actions{
+    position:fixed;
+    left:18px;
+    bottom:18px;
+
+    z-index:9998;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.floating-button{
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:25px;
+
+    color:white;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.35);
+
+    transition:.2s;
+}
+
+.floating-button:hover{
+    transform:scale(1.08);
+}
+
+.floating-whatsapp{
+    background:#25D366;
+}
+
+.floating-call{
+    background:#704052;
+}
+
+
+/* =====================================================
+   ⭐ نافذة الصور
+===================================================== */
+
+.image-modal{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    z-index:100001;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    cursor:pointer;
+}
+
+.image-modal.show{
+    display:flex;
+}
+
+.image-modal img{
+    max-width:95%;
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+
+    cursor:default;
+}
+
+.image-modal-close{
+    position:absolute;
+
+    top:20px;
+    right:25px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#704052;
+
+    color:white;
+
+    font-size:25px;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   ⭐ حركة الظهور
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =====================================================
    الفوتر
 ===================================================== */
 
@@ -1547,6 +1892,60 @@ footer p{
 
         height:200px;
     }
+
+
+    /* إضافات الموبايل */
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .stat-card{
+        padding:17px 7px;
+    }
+
+    .stat-card strong{
+        font-size:24px;
+    }
+
+    .stat-card span{
+        font-size:11px;
+    }
+
+    .reviews-grid{
+        grid-template-columns:1fr;
+        gap:12px;
+    }
+
+    .review-card{
+        padding:20px 15px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .contact-card{
+        padding:18px 10px;
+    }
+
+    .booking-status-guide{
+        gap:10px;
+    }
+
+    .floating-actions{
+        left:12px;
+        bottom:12px;
+    }
+
+    .floating-button{
+        width:48px;
+        height:48px;
+        font-size:22px;
+    }
+
 }
 
 
@@ -1583,6 +1982,35 @@ footer p{
 
     .farm-gallery-item{
         height:130px;
+    }
+
+    .stats-section{
+        padding:40px 12px;
+    }
+
+}
+
+
+/* =====================================================
+   تحسينات وصول
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+    }
+
+    .reveal{
+        opacity:1;
+        transform:none;
     }
 
 }
@@ -1630,7 +2058,11 @@ footer p{
 
         <a href="#features">المميزات</a>
 
+        <a href="#reviews">الآراء</a>
+
         <a href="#booking-start">الحجز</a>
+
+        <a href="#contact">التواصل</a>
 
     </nav>
 
@@ -1685,7 +2117,7 @@ footer p{
 
 <section
     id="about"
-    class="about"
+    class="about reveal"
 >
 
     <div class="section-title">
@@ -1735,7 +2167,7 @@ footer p{
 
 <section
     id="gallery"
-    class="gallery"
+    class="gallery reveal"
 >
 
     <div class="section-title">
@@ -1745,7 +2177,7 @@ footer p{
         </h2>
 
         <p>
-            تصفحوا صور مزارع الغيث بالسحب إلى اليمين واليسار
+            اضغط على أي صورة لعرضها بحجم كبير
         </p>
 
     </div>
@@ -1804,7 +2236,7 @@ footer p{
 
 <section
     id="features"
-    class="features"
+    class="features reveal"
 >
 
 <div class="features-grid">
@@ -1824,7 +2256,7 @@ footer p{
     <div class="feature">
         <div class="feature-icon">📸</div>
         <h3>جلسات تصوير</h3>
-        <p>اماكن مناسبة للتصوير واقامة المناسبات</p>
+        <p>أماكن مناسبة للتصوير وإقامة المناسبات</p>
     </div>
 
     <div class="feature">
@@ -1842,7 +2274,7 @@ footer p{
     <div class="feature">
         <div class="feature-icon">🏓</div>
         <h3>صالة ألعاب</h3>
-        <p>تنس طاولة بلياردو وplay station.</p>
+        <p>تنس طاولة بلياردو وPlayStation.</p>
     </div>
 
     <div class="feature">
@@ -2001,6 +2433,86 @@ footer p{
 
 
 <!-- =====================================================
+     إحصائيات ومميزات سريعة
+===================================================== -->
+
+<section class="stats-section reveal">
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🏡
+            </div>
+
+            <strong>
+                2
+            </strong>
+
+            <span>
+                مزارع للحجز
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                📅
+            </div>
+
+            <strong>
+                7
+            </strong>
+
+            <span>
+                أيام في الأسبوع
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                ⏰
+            </div>
+
+            <strong>
+                2
+            </strong>
+
+            <span>
+                شفتات يومياً
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">
+                🌿
+            </div>
+
+            <strong>
+                24/7
+            </strong>
+
+            <span>
+                استقبال طلبات الحجز
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      احجز الآن
 ===================================================== -->
 
@@ -2025,7 +2537,7 @@ footer p{
 
 <section
     id="farms"
-    class="farms-section"
+    class="farms-section reveal"
 >
 
     <div class="section-title">
@@ -2109,6 +2621,39 @@ footer p{
     ></div>
 
 
+    <!-- حالة الحجز -->
+
+    <div class="booking-status-guide">
+
+        <div class="status-guide-item">
+
+            <span class="status-dot available"></span>
+
+            متاح للحجز
+
+        </div>
+
+
+        <div class="status-guide-item">
+
+            <span class="status-dot booked"></span>
+
+            محجوز
+
+        </div>
+
+
+        <div class="status-guide-item">
+
+            <span class="status-dot past"></span>
+
+            يوم منتهي
+
+        </div>
+
+    </div>
+
+
     <div
         id="statusMessage"
         class="status-message"
@@ -2160,6 +2705,180 @@ footer p{
             id="calendar"
             class="calendar-grid"
         ></div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     آراء الزبائن
+===================================================== -->
+
+<section
+    id="reviews"
+    class="reviews-section reveal"
+>
+
+    <div class="section-title">
+
+        <h2>
+            آراء زبائننا
+        </h2>
+
+        <p>
+            تجارب وانطباعات جميلة من زوار المزرعة
+        </p>
+
+    </div>
+
+
+    <div class="reviews-grid">
+
+        <div class="review-card">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                مكان جميل ومرتب جداً، والأجواء هادئة
+                ومناسبة للعائلة.
+            </p>
+
+            <h4>
+                أحد زوار مزارع الغيث
+            </h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                المزرعة نظيفة والمرافق متكاملة،
+                وتجربة الحجز كانت سهلة.
+            </p>
+
+            <h4>
+                أحد زوار مزارع الغيث
+            </h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                أجواء راقية وخصوصية ممتازة،
+                وإن شاء الله تكون لنا زيارة ثانية.
+            </p>
+
+            <h4>
+                أحد زوار مزارع الغيث
+            </h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     التواصل
+===================================================== -->
+
+<section
+    id="contact"
+    class="contact-section reveal"
+>
+
+    <div class="section-title">
+
+        <h2>
+            تواصل معنا
+        </h2>
+
+        <p>
+            نحن جاهزون لاستقبال استفساراتكم وحجوزاتكم
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <a
+            href="tel:+9647736735730"
+            class="contact-card"
+        >
+
+            <div class="contact-card-icon">
+                ☎️
+            </div>
+
+            <h3>
+                اتصال مباشر
+            </h3>
+
+            <p>
+                0773 673 5730
+            </p>
+
+        </a>
+
+
+        <a
+            href="https://wa.me/9647736735730"
+            target="_blank"
+            rel="noopener"
+            class="contact-card"
+        >
+
+            <div class="contact-card-icon">
+                💬
+            </div>
+
+            <h3>
+                واتساب
+            </h3>
+
+            <p>
+                تواصل معنا عبر واتساب
+            </p>
+
+        </a>
+
+
+        <a
+            href="https://maps.app.goo.gl/34b587WJ3gjgsnuh9?g_st=ic"
+            target="_blank"
+            rel="noopener"
+            class="contact-card"
+        >
+
+            <div class="contact-card-icon">
+                📍
+            </div>
+
+            <h3>
+                موقعنا
+            </h3>
+
+            <p>
+                افتح موقع المزرعة على الخريطة
+            </p>
+
+        </a>
 
     </div>
 
@@ -2324,10 +3043,6 @@ footer p{
         </div>
 
 
-        <!-- =================================================
-             الموافقة على الشروط
-        ================================================= -->
-
         <div class="agreement-box">
 
             <label class="agreement-label">
@@ -2375,6 +3090,59 @@ footer p{
         </button>
 
     </div>
+
+</div>
+
+
+<!-- =====================================================
+     نافذة تكبير الصور
+===================================================== -->
+
+<div
+    id="imageModal"
+    class="image-modal"
+>
+
+    <button
+        class="image-modal-close"
+        onclick="closeImageModal()"
+    >
+        ×
+    </button>
+
+    <img
+        id="largeImage"
+        src=""
+        alt="صورة المزرعة"
+    >
+
+</div>
+
+
+<!-- =====================================================
+     أزرار ثابتة
+===================================================== -->
+
+<div class="floating-actions">
+
+    <a
+        class="floating-button floating-whatsapp"
+        href="https://wa.me/9647736735730"
+        target="_blank"
+        rel="noopener"
+        aria-label="واتساب"
+    >
+        💬
+    </a>
+
+
+    <a
+        class="floating-button floating-call"
+        href="tel:+9647736735730"
+        aria-label="اتصال"
+    >
+        ☎️
+    </a>
 
 </div>
 
@@ -2720,12 +3488,6 @@ function getShiftPrice(
             day
         ).getDay();
 
-
-    /*
-       الخميس = 4
-       الجمعة = 5
-       السبت = 6
-    */
 
     const weekendPrice =
         selectedDay === 4 ||
@@ -4002,6 +4764,185 @@ document
                 closeRules();
 
             }
+
+        }
+    );
+
+
+/* =====================================================
+   ⭐ تكبير الصور
+===================================================== */
+
+function openImageModal(
+    imageSrc
+){
+
+    const modal =
+        document.getElementById(
+            "imageModal"
+        );
+
+    const image =
+        document.getElementById(
+            "largeImage"
+        );
+
+    image.src =
+        imageSrc;
+
+    modal.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeImageModal(){
+
+    document
+        .getElementById(
+            "imageModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+document
+    .getElementById(
+        "imageModal"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target ===
+                this
+            ){
+
+                closeImageModal();
+
+            }
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "largeImage"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            event.stopPropagation();
+
+        }
+    );
+
+
+/* =====================================================
+   ⭐ ربط الصور الرئيسية بالتكبير
+===================================================== */
+
+document
+    .querySelectorAll(
+        ".gallery-item img"
+    )
+    .forEach(
+        function(img){
+
+            img.addEventListener(
+                "click",
+                function(){
+
+                    openImageModal(
+                        this.src
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+/* =====================================================
+   ⭐ ربط صور المزارع بالتكبير
+===================================================== */
+
+document
+    .getElementById(
+        "farmGallery"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target.tagName ===
+                "IMG"
+            ){
+
+                openImageModal(
+                    event.target.src
+                );
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   ⭐ حركة الظهور
+===================================================== */
+
+const revealObserver =
+    new IntersectionObserver(
+        function(entries){
+
+            entries.forEach(
+                function(entry){
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+    .querySelectorAll(
+        ".reveal"
+    )
+    .forEach(
+        function(element){
+
+            revealObserver.observe(
+                element
+            );
 
         }
     );
