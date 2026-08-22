@@ -12,6 +12,10 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
+/* =====================================================
+   عام
+===================================================== */
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -178,6 +182,53 @@ header{
 
 
 /* =====================================================
+   مربع المعلومات
+===================================================== */
+
+.info-stats{
+    max-width:900px;
+    margin:-45px auto 0;
+    position:relative;
+    z-index:10;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+    padding:0 15px;
+}
+
+.info-stat{
+    background:#211b20;
+    border:2px solid #704052;
+    border-radius:18px;
+
+    padding:20px 15px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.info-stat strong{
+    display:block;
+
+    color:#e4a9bb;
+
+    font-size:30px;
+}
+
+.info-stat span{
+    color:#f1dfe5;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
    الأقسام
 ===================================================== */
 
@@ -280,6 +331,8 @@ section{
     scroll-snap-align:start;
     background:#222;
     box-shadow:0 8px 25px rgba(0,0,0,.35);
+
+    cursor:pointer;
 }
 
 .gallery-item img{
@@ -287,6 +340,12 @@ section{
     height:100%;
     object-fit:cover;
     display:block;
+
+    transition:.3s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.05);
 }
 
 
@@ -792,6 +851,8 @@ section{
 
     box-shadow:
         0 8px 25px rgba(0,0,0,.35);
+
+    cursor:pointer;
 }
 
 .farm-gallery-item img{
@@ -807,6 +868,69 @@ section{
 
 .farm-gallery-item:hover img{
     transform:scale(1.05);
+}
+
+
+/* =====================================================
+   نافذة تكبير الصور
+===================================================== */
+
+.image-modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    z-index:200000;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.image-modal.show{
+    display:flex;
+}
+
+.image-modal img{
+    max-width:95vw;
+    max-height:90vh;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.7);
+}
+
+.image-modal-close{
+    position:absolute;
+
+    top:15px;
+    left:20px;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#b86f88;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:2;
 }
 
 
@@ -1326,69 +1450,6 @@ section{
 
 
 /* =====================================================
-   روابط التواصل أسفل الموقع
-===================================================== */
-
-.bottom-links{
-    background:#171318;
-
-    padding:35px 20px;
-
-    border-top:1px solid #704052;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.bottom-link{
-    min-width:220px;
-
-    background:#211b20;
-
-    color:white;
-
-    border:2px solid #704052;
-
-    border-radius:15px;
-
-    padding:15px 20px;
-
-    text-decoration:none;
-
-    text-align:center;
-
-    font-weight:bold;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-
-    transition:.2s;
-}
-
-.bottom-link:hover{
-    background:#704052;
-
-    transform:translateY(-3px);
-}
-
-.bottom-link .bottom-icon{
-    display:block;
-
-    font-size:30px;
-
-    margin-bottom:4px;
-}
-
-.bottom-link span{
-    color:#e4a9bb;
-}
-
-
-/* =====================================================
    الفوتر
 ===================================================== */
 
@@ -1410,6 +1471,43 @@ footer h3{
 
 footer p{
     color:#d8cdd1;
+}
+
+.footer-links{
+    max-width:700px;
+
+    margin:20px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+}
+
+.footer-link{
+    display:block;
+
+    text-decoration:none;
+
+    background:#211b20;
+
+    border:2px solid #704052;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    color:#f5e8ed;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.footer-link:hover{
+    background:#704052;
+    transform:translateY(-2px);
 }
 
 
@@ -1469,6 +1567,26 @@ footer p{
 
     section{
         padding:55px 15px;
+    }
+
+    .info-stats{
+        margin:-35px auto 0;
+
+        gap:10px;
+
+        padding:0 10px;
+    }
+
+    .info-stat{
+        padding:15px 8px;
+    }
+
+    .info-stat strong{
+        font-size:25px;
+    }
+
+    .info-stat span{
+        font-size:13px;
     }
 
     .section-title h2{
@@ -1607,9 +1725,8 @@ footer p{
         height:200px;
     }
 
-    .bottom-link{
-        width:100%;
-        min-width:0;
+    .footer-links{
+        grid-template-columns:1fr;
     }
 }
 
@@ -1744,6 +1861,40 @@ footer p{
 
 
 <!-- =====================================================
+     مربع مزرعتين و 24/7
+===================================================== -->
+
+<div class="info-stats">
+
+    <div class="info-stat">
+
+        <strong>
+            2
+        </strong>
+
+        <span>
+            مزرعتين
+        </span>
+
+    </div>
+
+
+    <div class="info-stat">
+
+        <strong>
+            24/7
+        </strong>
+
+        <span>
+            متاحين لخدمتكم
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
      عن المزرعة
 ===================================================== -->
 
@@ -1819,40 +1970,67 @@ footer p{
 
         <div class="gallery-scroll">
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('Farms.1.PNG')">
+
                 <img src="Farms.1.PNG" alt="مزارع الغيث">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm1-1.jpg')">
+
                 <img src="farm1-1.jpg" alt="المزرعة الأولى">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm1-2.jpg')">
+
                 <img src="farm1-2.jpg" alt="المزرعة الأولى">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm1-3.jpg')">
+
                 <img src="farm1-3.jpg" alt="المزرعة الأولى">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm1-4.jpg')">
+
                 <img src="farm1-4.jpg" alt="المزرعة الأولى">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm2-1.jpg')">
+
                 <img src="farm2-1.jpg" alt="المزرعة الثانية">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm2-2.jpg')">
+
                 <img src="farm2-2.jpg" alt="المزرعة الثانية">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm2-3.jpg')">
+
                 <img src="farm2-3.jpg" alt="المزرعة الثانية">
+
             </div>
 
-            <div class="gallery-item">
+            <div class="gallery-item"
+                 onclick="openImage('farm2-4.jpg')">
+
                 <img src="farm2-4.jpg" alt="المزرعة الثانية">
+
             </div>
 
         </div>
@@ -2315,6 +2493,32 @@ footer p{
 
 
 <!-- =====================================================
+     نافذة تكبير الصور
+===================================================== -->
+
+<div
+    id="imageModal"
+    class="image-modal"
+    onclick="closeImage(event)"
+>
+
+    <button
+        class="image-modal-close"
+        onclick="closeImage()"
+    >
+        ×
+    </button>
+
+    <img
+        id="largeImage"
+        src=""
+        alt="صورة المزرعة"
+    >
+
+</div>
+
+
+<!-- =====================================================
      نافذة الحجز
 ===================================================== -->
 
@@ -2418,58 +2622,6 @@ footer p{
 
 
 <!-- =====================================================
-     Google Maps + WhatsApp
-===================================================== -->
-
-<div class="bottom-links">
-
-    <a
-        class="bottom-link"
-        href="https://maps.app.goo.gl/34b587WJ3gjgsnuh9?g_st=ic"
-        target="_blank"
-        rel="noopener"
-    >
-
-        <span class="bottom-icon">
-            📍
-        </span>
-
-        <span>
-            Google Maps
-        </span>
-
-        <br>
-
-        فتح موقع المزرعة
-
-    </a>
-
-
-    <a
-        class="bottom-link"
-        href="https://wa.me/9647736735730"
-        target="_blank"
-        rel="noopener"
-    >
-
-        <span class="bottom-icon">
-            💬
-        </span>
-
-        <span>
-            WhatsApp
-        </span>
-
-        <br>
-
-        تواصل معنا
-
-    </a>
-
-</div>
-
-
-<!-- =====================================================
      الفوتر
 ===================================================== -->
 
@@ -2486,6 +2638,30 @@ footer p{
     <p>
         راحتك تبدأ من هنا 🌿
     </p>
+
+
+    <div class="footer-links">
+
+        <a
+            class="footer-link"
+            href="https://maps.app.goo.gl/34b587WJ3gjgsnuh9?g_st=ic"
+            target="_blank"
+            rel="noopener"
+        >
+            📍 Google Maps
+        </a>
+
+
+        <a
+            class="footer-link"
+            href="https://wa.me/9647736735730"
+            target="_blank"
+            rel="noopener"
+        >
+            💬 WhatsApp
+        </a>
+
+    </div>
 
 </footer>
 
@@ -2628,6 +2804,60 @@ const supabaseHeaders = {
         "application/json"
 
 };
+
+
+/* =====================================================
+   تكبير الصور
+===================================================== */
+
+function openImage(image){
+
+    const modal =
+        document.getElementById(
+            "imageModal"
+        );
+
+    const largeImage =
+        document.getElementById(
+            "largeImage"
+        );
+
+    largeImage.src =
+        image;
+
+    modal.classList.add(
+        "show"
+    );
+
+}
+
+
+function closeImage(event){
+
+    const modal =
+        document.getElementById(
+            "imageModal"
+        );
+
+    if(
+        !event ||
+        event.target === modal ||
+        event.target.classList.contains(
+            "image-modal-close"
+        )
+    ){
+
+        modal.classList.remove(
+            "show"
+        );
+
+        document.getElementById(
+            "largeImage"
+        ).src = "";
+
+    }
+
+}
 
 
 /* =====================================================
@@ -2970,6 +3200,16 @@ function renderFarmImages(
 
             item.className =
                 "farm-gallery-item";
+
+
+            item.onclick =
+                function(){
+
+                    openImage(
+                        image
+                    );
+
+                };
 
 
             const img =
@@ -3536,7 +3776,7 @@ function openBooking(
 
 
 /* =====================================================
-   تفعيل زر الحجز
+   تفعيل زر الحجز بعد الموافقة
 ===================================================== */
 
 function updateSendButton(){
@@ -4010,7 +4250,7 @@ function closeRules(){
 
 
 /* =====================================================
-   إغلاق النوافذ
+   إغلاق النوافذ عند الضغط خارجها
 ===================================================== */
 
 document
