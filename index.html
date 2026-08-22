@@ -3627,92 +3627,51 @@ function openBooking(
 /* =====================================================
    إرسال الحجز
 ===================================================== */
-
 async function sendBooking(){
 
     const name =
-        document
-            .getElementById(
-                "customerName"
-            )
-            .value
-            .trim();
-
+        document.getElementById("customerName").value.trim();
 
     const phone =
-        document
-            .getElementById(
-                "customerPhone"
-            )
-            .value
-            .trim();
-
+        document.getElementById("customerPhone").value.trim();
 
     const sendButton =
-        document.getElementById(
-            "sendButton"
-        );
+        document.getElementById("sendButton");
 
 
     if(!name){
-
-        alert(
-            "يرجى كتابة الاسم"
-        );
-
+        alert("يرجى كتابة الاسم");
         return;
-
     }
 
 
     if(!phone){
-
-        alert(
-            "يرجى كتابة رقم الهاتف"
-        );
-
+        alert("يرجى كتابة رقم الهاتف");
         return;
-
     }
 
 
-    if(
-        !selectedDate ||
-        !selectedShift ||
-        !currentFarm
-    ){
-
-        alert(
-            "يرجى اختيار المزرعة والتاريخ والشفت"
-        );
-
+    if(!selectedDate || !selectedShift || !currentFarm){
+        alert("يرجى اختيار المزرعة والتاريخ والشفت");
         return;
-
     }
 
 
-    if(
-        isShiftBooked(
-            selectedDate,
-            selectedShift
-        )
-    ){
+    /* فحص إذا الشفت محجوز */
 
-        alert(
-            "عذراً، هذا الشفت محجوز مسبقاً"
-        );
+    if(isShiftBooked(selectedDate, selectedShift)){
+
+        alert("عذراً، هذا الشفت محجوز مسبقاً");
 
         closeModal();
 
         renderCalendar();
 
         return;
-
     }
 
 
-    sendButton.disabled =
-        true;
+    sendButton.disabled = true;
 
     sendButton.textContent =
         "جاري تثبيت الحجز...";
@@ -3720,23 +3679,21 @@ async function sendBooking(){
 
     try{
 
+        /* =========================================
+           فحص مباشر من Supabase
+        ========================================= */
+
         const checkUrl =
             SUPABASE_URL +
             "/rest/v1/" +
             BOOKINGS_TABLE +
-            "?select=id" +
-            "&farm=eq." +
-            encodeURIComponent(
-                currentFarm
-            ) +
-            "&booking_date=eq." +
-            encodeURIComponent(
-                selectedDate
-            ) +
-            "&shift=eq." +
-            encodeURIComponent(
-                selectedShift
-            );
+            "?select=Id" +
+            "&Farm=eq." +
+            encodeURIComponent(currentFarm) +
+            "&Booking%20date=eq." +
+            encodeURIComponent(selectedDate) +
+            "&Shift=eq." +
+            encodeURIComponent(selectedShift);
 
 
         const checkResponse =
@@ -3744,10 +3701,7 @@ async function sendBooking(){
                 checkUrl,
                 {
                     method:"GET",
-
-                    headers:
-                        supabaseHeaders,
-
+                    headers:supabaseHeaders,
                     cache:"no-store"
                 }
             );
@@ -3762,7 +3716,6 @@ async function sendBooking(){
                 errorText ||
                 "تعذر فحص الحجز"
             );
-
         }
 
 
@@ -3770,12 +3723,10 @@ async function sendBooking(){
             await checkResponse.json();
 
 
-        if(
-            existingBookings.length > 0
-        ){
+        if(existingBookings.length > 0){
 
             alert(
-                "عذراً، هذا الشفت تم حجزه للتو من شخص آخر"
+                "عذراً، هذا الشفت محجوز مسبقاً"
             );
 
             await loadBookings();
@@ -3783,29 +3734,36 @@ async function sendBooking(){
             closeModal();
 
             return;
-
         }
 
 
+        /* =========================================
+           بيانات الحجز
+        ========================================= */
+
         const booking = {
 
-            farm:
-                currentFarm,
-
-            customer_name:
+            "Customer name":
                 name,
 
-            customer_phone:
+            "Customer phone":
                 phone,
 
-            booking_date:
-                selectedDate,
+            "Farm":
+                currentFarm,
 
-            shift:
-                selectedShift
+            "Shift":
+                selectedShift,
+
+            "Booking date":
+                selectedDate
 
         };
 
+
+        /* =========================================
+           إرسال الحجز إلى Supabase
+        ========================================= */
 
         const insertResponse =
             await fetch(
@@ -3817,19 +3775,12 @@ async function sendBooking(){
                     method:"POST",
 
                     headers:{
-
                         ...supabaseHeaders,
-
-                        "Prefer":
-                            "return=representation"
-
+                        "Prefer":"return=representation"
                     },
 
                     body:
-                        JSON.stringify(
-                            booking
-                        )
-
+                        JSON.stringify(booking)
                 }
             );
 
@@ -3839,93 +3790,53 @@ async function sendBooking(){
             const errorText =
                 await insertResponse.text();
 
-
-            let errorData =
-                {};
-
-            try{
-
-                errorData =
-                    JSON.parse(
-                        errorText
-                    );
-
-            }catch(e){
-
-                errorData =
-                    {};
-
-            }
-
-
-            if(
-                errorData.code ===
-                "23505"
-            ){
-
-                alert(
-                    "عذراً، هذا الشفت تم حجزه من شخص آخر"
-                );
-
-                await loadBookings();
-
-                closeModal();
-
-                return;
-
-            }
-
+            console.error(
+                "Supabase Insert Error:",
+                errorText
+            );
 
             throw new Error(
-                errorData.message ||
-                errorData.details ||
                 errorText ||
                 "فشل تثبيت الحجز"
             );
-
         }
 
+
+        /* =========================================
+           الحجز تم حفظه
+        ========================================= */
 
         const insertedBooking =
             await insertResponse.json();
 
-
         console.log(
-            "Booking inserted:",
+            "Booking saved:",
             insertedBooking
         );
 
 
-        bookings.push(
-            booking
-        );
+        /* تحديث الجدول بالموقع */
+
+        bookings.push({
+
+            farm:
+                currentFarm,
+
+            booking_date:
+                selectedDate,
+
+            shift:
+                selectedShift
+
+        });
 
 
         renderCalendar();
 
 
-        /* =================================================
-           سعر الحجز للواتساب
-        ================================================= */
-
-        const bookingDateObject =
-            new Date(
-                selectedDate + "T00:00:00"
-            );
-
-
-        const bookingPrice =
-            getShiftPrice(
-                bookingDateObject.getFullYear(),
-                bookingDateObject.getMonth(),
-                bookingDateObject.getDate(),
-                selectedShift
-            );
-
-
-        /* =================================================
-           واتساب
-        ================================================= */
+        /* =========================================
+           إرسال واتساب
+        ========================================= */
 
         const message =
 `🌿 مزارع الغيث
@@ -3948,9 +3859,6 @@ ${selectedDate}
 ⏰ الفترة:
 ${selectedShift}
 
-💰 السعر:
-${bookingPrice}
-
 شكراً لاختياركم مزارع الغيث 🌿`;
 
 
@@ -3958,9 +3866,7 @@ ${bookingPrice}
             "https://wa.me/" +
             whatsappNumber +
             "?text=" +
-            encodeURIComponent(
-                message
-            );
+            encodeURIComponent(message);
 
 
         window.open(
@@ -3969,16 +3875,16 @@ ${bookingPrice}
         );
 
 
+        /* تنظيف الحقول */
+
         document.getElementById(
             "customerName"
-        ).value =
-            "";
+        ).value = "";
 
 
         document.getElementById(
             "customerPhone"
-        ).value =
-            "";
+        ).value = "";
 
 
         closeModal();
@@ -4006,8 +3912,7 @@ ${bookingPrice}
 
     }finally{
 
-        sendButton.disabled =
-            false;
+        sendButton.disabled = false;
 
         sendButton.textContent =
             "تأكيد الحجز وإرسال عبر واتساب";
