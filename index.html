@@ -1138,6 +1138,66 @@ section{
     border-color:#a9657d;
 }
 
+
+/* =====================================================
+   موافقة الشروط قبل الحجز
+===================================================== */
+
+.terms-agreement{
+    background:#f8f0f3;
+
+    border:2px solid #dfcbd2;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    margin-bottom:13px;
+}
+
+.terms-checkbox{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    color:#5b3545;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.terms-checkbox input{
+    width:20px;
+
+    height:20px;
+
+    min-width:20px;
+
+    margin-top:2px;
+
+    cursor:pointer;
+
+    accent-color:#a9657d;
+}
+
+.terms-link{
+    color:#a9657d;
+
+    text-decoration:underline;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+
 .send-button{
     width:100%;
 
@@ -1163,7 +1223,7 @@ section{
 }
 
 .send-button:disabled{
-    opacity:.6;
+    opacity:.45;
 
     cursor:not-allowed;
 }
@@ -1868,8 +1928,6 @@ footer p{
 
     <div class="farms-grid">
 
-        <!-- المزرعة الأولى - باليمين بسبب RTL -->
-
         <div
             id="farmCard1"
             class="farm-card"
@@ -1886,8 +1944,6 @@ footer p{
 
         </div>
 
-
-        <!-- المزرعة الثانية - باليسار -->
 
         <div
             id="farmCard2"
@@ -1913,8 +1969,6 @@ footer p{
 
 <!-- =====================================================
      منطقة المزرعة المختارة
-     
-     مخفية بالبداية بالكامل
 ===================================================== -->
 
 <section
@@ -1935,29 +1989,17 @@ footer p{
     </p>
 
 
-    <!-- =================================================
-         صور المزرعة المختارة
-    ================================================= -->
-
     <div
         id="farmGallery"
         class="farm-gallery"
     ></div>
 
 
-    <!-- =================================================
-         رسالة الحالة
-    ================================================= -->
-
     <div
         id="statusMessage"
         class="status-message"
     ></div>
 
-
-    <!-- =================================================
-         جدول الحجز
-    ================================================= -->
 
     <div class="booking-container">
 
@@ -2170,10 +2212,45 @@ footer p{
         </div>
 
 
+        <!-- =================================================
+             الموافقة على شروط الحجز
+        ================================================= -->
+
+        <div class="terms-agreement">
+
+            <label class="terms-checkbox">
+
+                <input
+                    type="checkbox"
+                    id="termsCheckbox"
+                    onchange="toggleBookingButton()"
+                >
+
+                <span>
+
+                    أوافق على
+
+                    <span
+                        class="terms-link"
+                        onclick="openRules(); event.preventDefault();"
+                    >
+                        شروط الحجز والاستخدام
+                    </span>
+
+                    وأتعهد بالالتزام بها.
+
+                </span>
+
+            </label>
+
+        </div>
+
+
         <button
             id="sendButton"
             class="send-button"
             onclick="sendBooking()"
+            disabled
         >
             تأكيد الحجز وإرسال عبر واتساب
         </button>
@@ -2517,8 +2594,6 @@ function selectFarm(
         farmName;
 
 
-    /* تحديد البطاقة النشطة */
-
     document
         .getElementById("farmCard1")
         .classList.remove("active");
@@ -2546,29 +2621,21 @@ function selectFarm(
     }
 
 
-    /* عنوان المزرعة */
-
     document.getElementById(
         "selectedFarmTitle"
     ).textContent =
         farmName;
 
 
-    /* إظهار الصور */
-
     renderFarmImages(
         farmName
     );
 
 
-    /* إظهار منطقة الحجز */
-
     document
         .getElementById("farmBookingArea")
         .classList.add("show");
 
-
-    /* بدء الشهر من الشهر الحالي */
 
     currentDate =
         new Date(
@@ -2581,12 +2648,8 @@ function selectFarm(
     hideStatus();
 
 
-    /* رسم الجدول */
-
     renderCalendar();
 
-
-    /* نزول تلقائي لمنطقة الحجز */
 
     setTimeout(
         function(){
@@ -2746,8 +2809,6 @@ function renderCalendar(){
         ).getDate();
 
 
-    /* الخانات الفارغة */
-
     for(
         let i = 0;
         i < firstDay;
@@ -2768,8 +2829,6 @@ function renderCalendar(){
 
     }
 
-
-    /* الأيام */
 
     for(
         let day = 1;
@@ -2811,8 +2870,6 @@ function renderCalendar(){
             today.getTime();
 
 
-        /* رقم اليوم */
-
         const dayNumber =
             document.createElement(
                 "div"
@@ -2829,8 +2886,6 @@ function renderCalendar(){
             dayNumber
         );
 
-
-        /* اليوم الحالي */
 
         if(isToday){
 
@@ -2858,8 +2913,6 @@ function renderCalendar(){
         }
 
 
-        /* الأيام القديمة */
-
         if(isPast){
 
             dayBox.classList.add(
@@ -2885,8 +2938,6 @@ function renderCalendar(){
 
         }
 
-
-        /* الأيام الحالية والقادمة */
 
         else{
 
@@ -3117,8 +3168,6 @@ function openBooking(
         shift;
 
 
-    /* فحص الحجز */
-
     if(
         isShiftBooked(
             selectedDate,
@@ -3156,6 +3205,27 @@ function openBooking(
     `;
 
 
+    /* =================================================
+       إعادة ضبط الموافقة عند فتح نافذة حجز جديدة
+    ================================================= */
+
+    const termsCheckbox =
+        document.getElementById(
+            "termsCheckbox"
+        );
+
+    const sendButton =
+        document.getElementById(
+            "sendButton"
+        );
+
+    termsCheckbox.checked =
+        false;
+
+    sendButton.disabled =
+        true;
+
+
     document
         .getElementById(
             "bookingModal"
@@ -3168,10 +3238,56 @@ function openBooking(
 
 
 /* =====================================================
+   تفعيل زر الحجز بعد الموافقة على الشروط
+===================================================== */
+
+function toggleBookingButton(){
+
+    const checkbox =
+        document.getElementById(
+            "termsCheckbox"
+        );
+
+    const sendButton =
+        document.getElementById(
+            "sendButton"
+        );
+
+
+    sendButton.disabled =
+        !checkbox.checked;
+
+}
+
+
+/* =====================================================
    إرسال الحجز
 ===================================================== */
 
 async function sendBooking(){
+
+    /* =============================================
+       التأكد من الموافقة على الشروط
+    ============================================= */
+
+    const termsCheckbox =
+        document.getElementById(
+            "termsCheckbox"
+        );
+
+
+    if(
+        !termsCheckbox.checked
+    ){
+
+        alert(
+            "يجب الموافقة على شروط الحجز والاستخدام أولاً"
+        );
+
+        return;
+
+    }
+
 
     const name =
         document
@@ -3571,6 +3687,26 @@ function closeModal(){
         .classList.remove(
             "show"
         );
+
+
+    /* إعادة ضبط الموافقة */
+
+    const termsCheckbox =
+        document.getElementById(
+            "termsCheckbox"
+        );
+
+    const sendButton =
+        document.getElementById(
+            "sendButton"
+        );
+
+
+    termsCheckbox.checked =
+        false;
+
+    sendButton.disabled =
+        true;
 
 }
 
