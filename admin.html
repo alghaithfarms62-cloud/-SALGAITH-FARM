@@ -8,15 +8,17 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
+<meta name="theme-color" content="#0a0a0a">
+
 <title>إدارة حجوزات مزارع الغيث</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-/* =========================
-   GENERAL
-========================= */
+/* =====================================================
+   ALGAITH FARMS - LUXURY ADMIN
+===================================================== */
 
 *{
     box-sizing:border-box;
@@ -24,15 +26,36 @@
     padding:0;
 }
 
-body{
-    font-family:Tahoma,Arial,sans-serif;
-    background:#f5eef1;
-    color:#241d22;
+:root{
+    --black:#080808;
+    --black2:#101010;
+    --card:#151515;
+    --card2:#1b1b1b;
+    --gold:#d4af37;
+    --gold2:#f0d477;
+    --gold-dark:#9d7b16;
+    --white:#f7f7f7;
+    --gray:#a7a7a7;
+    --border:rgba(212,175,55,.22);
+    --red:#b52a2a;
 }
 
-/* =========================
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,.09),
+            transparent 35%
+        ),
+        #080808;
+    color:var(--white);
+    min-height:100vh;
+}
+
+/* =====================================================
    LOGIN
-========================= */
+===================================================== */
 
 #loginPage{
     min-height:100vh;
@@ -40,73 +63,152 @@ body{
     align-items:center;
     justify-content:center;
     padding:20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212,175,55,.12),
+            transparent 45%
+        ),
+        #080808;
 }
 
 .login-box{
     width:100%;
-    max-width:420px;
-    background:#fff;
-    padding:35px;
-    border-radius:22px;
-    border:2px solid #dfcbd2;
-    box-shadow:0 10px 35px rgba(0,0,0,.12);
+    max-width:430px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #0d0d0d
+        );
+
+    padding:38px 30px;
+
+    border-radius:26px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
     text-align:center;
 }
 
 .login-logo{
-    font-size:50px;
-    margin-bottom:10px;
+    width:82px;
+    height:82px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:2px solid var(--gold);
+
+    background:#090909;
+
+    font-size:40px;
+
+    box-shadow:
+        0 0 35px rgba(212,175,55,.18);
 }
 
 .login-box h1{
-    color:#704052;
+    color:var(--gold2);
     margin-bottom:8px;
+    font-size:26px;
 }
 
 .login-box p{
-    color:#777;
-    margin-bottom:25px;
+    color:var(--gray);
+    margin-bottom:28px;
 }
 
 .login-box input{
     width:100%;
-    padding:14px;
+
+    padding:15px;
+
     margin-bottom:13px;
-    border:2px solid #dfcbd2;
-    border-radius:10px;
+
+    background:#0b0b0b;
+
+    color:#fff;
+
+    border:1px solid #333;
+
+    border-radius:12px;
+
     font-family:inherit;
     font-size:15px;
+
     outline:none;
+
+    transition:.25s;
 }
 
 .login-box input:focus{
-    border-color:#a35f77;
+    border-color:var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,.08);
 }
 
 .login-btn{
     width:100%;
-    padding:14px;
+
+    padding:15px;
+
     border:0;
-    border-radius:10px;
-    background:#704052;
-    color:#fff;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
+
+    color:#111;
+
     font-family:inherit;
     font-weight:bold;
     font-size:16px;
+
     cursor:pointer;
+
+    box-shadow:
+        0 8px 25px rgba(212,175,55,.16);
+
+    transition:.25s;
 }
 
 .login-btn:hover{
-    background:#59313f;
+    transform:translateY(-1px);
 }
 
 .login-error{
     display:none;
+
     margin-top:15px;
+
     padding:12px;
+
     border-radius:10px;
-    background:#f8d7da;
-    color:#842029;
+
+    background:#321313;
+
+    border:1px solid #713030;
+
+    color:#ffb3b3;
+
     font-size:14px;
 }
 
@@ -114,172 +216,235 @@ body{
     display:block;
 }
 
-/* =========================
+/* =====================================================
    ADMIN
-========================= */
+===================================================== */
 
 #adminPage{
     display:none;
 }
 
+/* =====================================================
+   HEADER
+===================================================== */
+
 header{
-    background:#171318;
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:
+        rgba(8,8,8,.94);
+
+    backdrop-filter:blur(15px);
+
     color:#fff;
-    padding:22px 5%;
+
+    padding:20px 5%;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    gap:15px;
+
+    gap:20px;
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.35);
+}
+
+.brand-area{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand-icon{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:#111;
+
+    border:1px solid var(--gold);
+
+    font-size:25px;
+
+    box-shadow:
+        0 0 20px rgba(212,175,55,.12);
 }
 
 header h1{
-    color:#e2a4b7;
-    margin-bottom:6px;
+    color:var(--gold2);
+
+    margin-bottom:5px;
+
+    font-size:22px;
 }
 
 header p{
-    color:#ddd;
+    color:var(--gray);
+
+    font-size:13px;
 }
 
 .header-buttons{
     display:flex;
-    gap:10px;
+
+    gap:9px;
+
     align-items:center;
 }
 
-.notification-btn{
-    background:#704052;
-    color:#fff;
+.notification-btn,
+.logout-btn{
     border:0;
-    border-radius:10px;
+
+    border-radius:11px;
+
     padding:11px 15px;
+
     font-family:inherit;
+
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:.2s;
+}
+
+.notification-btn{
+    background:#1c1c1c;
+
+    color:var(--gold2);
+
+    border:1px solid var(--border);
 }
 
 .notification-btn:hover{
-    background:#59313f;
+    background:#252525;
 }
 
 .logout-btn{
-    background:#c62828;
+    background:#641c1c;
+
     color:#fff;
-    border:0;
-    border-radius:10px;
-    padding:11px 18px;
-    font-family:inherit;
-    font-weight:bold;
-    cursor:pointer;
+
+    border:1px solid #8b3030;
 }
 
 .logout-btn:hover{
-    background:#a51f1f;
+    background:#822323;
 }
 
-/* =========================
-   NEW BOOKING ALERT
-========================= */
-
-.new-booking-alert{
-    position:fixed;
-    top:20px;
-    right:20px;
-    width:340px;
-    max-width:calc(100% - 40px);
-    background:#fff;
-    border:3px solid #704052;
-    border-radius:18px;
-    padding:18px;
-    box-shadow:0 15px 45px rgba(0,0,0,.25);
-    z-index:9999;
-
-    transform:translateX(450px);
-    opacity:0;
-    pointer-events:none;
-
-    transition:.35s ease;
-}
-
-.new-booking-alert.show{
-    transform:translateX(0);
-    opacity:1;
-    pointer-events:auto;
-}
-
-.new-booking-alert h3{
-    color:#704052;
-    margin-bottom:10px;
-}
-
-.new-booking-alert p{
-    margin:6px 0;
-    color:#444;
-}
-
-.alert-close{
-    margin-top:12px;
-    width:100%;
-    padding:10px;
-    border:0;
-    border-radius:9px;
-    background:#704052;
-    color:#fff;
-    font-family:inherit;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* =========================
+/* =====================================================
    CONTAINER
-========================= */
+===================================================== */
 
 .container{
     width:94%;
-    max-width:1300px;
-    margin:30px auto;
+
+    max-width:1350px;
+
+    margin:30px auto 50px;
 }
 
-/* =========================
+/* =====================================================
    STATS
-========================= */
+===================================================== */
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
     margin-bottom:25px;
 }
 
 .stat{
-    background:#fff;
-    border:2px solid #dfcbd2;
-    border-radius:18px;
-    padding:22px;
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1a1a1a,
+            #101010
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:24px;
+
     text-align:center;
-    box-shadow:0 6px 20px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.3);
+}
+
+.stat::before{
+    content:"";
+
+    position:absolute;
+
+    top:-50px;
+    right:-50px;
+
+    width:120px;
+    height:120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.14),
+            transparent 70%
+        );
 }
 
 .stat h3{
-    color:#704052;
-    margin-bottom:8px;
+    color:#bdbdbd;
+
+    margin-bottom:10px;
+
+    font-size:14px;
 }
 
 .stat strong{
-    font-size:28px;
-    color:#a35f77;
+    font-size:30px;
+
+    color:var(--gold2);
 }
 
-/* =========================
+/* =====================================================
    MESSAGE
-========================= */
+===================================================== */
 
 .message{
     display:none;
+
     margin-bottom:15px;
-    padding:13px;
-    border-radius:10px;
+
+    padding:14px;
+
+    border-radius:12px;
+
     font-weight:bold;
+
+    text-align:center;
 }
 
 .message.show{
@@ -287,151 +452,352 @@ header p{
 }
 
 .success{
-    background:#d1e7dd;
-    color:#0f5132;
+    background:#11251a;
+
+    border:1px solid #2d6843;
+
+    color:#8de0aa;
 }
 
 .error{
-    background:#f8d7da;
-    color:#842029;
+    background:#2a1111;
+
+    border:1px solid #6c2b2b;
+
+    color:#ffabab;
 }
 
-/* =========================
+/* =====================================================
    FILTERS
-========================= */
+===================================================== */
 
 .filters{
-    background:#fff;
-    border:2px solid #dfcbd2;
-    border-radius:18px;
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #101010
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
     padding:20px;
+
     margin-bottom:20px;
 
     display:grid;
-    grid-template-columns:repeat(5,1fr);
+
+    grid-template-columns:
+        repeat(5,1fr);
+
     gap:12px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
 }
 
 .filters input,
 .filters select{
     width:100%;
-    padding:12px;
-    border:2px solid #dfcbd2;
-    border-radius:10px;
+
+    padding:13px;
+
+    background:#0b0b0b;
+
+    color:#eee;
+
+    border:1px solid #333;
+
+    border-radius:11px;
+
     font-family:inherit;
+
     outline:none;
 }
 
 .filters input:focus,
 .filters select:focus{
-    border-color:#a35f77;
+    border-color:var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(212,175,55,.06);
+}
+
+.filters select option{
+    background:#151515;
+    color:#fff;
 }
 
 .refresh{
-    background:#704052;
-    color:#fff;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
+
+    color:#111;
+
     border:0;
-    border-radius:10px;
-    padding:12px;
+
+    border-radius:11px;
+
+    padding:13px;
+
     font-family:inherit;
+
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:.2s;
 }
 
-/* =========================
+.refresh:hover{
+    transform:translateY(-1px);
+}
+
+/* =====================================================
    TABLE
-========================= */
+===================================================== */
 
 .table-box{
-    background:#fff;
-    border-radius:18px;
-    border:2px solid #dfcbd2;
+    background:#111;
+
+    border-radius:20px;
+
+    border:1px solid var(--border);
+
     overflow:auto;
-    box-shadow:0 6px 20px rgba(0,0,0,.07);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.35);
 }
 
 table{
     width:100%;
+
     border-collapse:collapse;
+
     min-width:1050px;
 }
 
 th{
-    background:#211b20;
-    color:#e2a4b7;
-    padding:15px;
+    background:
+        linear-gradient(
+            135deg,
+            #191919,
+            #0d0d0d
+        );
+
+    color:var(--gold2);
+
+    padding:16px;
+
     white-space:nowrap;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:13px;
 }
 
 td{
-    padding:13px;
-    border-bottom:1px solid #eee;
+    padding:14px;
+
+    border-bottom:1px solid #252525;
+
     text-align:center;
+
+    color:#ddd;
 }
 
 tr:hover{
-    background:#fff7fa;
+    background:#181818;
 }
 
 .price{
-    color:#a35f77;
+    color:var(--gold2);
+
     font-weight:bold;
 }
 
 .action-buttons{
     display:flex;
+
     justify-content:center;
+
     gap:7px;
 }
 
 .edit-btn{
-    background:#704052;
-    color:#fff;
-    border:0;
+    background:#27210d;
+
+    color:var(--gold2);
+
+    border:1px solid var(--gold-dark);
+
     border-radius:8px;
+
     padding:8px 12px;
+
     font-family:inherit;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
 .edit-btn:hover{
-    background:#59313f;
+    background:#362d10;
 }
 
 .delete-btn{
-    background:#c62828;
-    color:#fff;
-    border:0;
+    background:#451717;
+
+    color:#ffb0b0;
+
+    border:1px solid #713030;
+
     border-radius:8px;
+
     padding:8px 12px;
+
     font-family:inherit;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
 .delete-btn:hover{
-    background:#a51f1f;
+    background:#641d1d;
 }
 
 .empty{
     text-align:center;
-    padding:40px;
-    color:#777;
+
+    padding:45px;
+
+    color:#888;
 }
 
-/* =========================
+/* =====================================================
+   NEW BOOKING ALERT
+===================================================== */
+
+.new-booking-alert{
+    position:fixed;
+
+    top:90px;
+
+    right:20px;
+
+    width:350px;
+
+    max-width:
+        calc(100% - 40px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #0d0d0d
+        );
+
+    border:2px solid var(--gold);
+
+    border-radius:20px;
+
+    padding:19px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.65),
+        0 0 30px rgba(212,175,55,.12);
+
+    z-index:9999;
+
+    transform:
+        translateX(450px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s ease;
+}
+
+.new-booking-alert.show{
+    transform:
+        translateX(0);
+
+    opacity:1;
+
+    pointer-events:auto;
+}
+
+.new-booking-alert h3{
+    color:var(--gold2);
+
+    margin-bottom:12px;
+}
+
+.new-booking-alert p{
+    margin:7px 0;
+
+    color:#ddd;
+}
+
+.alert-close{
+    margin-top:13px;
+
+    width:100%;
+
+    padding:10px;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
+
+    color:#111;
+
+    font-family:inherit;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+/* =====================================================
    EDIT MODAL
-========================= */
+===================================================== */
 
 .modal-overlay{
     position:fixed;
+
     inset:0;
-    background:rgba(0,0,0,.55);
+
+    background:
+        rgba(0,0,0,.78);
+
+    backdrop-filter:blur(7px);
+
     display:none;
+
     align-items:center;
+
     justify-content:center;
+
     padding:20px;
+
     z-index:10000;
 }
 
@@ -441,16 +807,31 @@ tr:hover{
 
 .edit-modal{
     width:100%;
+
     max-width:500px;
-    background:#fff;
-    border-radius:22px;
-    padding:25px;
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d1d,
+            #0d0d0d
+        );
+
+    border:1px solid var(--border);
+
+    border-radius:23px;
+
+    padding:26px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.7);
 }
 
 .edit-modal h2{
-    color:#704052;
+    color:var(--gold2);
+
     margin-bottom:20px;
+
     text-align:center;
 }
 
@@ -460,58 +841,97 @@ tr:hover{
 
 .edit-group label{
     display:block;
+
     margin-bottom:6px;
+
     font-weight:bold;
-    color:#555;
+
+    color:#aaa;
 }
 
 .edit-group input,
 .edit-group select{
     width:100%;
+
     padding:12px;
-    border:2px solid #dfcbd2;
+
+    background:#0a0a0a;
+
+    color:#fff;
+
+    border:1px solid #333;
+
     border-radius:10px;
+
     font-family:inherit;
+
     outline:none;
 }
 
 .edit-group input:focus,
 .edit-group select:focus{
-    border-color:#a35f77;
+    border-color:var(--gold);
+}
+
+.edit-group select option{
+    background:#151515;
 }
 
 .modal-buttons{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:10px;
+
     margin-top:20px;
 }
 
 .save-edit{
-    background:#704052;
-    color:#fff;
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
+
+    color:#111;
+
     border:0;
+
     padding:13px;
+
     border-radius:10px;
+
     font-family:inherit;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
 .cancel-edit{
-    background:#777;
-    color:#fff;
-    border:0;
+    background:#333;
+
+    color:#ddd;
+
+    border:1px solid #444;
+
     padding:13px;
+
     border-radius:10px;
+
     font-family:inherit;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:900px){
 
@@ -525,20 +945,36 @@ tr:hover{
 
     header{
         flex-direction:column;
+
         text-align:center;
+
+        padding:18px 4%;
+    }
+
+    .brand-area{
+        justify-content:center;
     }
 
 }
 
-@media(max-width:500px){
+@media(max-width:600px){
+
+    .container{
+        width:92%;
+        margin-top:20px;
+    }
 
     .filters{
         grid-template-columns:1fr;
+        padding:15px;
     }
 
     .header-buttons{
         width:100%;
-        flex-direction:column;
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
     }
 
     .notification-btn,
@@ -547,11 +983,41 @@ tr:hover{
     }
 
     .new-booking-alert{
-        top:10px;
+        top:75px;
+
         right:10px;
-        max-width:calc(100% - 20px);
+
+        max-width:
+            calc(100% - 20px);
     }
 
+    .login-box{
+        padding:30px 22px;
+    }
+
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0b0b0b;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4c401b;
+
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:var(--gold);
 }
 
 </style>
@@ -621,17 +1087,26 @@ tr:hover{
 
     <header>
 
-        <div>
+        <div class="brand-area">
 
-            <h1>
-                📋 إدارة حجوزات مزارع الغيث
-            </h1>
+            <div class="brand-icon">
+                🌿
+            </div>
 
-            <p>
-                لوحة التحكم بالحجوزات
-            </p>
+            <div>
+
+                <h1>
+                    إدارة حجوزات مزارع الغيث
+                </h1>
+
+                <p>
+                    لوحة التحكم بالحجوزات
+                </p>
+
+            </div>
 
         </div>
+
 
         <div class="header-buttons">
 
@@ -639,7 +1114,7 @@ tr:hover{
                 class="notification-btn"
                 onclick="enableNotifications()"
             >
-                🔔 تفعيل الإشعارات
+                🔔 الإشعارات
             </button>
 
             <button
@@ -686,16 +1161,14 @@ tr:hover{
     <div class="container">
 
 
-        <!-- =========================
-             STATS
-        ========================= -->
+        <!-- STATS -->
 
         <div class="stats">
 
             <div class="stat">
 
                 <h3>
-                    عدد الحجوزات
+                    إجمالي الحجوزات
                 </h3>
 
                 <strong id="bookingCount">
@@ -744,9 +1217,7 @@ tr:hover{
         ></div>
 
 
-        <!-- =========================
-             FILTERS
-        ========================= -->
+        <!-- FILTERS -->
 
         <div class="filters">
 
@@ -815,9 +1286,7 @@ tr:hover{
         </div>
 
 
-        <!-- =========================
-             BOOKINGS TABLE
-        ========================= -->
+        <!-- TABLE -->
 
         <div class="table-box">
 
@@ -941,9 +1410,7 @@ tr:hover{
                 المزرعة
             </label>
 
-            <select
-                id="editFarm"
-            >
+            <select id="editFarm">
 
                 <option value="المزرعة الأولى">
                     المزرعة الأولى
@@ -964,9 +1431,7 @@ tr:hover{
                 الشفت
             </label>
 
-            <select
-                id="editShift"
-            >
+            <select id="editShift">
 
                 <option value="شفت صباحي">
                     ☀️ شفت صباحي
@@ -1013,14 +1478,11 @@ tr:hover{
 const SUPABASE_URL =
     "https://xhyuqruymtengguoyaie.supabase.co";
 
-
 const SUPABASE_KEY =
     "sb_publishable_v_vOawF0sNtyj2YavPT6xw_u_zESPoI";
 
-
 const BOOKINGS_TABLE =
     "BookingFarms";
-
 
 const supabaseClient =
     window.supabase.createClient(
@@ -1050,18 +1512,15 @@ async function login(){
         .value
         .trim();
 
-
     const password =
         document
         .getElementById("password")
         .value;
 
-
     const errorBox =
         document.getElementById(
             "loginError"
         );
-
 
     errorBox.className =
         "login-error";
@@ -1076,7 +1535,6 @@ async function login(){
             "login-error show";
 
         return;
-
     }
 
 
@@ -1111,7 +1569,6 @@ async function login(){
                 "login-error show";
 
             return;
-
         }
 
 
@@ -1127,15 +1584,10 @@ async function login(){
                 "login-error show";
 
             return;
-
         }
 
 
-        /*
-         * تهيئة الصوت بعد ضغطة المستخدم
-         */
         initAudio();
-
 
         showAdmin();
 
@@ -1179,7 +1631,6 @@ async function checkSession(){
             showLogin();
 
             return;
-
         }
 
 
@@ -1271,7 +1722,6 @@ async function logout(){
         );
 
         realtimeChannel = null;
-
     }
 
 
@@ -1341,7 +1791,6 @@ function initAudio(){
                     new AudioContext();
 
             }
-
         }
 
 
@@ -1477,7 +1926,7 @@ function playNotificationSound(){
 
 
 /* =====================================================
-   BROWSER NOTIFICATIONS
+   NOTIFICATIONS
 ===================================================== */
 
 async function enableNotifications(){
@@ -1491,7 +1940,6 @@ async function enableNotifications(){
         );
 
         return;
-
     }
 
 
@@ -1507,7 +1955,7 @@ async function enableNotifications(){
         ){
 
             showMessage(
-                "تم تفعيل إشعارات الحجوزات 🔔",
+                "تم تفعيل الإشعارات 🔔",
                 "success"
             );
 
@@ -1542,7 +1990,7 @@ async function enableNotifications(){
 
 
 /* =====================================================
-   SHOW NEW BOOKING NOTIFICATION
+   NEW BOOKING ALERT
 ===================================================== */
 
 function notifyNewBooking(
@@ -1575,15 +2023,8 @@ function notifyNewBooking(
         "-";
 
 
-    /*
-     * صوت
-     */
     playNotificationSound();
 
-
-    /*
-     * داخل الصفحة
-     */
 
     document.getElementById(
         "alertCustomer"
@@ -1608,10 +2049,6 @@ function notifyNewBooking(
         "show"
     );
 
-
-    /*
-     * إشعار المتصفح
-     */
 
     if(
         "Notification" in window &&
@@ -1642,19 +2079,12 @@ function notifyNewBooking(
 
         catch(error){
 
-            console.log(
-                "Browser notification error:",
-                error
-            );
+            console.log(error);
 
         }
 
     }
 
-
-    /*
-     * رسالة داخل لوحة الإدارة
-     */
 
     showMessage(
         "🔔 تم استلام حجز جديد من " +
@@ -1662,10 +2092,6 @@ function notifyNewBooking(
         "success"
     );
 
-
-    /*
-     * إغلاق التنبيه تلقائياً
-     */
 
     setTimeout(
         function(){
@@ -1696,14 +2122,9 @@ function closeBookingAlert(){
 
 function startRealtime(){
 
-    /*
-     * منع إنشاء أكثر من قناة
-     */
-
     if(realtimeChannel){
 
         return;
-
     }
 
 
@@ -1726,11 +2147,6 @@ function startRealtime(){
                     payload
                 );
 
-
-                /*
-                 * إذا الحجز موجود مسبقاً
-                 * لا نكرره
-                 */
 
                 const exists =
                     bookings.some(
@@ -1761,7 +2177,6 @@ function startRealtime(){
 
                 updateLastUpdate();
 
-
                 notifyNewBooking(
                     payload.new
                 );
@@ -1776,12 +2191,6 @@ function startRealtime(){
                 table:BOOKINGS_TABLE
             },
             function(payload){
-
-                console.log(
-                    "BOOKING UPDATED:",
-                    payload
-                );
-
 
                 const index =
                     bookings.findIndex(
@@ -1820,7 +2229,7 @@ function startRealtime(){
 
 
                 showMessage(
-                    "✏️ تم تحديث حجز",
+                    "✏️ تم تحديث الحجز",
                     "success"
                 );
 
@@ -1834,12 +2243,6 @@ function startRealtime(){
                 table:BOOKINGS_TABLE
             },
             function(payload){
-
-                console.log(
-                    "BOOKING DELETED:",
-                    payload
-                );
-
 
                 bookings =
                     bookings.filter(
@@ -1918,7 +2321,6 @@ async function loadBookings(){
         );
 
         return;
-
     }
 
 
@@ -1936,7 +2338,7 @@ async function loadBookings(){
 
 
 /* =====================================================
-   UPDATE LAST UPDATE
+   UPDATE TIME
 ===================================================== */
 
 function updateLastUpdate(){
@@ -1952,7 +2354,7 @@ function updateLastUpdate(){
 
 
 /* =====================================================
-   GET CUSTOMER NAME
+   GET NAME
 ===================================================== */
 
 function getCustomerName(
@@ -2033,12 +2435,6 @@ function getPrice(
     const day =
         dateObject.getDay();
 
-
-    /*
-        الخميس = 4
-        الجمعة = 5
-        السبت = 6
-    */
 
     const expensiveDays =
         day === 4 ||
@@ -2181,32 +2577,27 @@ function renderTable(){
                     );
 
 
-                const matchSearch =
-                    !search ||
-                    name.includes(search) ||
-                    phone.includes(search);
-
-
-                const matchDate =
-                    !date ||
-                    booking.booking_date === date;
-
-
-                const matchFarm =
-                    !farm ||
-                    bookingFarm === farm;
-
-
-                const matchShift =
-                    !shift ||
-                    bookingShift === shift;
-
-
                 return (
-                    matchSearch &&
-                    matchDate &&
-                    matchFarm &&
-                    matchShift
+
+                    (!search ||
+                    name.includes(search) ||
+                    phone.includes(search))
+
+                    &&
+
+                    (!date ||
+                    booking.booking_date === date)
+
+                    &&
+
+                    (!farm ||
+                    bookingFarm === farm)
+
+                    &&
+
+                    (!shift ||
+                    bookingShift === shift)
+
                 );
 
             }
@@ -2236,13 +2627,8 @@ function renderTable(){
         `;
 
         return;
-
     }
 
-
-    /*
-     * ترتيب الأحدث أولاً
-     */
 
     filtered.sort(
         function(a,b){
@@ -2357,7 +2743,7 @@ function renderTable(){
 
 
 /* =====================================================
-   UPDATE STATS
+   STATS
 ===================================================== */
 
 function updateStats(){
@@ -2393,7 +2779,7 @@ function updateStats(){
 
 
 /* =====================================================
-   OPEN EDIT MODAL
+   EDIT MODAL
 ===================================================== */
 
 function openEditModal(
@@ -2419,7 +2805,6 @@ function openEditModal(
         );
 
         return;
-
     }
 
 
@@ -2474,10 +2859,6 @@ function openEditModal(
 }
 
 
-/* =====================================================
-   CLOSE EDIT MODAL
-===================================================== */
-
 function closeEditModal(){
 
     editingBookingId =
@@ -2502,7 +2883,6 @@ async function saveEdit(){
     if(!editingBookingId){
 
         return;
-
     }
 
 
@@ -2561,28 +2941,30 @@ async function saveEdit(){
         );
 
         return;
-
     }
 
-
-    /*
-     * منع تعديل الحجز إلى شفت
-     * محجوز من شخص آخر
-     */
 
     const conflict =
         bookings.find(
             function(item){
 
                 return (
+
                     String(item.id) !==
                     String(editingBookingId)
+
                     &&
+
                     item.booking_date === date
+
                     &&
+
                     getFarm(item) === farm
+
                     &&
+
                     getShift(item) === shift
+
                 );
 
             }
@@ -2596,7 +2978,6 @@ async function saveEdit(){
         );
 
         return;
-
     }
 
 
@@ -2651,7 +3032,6 @@ async function saveEdit(){
         );
 
         return;
-
     }
 
 
@@ -2682,7 +3062,6 @@ async function saveEdit(){
     updateStats();
 
     updateLastUpdate();
-
 
     closeEditModal();
 
@@ -2722,7 +3101,6 @@ async function cancelBooking(
         );
 
         return;
-
     }
 
 
@@ -2767,7 +3145,6 @@ ${shift}`
     if(!confirmed){
 
         return;
-
     }
 
 
@@ -2797,7 +3174,6 @@ ${shift}`
         );
 
         return;
-
     }
 
 
@@ -2829,7 +3205,7 @@ ${shift}`
 
 
 /* =====================================================
-   CLOSE MODAL WHEN CLICK OUTSIDE
+   CLOSE MODAL OUTSIDE
 ===================================================== */
 
 document
