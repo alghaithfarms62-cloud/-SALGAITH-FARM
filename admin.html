@@ -141,6 +141,27 @@ header p{
     color:#ddd;
 }
 
+.header-buttons{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.notification-btn{
+    background:#704052;
+    color:#fff;
+    border:0;
+    border-radius:10px;
+    padding:11px 15px;
+    font-family:inherit;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.notification-btn:hover{
+    background:#59313f;
+}
+
 .logout-btn{
     background:#c62828;
     color:#fff;
@@ -154,6 +175,59 @@ header p{
 
 .logout-btn:hover{
     background:#a51f1f;
+}
+
+/* =========================
+   NEW BOOKING ALERT
+========================= */
+
+.new-booking-alert{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:340px;
+    max-width:calc(100% - 40px);
+    background:#fff;
+    border:3px solid #704052;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+    z-index:9999;
+
+    transform:translateX(450px);
+    opacity:0;
+    pointer-events:none;
+
+    transition:.35s ease;
+}
+
+.new-booking-alert.show{
+    transform:translateX(0);
+    opacity:1;
+    pointer-events:auto;
+}
+
+.new-booking-alert h3{
+    color:#704052;
+    margin-bottom:10px;
+}
+
+.new-booking-alert p{
+    margin:6px 0;
+    color:#444;
+}
+
+.alert-close{
+    margin-top:12px;
+    width:100%;
+    padding:10px;
+    border:0;
+    border-radius:9px;
+    background:#704052;
+    color:#fff;
+    font-family:inherit;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* =========================
@@ -279,7 +353,7 @@ header p{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:950px;
+    min-width:1050px;
 }
 
 th{
@@ -304,12 +378,33 @@ tr:hover{
     font-weight:bold;
 }
 
+.action-buttons{
+    display:flex;
+    justify-content:center;
+    gap:7px;
+}
+
+.edit-btn{
+    background:#704052;
+    color:#fff;
+    border:0;
+    border-radius:8px;
+    padding:8px 12px;
+    font-family:inherit;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.edit-btn:hover{
+    background:#59313f;
+}
+
 .delete-btn{
     background:#c62828;
     color:#fff;
     border:0;
     border-radius:8px;
-    padding:8px 13px;
+    padding:8px 12px;
     font-family:inherit;
     font-weight:bold;
     cursor:pointer;
@@ -323,6 +418,95 @@ tr:hover{
     text-align:center;
     padding:40px;
     color:#777;
+}
+
+/* =========================
+   EDIT MODAL
+========================= */
+
+.modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:10000;
+}
+
+.modal-overlay.show{
+    display:flex;
+}
+
+.edit-modal{
+    width:100%;
+    max-width:500px;
+    background:#fff;
+    border-radius:22px;
+    padding:25px;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.edit-modal h2{
+    color:#704052;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.edit-group{
+    margin-bottom:14px;
+}
+
+.edit-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#555;
+}
+
+.edit-group input,
+.edit-group select{
+    width:100%;
+    padding:12px;
+    border:2px solid #dfcbd2;
+    border-radius:10px;
+    font-family:inherit;
+    outline:none;
+}
+
+.edit-group input:focus,
+.edit-group select:focus{
+    border-color:#a35f77;
+}
+
+.modal-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:20px;
+}
+
+.save-edit{
+    background:#704052;
+    color:#fff;
+    border:0;
+    padding:13px;
+    border-radius:10px;
+    font-family:inherit;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.cancel-edit{
+    background:#777;
+    color:#fff;
+    border:0;
+    padding:13px;
+    border-radius:10px;
+    font-family:inherit;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 /* =========================
@@ -350,6 +534,22 @@ tr:hover{
 
     .filters{
         grid-template-columns:1fr;
+    }
+
+    .header-buttons{
+        width:100%;
+        flex-direction:column;
+    }
+
+    .notification-btn,
+    .logout-btn{
+        width:100%;
+    }
+
+    .new-booking-alert{
+        top:10px;
+        right:10px;
+        max-width:calc(100% - 20px);
     }
 
 }
@@ -433,14 +633,54 @@ tr:hover{
 
         </div>
 
-        <button
-            class="logout-btn"
-            onclick="logout()"
-        >
-            تسجيل خروج
-        </button>
+        <div class="header-buttons">
+
+            <button
+                class="notification-btn"
+                onclick="enableNotifications()"
+            >
+                🔔 تفعيل الإشعارات
+            </button>
+
+            <button
+                class="logout-btn"
+                onclick="logout()"
+            >
+                تسجيل خروج
+            </button>
+
+        </div>
 
     </header>
+
+
+    <!-- NEW BOOKING ALERT -->
+
+    <div
+        id="newBookingAlert"
+        class="new-booking-alert"
+    >
+
+        <h3>
+            🔔 حجز جديد!
+        </h3>
+
+        <p id="alertCustomer">
+            -
+        </p>
+
+        <p id="alertDetails">
+            -
+        </p>
+
+        <button
+            class="alert-close"
+            onclick="closeBookingAlert()"
+        >
+            إغلاق
+        </button>
+
+    </div>
 
 
     <div class="container">
@@ -616,7 +856,7 @@ tr:hover{
                         </th>
 
                         <th>
-                            إلغاء
+                            الإجراءات
                         </th>
 
                     </tr>
@@ -629,6 +869,133 @@ tr:hover{
                 </tbody>
 
             </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     EDIT MODAL
+===================================================== -->
+
+<div
+    id="editModal"
+    class="modal-overlay"
+>
+
+    <div class="edit-modal">
+
+        <h2>
+            ✏️ تعديل الحجز
+        </h2>
+
+
+        <div class="edit-group">
+
+            <label>
+                اسم الزبون
+            </label>
+
+            <input
+                id="editCustomerName"
+                type="text"
+            >
+
+        </div>
+
+
+        <div class="edit-group">
+
+            <label>
+                رقم الهاتف
+            </label>
+
+            <input
+                id="editPhone"
+                type="text"
+            >
+
+        </div>
+
+
+        <div class="edit-group">
+
+            <label>
+                التاريخ
+            </label>
+
+            <input
+                id="editDate"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="edit-group">
+
+            <label>
+                المزرعة
+            </label>
+
+            <select
+                id="editFarm"
+            >
+
+                <option value="المزرعة الأولى">
+                    المزرعة الأولى
+                </option>
+
+                <option value="المزرعة الثانية">
+                    المزرعة الثانية
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="edit-group">
+
+            <label>
+                الشفت
+            </label>
+
+            <select
+                id="editShift"
+            >
+
+                <option value="شفت صباحي">
+                    ☀️ شفت صباحي
+                </option>
+
+                <option value="شفت مسائي">
+                    🌙 شفت مسائي
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-buttons">
+
+            <button
+                class="save-edit"
+                onclick="saveEdit()"
+            >
+                💾 حفظ التعديل
+            </button>
+
+            <button
+                class="cancel-edit"
+                onclick="closeEditModal()"
+            >
+                إلغاء
+            </button>
 
         </div>
 
@@ -663,6 +1030,12 @@ const supabaseClient =
 
 
 let bookings = [];
+
+let realtimeChannel = null;
+
+let editingBookingId = null;
+
+let audioContext = null;
 
 
 /* =====================================================
@@ -758,6 +1131,12 @@ async function login(){
         }
 
 
+        /*
+         * تهيئة الصوت بعد ضغطة المستخدم
+         */
+        initAudio();
+
+
         showAdmin();
 
     }
@@ -808,6 +1187,8 @@ async function checkSession(){
             data &&
             data.session
         ){
+
+            initAudio();
 
             showAdmin();
 
@@ -871,6 +1252,8 @@ function showAdmin(){
 
     loadBookings();
 
+    startRealtime();
+
 }
 
 
@@ -879,6 +1262,18 @@ function showAdmin(){
 ===================================================== */
 
 async function logout(){
+
+    if(realtimeChannel){
+
+        await supabaseClient
+        .removeChannel(
+            realtimeChannel
+        );
+
+        realtimeChannel = null;
+
+    }
+
 
     await supabaseClient.auth.signOut();
 
@@ -920,8 +1315,570 @@ function showMessage(
                 "message";
 
         },
-        3000
+        3500
     );
+
+}
+
+
+/* =====================================================
+   AUDIO
+===================================================== */
+
+function initAudio(){
+
+    try{
+
+        if(!audioContext){
+
+            const AudioContext =
+                window.AudioContext ||
+                window.webkitAudioContext;
+
+            if(AudioContext){
+
+                audioContext =
+                    new AudioContext();
+
+            }
+
+        }
+
+
+        if(
+            audioContext &&
+            audioContext.state ===
+            "suspended"
+        ){
+
+            audioContext.resume();
+
+        }
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Audio unavailable",
+            error
+        );
+
+    }
+
+}
+
+
+function playNotificationSound(){
+
+    try{
+
+        if(!audioContext){
+
+            initAudio();
+
+        }
+
+
+        if(!audioContext){
+
+            return;
+
+        }
+
+
+        if(
+            audioContext.state ===
+            "suspended"
+        ){
+
+            audioContext.resume();
+
+        }
+
+
+        const now =
+            audioContext.currentTime;
+
+
+        const oscillator =
+            audioContext.createOscillator();
+
+
+        const gain =
+            audioContext.createGain();
+
+
+        oscillator.type =
+            "sine";
+
+
+        oscillator.frequency.setValueAtTime(
+            880,
+            now
+        );
+
+
+        oscillator.frequency.setValueAtTime(
+            660,
+            now + 0.15
+        );
+
+
+        oscillator.frequency.setValueAtTime(
+            880,
+            now + 0.30
+        );
+
+
+        gain.gain.setValueAtTime(
+            0.0001,
+            now
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.25,
+            now + 0.03
+        );
+
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.0001,
+            now + 0.50
+        );
+
+
+        oscillator.connect(gain);
+
+        gain.connect(
+            audioContext.destination
+        );
+
+
+        oscillator.start(now);
+
+        oscillator.stop(
+            now + 0.55
+        );
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Sound error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   BROWSER NOTIFICATIONS
+===================================================== */
+
+async function enableNotifications(){
+
+    if(
+        !("Notification" in window)
+    ){
+
+        alert(
+            "المتصفح الحالي لا يدعم إشعارات المتصفح."
+        );
+
+        return;
+
+    }
+
+
+    try{
+
+        const permission =
+            await Notification.requestPermission();
+
+
+        if(
+            permission ===
+            "granted"
+        ){
+
+            showMessage(
+                "تم تفعيل إشعارات الحجوزات 🔔",
+                "success"
+            );
+
+
+            new Notification(
+                "مزارع الغيث",
+                {
+                    body:
+                    "تم تفعيل إشعارات الحجوزات بنجاح."
+                }
+            );
+
+        }
+        else{
+
+            showMessage(
+                "لم يتم السماح بالإشعارات.",
+                "error"
+            );
+
+        }
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* =====================================================
+   SHOW NEW BOOKING NOTIFICATION
+===================================================== */
+
+function notifyNewBooking(
+    booking
+){
+
+    const name =
+        getCustomerName(
+            booking
+        ) ||
+        "زبون جديد";
+
+
+    const farm =
+        getFarm(
+            booking
+        ) ||
+        "-";
+
+
+    const shift =
+        getShift(
+            booking
+        ) ||
+        "-";
+
+
+    const date =
+        booking.booking_date ||
+        "-";
+
+
+    /*
+     * صوت
+     */
+    playNotificationSound();
+
+
+    /*
+     * داخل الصفحة
+     */
+
+    document.getElementById(
+        "alertCustomer"
+    ).textContent =
+        "👤 " + name;
+
+
+    document.getElementById(
+        "alertDetails"
+    ).textContent =
+        "📅 " +
+        date +
+        " | " +
+        farm +
+        " | " +
+        shift;
+
+
+    document.getElementById(
+        "newBookingAlert"
+    ).classList.add(
+        "show"
+    );
+
+
+    /*
+     * إشعار المتصفح
+     */
+
+    if(
+        "Notification" in window &&
+        Notification.permission ===
+        "granted"
+    ){
+
+        try{
+
+            new Notification(
+                "🔔 حجز جديد - مزارع الغيث",
+                {
+                    body:
+                    name +
+                    "\n" +
+                    date +
+                    " - " +
+                    farm +
+                    " - " +
+                    shift,
+
+                    tag:
+                    "algaith-new-booking"
+                }
+            );
+
+        }
+
+        catch(error){
+
+            console.log(
+                "Browser notification error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /*
+     * رسالة داخل لوحة الإدارة
+     */
+
+    showMessage(
+        "🔔 تم استلام حجز جديد من " +
+        name,
+        "success"
+    );
+
+
+    /*
+     * إغلاق التنبيه تلقائياً
+     */
+
+    setTimeout(
+        function(){
+
+            closeBookingAlert();
+
+        },
+        10000
+    );
+
+}
+
+
+function closeBookingAlert(){
+
+    document.getElementById(
+        "newBookingAlert"
+    ).classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   REALTIME
+===================================================== */
+
+function startRealtime(){
+
+    /*
+     * منع إنشاء أكثر من قناة
+     */
+
+    if(realtimeChannel){
+
+        return;
+
+    }
+
+
+    realtimeChannel =
+        supabaseClient
+        .channel(
+            "bookingfarms-realtime"
+        )
+        .on(
+            "postgres_changes",
+            {
+                event:"INSERT",
+                schema:"public",
+                table:BOOKINGS_TABLE
+            },
+            function(payload){
+
+                console.log(
+                    "NEW BOOKING:",
+                    payload
+                );
+
+
+                /*
+                 * إذا الحجز موجود مسبقاً
+                 * لا نكرره
+                 */
+
+                const exists =
+                    bookings.some(
+                        function(item){
+
+                            return String(
+                                item.id
+                            ) === String(
+                                payload.new.id
+                            );
+
+                        }
+                    );
+
+
+                if(!exists){
+
+                    bookings.push(
+                        payload.new
+                    );
+
+                }
+
+
+                renderTable();
+
+                updateStats();
+
+                updateLastUpdate();
+
+
+                notifyNewBooking(
+                    payload.new
+                );
+
+            }
+        )
+        .on(
+            "postgres_changes",
+            {
+                event:"UPDATE",
+                schema:"public",
+                table:BOOKINGS_TABLE
+            },
+            function(payload){
+
+                console.log(
+                    "BOOKING UPDATED:",
+                    payload
+                );
+
+
+                const index =
+                    bookings.findIndex(
+                        function(item){
+
+                            return String(
+                                item.id
+                            ) === String(
+                                payload.new.id
+                            );
+
+                        }
+                    );
+
+
+                if(index !== -1){
+
+                    bookings[index] =
+                        payload.new;
+
+                }
+                else{
+
+                    bookings.push(
+                        payload.new
+                    );
+
+                }
+
+
+                renderTable();
+
+                updateStats();
+
+                updateLastUpdate();
+
+
+                showMessage(
+                    "✏️ تم تحديث حجز",
+                    "success"
+                );
+
+            }
+        )
+        .on(
+            "postgres_changes",
+            {
+                event:"DELETE",
+                schema:"public",
+                table:BOOKINGS_TABLE
+            },
+            function(payload){
+
+                console.log(
+                    "BOOKING DELETED:",
+                    payload
+                );
+
+
+                bookings =
+                    bookings.filter(
+                        function(item){
+
+                            return String(
+                                item.id
+                            ) !== String(
+                                payload.old.id
+                            );
+
+                        }
+                    );
+
+
+                renderTable();
+
+                updateStats();
+
+                updateLastUpdate();
+
+
+                showMessage(
+                    "🗑️ تم إلغاء حجز",
+                    "success"
+                );
+
+            }
+        )
+        .subscribe(
+            function(status){
+
+                console.log(
+                    "Realtime status:",
+                    status
+                );
+
+            }
+        );
 
 }
 
@@ -973,6 +1930,16 @@ async function loadBookings(){
 
     updateStats();
 
+    updateLastUpdate();
+
+}
+
+
+/* =====================================================
+   UPDATE LAST UPDATE
+===================================================== */
+
+function updateLastUpdate(){
 
     document.getElementById(
         "lastUpdate"
@@ -1273,6 +2240,25 @@ function renderTable(){
     }
 
 
+    /*
+     * ترتيب الأحدث أولاً
+     */
+
+    filtered.sort(
+        function(a,b){
+
+            return String(
+                b.created_at || ""
+            ).localeCompare(
+                String(
+                    a.created_at || ""
+                )
+            );
+
+        }
+    );
+
+
     filtered.forEach(
         function(
             booking,
@@ -1337,12 +2323,23 @@ function renderTable(){
 
                 <td>
 
-                    <button
-                        class="delete-btn"
-                        onclick="cancelBooking('${booking.id}')"
-                    >
-                        إلغاء الحجز
-                    </button>
+                    <div class="action-buttons">
+
+                        <button
+                            class="edit-btn"
+                            onclick="openEditModal('${booking.id}')"
+                        >
+                            ✏️ تعديل
+                        </button>
+
+                        <button
+                            class="delete-btn"
+                            onclick="cancelBooking('${booking.id}')"
+                        >
+                            🗑️ إلغاء
+                        </button>
+
+                    </div>
 
                 </td>
 
@@ -1391,6 +2388,309 @@ function updateStats(){
         "totalAmount"
     ).textContent =
         formatPrice(total);
+
+}
+
+
+/* =====================================================
+   OPEN EDIT MODAL
+===================================================== */
+
+function openEditModal(
+    id
+){
+
+    const booking =
+        bookings.find(
+            function(item){
+
+                return String(
+                    item.id
+                ) === String(id);
+
+            }
+        );
+
+
+    if(!booking){
+
+        alert(
+            "لم يتم العثور على الحجز."
+        );
+
+        return;
+
+    }
+
+
+    editingBookingId =
+        id;
+
+
+    document.getElementById(
+        "editCustomerName"
+    ).value =
+        getCustomerName(
+            booking
+        );
+
+
+    document.getElementById(
+        "editPhone"
+    ).value =
+        booking.customer_phone ||
+        "";
+
+
+    document.getElementById(
+        "editDate"
+    ).value =
+        booking.booking_date ||
+        "";
+
+
+    document.getElementById(
+        "editFarm"
+    ).value =
+        getFarm(
+            booking
+        );
+
+
+    document.getElementById(
+        "editShift"
+    ).value =
+        getShift(
+            booking
+        );
+
+
+    document.getElementById(
+        "editModal"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE EDIT MODAL
+===================================================== */
+
+function closeEditModal(){
+
+    editingBookingId =
+        null;
+
+
+    document.getElementById(
+        "editModal"
+    ).classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   SAVE EDIT
+===================================================== */
+
+async function saveEdit(){
+
+    if(!editingBookingId){
+
+        return;
+
+    }
+
+
+    const customerName =
+        document
+        .getElementById(
+            "editCustomerName"
+        )
+        .value
+        .trim();
+
+
+    const phone =
+        document
+        .getElementById(
+            "editPhone"
+        )
+        .value
+        .trim();
+
+
+    const date =
+        document
+        .getElementById(
+            "editDate"
+        )
+        .value;
+
+
+    const farm =
+        document
+        .getElementById(
+            "editFarm"
+        )
+        .value;
+
+
+    const shift =
+        document
+        .getElementById(
+            "editShift"
+        )
+        .value;
+
+
+    if(
+        !customerName ||
+        !phone ||
+        !date ||
+        !farm ||
+        !shift
+    ){
+
+        alert(
+            "يرجى ملء جميع الحقول."
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * منع تعديل الحجز إلى شفت
+     * محجوز من شخص آخر
+     */
+
+    const conflict =
+        bookings.find(
+            function(item){
+
+                return (
+                    String(item.id) !==
+                    String(editingBookingId)
+                    &&
+                    item.booking_date === date
+                    &&
+                    getFarm(item) === farm
+                    &&
+                    getShift(item) === shift
+                );
+
+            }
+        );
+
+
+    if(conflict){
+
+        alert(
+            "هذا التاريخ والشفت محجوز مسبقاً."
+        );
+
+        return;
+
+    }
+
+
+    const updateData = {
+
+        "Customer name":
+            customerName,
+
+        "customer_phone":
+            phone,
+
+        "booking_date":
+            date,
+
+        "Farm":
+            farm,
+
+        "Shift":
+            shift
+
+    };
+
+
+    const {
+        data,
+        error
+    } =
+        await supabaseClient
+        .from(BOOKINGS_TABLE)
+        .update(
+            updateData
+        )
+        .eq(
+            "id",
+            editingBookingId
+        )
+        .select()
+        .single();
+
+
+    if(error){
+
+        console.error(
+            "UPDATE ERROR:",
+            error
+        );
+
+        showMessage(
+            "فشل تعديل الحجز: " +
+            error.message,
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const index =
+        bookings.findIndex(
+            function(item){
+
+                return String(
+                    item.id
+                ) === String(
+                    editingBookingId
+                );
+
+            }
+        );
+
+
+    if(index !== -1){
+
+        bookings[index] =
+            data;
+
+    }
+
+
+    renderTable();
+
+    updateStats();
+
+    updateLastUpdate();
+
+
+    closeEditModal();
+
+
+    showMessage(
+        "تم تعديل الحجز بنجاح ✅",
+        "success"
+    );
 
 }
 
@@ -1517,6 +2817,8 @@ ${shift}`
 
     updateStats();
 
+    updateLastUpdate();
+
 
     showMessage(
         "تم إلغاء الحجز بنجاح ✅",
@@ -1524,6 +2826,29 @@ ${shift}`
     );
 
 }
+
+
+/* =====================================================
+   CLOSE MODAL WHEN CLICK OUTSIDE
+===================================================== */
+
+document
+.getElementById("editModal")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            this
+        ){
+
+            closeEditModal();
+
+        }
+
+    }
+);
 
 
 /* =====================================================
