@@ -10,6 +10,8 @@ content="width=device-width, initial-scale=1.0">
 
 <title>مزارع الغيث | ALGAITH FARMS</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 /* =====================================================
@@ -37,7 +39,6 @@ button,
 input{
     font-family:inherit;
 }
-
 
 /* =====================================================
    الهيدر
@@ -95,7 +96,6 @@ header{
 .menu a:hover{
     color:#d79aae;
 }
-
 
 /* =====================================================
    الرئيسية
@@ -180,7 +180,6 @@ header{
     transform:translateY(-2px);
 }
 
-
 /* =====================================================
    مربع المعلومات
 ===================================================== */
@@ -213,20 +212,15 @@ header{
 
 .info-stat strong{
     display:block;
-
     color:#e4a9bb;
-
     font-size:30px;
 }
 
 .info-stat span{
     color:#f1dfe5;
-
     font-size:16px;
-
     font-weight:bold;
 }
-
 
 /* =====================================================
    الأقسام
@@ -250,7 +244,6 @@ section{
     color:#806e75;
     font-size:18px;
 }
-
 
 /* =====================================================
    عن المزرعة
@@ -281,7 +274,6 @@ section{
     color:#665b60;
     font-size:18px;
 }
-
 
 /* =====================================================
    الصور
@@ -331,7 +323,6 @@ section{
     scroll-snap-align:start;
     background:#222;
     box-shadow:0 8px 25px rgba(0,0,0,.35);
-
     cursor:pointer;
 }
 
@@ -340,14 +331,12 @@ section{
     height:100%;
     object-fit:cover;
     display:block;
-
     transition:.3s;
 }
 
 .gallery-item:hover img{
     transform:scale(1.05);
 }
-
 
 /* =====================================================
    المميزات
@@ -408,9 +397,8 @@ section{
     font-size:14px;
 }
 
-
 /* =====================================================
-   مواقع المزرعة
+   الموقع
 ===================================================== */
 
 .location-boxes{
@@ -458,7 +446,6 @@ section{
     color:#ddd;
     font-size:14px;
 }
-
 
 /* =====================================================
    الأسعار
@@ -511,7 +498,6 @@ section{
     font-size:25px;
 }
 
-
 /* =====================================================
    شروط المزرعة
 ===================================================== */
@@ -552,7 +538,6 @@ section{
     background:#704052;
     transform:translateY(-2px);
 }
-
 
 /* =====================================================
    نافذة الشروط
@@ -637,9 +622,8 @@ section{
     cursor:pointer;
 }
 
-
 /* =====================================================
-   احجز الآن
+   الحجز
 ===================================================== */
 
 .booking-start{
@@ -688,7 +672,6 @@ section{
     background:#ca8199;
     transform:translateY(-2px);
 }
-
 
 /* =====================================================
    اختيار المزرعة
@@ -781,7 +764,6 @@ section{
     color:#ddd;
 }
 
-
 /* =====================================================
    منطقة الحجز
 ===================================================== */
@@ -819,7 +801,6 @@ section{
 
     font-size:17px;
 }
-
 
 /* =====================================================
    صور المزرعة
@@ -869,7 +850,6 @@ section{
 .farm-gallery-item:hover img{
     transform:scale(1.05);
 }
-
 
 /* =====================================================
    نافذة تكبير الصور
@@ -933,7 +913,6 @@ section{
     z-index:2;
 }
 
-
 /* =====================================================
    الحجز
 ===================================================== */
@@ -952,7 +931,6 @@ section{
     box-shadow:
         0 15px 40px rgba(0,0,0,.35);
 }
-
 
 /* =====================================================
    الشهر
@@ -1003,7 +981,6 @@ section{
     cursor:not-allowed;
 }
 
-
 /* =====================================================
    أيام الأسبوع
 ===================================================== */
@@ -1030,7 +1007,6 @@ section{
 
     font-size:13px;
 }
-
 
 /* =====================================================
    التقويم
@@ -1075,7 +1051,6 @@ section{
     margin-bottom:5px;
 }
 
-
 /* =====================================================
    الأيام القديمة
 ===================================================== */
@@ -1102,7 +1077,6 @@ section{
     padding-top:20px;
 }
 
-
 /* =====================================================
    اليوم الحالي
 ===================================================== */
@@ -1128,7 +1102,6 @@ section{
 
     margin-bottom:4px;
 }
-
 
 /* =====================================================
    الشفتات
@@ -1197,7 +1170,6 @@ section{
     font-size:9px;
 }
 
-
 /* =====================================================
    رسالة الحالة
 ===================================================== */
@@ -1233,7 +1205,6 @@ section{
 
     color:#0f5132;
 }
-
 
 /* =====================================================
    نافذة الحجز
@@ -1332,9 +1303,8 @@ section{
     border-color:#a9657d;
 }
 
-
 /* =====================================================
-   الموافقة على الشروط
+   الموافقة
 ===================================================== */
 
 .agreement-box{
@@ -1388,7 +1358,6 @@ section{
     text-decoration:underline;
 }
 
-
 /* =====================================================
    زر الإرسال
 ===================================================== */
@@ -1423,9 +1392,8 @@ section{
     cursor:not-allowed;
 }
 
-
 /* =====================================================
-   زر الإلغاء
+   الإلغاء
 ===================================================== */
 
 .close-button{
@@ -1447,7 +1415,6 @@ section{
 
     cursor:pointer;
 }
-
 
 /* =====================================================
    الفوتر
@@ -1510,7 +1477,6 @@ footer p{
     transform:translateY(-2px);
 }
 
-
 /* =====================================================
    الموبايل
 ===================================================== */
@@ -1519,7 +1485,6 @@ footer p{
 
     header{
         height:70px;
-
         padding:7px 15px;
     }
 
@@ -1542,7 +1507,6 @@ footer p{
 
     .hero{
         min-height:580px;
-
         background-position:center;
     }
 
@@ -1557,7 +1521,6 @@ footer p{
 
     .hero .english{
         font-size:17px;
-
         letter-spacing:4px;
     }
 
@@ -1571,9 +1534,7 @@ footer p{
 
     .info-stats{
         margin:-35px auto 0;
-
         gap:10px;
-
         padding:0 10px;
     }
 
@@ -1602,9 +1563,7 @@ footer p{
 
     .feature{
         min-height:180px;
-
         padding:18px 8px;
-
         border-radius:18px;
     }
 
@@ -1660,7 +1619,6 @@ footer p{
 
     .booking-start-button{
         font-size:23px;
-
         padding:18px;
     }
 
@@ -1673,7 +1631,6 @@ footer p{
 
     .farm-card{
         min-height:170px;
-
         padding:20px 8px;
     }
 
@@ -1702,7 +1659,6 @@ footer p{
 
     .booking-container{
         padding:10px;
-
         overflow-x:auto;
     }
 
@@ -1721,7 +1677,6 @@ footer p{
 
     .gallery-item{
         flex-basis:280px;
-
         height:200px;
     }
 
@@ -1729,7 +1684,6 @@ footer p{
         grid-template-columns:1fr;
     }
 }
-
 
 @media(max-width:500px){
 
@@ -1772,9 +1726,7 @@ footer p{
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      الهيدر
@@ -1800,7 +1752,6 @@ footer p{
 
     </div>
 
-
     <nav class="menu">
 
         <a href="#home">الرئيسية</a>
@@ -1817,15 +1768,11 @@ footer p{
 
 </header>
 
-
 <!-- =====================================================
      الرئيسية
 ===================================================== -->
 
-<section
-    id="home"
-    class="hero"
->
+<section id="home" class="hero">
 
     <div class="hero-content">
 
@@ -1859,18 +1806,15 @@ footer p{
 
 </section>
 
-
 <!-- =====================================================
-     مربع مزرعتين و 24/7
+     المعلومات
 ===================================================== -->
 
 <div class="info-stats">
 
     <div class="info-stat">
 
-        <strong>
-            2
-        </strong>
+        <strong>2</strong>
 
         <span>
             مزرعتين
@@ -1878,12 +1822,9 @@ footer p{
 
     </div>
 
-
     <div class="info-stat">
 
-        <strong>
-            24/7
-        </strong>
+        <strong>24/7</strong>
 
         <span>
             متاحين لخدمتكم
@@ -1893,15 +1834,11 @@ footer p{
 
 </div>
 
-
 <!-- =====================================================
      عن المزرعة
 ===================================================== -->
 
-<section
-    id="about"
-    class="about"
->
+<section id="about" class="about">
 
     <div class="section-title">
 
@@ -1914,7 +1851,6 @@ footer p{
         </p>
 
     </div>
-
 
     <div class="about-box">
 
@@ -1943,15 +1879,11 @@ footer p{
 
 </section>
 
-
 <!-- =====================================================
      الصور
 ===================================================== -->
 
-<section
-    id="gallery"
-    class="gallery"
->
+<section id="gallery" class="gallery">
 
     <div class="section-title">
 
@@ -1964,7 +1896,6 @@ footer p{
         </p>
 
     </div>
-
 
     <div class="gallery-container">
 
@@ -2039,15 +1970,11 @@ footer p{
 
 </section>
 
-
 <!-- =====================================================
      المميزات
 ===================================================== -->
 
-<section
-    id="features"
-    class="features"
->
+<section id="features" class="features">
 
 <div class="features-grid">
 
@@ -2113,11 +2040,6 @@ footer p{
 
 </div>
 
-
-<!-- =====================================================
-     Waze فقط
-===================================================== -->
-
 <div class="location-boxes">
 
     <a
@@ -2143,9 +2065,8 @@ footer p{
 
 </div>
 
-
 <!-- =====================================================
-     الأسعار
+     الأسعار - تتحدث من الأدمن
 ===================================================== -->
 
 <div class="prices-box">
@@ -2166,20 +2087,19 @@ footer p{
                 الشفت الصباحي
             </p>
 
-            <strong>
-                250,000 د.ع
+            <strong id="normalMorningPrice">
+                جاري التحميل...
             </strong>
 
             <p>
                 الشفت المسائي
             </p>
 
-            <strong>
-                300,000 د.ع
+            <strong id="normalEveningPrice">
+                جاري التحميل...
             </strong>
 
         </div>
-
 
         <div class="price-card">
 
@@ -2191,16 +2111,16 @@ footer p{
                 الشفت الصباحي
             </p>
 
-            <strong>
-                350,000 د.ع
+            <strong id="specialMorningPrice">
+                جاري التحميل...
             </strong>
 
             <p>
                 الشفت المسائي
             </p>
 
-            <strong>
-                400,000 د.ع
+            <strong id="specialEveningPrice">
+                جاري التحميل...
             </strong>
 
         </div>
@@ -2208,7 +2128,6 @@ footer p{
     </div>
 
 </div>
-
 
 <button
     class="rules-button"
@@ -2218,7 +2137,6 @@ footer p{
 </button>
 
 </section>
-
 
 <!-- =====================================================
      احجز الآن
@@ -2237,7 +2155,6 @@ footer p{
     </a>
 
 </section>
-
 
 <!-- =====================================================
      اختيار المزرعة
@@ -2260,7 +2177,6 @@ footer p{
 
     </div>
 
-
     <div class="farms-grid">
 
         <div
@@ -2278,7 +2194,6 @@ footer p{
             </p>
 
         </div>
-
 
         <div
             id="farmCard2"
@@ -2300,9 +2215,8 @@ footer p{
 
 </section>
 
-
 <!-- =====================================================
-     منطقة المزرعة المختارة
+     منطقة المزرعة
 ===================================================== -->
 
 <section
@@ -2317,23 +2231,19 @@ footer p{
         المزرعة الأولى
     </h2>
 
-
     <p class="selected-farm-subtitle">
         صور المزرعة وجدول الحجز
     </p>
-
 
     <div
         id="farmGallery"
         class="farm-gallery"
     ></div>
 
-
     <div
         id="statusMessage"
         class="status-message"
     ></div>
-
 
     <div class="booking-container">
 
@@ -2347,11 +2257,9 @@ footer p{
                 ❮
             </button>
 
-
             <h3 id="monthTitle">
                 الشهر
             </h3>
-
 
             <button
                 class="month-button"
@@ -2361,7 +2269,6 @@ footer p{
             </button>
 
         </div>
-
 
         <div class="week-days">
 
@@ -2375,7 +2282,6 @@ footer p{
 
         </div>
 
-
         <div
             id="calendar"
             class="calendar-grid"
@@ -2384,7 +2290,6 @@ footer p{
     </div>
 
 </section>
-
 
 <!-- =====================================================
      نافذة الشروط
@@ -2400,7 +2305,6 @@ footer p{
         <h2>
             شروط الحجز والاستخدام
         </h2>
-
 
         <h3>
             شروط الحجز
@@ -2432,7 +2336,6 @@ footer p{
             </li>
 
         </ul>
-
 
         <h3>
             قوانين المنتجع
@@ -2479,7 +2382,6 @@ footer p{
 
         </ul>
 
-
         <button
             class="rules-close"
             onclick="closeRules()"
@@ -2491,9 +2393,8 @@ footer p{
 
 </div>
 
-
 <!-- =====================================================
-     نافذة تكبير الصور
+     تكبير الصور
 ===================================================== -->
 
 <div
@@ -2517,7 +2418,6 @@ footer p{
 
 </div>
 
-
 <!-- =====================================================
      نافذة الحجز
 ===================================================== -->
@@ -2533,12 +2433,10 @@ footer p{
             إكمال الحجز
         </h2>
 
-
         <div
             id="selectedInfo"
             class="selected-info"
         ></div>
-
 
         <div class="form-group">
 
@@ -2554,7 +2452,6 @@ footer p{
 
         </div>
 
-
         <div class="form-group">
 
             <label>
@@ -2568,7 +2465,6 @@ footer p{
             >
 
         </div>
-
 
         <div class="agreement-box">
 
@@ -2598,7 +2494,6 @@ footer p{
 
         </div>
 
-
         <button
             id="sendButton"
             class="send-button"
@@ -2607,7 +2502,6 @@ footer p{
         >
             تأكيد الحجز وإرسال عبر واتساب
         </button>
-
 
         <button
             class="close-button"
@@ -2619,7 +2513,6 @@ footer p{
     </div>
 
 </div>
-
 
 <!-- =====================================================
      الفوتر
@@ -2639,7 +2532,6 @@ footer p{
         راحتك تبدأ من هنا 🌿
     </p>
 
-
     <div class="footer-links">
 
         <a
@@ -2650,7 +2542,6 @@ footer p{
         >
             📍 Google Maps
         </a>
-
 
         <a
             class="footer-link"
@@ -2664,7 +2555,6 @@ footer p{
     </div>
 
 </footer>
-
 
 <script>
 
@@ -2681,6 +2571,21 @@ const SUPABASE_KEY =
 const BOOKINGS_TABLE =
 "BookingFarms";
 
+const SETTINGS_TABLE =
+"FarmSettings";
+
+const CLOSURES_TABLE =
+"FarmClosures";
+
+/* =====================================================
+   Supabase Realtime
+===================================================== */
+
+const realtimeClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
 
 /* =====================================================
    واتساب
@@ -2688,7 +2593,6 @@ const BOOKINGS_TABLE =
 
 const whatsappNumber =
 "9647736735730";
-
 
 /* =====================================================
    التاريخ
@@ -2711,14 +2615,12 @@ new Date(
     1
 );
 
-
 /* =====================================================
    المزرعة الحالية
 ===================================================== */
 
 let currentFarm =
 "";
-
 
 /* =====================================================
    الحجز المختار
@@ -2730,7 +2632,6 @@ let selectedDate =
 let selectedShift =
 "";
 
-
 /* =====================================================
    الحجوزات
 ===================================================== */
@@ -2738,9 +2639,35 @@ let selectedShift =
 let bookings =
 [];
 
+/* =====================================================
+   أسعار الأدمن
+===================================================== */
+
+let farmSettings = {
+
+    morning_price:
+        250000,
+
+    evening_price:
+        300000,
+
+    special_morning_price:
+        350000,
+
+    special_evening_price:
+        400000
+
+};
 
 /* =====================================================
-   أسماء الأشهر
+   إغلاقات الأدمن
+===================================================== */
+
+let farmClosures =
+[];
+
+/* =====================================================
+   الأشهر
 ===================================================== */
 
 const months = [
@@ -2759,7 +2686,6 @@ const months = [
     "ديسمبر"
 
 ];
-
 
 /* =====================================================
    صور كل مزرعة
@@ -2787,7 +2713,6 @@ const farmImages = {
 
 };
 
-
 /* =====================================================
    Headers
 ===================================================== */
@@ -2805,6 +2730,17 @@ const supabaseHeaders = {
 
 };
 
+/* =====================================================
+   تنسيق السعر
+===================================================== */
+
+function formatPrice(price){
+
+    return Number(price)
+        .toLocaleString("en-US") +
+        " د.ع";
+
+}
 
 /* =====================================================
    تكبير الصور
@@ -2830,7 +2766,6 @@ function openImage(image){
     );
 
 }
-
 
 function closeImage(event){
 
@@ -2859,7 +2794,6 @@ function closeImage(event){
 
 }
 
-
 /* =====================================================
    رسالة الحالة
 ===================================================== */
@@ -2883,7 +2817,6 @@ function showStatus(
 
 }
 
-
 function hideStatus(){
 
     const box =
@@ -2899,9 +2832,8 @@ function hideStatus(){
 
 }
 
-
 /* =====================================================
-   تحميل الحجوزات من Supabase
+   تحميل الحجوزات
 ===================================================== */
 
 async function loadBookings(){
@@ -2914,29 +2846,21 @@ async function loadBookings(){
             BOOKINGS_TABLE +
             "?select=id,created_at,customer_name,customer_phone,booking_date,farm,shift";
 
-
         const response =
             await fetch(
                 url,
                 {
                     method:"GET",
-
-                    headers:
-                        supabaseHeaders,
-
+                    headers:supabaseHeaders,
                     cache:"no-store"
                 }
             );
 
-
         if(!response.ok){
 
-            const errorText =
-                await response.text();
-
             console.error(
-                "Supabase GET Error:",
-                errorText
+                "Bookings Error:",
+                await response.text()
             );
 
             showStatus(
@@ -2948,10 +2872,8 @@ async function loadBookings(){
 
         }
 
-
         bookings =
             await response.json();
-
 
         if(currentFarm){
 
@@ -2966,15 +2888,247 @@ async function loadBookings(){
             error
         );
 
-        showStatus(
-            "تعذر الاتصال بقاعدة الحجوزات",
-            "error"
+    }
+
+}
+
+/* =====================================================
+   تحميل الأسعار
+===================================================== */
+
+async function loadFarmSettings(){
+
+    try{
+
+        const url =
+            SUPABASE_URL +
+            "/rest/v1/" +
+            SETTINGS_TABLE +
+            "?select=morning_price,evening_price,special_morning_price,special_evening_price&limit=1";
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    headers:supabaseHeaders,
+                    cache:"no-store"
+                }
+            );
+
+        if(!response.ok){
+
+            console.error(
+                "FarmSettings Error:",
+                await response.text()
+            );
+
+            return;
+
+        }
+
+        const data =
+            await response.json();
+
+        if(data.length > 0){
+
+            farmSettings = {
+
+                morning_price:
+                    Number(
+                        data[0].morning_price
+                    ),
+
+                evening_price:
+                    Number(
+                        data[0].evening_price
+                    ),
+
+                special_morning_price:
+                    Number(
+                        data[0].special_morning_price
+                    ),
+
+                special_evening_price:
+                    Number(
+                        data[0].special_evening_price
+                    )
+
+            };
+
+        }
+
+        updatePriceList();
+
+        if(currentFarm){
+
+            renderCalendar();
+
+        }
+
+    }catch(error){
+
+        console.error(
+            "Load settings error:",
+            error
         );
 
     }
 
 }
 
+/* =====================================================
+   تحديث لائحة الأسعار
+===================================================== */
+
+function updatePriceList(){
+
+    const normalMorning =
+        document.getElementById(
+            "normalMorningPrice"
+        );
+
+    const normalEvening =
+        document.getElementById(
+            "normalEveningPrice"
+        );
+
+    const specialMorning =
+        document.getElementById(
+            "specialMorningPrice"
+        );
+
+    const specialEvening =
+        document.getElementById(
+            "specialEveningPrice"
+        );
+
+    if(normalMorning){
+
+        normalMorning.textContent =
+            formatPrice(
+                farmSettings.morning_price
+            );
+
+    }
+
+    if(normalEvening){
+
+        normalEvening.textContent =
+            formatPrice(
+                farmSettings.evening_price
+            );
+
+    }
+
+    if(specialMorning){
+
+        specialMorning.textContent =
+            formatPrice(
+                farmSettings.special_morning_price
+            );
+
+    }
+
+    if(specialEvening){
+
+        specialEvening.textContent =
+            formatPrice(
+                farmSettings.special_evening_price
+            );
+
+    }
+
+}
+
+/* =====================================================
+   تحميل إغلاقات الأدمن
+===================================================== */
+
+async function loadFarmClosures(){
+
+    try{
+
+        const url =
+            SUPABASE_URL +
+            "/rest/v1/" +
+            CLOSURES_TABLE +
+            "?select=id,closure_date,farm,shift,reason,created_at";
+
+        const response =
+            await fetch(
+                url,
+                {
+                    method:"GET",
+                    headers:supabaseHeaders,
+                    cache:"no-store"
+                }
+            );
+
+        if(!response.ok){
+
+            console.error(
+                "FarmClosures Error:",
+                await response.text()
+            );
+
+            return;
+
+        }
+
+        farmClosures =
+            await response.json();
+
+        if(currentFarm){
+
+            renderCalendar();
+
+        }
+
+    }catch(error){
+
+        console.error(
+            "Load closures error:",
+            error
+        );
+
+    }
+
+}
+
+/* =====================================================
+   فحص هل الشفت مغلق
+===================================================== */
+
+function isShiftClosed(
+    date,
+    shift
+){
+
+    return farmClosures.some(
+        function(item){
+
+            return (
+
+                item.farm ===
+                currentFarm
+
+                &&
+
+                item.closure_date ===
+                date
+
+                &&
+
+                item.shift ===
+                shift
+
+            );
+
+        }
+    );
+
+}
 
 /* =====================================================
    فحص هل الشفت محجوز
@@ -3010,7 +3164,6 @@ function isShiftBooked(
 
 }
 
-
 /* =====================================================
    سعر الشفت
 ===================================================== */
@@ -3032,7 +3185,6 @@ function getShiftPrice(
     const day =
         Number(parts[2]);
 
-
     const selectedDay =
         new Date(
             year,
@@ -3040,45 +3192,46 @@ function getShiftPrice(
             day
         ).getDay();
 
-
-    const weekendPrice =
+    const specialDay =
         selectedDay === 4 ||
         selectedDay === 5 ||
         selectedDay === 6;
 
-
-    if(weekendPrice){
+    if(specialDay){
 
         if(
             shift ===
             "شفت صباحي"
         ){
 
-            return "350,000";
-
-        }else{
-
-            return "400,000";
+            return Number(
+                farmSettings.special_morning_price
+            );
 
         }
 
-    }
+        return Number(
+            farmSettings.special_evening_price
+        );
 
+    }
 
     if(
         shift ===
         "شفت صباحي"
     ){
 
-        return "250,000";
+        return Number(
+            farmSettings.morning_price
+        );
 
     }
 
-
-    return "300,000";
+    return Number(
+        farmSettings.evening_price
+    );
 
 }
-
 
 /* =====================================================
    اختيار المزرعة
@@ -3091,7 +3244,6 @@ function selectFarm(
     currentFarm =
         farmName;
 
-
     document
         .getElementById("farmCard1")
         .classList.remove("active");
@@ -3099,7 +3251,6 @@ function selectFarm(
     document
         .getElementById("farmCard2")
         .classList.remove("active");
-
 
     if(
         farmName ===
@@ -3118,22 +3269,18 @@ function selectFarm(
 
     }
 
-
     document.getElementById(
         "selectedFarmTitle"
     ).textContent =
         farmName;
 
-
     renderFarmImages(
         farmName
     );
 
-
     document
         .getElementById("farmBookingArea")
         .classList.add("show");
-
 
     currentDate =
         new Date(
@@ -3142,12 +3289,9 @@ function selectFarm(
             1
         );
 
-
     hideStatus();
 
-
     renderCalendar();
-
 
     setTimeout(
         function(){
@@ -3167,7 +3311,6 @@ function selectFarm(
 
 }
 
-
 /* =====================================================
    صور المزرعة
 ===================================================== */
@@ -3181,14 +3324,11 @@ function renderFarmImages(
             "farmGallery"
         );
 
-
     gallery.innerHTML =
         "";
 
-
     const images =
         farmImages[farmName] || [];
-
 
     images.forEach(
         function(image){
@@ -3201,7 +3341,6 @@ function renderFarmImages(
             item.className =
                 "farm-gallery-item";
 
-
             item.onclick =
                 function(){
 
@@ -3210,7 +3349,6 @@ function renderFarmImages(
                     );
 
                 };
-
 
             const img =
                 document.createElement(
@@ -3223,11 +3361,9 @@ function renderFarmImages(
             img.alt =
                 farmName;
 
-
             item.appendChild(
                 img
             );
-
 
             gallery.appendChild(
                 item
@@ -3237,7 +3373,6 @@ function renderFarmImages(
     );
 
 }
-
 
 /* =====================================================
    رسم التقويم
@@ -3260,7 +3395,6 @@ function renderCalendar(){
             "prevMonth"
         );
 
-
     if(
         !calendar ||
         !currentFarm
@@ -3270,10 +3404,8 @@ function renderCalendar(){
 
     }
 
-
     calendar.innerHTML =
         "";
-
 
     const year =
         currentDate.getFullYear();
@@ -3281,12 +3413,10 @@ function renderCalendar(){
     const month =
         currentDate.getMonth();
 
-
     monthTitle.textContent =
         months[month] +
         " " +
         year;
-
 
     const currentMonthStart =
         new Date(
@@ -3295,11 +3425,9 @@ function renderCalendar(){
             1
         );
 
-
     previousButton.disabled =
         currentDate <=
         currentMonthStart;
-
 
     const firstDay =
         new Date(
@@ -3308,14 +3436,12 @@ function renderCalendar(){
             1
         ).getDay();
 
-
     const daysInMonth =
         new Date(
             year,
             month + 1,
             0
         ).getDate();
-
 
     for(
         let i = 0;
@@ -3337,7 +3463,6 @@ function renderCalendar(){
 
     }
 
-
     for(
         let day = 1;
         day <= daysInMonth;
@@ -3351,7 +3476,6 @@ function renderCalendar(){
 
         dayBox.className =
             "day-box";
-
 
         const thisDate =
             new Date(
@@ -3367,16 +3491,13 @@ function renderCalendar(){
             0
         );
 
-
         const isPast =
             thisDate <
             today;
 
-
         const isToday =
             thisDate.getTime() ===
             today.getTime();
-
 
         const dayNumber =
             document.createElement(
@@ -3389,18 +3510,15 @@ function renderCalendar(){
         dayNumber.textContent =
             day;
 
-
         dayBox.appendChild(
             dayNumber
         );
-
 
         if(isToday){
 
             dayBox.classList.add(
                 "today"
             );
-
 
             const todayLabel =
                 document.createElement(
@@ -3413,20 +3531,17 @@ function renderCalendar(){
             todayLabel.textContent =
                 "اليوم";
 
-
             dayBox.appendChild(
                 todayLabel
             );
 
         }
 
-
         if(isPast){
 
             dayBox.classList.add(
                 "past-day"
             );
-
 
             const locked =
                 document.createElement(
@@ -3439,19 +3554,20 @@ function renderCalendar(){
             locked.textContent =
                 "غير متاح";
 
-
             dayBox.appendChild(
                 locked
             );
 
         }
 
-
         else{
 
             const dateKey =
                 `${year}-${String(month + 1).padStart(2,"0")}-${String(day).padStart(2,"0")}`;
 
+            /* ==========================================
+               الصباحي
+            ========================================== */
 
             const morningButton =
                 document.createElement(
@@ -3461,13 +3577,11 @@ function renderCalendar(){
             morningButton.className =
                 "shift-button";
 
-
             const morningPrice =
                 getShiftPrice(
                     dateKey,
                     "شفت صباحي"
                 );
-
 
             morningButton.innerHTML = `
 
@@ -3478,18 +3592,49 @@ function renderCalendar(){
                 شفت صباحي
 
                 <span class="shift-price">
-                    ${morningPrice} د.ع
+                    ${formatPrice(morningPrice)}
                 </span>
 
             `;
 
+            const morningClosed =
+                isShiftClosed(
+                    dateKey,
+                    "شفت صباحي"
+                );
 
-            if(
+            const morningBooked =
                 isShiftBooked(
                     dateKey,
                     "شفت صباحي"
-                )
-            ){
+                );
+
+            if(morningClosed){
+
+                morningButton.classList.add(
+                    "booked"
+                );
+
+                morningButton.disabled =
+                    true;
+
+                morningButton.innerHTML = `
+
+                    <span class="shift-icon">
+                        🔒
+                    </span>
+
+                    مغلق
+
+                    <span class="shift-price">
+                        ${formatPrice(morningPrice)}
+                    </span>
+
+                `;
+
+            }
+
+            else if(morningBooked){
 
                 morningButton.classList.add(
                     "booked"
@@ -3507,12 +3652,14 @@ function renderCalendar(){
                     محجوز
 
                     <span class="shift-price">
-                        ${morningPrice} د.ع
+                        ${formatPrice(morningPrice)}
                     </span>
 
                 `;
 
-            }else{
+            }
+
+            else{
 
                 morningButton.onclick =
                     function(){
@@ -3528,6 +3675,9 @@ function renderCalendar(){
 
             }
 
+            /* ==========================================
+               المسائي
+            ========================================== */
 
             const eveningButton =
                 document.createElement(
@@ -3537,13 +3687,11 @@ function renderCalendar(){
             eveningButton.className =
                 "shift-button";
 
-
             const eveningPrice =
                 getShiftPrice(
                     dateKey,
                     "شفت مسائي"
                 );
-
 
             eveningButton.innerHTML = `
 
@@ -3554,18 +3702,49 @@ function renderCalendar(){
                 شفت مسائي
 
                 <span class="shift-price">
-                    ${eveningPrice} د.ع
+                    ${formatPrice(eveningPrice)}
                 </span>
 
             `;
 
+            const eveningClosed =
+                isShiftClosed(
+                    dateKey,
+                    "شفت مسائي"
+                );
 
-            if(
+            const eveningBooked =
                 isShiftBooked(
                     dateKey,
                     "شفت مسائي"
-                )
-            ){
+                );
+
+            if(eveningClosed){
+
+                eveningButton.classList.add(
+                    "booked"
+                );
+
+                eveningButton.disabled =
+                    true;
+
+                eveningButton.innerHTML = `
+
+                    <span class="shift-icon">
+                        🔒
+                    </span>
+
+                    مغلق
+
+                    <span class="shift-price">
+                        ${formatPrice(eveningPrice)}
+                    </span>
+
+                `;
+
+            }
+
+            else if(eveningBooked){
 
                 eveningButton.classList.add(
                     "booked"
@@ -3583,12 +3762,14 @@ function renderCalendar(){
                     محجوز
 
                     <span class="shift-price">
-                        ${eveningPrice} د.ع
+                        ${formatPrice(eveningPrice)}
                     </span>
 
                 `;
 
-            }else{
+            }
+
+            else{
 
                 eveningButton.onclick =
                     function(){
@@ -3604,7 +3785,6 @@ function renderCalendar(){
 
             }
 
-
             dayBox.appendChild(
                 morningButton
             );
@@ -3615,7 +3795,6 @@ function renderCalendar(){
 
         }
 
-
         calendar.appendChild(
             dayBox
         );
@@ -3623,7 +3802,6 @@ function renderCalendar(){
     }
 
 }
-
 
 /* =====================================================
    تغيير الشهر
@@ -3641,14 +3819,12 @@ function changeMonth(
             1
         );
 
-
     const currentMonthStart =
         new Date(
             today.getFullYear(),
             today.getMonth(),
             1
         );
-
 
     if(
         newDate <
@@ -3659,15 +3835,12 @@ function changeMonth(
 
     }
 
-
     currentDate =
         newDate;
-
 
     renderCalendar();
 
 }
-
 
 /* =====================================================
    فتح نافذة الحجز
@@ -3688,7 +3861,6 @@ function openBooking(
             "0"
         );
 
-
     const formattedDay =
         String(
             day
@@ -3697,14 +3869,36 @@ function openBooking(
             "0"
         );
 
-
     selectedDate =
         `${year}-${formattedMonth}-${formattedDay}`;
-
 
     selectedShift =
         shift;
 
+    /* ==========================================
+       حماية من الحجز إذا صار مغلق
+    ========================================== */
+
+    if(
+        isShiftClosed(
+            selectedDate,
+            selectedShift
+        )
+    ){
+
+        alert(
+            "عذراً، هذا الشفت مغلق حالياً من إدارة المزرعة"
+        );
+
+        renderCalendar();
+
+        return;
+
+    }
+
+    /* ==========================================
+       حماية من الحجز إذا انحجز
+    ========================================== */
 
     if(
         isShiftBooked(
@@ -3723,13 +3917,11 @@ function openBooking(
 
     }
 
-
     const price =
         getShiftPrice(
             selectedDate,
             selectedShift
         );
-
 
     document.getElementById(
         "selectedInfo"
@@ -3750,19 +3942,16 @@ function openBooking(
         <br>
 
         💰 السعر:
-        ${price} دينار
+        ${formatPrice(price)}
 
     `;
-
 
     document.getElementById(
         "agreeRules"
     ).checked =
         false;
 
-
     updateSendButton();
-
 
     document
         .getElementById(
@@ -3774,9 +3963,8 @@ function openBooking(
 
 }
 
-
 /* =====================================================
-   تفعيل زر الحجز بعد الموافقة
+   زر الحجز
 ===================================================== */
 
 function updateSendButton(){
@@ -3791,12 +3979,10 @@ function updateSendButton(){
             "sendButton"
         );
 
-
     sendButton.disabled =
         !checkbox.checked;
 
 }
-
 
 /* =====================================================
    إرسال الحجز
@@ -3812,7 +3998,6 @@ async function sendBooking(){
             .value
             .trim();
 
-
     const phone =
         document
             .getElementById(
@@ -3821,18 +4006,15 @@ async function sendBooking(){
             .value
             .trim();
 
-
     const agreed =
         document.getElementById(
             "agreeRules"
         ).checked;
 
-
     const sendButton =
         document.getElementById(
             "sendButton"
         );
-
 
     if(!agreed){
 
@@ -3844,7 +4026,6 @@ async function sendBooking(){
 
     }
 
-
     if(!name){
 
         alert(
@@ -3855,7 +4036,6 @@ async function sendBooking(){
 
     }
 
-
     if(!phone){
 
         alert(
@@ -3865,7 +4045,6 @@ async function sendBooking(){
         return;
 
     }
-
 
     if(
         !selectedDate ||
@@ -3881,6 +4060,32 @@ async function sendBooking(){
 
     }
 
+    /* ==========================================
+       فحص الإغلاق
+    ========================================== */
+
+    if(
+        isShiftClosed(
+            selectedDate,
+            selectedShift
+        )
+    ){
+
+        alert(
+            "عذراً، هذا الشفت مغلق حالياً من إدارة المزرعة"
+        );
+
+        closeModal();
+
+        renderCalendar();
+
+        return;
+
+    }
+
+    /* ==========================================
+       فحص الحجز
+    ========================================== */
 
     if(
         isShiftBooked(
@@ -3901,15 +4106,17 @@ async function sendBooking(){
 
     }
 
-
     sendButton.disabled =
         true;
 
     sendButton.textContent =
         "جاري تثبيت الحجز...";
 
-
     try{
+
+        /* ======================================
+           فحص مباشر من Supabase
+        ====================================== */
 
         const checkUrl =
             SUPABASE_URL +
@@ -3929,37 +4136,26 @@ async function sendBooking(){
                 selectedShift
             );
 
-
         const checkResponse =
             await fetch(
                 checkUrl,
                 {
                     method:"GET",
-
-                    headers:
-                        supabaseHeaders,
-
+                    headers:supabaseHeaders,
                     cache:"no-store"
                 }
             );
 
-
         if(!checkResponse.ok){
 
-            const errorText =
-                await checkResponse.text();
-
             throw new Error(
-                errorText ||
-                "تعذر فحص الحجز"
+                await checkResponse.text()
             );
 
         }
 
-
         const existingBookings =
             await checkResponse.json();
-
 
         if(
             existingBookings.length > 0
@@ -3977,6 +4173,68 @@ async function sendBooking(){
 
         }
 
+        /* ======================================
+           فحص الإغلاق من Supabase مباشرة
+        ====================================== */
+
+        const closureCheckUrl =
+            SUPABASE_URL +
+            "/rest/v1/" +
+            CLOSURES_TABLE +
+            "?select=id" +
+            "&farm=eq." +
+            encodeURIComponent(
+                currentFarm
+            ) +
+            "&closure_date=eq." +
+            encodeURIComponent(
+                selectedDate
+            ) +
+            "&shift=eq." +
+            encodeURIComponent(
+                selectedShift
+            );
+
+        const closureResponse =
+            await fetch(
+                closureCheckUrl,
+                {
+                    method:"GET",
+                    headers:supabaseHeaders,
+                    cache:"no-store"
+                }
+            );
+
+        if(!closureResponse.ok){
+
+            throw new Error(
+                await closureResponse.text()
+            );
+
+        }
+
+        const currentClosures =
+            await closureResponse.json();
+
+        if(
+            currentClosures.length > 0
+        ){
+
+            alert(
+                "عذراً، هذا الشفت مغلق حالياً من إدارة المزرعة"
+            );
+
+            await loadFarmClosures();
+
+            closeModal();
+
+            return;
+
+        }
+
+        /* ======================================
+           إنشاء الحجز
+        ====================================== */
 
         const booking = {
 
@@ -3996,7 +4254,6 @@ async function sendBooking(){
                 selectedShift
 
         };
-
 
         const insertResponse =
             await fetch(
@@ -4024,12 +4281,10 @@ async function sendBooking(){
                 }
             );
 
-
         if(!insertResponse.ok){
 
             const errorText =
                 await insertResponse.text();
-
 
             let errorData =
                 {};
@@ -4048,7 +4303,6 @@ async function sendBooking(){
 
             }
 
-
             if(
                 errorData.code ===
                 "23505"
@@ -4066,7 +4320,6 @@ async function sendBooking(){
 
             }
 
-
             throw new Error(
                 errorData.message ||
                 errorData.details ||
@@ -4076,24 +4329,19 @@ async function sendBooking(){
 
         }
 
-
-        const insertedBooking =
-            await insertResponse.json();
-
-
-        console.log(
-            "Booking inserted:",
-            insertedBooking
-        );
-
+        /* ======================================
+           إضافة للحجوزات الحالية
+        ====================================== */
 
         bookings.push(
             booking
         );
 
-
         renderCalendar();
 
+        /* ======================================
+           السعر الحالي
+        ====================================== */
 
         const bookingPrice =
             getShiftPrice(
@@ -4101,6 +4349,9 @@ async function sendBooking(){
                 selectedShift
             );
 
+        /* ======================================
+           رسالة واتساب
+        ====================================== */
 
         const message =
 `🌿 مزارع الغيث
@@ -4124,12 +4375,11 @@ ${selectedDate}
 ${selectedShift}
 
 💰 السعر:
-${bookingPrice} دينار
+${formatPrice(bookingPrice)}
 
 ✅ تمت الموافقة على شروط الحجز
 
 شكراً لاختياركم مزارع الغيث 🌿`;
-
 
         const whatsappURL =
             "https://wa.me/" +
@@ -4139,42 +4389,38 @@ ${bookingPrice} دينار
                 message
             );
 
-
         window.open(
             whatsappURL,
             "_blank"
         );
 
+        /* ======================================
+           تنظيف النموذج
+        ====================================== */
 
         document.getElementById(
             "customerName"
         ).value =
             "";
 
-
         document.getElementById(
             "customerPhone"
         ).value =
             "";
-
 
         document.getElementById(
             "agreeRules"
         ).checked =
             false;
 
-
         updateSendButton();
 
-
         closeModal();
-
 
         showStatus(
             "تم تثبيت الحجز بنجاح ✅",
             "success"
         );
-
 
     }catch(error){
 
@@ -4183,12 +4429,10 @@ ${bookingPrice} دينار
             error
         );
 
-
         alert(
             "حدث خطأ أثناء تثبيت الحجز:\n\n" +
             error.message
         );
-
 
     }finally{
 
@@ -4200,7 +4444,6 @@ ${bookingPrice} دينار
     }
 
 }
-
 
 /* =====================================================
    إغلاق نافذة الحجز
@@ -4218,7 +4461,6 @@ function closeModal(){
 
 }
 
-
 /* =====================================================
    الشروط
 ===================================================== */
@@ -4235,7 +4477,6 @@ function openRules(){
 
 }
 
-
 function closeRules(){
 
     document
@@ -4248,9 +4489,8 @@ function closeRules(){
 
 }
 
-
 /* =====================================================
-   إغلاق النوافذ عند الضغط خارجها
+   إغلاق النوافذ
 ===================================================== */
 
 document
@@ -4273,7 +4513,6 @@ document
         }
     );
 
-
 document
     .getElementById(
         "rulesModal"
@@ -4294,6 +4533,87 @@ document
         }
     );
 
+/* =====================================================
+   Realtime - الأسعار
+===================================================== */
+
+function startRealtime(){
+
+    realtimeClient
+        .channel(
+            "farm-settings-live"
+        )
+
+        .on(
+            "postgres_changes",
+            {
+                event:"*",
+                schema:"public",
+                table:"FarmSettings"
+            },
+            async function(){
+
+                console.log(
+                    "FarmSettings changed"
+                );
+
+                await loadFarmSettings();
+
+                showStatus(
+                    "تم تحديث الأسعار من إدارة المزرعة ✅",
+                    "success"
+                );
+
+                setTimeout(
+                    hideStatus,
+                    3000
+                );
+
+            }
+        )
+
+        .subscribe();
+
+/* =====================================================
+   Realtime - الإغلاقات
+===================================================== */
+
+    realtimeClient
+        .channel(
+            "farm-closures-live"
+        )
+
+        .on(
+            "postgres_changes",
+            {
+                event:"*",
+                schema:"public",
+                table:"FarmClosures"
+            },
+            async function(){
+
+                console.log(
+                    "FarmClosures changed"
+                );
+
+                await loadFarmClosures();
+
+                showStatus(
+                    "تم تحديث حالة الحجوزات من إدارة المزرعة 🔄",
+                    "success"
+                );
+
+                setTimeout(
+                    hideStatus,
+                    3000
+                );
+
+            }
+        )
+
+        .subscribe();
+
+}
 
 /* =====================================================
    تشغيل الموقع
@@ -4301,10 +4621,19 @@ document
 
 async function startApp(){
 
-    await loadBookings();
+    await Promise.all([
+
+        loadBookings(),
+
+        loadFarmSettings(),
+
+        loadFarmClosures()
+
+    ]);
+
+    startRealtime();
 
 }
-
 
 startApp();
 
