@@ -684,7 +684,6 @@ tr:hover{
     border:1px solid #713030;
 }
 
-/* NEW */
 .print-receipt-btn{
     background:linear-gradient(135deg,#e8cf6b,#b99724);
     color:#111;
@@ -936,10 +935,6 @@ tr:hover{
 
 <body>
 
-<!-- =====================================================
-     LOGIN
-===================================================== -->
-
 <div id="loginPage">
 
     <div class="login-box">
@@ -981,11 +976,6 @@ tr:hover{
     </div>
 
 </div>
-
-
-<!-- =====================================================
-     ADMIN
-===================================================== -->
 
 <div id="adminPage">
 
@@ -1032,9 +1022,6 @@ tr:hover{
 
 </header>
 
-
-<!-- ALERT -->
-
 <div
     id="newBookingAlert"
     class="new-booking-alert"
@@ -1055,121 +1042,53 @@ tr:hover{
 
 </div>
 
-
 <div class="container">
-
-
-<!-- =====================================================
-     STATS
-===================================================== -->
 
 <div class="stats">
 
     <div class="stat">
-
-        <h3>
-            إجمالي الحجوزات
-        </h3>
-
-        <strong id="bookingCount">
-            0
-        </strong>
-
+        <h3>إجمالي الحجوزات</h3>
+        <strong id="bookingCount">0</strong>
     </div>
 
     <div class="stat">
-
-        <h3>
-            قيمة الحجوزات
-        </h3>
-
-        <strong id="totalAmount">
-            0 د.ع
-        </strong>
-
+        <h3>قيمة الحجوزات</h3>
+        <strong id="totalAmount">0 د.ع</strong>
     </div>
 
     <div class="stat">
-
-        <h3>
-            آخر تحديث
-        </h3>
-
-        <strong
-            id="lastUpdate"
-            style="font-size:18px"
-        >
-            -
-        </strong>
-
+        <h3>آخر تحديث</h3>
+        <strong id="lastUpdate" style="font-size:18px">-</strong>
     </div>
 
 </div>
-
-
-<!-- EXTRA STATS -->
 
 <div class="extra-stats">
 
     <div class="extra-stat">
-
-        <span>
-            حجوزات المزرعة الأولى
-        </span>
-
-        <strong id="farmOneCount">
-            0
-        </strong>
-
+        <span>حجوزات المزرعة الأولى</span>
+        <strong id="farmOneCount">0</strong>
     </div>
 
     <div class="extra-stat">
-
-        <span>
-            حجوزات المزرعة الثانية
-        </span>
-
-        <strong id="farmTwoCount">
-            0
-        </strong>
-
+        <span>حجوزات المزرعة الثانية</span>
+        <strong id="farmTwoCount">0</strong>
     </div>
 
     <div class="extra-stat">
-
-        <span>
-            الإغلاقات
-        </span>
-
-        <strong id="closureCount">
-            0
-        </strong>
-
+        <span>الإغلاقات</span>
+        <strong id="closureCount">0</strong>
     </div>
 
 </div>
 
-
-<div
-    id="message"
-    class="message"
-></div>
-
-
-<!-- =====================================================
-     MANAGEMENT
-===================================================== -->
+<div id="message" class="message"></div>
 
 <div class="management-grid">
 
-
-<!-- PRICES -->
-
 <div class="panel">
 
-    <h2>
-        💰 إدارة الأسعار
-    </h2>
+    <h2>💰 إدارة الأسعار</h2>
 
     <p class="panel-description">
         تغيير السعر من هنا ينعكس على جدول الحجوزات.
@@ -1178,80 +1097,36 @@ tr:hover{
     <div class="price-grid">
 
         <div class="field">
-
-            <label>
-                الشفت الصباحي العادي
-            </label>
-
-            <input
-                id="morningPrice"
-                type="number"
-                min="0"
-            >
-
+            <label>الشفت الصباحي العادي</label>
+            <input id="morningPrice" type="number" min="0">
         </div>
 
         <div class="field">
-
-            <label>
-                الشفت المسائي العادي
-            </label>
-
-            <input
-                id="eveningPrice"
-                type="number"
-                min="0"
-            >
-
+            <label>الشفت المسائي العادي</label>
+            <input id="eveningPrice" type="number" min="0">
         </div>
 
         <div class="field">
-
-            <label>
-                الصباحي للأيام الخاصة
-            </label>
-
-            <input
-                id="specialMorningPrice"
-                type="number"
-                min="0"
-            >
-
+            <label>الصباحي للأيام الخاصة</label>
+            <input id="specialMorningPrice" type="number" min="0">
         </div>
 
         <div class="field">
-
-            <label>
-                المسائي للأيام الخاصة
-            </label>
-
-            <input
-                id="specialEveningPrice"
-                type="number"
-                min="0"
-            >
-
+            <label>المسائي للأيام الخاصة</label>
+            <input id="specialEveningPrice" type="number" min="0">
         </div>
 
     </div>
 
-    <button
-        class="save-prices"
-        onclick="savePrices()"
-    >
+    <button class="save-prices" onclick="savePrices()">
         💾 حفظ الأسعار
     </button>
 
 </div>
 
-
-<!-- CLOSURES -->
-
 <div class="panel">
 
-    <h2>
-        🔒 إغلاق يوم أو شفت
-    </h2>
+    <h2>🔒 إغلاق يوم أو شفت</h2>
 
     <p class="panel-description">
         يمكنك إغلاق يوم كامل أو مزرعة أو شفت محدد.
@@ -1260,78 +1135,35 @@ tr:hover{
     <div class="closure-form">
 
         <div class="field">
-
-            <label>
-                التاريخ
-            </label>
-
-            <input
-                id="closureDate"
-                type="date"
-            >
-
+            <label>التاريخ</label>
+            <input id="closureDate" type="date">
         </div>
 
         <div class="field">
-
-            <label>
-                المزرعة
-            </label>
+            <label>المزرعة</label>
 
             <select id="closureFarm">
-
-                <option value="">
-                    كل المزارع
-                </option>
-
-                <option value="المزرعة الأولى">
-                    المزرعة الأولى
-                </option>
-
-                <option value="المزرعة الثانية">
-                    المزرعة الثانية
-                </option>
-
+                <option value="">كل المزارع</option>
+                <option value="المزرعة الأولى">المزرعة الأولى</option>
+                <option value="المزرعة الثانية">المزرعة الثانية</option>
             </select>
 
         </div>
 
         <div class="field">
-
-            <label>
-                الشفت
-            </label>
+            <label>الشفت</label>
 
             <select id="closureShift">
-
-                <option value="">
-                    اليوم كامل
-                </option>
-
-                <option value="شفت صباحي">
-                    ☀️ شفت صباحي
-                </option>
-
-                <option value="شفت مسائي">
-                    🌙 شفت مسائي
-                </option>
-
+                <option value="">اليوم كامل</option>
+                <option value="شفت صباحي">☀️ شفت صباحي</option>
+                <option value="شفت مسائي">🌙 شفت مسائي</option>
             </select>
 
         </div>
 
         <div class="field">
-
-            <label>
-                سبب الإغلاق
-            </label>
-
-            <input
-                id="closureReason"
-                type="text"
-                placeholder="مثلاً: صيانة"
-            >
-
+            <label>سبب الإغلاق</label>
+            <input id="closureReason" type="text" placeholder="مثلاً: صيانة">
         </div>
 
         <div class="full">
@@ -1347,19 +1179,11 @@ tr:hover{
 
     </div>
 
-    <div
-        id="closuresList"
-        class="closures-list"
-    ></div>
+    <div id="closuresList" class="closures-list"></div>
 
 </div>
 
 </div>
-
-
-<!-- =====================================================
-     FILTERS
-===================================================== -->
 
 <div class="filters">
 
@@ -1381,17 +1205,9 @@ tr:hover{
         onchange="renderAllTables()"
     >
 
-        <option value="">
-            كل المزارع
-        </option>
-
-        <option value="المزرعة الأولى">
-            المزرعة الأولى
-        </option>
-
-        <option value="المزرعة الثانية">
-            المزرعة الثانية
-        </option>
+        <option value="">كل المزارع</option>
+        <option value="المزرعة الأولى">المزرعة الأولى</option>
+        <option value="المزرعة الثانية">المزرعة الثانية</option>
 
     </select>
 
@@ -1404,22 +1220,11 @@ tr:hover{
 
 </div>
 
-
-<!-- =====================================================
-     FARMS
-===================================================== -->
-
 <h2 class="farms-title">
     📋 حجوزات المزارع
 </h2>
 
-
-<!-- FARM ONE -->
-
-<div
-    id="farmBox1"
-    class="farm-box"
->
+<div id="farmBox1" class="farm-box">
 
     <button
         class="farm-header"
@@ -1428,9 +1233,7 @@ tr:hover{
 
         <div class="farm-header-left">
 
-            <div class="farm-icon">
-                🌿
-            </div>
+            <div class="farm-icon">🌿</div>
 
             <div>
 
@@ -1455,14 +1258,11 @@ tr:hover{
                 0 حجز
             </span>
 
-            <span class="farm-arrow">
-                ▼
-            </span>
+            <span class="farm-arrow">▼</span>
 
         </div>
 
     </button>
-
 
     <div class="farm-content">
 
@@ -1471,9 +1271,7 @@ tr:hover{
             <table>
 
                 <thead>
-
                     <tr>
-
                         <th>#</th>
                         <th>التاريخ</th>
                         <th>الشفت</th>
@@ -1481,9 +1279,7 @@ tr:hover{
                         <th>رقم الهاتف</th>
                         <th>السعر</th>
                         <th>الإجراءات</th>
-
                     </tr>
-
                 </thead>
 
                 <tbody id="farmOneTable"></tbody>
@@ -1496,13 +1292,7 @@ tr:hover{
 
 </div>
 
-
-<!-- FARM TWO -->
-
-<div
-    id="farmBox2"
-    class="farm-box"
->
+<div id="farmBox2" class="farm-box">
 
     <button
         class="farm-header"
@@ -1511,9 +1301,7 @@ tr:hover{
 
         <div class="farm-header-left">
 
-            <div class="farm-icon">
-                🌴
-            </div>
+            <div class="farm-icon">🌴</div>
 
             <div>
 
@@ -1538,14 +1326,11 @@ tr:hover{
                 0 حجز
             </span>
 
-            <span class="farm-arrow">
-                ▼
-            </span>
+            <span class="farm-arrow">▼</span>
 
         </div>
 
     </button>
-
 
     <div class="farm-content">
 
@@ -1554,9 +1339,7 @@ tr:hover{
             <table>
 
                 <thead>
-
                     <tr>
-
                         <th>#</th>
                         <th>التاريخ</th>
                         <th>الشفت</th>
@@ -1564,9 +1347,7 @@ tr:hover{
                         <th>رقم الهاتف</th>
                         <th>السعر</th>
                         <th>الإجراءات</th>
-
                     </tr>
-
                 </thead>
 
                 <tbody id="farmTwoTable"></tbody>
@@ -1579,101 +1360,46 @@ tr:hover{
 
 </div>
 
-
 </div>
 </div>
 
-
-<!-- =====================================================
-     EDIT MODAL
-===================================================== -->
-
-<div
-    id="editModal"
-    class="modal-overlay"
->
+<div id="editModal" class="modal-overlay">
 
 <div class="edit-modal">
 
-    <h2>
-        ✏️ تعديل الحجز
-    </h2>
+    <h2>✏️ تعديل الحجز</h2>
 
     <div class="edit-group">
-
-        <label>
-            اسم الزبون
-        </label>
-
-        <input
-            id="editCustomerName"
-            type="text"
-        >
-
+        <label>اسم الزبون</label>
+        <input id="editCustomerName" type="text">
     </div>
 
     <div class="edit-group">
-
-        <label>
-            رقم الهاتف
-        </label>
-
-        <input
-            id="editPhone"
-            type="text"
-        >
-
+        <label>رقم الهاتف</label>
+        <input id="editPhone" type="text">
     </div>
 
     <div class="edit-group">
-
-        <label>
-            التاريخ
-        </label>
-
-        <input
-            id="editDate"
-            type="date"
-        >
-
+        <label>التاريخ</label>
+        <input id="editDate" type="date">
     </div>
 
     <div class="edit-group">
-
-        <label>
-            المزرعة
-        </label>
+        <label>المزرعة</label>
 
         <select id="editFarm">
-
-            <option value="المزرعة الأولى">
-                المزرعة الأولى
-            </option>
-
-            <option value="المزرعة الثانية">
-                المزرعة الثانية
-            </option>
-
+            <option value="المزرعة الأولى">المزرعة الأولى</option>
+            <option value="المزرعة الثانية">المزرعة الثانية</option>
         </select>
 
     </div>
 
     <div class="edit-group">
-
-        <label>
-            الشفت
-        </label>
+        <label>الشفت</label>
 
         <select id="editShift">
-
-            <option value="شفت صباحي">
-                ☀️ شفت صباحي
-            </option>
-
-            <option value="شفت مسائي">
-                🌙 شفت مسائي
-            </option>
-
+            <option value="شفت صباحي">☀️ شفت صباحي</option>
+            <option value="شفت مسائي">🌙 شفت مسائي</option>
         </select>
 
     </div>
@@ -1699,7 +1425,6 @@ tr:hover{
 </div>
 
 </div>
-
 
 <script>
 
@@ -1974,23 +1699,17 @@ function playNotificationSound(){
     try{
 
         if(!audioContext){
-
             initAudio();
-
         }
 
         if(!audioContext){
-
             return;
-
         }
 
         if(
             audioContext.state === "suspended"
         ){
-
             audioContext.resume();
-
         }
 
         const now =
@@ -2169,9 +1888,7 @@ function updateNotificationButton(){
         );
 
     if(!button){
-
         return;
-
     }
 
     if(
@@ -2298,9 +2015,7 @@ function closeBookingAlert(){
 function startRealtime(){
 
     if(realtimeChannel){
-
         return;
-
     }
 
     realtimeChannel =
@@ -2324,17 +2039,13 @@ function startRealtime(){
                     );
 
                 if(!exists){
-
                     bookings.push(
                         payload.new
                     );
-
                 }
 
                 renderAllTables();
-
                 updateStats();
-
                 updateLastUpdate();
 
                 notifyNewBooking(
@@ -2375,9 +2086,7 @@ function startRealtime(){
                 }
 
                 renderAllTables();
-
                 updateStats();
-
                 updateLastUpdate();
 
                 showMessage(
@@ -2405,9 +2114,7 @@ function startRealtime(){
                     );
 
                 renderAllTables();
-
                 updateStats();
-
                 updateLastUpdate();
 
             }
@@ -2427,7 +2134,6 @@ function startRealtime(){
                 );
 
                 renderClosures();
-
                 updateStats();
 
             }
@@ -2450,7 +2156,6 @@ function startRealtime(){
                     );
 
                 renderClosures();
-
                 updateStats();
 
             }
@@ -2522,9 +2227,7 @@ async function loadBookings(){
     bookings = data || [];
 
     renderAllTables();
-
     updateStats();
-
     updateLastUpdate();
 }
 
@@ -2581,6 +2284,7 @@ async function loadSettings(){
             "specialEveningPrice"
         ).value =
             data.special_evening_price ?? 0;
+
     }
 }
 
@@ -2685,6 +2389,7 @@ async function savePrices(){
             })
             .select()
             .single();
+
     }
 
     if(result.error){
@@ -2701,7 +2406,6 @@ async function savePrices(){
     settings = result.data;
 
     renderAllTables();
-
     updateStats();
 
     showMessage(
@@ -2747,7 +2451,6 @@ async function loadClosures(){
     closures = data || [];
 
     renderClosures();
-
     updateStats();
 }
 
@@ -2837,7 +2540,6 @@ async function addClosure(){
     closures.push(data);
 
     renderClosures();
-
     updateStats();
 
     document.getElementById(
@@ -2946,9 +2648,7 @@ function renderClosures(){
 async function deleteClosure(id){
 
     if(!confirm("هل تريد حذف هذا الإغلاق؟")){
-
         return;
-
     }
 
     const {
@@ -2981,7 +2681,6 @@ async function deleteClosure(id){
         );
 
     renderClosures();
-
     updateStats();
 
     showMessage(
@@ -3001,9 +2700,7 @@ function toggleFarm(id){
         document.getElementById(id);
 
     if(!box){
-
         return;
-
     }
 
     box.classList.toggle("open");
@@ -3053,9 +2750,7 @@ function getShift(booking){
 function getPrice(date,shift){
 
     if(!date){
-
         return 0;
-
     }
 
     const normalMorning =
@@ -3099,28 +2794,20 @@ function getPrice(date,shift){
     if(expensiveDays){
 
         if(shift === "شفت صباحي"){
-
             return specialMorning;
-
         }
 
         if(shift === "شفت مسائي"){
-
             return specialEvening;
-
         }
     }
 
     if(shift === "شفت صباحي"){
-
         return normalMorning;
-
     }
 
     if(shift === "شفت مسائي"){
-
         return normalEvening;
-
     }
 
     return 0;
@@ -3396,6 +3083,7 @@ function renderFarmTable(
                     </div>
 
                 </td>
+
             `;
 
             tbody.appendChild(tr);
@@ -3557,9 +3245,7 @@ function closeEditModal(){
 async function saveEdit(){
 
     if(!editingBookingId){
-
         return;
-
     }
 
     const customerName =
@@ -3707,9 +3393,7 @@ async function saveEdit(){
     }
 
     renderAllTables();
-
     updateStats();
-
     updateLastUpdate();
 
     closeEditModal();
@@ -3763,9 +3447,7 @@ ${getShift(booking)}`
         );
 
     if(!confirmed){
-
         return;
-
     }
 
     const {
@@ -3798,9 +3480,7 @@ ${getShift(booking)}`
         );
 
     renderAllTables();
-
     updateStats();
-
     updateLastUpdate();
 
     showMessage(
@@ -3813,300 +3493,162 @@ ${getShift(booking)}`
 /* =====================================================
    RECEIPT / PRINT
 ===================================================== */
-/*
-   شروط الحجز والاستخدام
-*/
-const FARM_RULES = [
-    "لتثبيت الحجز يُدفع عربون قدره 100,000 دينار للأيام الاعتيادية، و200,000 دينار ليومي الخميس والجمعة — لا يمكن تثبيت أي حجز مسبق بدونه.",
-    "في حال عدم الالتزام بموعد الحجز لا يُسترجع العربون.",
-    "طلب الإلغاء للظروف القاهرة يجب أن يكون خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.",
-    "تُدفع تأمينات قدرها 100,000 دينار عند الدخول وتُسترجع عند المغادرة بعد التأكد من عدم فقدان أو تلف أي شيء داخل المنتجع.",
-    "الحجز للعوائل أو شباب فقط أو نساء فقط — يمنع الاختلاط إلا بعقد زواج.",
-    "يمنع منعاً باتاً إدخال السلاح أو المشروبات الكحولية أو الممنوعات، وبخلافه يتم تبليغ الجهات المختصة.",
-    "يمنع إطلاق العيارات النارية والألعاب النارية داخل المنتجع.",
-    "يمنع رمي الأوساخ في المسبح أو في الأماكن غير المخصصة، وبخلافه يتحمل المستأجر كافة المسؤولية.",
-    "الالتزام بأوقات بداية ونهاية الشفت — التأخير في المغادرة تُحتسب عليه رسوم إضافية.",
-    "عدد الأشخاص يجب أن يطابق العدد المتفق عليه عند الحجز.",
-    "السباحة على مسؤولية المستأجر، مع ضرورة مراقبة الأطفال قرب المسبح."
-];
-/*
-   تحويل التاريخ
-*/
-function formatReceiptDate(date){
-    if(!date){
-        return "-";
-    }
-    const parts =
-        String(date).split("-");
-    if(parts.length !== 3){
-        return date;
-    }
-    return (
-        parts[2] +
-        "/" +
-        parts[1] +
-        "/" +
-        parts[0]
-    );
-}
-/*
-   إنشاء رقم الوصل
-*/
-function getReceiptNumber(booking){
-    const raw =
-        String(
-            booking.id || ""
-        );
-    const shortId =
-        raw
-        .replace(/[^a-zA-Z0-9]/g,"")
-        .slice(-8)
-        .toUpperCase();
-    return (
-        "AG-" +
-        (
-            shortId ||
-            Date.now()
-        )
-    );
-}
-/*
-   طباعة الوصل
-*/
-function printReceipt(id){
-    const booking =
-        bookings.find(
-            item =>
-            String(item.id) ===
-            String(id)
-        );
-    if(!booking){
-        alert(
-            "لم يتم العثور على الحجز."
-        );
-        return;
-    }
-    const customerName =
-        getCustomerName(booking) ||
-        "-";
-    const phone =
-        booking.customer_phone ||
-        booking["customer_phone"] ||
-        "-";
-    const farm =
-        getFarm(booking) ||
-        "-";
-    const shift =
-        getShift(booking) ||
-        "-";
-    const date =
-        booking.booking_date ||
-        "-";
-    const price =
-        getPrice(
-            date,
-            shift
-        );
-    const receiptNumber =
-        getReceiptNumber(booking);
-    const rulesHtml =
-        FARM_RULES
-        .map(
-            (rule,index) => `
-                <li>
-                    <span class="rule-number">
-                        ${index + 1}
-                    </span>
-                    <span class="rule-text">
-                        ${escapeHtml(rule)}
-                    </span>
-                </li>
-            `
-        )
-        .join("");
-    const printWindow =
-        window.open(
-            "",
-            "_blank",
-            "width=1000,height=900"
-        );
-    if(!printWindow){
-        alert(
-            "المتصفح منع نافذة الطباعة. اسمح بالنوافذ المنبثقة ثم حاول مرة أخرى."
-        );
-        return;
-    }
     printWindow.document.write(`
+
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>
 وصل حجز - مزارع الغيث
 </title>
+
 <style>
-/* =====================================================
-   RESET
-===================================================== */
+
 *{
     box-sizing:border-box;
 }
+
+@page{
+    size:A4;
+    margin:8mm;
+}
+
 html,
 body{
+    width:100%;
     margin:0;
     padding:0;
 }
-/* =====================================================
-   PAGE
-===================================================== */
-@page{
-    size:A4;
-    margin:7mm;
-}
-/* =====================================================
-   BODY
-===================================================== */
+
 body{
     background:#fff;
     color:#111;
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
+    font-family:Tahoma,Arial,sans-serif;
     direction:rtl;
-    font-size:11px;
-    line-height:1.35;
 }
-/* =====================================================
-   RECEIPT
-===================================================== */
+
 .receipt{
     width:100%;
-    max-width:196mm;
+    max-width:194mm;
     margin:0 auto;
     border:2px solid #b38a20;
-    padding:11px 13px;
+    padding:12px;
     position:relative;
-    background:#fff;
-    page-break-inside:avoid;
-    break-inside:avoid;
+    overflow:hidden;
 }
-/* =====================================================
-   HEADER
-===================================================== */
+
 .header{
     text-align:center;
-    border-bottom:1.5px solid #b38a20;
-    padding-bottom:8px;
-    margin-bottom:9px;
-    page-break-inside:avoid;
-    break-inside:avoid;
+    border-bottom:2px solid #b38a20;
+    padding-bottom:9px;
+    margin-bottom:10px;
 }
+
 .logo{
-    width:58px;
-    height:58px;
+    width:65px;
+    height:65px;
     object-fit:contain;
-    margin-bottom:3px;
+    margin-bottom:4px;
 }
+
 .title{
-    font-size:21px;
+    font-size:22px;
     font-weight:bold;
     color:#8b6a16;
-    margin-bottom:1px;
+    margin-bottom:2px;
 }
+
 .subtitle{
-    font-size:11px;
+    font-size:12px;
     color:#555;
 }
+
 .receipt-title{
-    margin-top:5px;
-    font-size:17px;
+    margin-top:7px;
+    font-size:18px;
     font-weight:bold;
 }
+
 .receipt-number{
-    margin-top:2px;
-    font-size:9.5px;
+    margin-top:4px;
+    font-size:10px;
     color:#555;
 }
-/* =====================================================
-   INFO TABLE
-===================================================== */
+
 .info-table{
     width:100%;
     border-collapse:collapse;
-    margin-top:8px;
-    margin-bottom:9px;
-    page-break-inside:avoid;
-    break-inside:avoid;
+    margin-top:10px;
+    margin-bottom:12px;
 }
+
 .info-table td{
     border:1px solid #cfcfcf;
-    padding:6px 7px;
-    font-size:10.5px;
-    line-height:1.3;
+    padding:7px;
+    font-size:11px;
 }
+
 .info-table td.label{
     background:#f6f1df;
     font-weight:bold;
-    width:21%;
+    width:22%;
     color:#604b10;
 }
-/* =====================================================
-   PRICE
-===================================================== */
+
 .price-box{
-    border:1.5px solid #b38a20;
+    border:2px solid #b38a20;
     background:#fbf7e9;
-    padding:7px;
+    padding:8px;
     text-align:center;
-    margin-bottom:9px;
-    page-break-inside:avoid;
-    break-inside:avoid;
+    margin-bottom:12px;
 }
+
 .price-label{
-    font-size:10px;
+    font-size:11px;
     color:#555;
-    margin-bottom:1px;
+    margin-bottom:2px;
 }
+
 .price{
-    font-size:19px;
+    font-size:21px;
     font-weight:bold;
     color:#7d5d0e;
 }
-/* =====================================================
-   RULES
-===================================================== */
+
 .rules-title{
     text-align:right;
-    font-size:14px;
+    font-size:15px;
     font-weight:bold;
     color:#8b6a16;
     border-bottom:1px solid #b38a20;
-    padding-bottom:4px;
-    margin-bottom:5px;
-    page-break-after:avoid;
+    padding-bottom:5px;
+    margin-bottom:7px;
 }
+
 .rules{
     padding:0;
-    margin:0 0 7px 0;
+    margin:0 0 8px 0;
     list-style:none;
-    page-break-inside:avoid;
-    break-inside:avoid;
 }
+
 .rules li{
     display:flex;
     gap:6px;
     align-items:flex-start;
-    margin-bottom:3px;
-    font-size:9px;
-    line-height:1.35;
-    page-break-inside:avoid;
-    break-inside:avoid;
+    margin-bottom:4px;
+    font-size:9.5px;
+    line-height:1.4;
 }
+
 .rule-number{
     flex:none;
-    width:16px;
-    height:16px;
+    width:17px;
+    height:17px;
     border:1px solid #b38a20;
     border-radius:50%;
     display:flex;
@@ -4116,19 +3658,293 @@ body{
     font-weight:bold;
     font-size:8px;
 }
-.rule-text{
-    flex:1;
-}
-/* =====================================================
-   AGREEMENT
-===================================================== */
+
 .agreement{
     text-align:center;
-    font-size:9px;
+    font-size:9.5px;
     border-top:1px solid #ddd;
     border-bottom:1px solid #ddd;
-    padding:5px 7px;
-    margin:7px 0
+    padding:6px;
+    margin:9px 0;
+    line-height:1.5;
+}
+
+.signatures{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:10px;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.signature-box{
+    text-align:center;
+    min-height:72px;
+    page-break-inside:avoid;
+    break-inside:avoid;
+}
+
+.signature-title{
+    font-weight:bold;
+    color:#604b10;
+    margin-bottom:25px;
+    font-size:11px;
+    line-height:1.5;
+}
+
+.signature-line{
+    border-top:1px solid #222;
+    padding-top:5px;
+    font-size:9px;
+}
+
+.footer{
+    text-align:center;
+    border-top:1px solid #ddd;
+    margin-top:10px;
+    padding-top:5px;
+    color:#777;
+    font-size:8px;
+    page-break-inside:avoid;
+}
+
+@media print{
+
+    html,
+    body{
+        width:100%;
+        height:auto;
+        background:#fff;
+    }
+
+    .receipt{
+        border:2px solid #b38a20;
+        page-break-inside:avoid;
+        break-inside:avoid;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="receipt">
+
+    <div class="header">
+
+        <img
+            src="Logo-farms.PNG"
+            class="logo"
+            alt="مزارع الغيث"
+        >
+
+        <div class="title">
+            مزارع الغيث
+        </div>
+
+        <div class="subtitle">
+            ALGAITH FARMS
+        </div>
+
+        <div class="receipt-title">
+            وصل حجز رسمي
+        </div>
+
+        <div class="receipt-number">
+            رقم الوصل: ${escapeHtml(receiptNumber)}
+        </div>
+
+    </div>
+
+
+    <table class="info-table">
+
+        <tr>
+
+            <td class="label">
+                اسم الزبون
+            </td>
+
+            <td>
+                ${escapeHtml(customerName)}
+            </td>
+
+            <td class="label">
+                رقم الهاتف
+            </td>
+
+            <td>
+                ${escapeHtml(phone)}
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td class="label">
+                المزرعة
+            </td>
+
+            <td>
+                ${escapeHtml(farm)}
+            </td>
+
+            <td class="label">
+                التاريخ
+            </td>
+
+            <td>
+                ${escapeHtml(
+                    formatReceiptDate(date)
+                )}
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td class="label">
+                الشفت
+            </td>
+
+            <td>
+                ${escapeHtml(shift)}
+            </td>
+
+            <td class="label">
+                تاريخ إصدار الوصل
+            </td>
+
+            <td>
+                ${escapeHtml(
+                    new Date().toLocaleDateString("ar-IQ")
+                )}
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <div class="price-box">
+
+        <div class="price-label">
+            قيمة الحجز
+        </div>
+
+        <div class="price">
+            ${escapeHtml(
+                formatPrice(price)
+            )}
+        </div>
+
+    </div>
+
+
+    <div class="rules-title">
+        شروط الحجز
+    </div>
+
+
+    <ul class="rules">
+
+        ${rulesHtml}
+
+    </ul>
+
+
+    <div class="agreement">
+
+        أقرّ الطرف الثاني باطلاعه على شروط الحجز
+        وقوانين المزرعة المذكورة أعلاه،
+        وموافقته عليها والالتزام بها.
+
+    </div>
+
+
+    <div class="signatures">
+
+        <div class="signature-box">
+
+            <div class="signature-title">
+
+                الطرف الأول
+                <br>
+
+                مزارع الغيث
+
+            </div>
+
+            <div class="signature-line">
+                التوقيع والختم
+            </div>
+
+        </div>
+
+
+        <div class="signature-box">
+
+            <div class="signature-title">
+
+                الطرف الثاني
+                <br>
+
+                ${escapeHtml(customerName)}
+
+            </div>
+
+            <div class="signature-line">
+                توقيع الزبون
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        مزارع الغيث | ALGAITH FARMS
+
+        <br>
+
+        هذا الوصل خاص بالحجز المذكور أعلاه.
+
+    </div>
+
+</div>
+
+
+<script>
+
+window.onload = function(){
+
+    setTimeout(function(){
+
+        window.print();
+
+    },500);
+
+};
+
+<\/script>
+
+</body>
+
+</html>
+
+`);
+
+    printWindow.document.close();
+
+}
+
 /* =====================================================
    SECURITY
 ===================================================== */
@@ -4175,8 +3991,3 @@ document
 ===================================================== */
 
 checkSession();
-
-</script>
-
-</body>
-</html>
