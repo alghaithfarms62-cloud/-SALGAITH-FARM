@@ -8,7 +8,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -33,7 +32,11 @@
 body{
     font-family:Tahoma,Arial,sans-serif;
     background:
-        radial-gradient(circle at top right,rgba(212,175,55,.09),transparent 35%),
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,.09),
+            transparent 35%
+        ),
         #080808;
     color:var(--white);
     min-height:100vh;
@@ -50,18 +53,28 @@ body{
     justify-content:center;
     padding:20px;
     background:
-        radial-gradient(circle at center,rgba(212,175,55,.12),transparent 45%),
+        radial-gradient(
+            circle at center,
+            rgba(212,175,55,.12),
+            transparent 45%
+        ),
         #080808;
 }
 
 .login-box{
     width:100%;
     max-width:430px;
-    background:linear-gradient(145deg,#1b1b1b,#0d0d0d);
+    background:
+        linear-gradient(
+            145deg,
+            #1b1b1b,
+            #0d0d0d
+        );
     padding:38px 30px;
     border-radius:26px;
     border:1px solid var(--border);
-    box-shadow:0 25px 70px rgba(0,0,0,.65);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65);
     text-align:center;
 }
 
@@ -114,7 +127,12 @@ body{
     padding:15px;
     border:0;
     border-radius:12px;
-    background:linear-gradient(135deg,var(--gold2),var(--gold));
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
     color:#111;
     font-family:inherit;
     font-weight:bold;
@@ -251,7 +269,12 @@ header p{
 }
 
 .stat{
-    background:linear-gradient(145deg,#1a1a1a,#101010);
+    background:
+        linear-gradient(
+            145deg,
+            #1a1a1a,
+            #101010
+        );
     border:1px solid var(--border);
     border-radius:20px;
     padding:24px;
@@ -410,12 +433,22 @@ header p{
 }
 
 .save-prices{
-    background:linear-gradient(135deg,var(--gold2),var(--gold));
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
     color:#111;
 }
 
 .close-day-btn{
-    background:linear-gradient(135deg,#7b2424,#a82e2e);
+    background:
+        linear-gradient(
+            135deg,
+            #7b2424,
+            #a82e2e
+        );
     color:#fff;
 }
 
@@ -498,7 +531,12 @@ header p{
 }
 
 .refresh{
-    background:linear-gradient(135deg,var(--gold2),var(--gold));
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
     color:#111;
     border:0;
     border-radius:11px;
@@ -519,12 +557,18 @@ header p{
 }
 
 .farm-box{
-    background:linear-gradient(145deg,#181818,#0d0d0d);
+    background:
+        linear-gradient(
+            145deg,
+            #181818,
+            #0d0d0d
+        );
     border:1px solid var(--border);
     border-radius:22px;
     margin-bottom:18px;
     overflow:hidden;
-    box-shadow:0 12px 35px rgba(0,0,0,.25);
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.25);
 }
 
 .farm-header{
@@ -618,11 +662,16 @@ header p{
 table{
     width:100%;
     border-collapse:collapse;
-    min-width:1180px;
+    min-width:1150px;
 }
 
 th{
-    background:linear-gradient(135deg,#191919,#0d0d0d);
+    background:
+        linear-gradient(
+            135deg,
+            #191919,
+            #0d0d0d
+        );
     color:var(--gold2);
     padding:15px;
     white-space:nowrap;
@@ -659,14 +708,13 @@ tr:hover{
     display:flex;
     justify-content:center;
     gap:7px;
-    flex-wrap:wrap;
 }
 
 .edit-btn,
 .delete-btn,
-.print-receipt-btn{
+.receipt-btn{
     border-radius:8px;
-    padding:8px 12px;
+    padding:8px 11px;
     font-family:inherit;
     font-weight:bold;
     cursor:pointer;
@@ -684,11 +732,10 @@ tr:hover{
     border:1px solid #713030;
 }
 
-/* NEW */
-.print-receipt-btn{
-    background:linear-gradient(135deg,#e8cf6b,#b99724);
-    color:#111;
-    border:1px solid #d4af37;
+.receipt-btn{
+    background:#14321f;
+    color:#8de0aa;
+    border:1px solid #2d6843;
 }
 
 .empty{
@@ -707,11 +754,17 @@ tr:hover{
     right:20px;
     width:350px;
     max-width:calc(100% - 40px);
-    background:linear-gradient(145deg,#202020,#0d0d0d);
+    background:
+        linear-gradient(
+            145deg,
+            #202020,
+            #0d0d0d
+        );
     border:2px solid var(--gold);
     border-radius:20px;
     padding:19px;
-    box-shadow:0 20px 60px rgba(0,0,0,.65);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.65);
     z-index:9999;
     transform:translateX(450px);
     opacity:0;
@@ -741,7 +794,12 @@ tr:hover{
     padding:10px;
     border:0;
     border-radius:9px;
-    background:linear-gradient(135deg,var(--gold2),var(--gold));
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
     color:#111;
     font-family:inherit;
     font-weight:bold;
@@ -771,11 +829,17 @@ tr:hover{
 .edit-modal{
     width:100%;
     max-width:500px;
-    background:linear-gradient(145deg,#1d1d1d,#0d0d0d);
+    background:
+        linear-gradient(
+            145deg,
+            #1d1d1d,
+            #0d0d0d
+        );
     border:1px solid var(--border);
     border-radius:23px;
     padding:26px;
-    box-shadow:0 25px 80px rgba(0,0,0,.7);
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.7);
 }
 
 .edit-modal h2{
@@ -819,7 +883,12 @@ tr:hover{
 }
 
 .save-edit{
-    background:linear-gradient(135deg,var(--gold2),var(--gold));
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
     color:#111;
     border:0;
     padding:13px;
@@ -838,6 +907,236 @@ tr:hover{
     font-family:inherit;
     font-weight:bold;
     cursor:pointer;
+}
+
+/* =========================
+   RECEIPT PREVIEW
+========================= */
+
+.receipt-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    z-index:20000;
+    display:none;
+    overflow:auto;
+    padding:25px;
+}
+
+.receipt-overlay.show{
+    display:block;
+}
+
+.receipt-controls{
+    width:100%;
+    max-width:900px;
+    margin:0 auto 15px;
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.receipt-controls button{
+    border:0;
+    border-radius:10px;
+    padding:12px 22px;
+    font-family:inherit;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.print-receipt-btn{
+    background:linear-gradient(
+        135deg,
+        var(--gold2),
+        var(--gold)
+    );
+    color:#111;
+}
+
+.close-receipt-btn{
+    background:#333;
+    color:#fff;
+}
+
+/*
+   A4 EXACT SIZE
+   210mm × 297mm
+*/
+.receipt-page{
+    width:210mm;
+    height:297mm;
+    min-width:210mm;
+    max-width:210mm;
+    min-height:297mm;
+    max-height:297mm;
+
+    margin:0 auto;
+    background:#fff;
+    color:#111;
+    padding:15mm;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.55);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.receipt-header{
+    border:2px solid #b28b22;
+    padding:10mm 8mm;
+    text-align:center;
+    margin-bottom:7mm;
+}
+
+.receipt-logo{
+    width:28mm;
+    height:28mm;
+    object-fit:contain;
+    margin-bottom:3mm;
+}
+
+.receipt-header h1{
+    color:#8c6915;
+    font-size:25px;
+    margin-bottom:3mm;
+}
+
+.receipt-header h2{
+    font-size:17px;
+    margin-bottom:2mm;
+}
+
+.receipt-header p{
+    font-size:12px;
+    color:#555;
+}
+
+.receipt-title{
+    text-align:center;
+    font-size:21px;
+    font-weight:bold;
+    color:#8c6915;
+    border-bottom:2px solid #b28b22;
+    padding-bottom:4mm;
+    margin-bottom:6mm;
+}
+
+.receipt-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3mm;
+    margin-bottom:6mm;
+}
+
+.receipt-info-box{
+    border:1px solid #ccc;
+    padding:4mm;
+    min-height:17mm;
+}
+
+.receipt-info-box strong{
+    display:block;
+    color:#777;
+    font-size:10px;
+    margin-bottom:2mm;
+}
+
+.receipt-info-box span{
+    font-size:13px;
+    font-weight:bold;
+}
+
+.receipt-payment{
+    border:1.5px solid #b28b22;
+    margin-bottom:6mm;
+}
+
+.receipt-payment-title{
+    background:#f5ecd1;
+    color:#72550e;
+    padding:3mm;
+    font-weight:bold;
+    text-align:center;
+    border-bottom:1px solid #b28b22;
+}
+
+.receipt-payment-row{
+    display:flex;
+    justify-content:space-between;
+    padding:3.5mm 5mm;
+    border-bottom:1px solid #ddd;
+    font-size:12px;
+}
+
+.receipt-payment-row:last-child{
+    border-bottom:0;
+}
+
+.receipt-payment-row.total{
+    background:#faf7ed;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.receipt-conditions{
+    border:1px solid #ccc;
+    padding:5mm;
+    margin-bottom:5mm;
+}
+
+.receipt-conditions h3{
+    color:#8c6915;
+    font-size:15px;
+    border-bottom:1px solid #d5bd75;
+    padding-bottom:2mm;
+    margin-bottom:3mm;
+}
+
+.receipt-conditions ol{
+    padding-right:6mm;
+}
+
+.receipt-conditions li{
+    font-size:10.5px;
+    line-height:1.65;
+    margin-bottom:1.2mm;
+}
+
+.receipt-signatures{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20mm;
+    margin-top:7mm;
+    padding-top:5mm;
+}
+
+.signature-box{
+    text-align:center;
+    font-size:11px;
+}
+
+.signature-line{
+    height:25mm;
+    border-bottom:1px solid #555;
+    margin-bottom:3mm;
+}
+
+.signature-name{
+    font-weight:bold;
+}
+
+.receipt-footer{
+    position:absolute;
+    bottom:9mm;
+    right:15mm;
+    left:15mm;
+    text-align:center;
+    border-top:1px solid #ddd;
+    padding-top:3mm;
+    color:#777;
+    font-size:9px;
 }
 
 /* =========================
@@ -922,15 +1221,10 @@ tr:hover{
         font-size:17px;
     }
 
-    .action-buttons{
-        flex-direction:column;
-    }
-
-    .action-buttons button{
-        width:100%;
+    .receipt-overlay{
+        padding:10px;
     }
 }
-
 </style>
 </head>
 
@@ -945,12 +1239,19 @@ tr:hover{
     <div class="login-box">
 
         <div class="login-logo">
-            <img src="Logo-farms.PNG" alt="مزارع الغيث">
+            <img
+                src="Logo-farms.PNG"
+                alt="مزارع الغيث"
+            >
         </div>
 
-        <h1>مزارع الغيث</h1>
+        <h1>
+            مزارع الغيث
+        </h1>
 
-        <p>تسجيل دخول الإدارة</p>
+        <p>
+            تسجيل دخول الإدارة
+        </p>
 
         <input
             id="email"
@@ -982,7 +1283,6 @@ tr:hover{
 
 </div>
 
-
 <!-- =====================================================
      ADMIN
 ===================================================== -->
@@ -994,7 +1294,10 @@ tr:hover{
     <div class="brand-area">
 
         <div class="brand-icon">
-            <img src="Logo-farms.PNG" alt="مزارع الغيث">
+            <img
+                src="Logo-farms.PNG"
+                alt="مزارع الغيث"
+            >
         </div>
 
         <div>
@@ -1032,7 +1335,6 @@ tr:hover{
 
 </header>
 
-
 <!-- ALERT -->
 
 <div
@@ -1040,11 +1342,17 @@ tr:hover{
     class="new-booking-alert"
 >
 
-    <h3>🔔 حجز جديد!</h3>
+    <h3>
+        🔔 حجز جديد!
+    </h3>
 
-    <p id="alertCustomer">-</p>
+    <p id="alertCustomer">
+        -
+    </p>
 
-    <p id="alertDetails">-</p>
+    <p id="alertDetails">
+        -
+    </p>
 
     <button
         class="alert-close"
@@ -1055,9 +1363,7 @@ tr:hover{
 
 </div>
 
-
 <div class="container">
-
 
 <!-- =====================================================
      STATS
@@ -1106,7 +1412,6 @@ tr:hover{
 
 </div>
 
-
 <!-- EXTRA STATS -->
 
 <div class="extra-stats">
@@ -1149,19 +1454,16 @@ tr:hover{
 
 </div>
 
-
 <div
     id="message"
     class="message"
 ></div>
-
 
 <!-- =====================================================
      MANAGEMENT
 ===================================================== -->
 
 <div class="management-grid">
-
 
 <!-- PRICES -->
 
@@ -1243,7 +1545,6 @@ tr:hover{
     </button>
 
 </div>
-
 
 <!-- CLOSURES -->
 
@@ -1356,7 +1657,6 @@ tr:hover{
 
 </div>
 
-
 <!-- =====================================================
      FILTERS
 ===================================================== -->
@@ -1404,15 +1704,9 @@ tr:hover{
 
 </div>
 
-
-<!-- =====================================================
-     FARMS
-===================================================== -->
-
 <h2 class="farms-title">
     📋 حجوزات المزارع
 </h2>
-
 
 <!-- FARM ONE -->
 
@@ -1446,7 +1740,13 @@ tr:hover{
 
         </div>
 
-        <div style="display:flex;align-items:center;gap:12px;">
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                gap:12px;
+            "
+        >
 
             <span
                 id="farmOneTableCount"
@@ -1462,7 +1762,6 @@ tr:hover{
         </div>
 
     </button>
-
 
     <div class="farm-content">
 
@@ -1496,7 +1795,6 @@ tr:hover{
 
 </div>
 
-
 <!-- FARM TWO -->
 
 <div
@@ -1529,7 +1827,13 @@ tr:hover{
 
         </div>
 
-        <div style="display:flex;align-items:center;gap:12px;">
+        <div
+            style="
+                display:flex;
+                align-items:center;
+                gap:12px;
+            "
+        >
 
             <span
                 id="farmTwoTableCount"
@@ -1545,7 +1849,6 @@ tr:hover{
         </div>
 
     </button>
-
 
     <div class="farm-content">
 
@@ -1579,10 +1882,8 @@ tr:hover{
 
 </div>
 
-
 </div>
 </div>
-
 
 <!-- =====================================================
      EDIT MODAL
@@ -1700,6 +2001,295 @@ tr:hover{
 
 </div>
 
+<!-- =====================================================
+     RECEIPT
+===================================================== -->
+
+<div
+    id="receiptOverlay"
+    class="receipt-overlay"
+>
+
+    <div class="receipt-controls">
+
+        <button
+            class="print-receipt-btn"
+            onclick="printReceipt()"
+        >
+            🖨️ طباعة الوصل A4
+        </button>
+
+        <button
+            class="close-receipt-btn"
+            onclick="closeReceipt()"
+        >
+            ✕ إغلاق
+        </button>
+
+    </div>
+
+    <div
+        id="receiptPage"
+        class="receipt-page"
+    >
+
+        <div class="receipt-header">
+
+            <img
+                src="Logo-farms.PNG"
+                class="receipt-logo"
+                alt="مزارع الغيث"
+            >
+
+            <h1>
+                مزارع الغيث
+            </h1>
+
+            <h2>
+                ALGAITH FARMS
+            </h2>
+
+            <p>
+                إيصال حجز رسمي
+            </p>
+
+        </div>
+
+        <div class="receipt-title">
+            وصل تثبيت حجز
+        </div>
+
+        <div class="receipt-info">
+
+            <div class="receipt-info-box">
+
+                <strong>
+                    اسم الزبون
+                </strong>
+
+                <span id="receiptCustomer">
+                    -
+                </span>
+
+            </div>
+
+            <div class="receipt-info-box">
+
+                <strong>
+                    رقم الهاتف
+                </strong>
+
+                <span id="receiptPhone">
+                    -
+                </span>
+
+            </div>
+
+            <div class="receipt-info-box">
+
+                <strong>
+                    المزرعة
+                </strong>
+
+                <span id="receiptFarm">
+                    -
+                </span>
+
+            </div>
+
+            <div class="receipt-info-box">
+
+                <strong>
+                    الشفت
+                </strong>
+
+                <span id="receiptShift">
+                    -
+                </span>
+
+            </div>
+
+            <div class="receipt-info-box">
+
+                <strong>
+                    تاريخ الحجز
+                </strong>
+
+                <span id="receiptDate">
+                    -
+                </span>
+
+            </div>
+
+            <div class="receipt-info-box">
+
+                <strong>
+                    رقم الحجز
+                </strong>
+
+                <span id="receiptBookingId">
+                    -
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="receipt-payment">
+
+            <div class="receipt-payment-title">
+                تفاصيل المبالغ
+            </div>
+
+            <div class="receipt-payment-row">
+
+                <span>
+                    قيمة الحجز
+                </span>
+
+                <strong id="receiptTotal">
+                    0 د.ع
+                </strong>
+
+            </div>
+
+            <div class="receipt-payment-row">
+
+                <span>
+                    العربون المطلوب
+                </span>
+
+                <strong id="receiptDeposit">
+                    0 د.ع
+                </strong>
+
+            </div>
+
+            <div class="receipt-payment-row">
+
+                <span>
+                    التأمين عند الدخول
+                </span>
+
+                <strong>
+                    100,000 د.ع
+                </strong>
+
+            </div>
+
+            <div class="receipt-payment-row total">
+
+                <span>
+                    إجمالي المبلغ المطلوب عند التثبيت
+                </span>
+
+                <strong id="receiptRequired">
+                    0 د.ع
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="receipt-conditions">
+
+            <h3>
+                شروط الحجز
+            </h3>
+
+            <ol>
+
+                <li>
+                    لتثبيت الحجز يُدفع عربون قدره 100,000 دينار للأيام الاعتيادية، و200,000 دينار ليومي الخميس والجمعة — لا يمكن تثبيت أي حجز مسبق بدونه.
+                </li>
+
+                <li>
+                    في حال عدم الالتزام بموعد الحجز لا يُسترجع العربون.
+                </li>
+
+                <li>
+                    طلب الإلغاء للظروف القاهرة يجب أن يكون خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.
+                </li>
+
+                <li>
+                    تُدفع تأمينات قدرها 100,000 دينار عند الدخول وتُسترجع عند المغادرة بعد التأكد من عدم فقدان أو تلف أي شيء داخل المنتجع.
+                </li>
+
+            </ol>
+
+        </div>
+
+        <div class="receipt-conditions">
+
+            <h3>
+                قوانين المزرعة
+            </h3>
+
+            <ol>
+
+                <li>
+                    الحجز للعوائل أو شباب فقط أو نساء فقط — يمنع الاختلاط إلا بعقد زواج.
+                </li>
+
+                <li>
+                    يمنع منعاً باتاً إدخال السلاح أو المشروبات الكحولية أو الممنوعات، وبخلافه يتم تبليغ الجهات المختصة.
+                </li>
+
+                <li>
+                    يمنع إطلاق العيارات النارية والألعاب النارية داخل المنتجع.
+                </li>
+
+                <li>
+                    يمنع رمي الأوساخ في المسبح أو في الأماكن غير المخصصة، وبخلافه يتحمل المستأجر كافة المسؤولية.
+                </li>
+
+                <li>
+                    الالتزام بأوقات بداية ونهاية الشفت — التأخير في المغادرة تُحتسب عليه رسوم إضافية.
+                </li>
+
+                <li>
+                    عدد الأشخاص يجب أن يطابق العدد المتفق عليه عند الحجز.
+                </li>
+
+                <li>
+                    السباحة على مسؤولية المستأجر، مع ضرورة مراقبة الأطفال قرب المسبح.
+                </li>
+
+            </ol>
+
+        </div>
+
+        <div class="receipt-signatures">
+
+            <div class="signature-box">
+
+                <div class="signature-line"></div>
+
+                <div class="signature-name">
+                    توقيع الزبون
+                </div>
+
+            </div>
+
+            <div class="signature-box">
+
+                <div class="signature-line"></div>
+
+                <div class="signature-name">
+                    توقيع إدارة مزارع الغيث
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="receipt-footer">
+            مزارع الغيث | ALGAITH FARMS — هذا الوصل يثبت تفاصيل الحجز والشروط المتفق عليها.
+        </div>
+
+    </div>
+
+</div>
 
 <script>
 
@@ -1735,7 +2325,6 @@ let realtimeChannel = null;
 let editingBookingId = null;
 let audioContext = null;
 
-
 /* =====================================================
    LOGIN
 ===================================================== */
@@ -1756,7 +2345,8 @@ async function login(){
     const errorBox =
         document.getElementById("loginError");
 
-    errorBox.className = "login-error";
+    errorBox.className =
+        "login-error";
 
     if(!email || !password){
 
@@ -1805,6 +2395,7 @@ async function login(){
         }
 
         initAudio();
+
         showAdmin();
 
     }
@@ -1819,7 +2410,6 @@ async function login(){
             "login-error show";
     }
 }
-
 
 /* =====================================================
    SESSION
@@ -1838,6 +2428,7 @@ async function checkSession(){
         if(data && data.session){
 
             initAudio();
+
             showAdmin();
 
         }
@@ -1853,28 +2444,29 @@ async function checkSession(){
         console.error(error);
 
         showLogin();
-
     }
 }
 
-
 function showLogin(){
 
-    document.getElementById("loginPage")
-        .style.display = "flex";
+    document
+    .getElementById("loginPage")
+    .style.display = "flex";
 
-    document.getElementById("adminPage")
-        .style.display = "none";
+    document
+    .getElementById("adminPage")
+    .style.display = "none";
 }
-
 
 function showAdmin(){
 
-    document.getElementById("loginPage")
-        .style.display = "none";
+    document
+    .getElementById("loginPage")
+    .style.display = "none";
 
-    document.getElementById("adminPage")
-        .style.display = "block";
+    document
+    .getElementById("adminPage")
+    .style.display = "block";
 
     updateNotificationButton();
 
@@ -1882,7 +2474,6 @@ function showAdmin(){
 
     startRealtime();
 }
-
 
 /* =====================================================
    LOGOUT
@@ -1906,7 +2497,6 @@ async function logout(){
     showLogin();
 }
 
-
 /* =====================================================
    MESSAGE
 ===================================================== */
@@ -1923,11 +2513,11 @@ function showMessage(text,type){
 
     setTimeout(function(){
 
-        box.className = "message";
+        box.className =
+            "message";
 
     },3500);
 }
-
 
 /* =====================================================
    AUDIO
@@ -1947,7 +2537,6 @@ function initAudio(){
 
                 audioContext =
                     new AudioContext();
-
             }
         }
 
@@ -1957,17 +2546,14 @@ function initAudio(){
         ){
 
             audioContext.resume();
-
         }
 
     }
     catch(error){
 
         console.log(error);
-
     }
 }
-
 
 function playNotificationSound(){
 
@@ -1976,13 +2562,11 @@ function playNotificationSound(){
         if(!audioContext){
 
             initAudio();
-
         }
 
         if(!audioContext){
 
             return;
-
         }
 
         if(
@@ -1990,7 +2574,6 @@ function playNotificationSound(){
         ){
 
             audioContext.resume();
-
         }
 
         const now =
@@ -2002,7 +2585,8 @@ function playNotificationSound(){
         const gain =
             audioContext.createGain();
 
-        oscillator.type = "sine";
+        oscillator.type =
+            "sine";
 
         oscillator.frequency.setValueAtTime(
             880,
@@ -2050,10 +2634,8 @@ function playNotificationSound(){
     catch(error){
 
         console.log(error);
-
     }
 }
-
 
 /* =====================================================
    NOTIFICATIONS
@@ -2067,7 +2649,6 @@ function notificationWasEnabled(){
         ) === "true"
     );
 }
-
 
 async function enableNotifications(){
 
@@ -2156,10 +2737,8 @@ async function enableNotifications(){
     catch(error){
 
         console.error(error);
-
     }
 }
-
 
 function updateNotificationButton(){
 
@@ -2171,7 +2750,6 @@ function updateNotificationButton(){
     if(!button){
 
         return;
-
     }
 
     if(
@@ -2179,7 +2757,9 @@ function updateNotificationButton(){
         Notification.permission === "granted"
     ){
 
-        button.classList.add("enabled");
+        button.classList.add(
+            "enabled"
+        );
 
         button.textContent =
             "🔔 الإشعارات مفعّلة";
@@ -2187,14 +2767,14 @@ function updateNotificationButton(){
     }
     else{
 
-        button.classList.remove("enabled");
+        button.classList.remove(
+            "enabled"
+        );
 
         button.textContent =
             "🔔 تفعيل الإشعارات";
-
     }
 }
-
 
 /* =====================================================
    ALERT
@@ -2266,7 +2846,6 @@ function notifyNewBooking(booking){
         catch(error){
 
             console.log(error);
-
         }
     }
 
@@ -2281,15 +2860,12 @@ function notifyNewBooking(booking){
     );
 }
 
-
 function closeBookingAlert(){
 
     document.getElementById(
         "newBookingAlert"
     ).classList.remove("show");
-
 }
-
 
 /* =====================================================
    REALTIME
@@ -2300,7 +2876,6 @@ function startRealtime(){
     if(realtimeChannel){
 
         return;
-
     }
 
     realtimeChannel =
@@ -2314,6 +2889,7 @@ function startRealtime(){
                 schema:"public",
                 table:BOOKINGS_TABLE
             },
+
             function(payload){
 
                 const exists =
@@ -2328,7 +2904,6 @@ function startRealtime(){
                     bookings.push(
                         payload.new
                     );
-
                 }
 
                 renderAllTables();
@@ -2340,7 +2915,6 @@ function startRealtime(){
                 notifyNewBooking(
                     payload.new
                 );
-
             }
         )
 
@@ -2351,6 +2925,7 @@ function startRealtime(){
                 schema:"public",
                 table:BOOKINGS_TABLE
             },
+
             function(payload){
 
                 const index =
@@ -2371,7 +2946,6 @@ function startRealtime(){
                     bookings.push(
                         payload.new
                     );
-
                 }
 
                 renderAllTables();
@@ -2384,7 +2958,6 @@ function startRealtime(){
                     "✏️ تم تحديث الحجز",
                     "success"
                 );
-
             }
         )
 
@@ -2395,6 +2968,7 @@ function startRealtime(){
                 schema:"public",
                 table:BOOKINGS_TABLE
             },
+
             function(payload){
 
                 bookings =
@@ -2409,7 +2983,6 @@ function startRealtime(){
                 updateStats();
 
                 updateLastUpdate();
-
             }
         )
 
@@ -2420,6 +2993,7 @@ function startRealtime(){
                 schema:"public",
                 table:CLOSURES_TABLE
             },
+
             function(payload){
 
                 closures.push(
@@ -2429,7 +3003,6 @@ function startRealtime(){
                 renderClosures();
 
                 updateStats();
-
             }
         )
 
@@ -2440,6 +3013,7 @@ function startRealtime(){
                 schema:"public",
                 table:CLOSURES_TABLE
             },
+
             function(payload){
 
                 closures =
@@ -2452,7 +3026,6 @@ function startRealtime(){
                 renderClosures();
 
                 updateStats();
-
             }
         )
 
@@ -2468,7 +3041,6 @@ function startRealtime(){
         );
 }
 
-
 /* =====================================================
    LOAD ALL
 ===================================================== */
@@ -2476,15 +3048,11 @@ function startRealtime(){
 async function loadAll(){
 
     await Promise.all([
-
         loadBookings(),
         loadSettings(),
         loadClosures()
-
     ]);
-
 }
-
 
 /* =====================================================
    BOOKINGS
@@ -2519,7 +3087,8 @@ async function loadBookings(){
         return;
     }
 
-    bookings = data || [];
+    bookings =
+        data || [];
 
     renderAllTables();
 
@@ -2527,7 +3096,6 @@ async function loadBookings(){
 
     updateLastUpdate();
 }
-
 
 /* =====================================================
    SETTINGS
@@ -2560,7 +3128,8 @@ async function loadSettings(){
 
     if(data){
 
-        settings = data;
+        settings =
+            data;
 
         document.getElementById(
             "morningPrice"
@@ -2583,7 +3152,6 @@ async function loadSettings(){
             data.special_evening_price ?? 0;
     }
 }
-
 
 /* =====================================================
    SAVE PRICES
@@ -2643,9 +3211,11 @@ async function savePrices(){
             .from(SETTINGS_TABLE)
             .update({
 
-                morning_price:morning,
+                morning_price:
+                    morning,
 
-                evening_price:evening,
+                evening_price:
+                    evening,
 
                 special_morning_price:
                     specialMorning,
@@ -2657,10 +3227,12 @@ async function savePrices(){
                     new Date().toISOString()
 
             })
+
             .eq(
                 "id",
                 settings.id
             )
+
             .select()
             .single();
 
@@ -2672,9 +3244,11 @@ async function savePrices(){
             .from(SETTINGS_TABLE)
             .insert({
 
-                morning_price:morning,
+                morning_price:
+                    morning,
 
-                evening_price:evening,
+                evening_price:
+                    evening,
 
                 special_morning_price:
                     specialMorning,
@@ -2683,6 +3257,7 @@ async function savePrices(){
                     specialEvening
 
             })
+
             .select()
             .single();
     }
@@ -2698,7 +3273,8 @@ async function savePrices(){
         return;
     }
 
-    settings = result.data;
+    settings =
+        result.data;
 
     renderAllTables();
 
@@ -2709,7 +3285,6 @@ async function savePrices(){
         "success"
     );
 }
-
 
 /* =====================================================
    CLOSURES
@@ -2744,13 +3319,13 @@ async function loadClosures(){
         return;
     }
 
-    closures = data || [];
+    closures =
+        data || [];
 
     renderClosures();
 
     updateStats();
 }
-
 
 async function addClosure(){
 
@@ -2811,13 +3386,17 @@ async function addClosure(){
         .from(CLOSURES_TABLE)
         .insert({
 
-            closure_date:date,
+            closure_date:
+                date,
 
-            farm:farm || null,
+            farm:
+                farm || null,
 
-            shift:shift || null,
+            shift:
+                shift || null,
 
-            reason:reason || null
+            reason:
+                reason || null
 
         })
         .select()
@@ -2834,7 +3413,9 @@ async function addClosure(){
         return;
     }
 
-    closures.push(data);
+    closures.push(
+        data
+    );
 
     renderClosures();
 
@@ -2849,7 +3430,6 @@ async function addClosure(){
         "success"
     );
 }
-
 
 function renderClosures(){
 
@@ -2899,7 +3479,9 @@ function renderClosures(){
             "بدون سبب";
 
         const div =
-            document.createElement("div");
+            document.createElement(
+                "div"
+            );
 
         div.className =
             "closure-item";
@@ -2909,7 +3491,9 @@ function renderClosures(){
             <div class="closure-info">
 
                 <strong>
-                    🔒 ${escapeHtml(item.closure_date)}
+                    🔒 ${escapeHtml(
+                        item.closure_date
+                    )}
                 </strong>
 
                 <br>
@@ -2935,20 +3519,20 @@ function renderClosures(){
             >
                 🗑️ حذف
             </button>
+
         `;
 
         box.appendChild(div);
-
     });
 }
 
-
 async function deleteClosure(id){
 
-    if(!confirm("هل تريد حذف هذا الإغلاق؟")){
+    if(!confirm(
+        "هل تريد حذف هذا الإغلاق؟"
+    )){
 
         return;
-
     }
 
     const {
@@ -2990,7 +3574,6 @@ async function deleteClosure(id){
     );
 }
 
-
 /* =====================================================
    FARM TOGGLE
 ===================================================== */
@@ -3003,12 +3586,12 @@ function toggleFarm(id){
     if(!box){
 
         return;
-
     }
 
-    box.classList.toggle("open");
+    box.classList.toggle(
+        "open"
+    );
 }
-
 
 /* =====================================================
    HELPERS
@@ -3025,7 +3608,6 @@ function getCustomerName(booking){
     );
 }
 
-
 function getFarm(booking){
 
     return (
@@ -3034,7 +3616,6 @@ function getFarm(booking){
         ""
     );
 }
-
 
 function getShift(booking){
 
@@ -3045,7 +3626,6 @@ function getShift(booking){
     );
 }
 
-
 /* =====================================================
    PRICE
 ===================================================== */
@@ -3055,7 +3635,6 @@ function getPrice(date,shift){
     if(!date){
 
         return 0;
-
     }
 
     const normalMorning =
@@ -3101,31 +3680,26 @@ function getPrice(date,shift){
         if(shift === "شفت صباحي"){
 
             return specialMorning;
-
         }
 
         if(shift === "شفت مسائي"){
 
             return specialEvening;
-
         }
     }
 
     if(shift === "شفت صباحي"){
 
         return normalMorning;
-
     }
 
     if(shift === "شفت مسائي"){
 
         return normalEvening;
-
     }
 
     return 0;
 }
-
 
 function formatPrice(price){
 
@@ -3134,9 +3708,44 @@ function formatPrice(price){
         .toLocaleString("en-US") +
         " د.ع"
     );
-
 }
 
+/* =====================================================
+   DEPOSIT
+===================================================== */
+
+function getDeposit(date){
+
+    if(!date){
+
+        return 100000;
+    }
+
+    const parts =
+        String(date).split("-");
+
+    const dateObject =
+        new Date(
+            Number(parts[0]),
+            Number(parts[1]) - 1,
+            Number(parts[2])
+        );
+
+    const day =
+        dateObject.getDay();
+
+    /*
+       Thursday = 4
+       Friday = 5
+    */
+
+    if(day === 4 || day === 5){
+
+        return 200000;
+    }
+
+    return 100000;
+}
 
 /* =====================================================
    FILTER
@@ -3152,61 +3761,63 @@ function getFilteredBookings(){
         .toLowerCase();
 
     const date =
-        document.getElementById(
-            "dateFilter"
-        ).value;
+        document
+        .getElementById("dateFilter")
+        .value;
 
     const farm =
-        document.getElementById(
-            "farmFilter"
-        ).value;
+        document
+        .getElementById("farmFilter")
+        .value;
 
-    return bookings.filter(booking => {
+    return bookings.filter(
+        booking => {
 
-        const name =
-            String(
-                getCustomerName(booking)
-            )
-            .toLowerCase();
+            const name =
+                String(
+                    getCustomerName(
+                        booking
+                    )
+                )
+                .toLowerCase();
 
-        const phone =
-            String(
-                booking.customer_phone ||
-                booking["customer_phone"] ||
-                ""
-            )
-            .toLowerCase();
+            const phone =
+                String(
+                    booking.customer_phone ||
+                    booking["customer_phone"] ||
+                    ""
+                )
+                .toLowerCase();
 
-        const bookingFarm =
-            getFarm(booking);
+            const bookingFarm =
+                getFarm(booking);
 
-        return (
+            return (
 
-            (
-                !search ||
-                name.includes(search) ||
-                phone.includes(search)
-            )
+                (
+                    !search ||
+                    name.includes(search) ||
+                    phone.includes(search)
+                )
 
-            &&
+                &&
 
-            (
-                !date ||
-                booking.booking_date === date
-            )
+                (
+                    !date ||
+                    booking.booking_date === date
+                )
 
-            &&
+                &&
 
-            (
-                !farm ||
-                bookingFarm === farm
-            )
+                (
+                    !farm ||
+                    bookingFarm === farm
+                )
 
-        );
-
-    });
+            );
+        }
+    );
 }
-
 
 /* =====================================================
    RENDER TABLES
@@ -3254,7 +3865,6 @@ function renderAllTables(){
         " حجز";
 }
 
-
 /* =====================================================
    FARM TABLE
 ===================================================== */
@@ -3274,18 +3884,14 @@ function renderFarmTable(
     if(list.length === 0){
 
         tbody.innerHTML = `
-
             <tr>
-
                 <td
                     colspan="7"
                     class="empty"
                 >
                     لا توجد حجوزات لهذه المزرعة
                 </td>
-
             </tr>
-
         `;
 
         return;
@@ -3317,7 +3923,9 @@ function renderFarmTable(
                 );
 
             const tr =
-                document.createElement("tr");
+                document.createElement(
+                    "tr"
+                );
 
             const shiftHtml =
                 shift === "شفت صباحي"
@@ -3352,7 +3960,9 @@ function renderFarmTable(
 
                 <td>
                     ${escapeHtml(
-                        getCustomerName(booking) || "-"
+                        getCustomerName(
+                            booking
+                        ) || "-"
                     )}
                 </td>
 
@@ -3373,10 +3983,10 @@ function renderFarmTable(
                     <div class="action-buttons">
 
                         <button
-                            class="print-receipt-btn"
-                            onclick="printReceipt('${booking.id}')"
+                            class="receipt-btn"
+                            onclick="openReceipt('${booking.id}')"
                         >
-                            🧾 طباعة الوصل
+                            🧾 وصل
                         </button>
 
                         <button
@@ -3396,14 +4006,13 @@ function renderFarmTable(
                     </div>
 
                 </td>
+
             `;
 
             tbody.appendChild(tr);
-
         }
     );
 }
-
 
 /* =====================================================
    STATS
@@ -3426,7 +4035,6 @@ function updateStats(){
                     booking.booking_date,
                     getShift(booking)
                 );
-
         }
     );
 
@@ -3465,7 +4073,6 @@ function updateStats(){
         closures.length;
 }
 
-
 /* =====================================================
    LAST UPDATE
 ===================================================== */
@@ -3478,9 +4085,7 @@ function updateLastUpdate(){
         new Date().toLocaleTimeString(
             "ar-IQ"
         );
-
 }
-
 
 /* =====================================================
    EDIT
@@ -3504,12 +4109,15 @@ function openEditModal(id){
         return;
     }
 
-    editingBookingId = id;
+    editingBookingId =
+        id;
 
     document.getElementById(
         "editCustomerName"
     ).value =
-        getCustomerName(booking);
+        getCustomerName(
+            booking
+        );
 
     document.getElementById(
         "editPhone"
@@ -3521,7 +4129,8 @@ function openEditModal(id){
     document.getElementById(
         "editDate"
     ).value =
-        booking.booking_date || "";
+        booking.booking_date ||
+        "";
 
     document.getElementById(
         "editFarm"
@@ -3535,20 +4144,22 @@ function openEditModal(id){
 
     document.getElementById(
         "editModal"
-    ).classList.add("show");
+    ).classList.add(
+        "show"
+    );
 }
-
 
 function closeEditModal(){
 
-    editingBookingId = null;
+    editingBookingId =
+        null;
 
     document.getElementById(
         "editModal"
-    ).classList.remove("show");
-
+    ).classList.remove(
+        "show"
+    );
 }
-
 
 /* =====================================================
    SAVE EDIT
@@ -3559,7 +4170,6 @@ async function saveEdit(){
     if(!editingBookingId){
 
         return;
-
     }
 
     const customerName =
@@ -3636,7 +4246,6 @@ async function saveEdit(){
                     shift
 
                 );
-
             }
         );
 
@@ -3665,7 +4274,6 @@ async function saveEdit(){
 
         "Shift":
             shift
-
     };
 
     const {
@@ -3674,7 +4282,9 @@ async function saveEdit(){
     } =
         await supabaseClient
         .from(BOOKINGS_TABLE)
-        .update(updateData)
+        .update(
+            updateData
+        )
         .eq(
             "id",
             editingBookingId
@@ -3702,8 +4312,8 @@ async function saveEdit(){
 
     if(index !== -1){
 
-        bookings[index] = data;
-
+        bookings[index] =
+            data;
     }
 
     renderAllTables();
@@ -3719,7 +4329,6 @@ async function saveEdit(){
         "success"
     );
 }
-
 
 /* =====================================================
    CANCEL BOOKING
@@ -3745,7 +4354,6 @@ async function cancelBooking(id){
 
     const confirmed =
         confirm(
-
 `هل أنت متأكد من إلغاء الحجز؟
 
 الاسم:
@@ -3759,13 +4367,11 @@ ${booking.booking_date}
 
 الشفت:
 ${getShift(booking)}`
-
         );
 
     if(!confirmed){
 
         return;
-
     }
 
     const {
@@ -3809,105 +4415,11 @@ ${getShift(booking)}`
     );
 }
 
-
 /* =====================================================
-   RECEIPT / PRINT
+   RECEIPT
 ===================================================== */
 
-/*
-   شروط الحجز والاستخدام
-*/
-
-const FARM_RULES = [
-
-    "لتثبيت الحجز يُدفع عربون قدره 100,000 دينار للأيام الاعتيادية، و200,000 دينار ليومي الخميس والجمعة — لا يمكن تثبيت أي حجز مسبق بدونه.",
-
-    "في حال عدم الالتزام بموعد الحجز لا يُسترجع العربون.",
-
-    "طلب الإلغاء للظروف القاهرة يجب أن يكون خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.",
-
-    "تُدفع تأمينات قدرها 100,000 دينار عند الدخول وتُسترجع عند المغادرة بعد التأكد من عدم فقدان أو تلف أي شيء داخل المنتجع.",
-
-    "الحجز للعوائل أو شباب فقط أو نساء فقط — يمنع الاختلاط إلا بعقد زواج.",
-
-    "يمنع منعاً باتاً إدخال السلاح أو المشروبات الكحولية أو الممنوعات، وبخلافه يتم تبليغ الجهات المختصة.",
-
-    "يمنع إطلاق العيارات النارية والألعاب النارية داخل المنتجع.",
-
-    "يمنع رمي الأوساخ في المسبح أو في الأماكن غير المخصصة، وبخلافه يتحمل المستأجر كافة المسؤولية.",
-
-    "الالتزام بأوقات بداية ونهاية الشفت — التأخير في المغادرة تُحتسب عليه رسوم إضافية.",
-
-    "عدد الأشخاص يجب أن يطابق العدد المتفق عليه عند الحجز.",
-
-    "السباحة على مسؤولية المستأجر، مع ضرورة مراقبة الأطفال قرب المسبح."
-
-];
-
-
-/*
-   تحويل التاريخ إلى شكل عربي
-*/
-
-function formatReceiptDate(date){
-
-    if(!date){
-
-        return "-";
-
-    }
-
-    const parts =
-        String(date).split("-");
-
-    if(parts.length !== 3){
-
-        return date;
-
-    }
-
-    return (
-        parts[2] +
-        "/" +
-        parts[1] +
-        "/" +
-        parts[0]
-    );
-}
-
-
-/*
-   إنشاء رقم وصل
-*/
-
-function getReceiptNumber(booking){
-
-    const raw =
-        String(
-            booking.id || ""
-        );
-
-    const shortId =
-        raw
-        .replace(/[^a-zA-Z0-9]/g,"")
-        .slice(-8)
-        .toUpperCase();
-
-    return (
-        "AG-" +
-        (
-            shortId ||
-            Date.now()
-        )
-    );
-}
-
-
-/*
-   طباعة الوصل
-*/
-
-function printReceipt(id){
+function openReceipt(id){
 
     const booking =
         bookings.find(
@@ -3925,9 +4437,10 @@ function printReceipt(id){
         return;
     }
 
-    const customerName =
-        getCustomerName(booking) ||
-        "-";
+    const name =
+        getCustomerName(
+            booking
+        ) || "-";
 
     const phone =
         booking.customer_phone ||
@@ -3935,12 +4448,14 @@ function printReceipt(id){
         "-";
 
     const farm =
-        getFarm(booking) ||
-        "-";
+        getFarm(
+            booking
+        ) || "-";
 
     const shift =
-        getShift(booking) ||
-        "-";
+        getShift(
+            booking
+        ) || "-";
 
     const date =
         booking.booking_date ||
@@ -3952,30 +4467,103 @@ function printReceipt(id){
             shift
         );
 
-    const receiptNumber =
-        getReceiptNumber(booking);
+    const deposit =
+        getDeposit(
+            date
+        );
 
-    const rulesHtml =
-        FARM_RULES
-        .map(
-            (rule,index) => `
-                <li>
-                    <span class="rule-number">
-                        ${index + 1}
-                    </span>
-                    <span>
-                        ${escapeHtml(rule)}
-                    </span>
-                </li>
-            `
-        )
-        .join("");
+    const required =
+        deposit + 100000;
+
+    document.getElementById(
+        "receiptCustomer"
+    ).textContent =
+        name;
+
+    document.getElementById(
+        "receiptPhone"
+    ).textContent =
+        phone;
+
+    document.getElementById(
+        "receiptFarm"
+    ).textContent =
+        farm;
+
+    document.getElementById(
+        "receiptShift"
+    ).textContent =
+        shift;
+
+    document.getElementById(
+        "receiptDate"
+    ).textContent =
+        date;
+
+    document.getElementById(
+        "receiptBookingId"
+    ).textContent =
+        String(
+            booking.id
+        );
+
+    document.getElementById(
+        "receiptTotal"
+    ).textContent =
+        formatPrice(
+            price
+        );
+
+    document.getElementById(
+        "receiptDeposit"
+    ).textContent =
+        formatPrice(
+            deposit
+        );
+
+    document.getElementById(
+        "receiptRequired"
+    ).textContent =
+        formatPrice(
+            required
+        );
+
+    document.getElementById(
+        "receiptOverlay"
+    ).classList.add(
+        "show"
+    );
+}
+
+function closeReceipt(){
+
+    document.getElementById(
+        "receiptOverlay"
+    ).classList.remove(
+        "show"
+    );
+}
+
+/* =====================================================
+   PRINT A4 RECEIPT
+===================================================== */
+
+function printReceipt(){
+
+    const receipt =
+        document.getElementById(
+            "receiptPage"
+        );
+
+    if(!receipt){
+
+        return;
+    }
 
     const printWindow =
         window.open(
             "",
-            "_blank",
-            "width=1000,height=900"
+            "_blank"
         );
 
     if(!printWindow){
@@ -3987,8 +4575,9 @@ function printReceipt(id){
         return;
     }
 
-    printWindow.document.write(`
+    printWindow.document.open();
 
+    printWindow.document.write(`
 <!DOCTYPE html>
 
 <html lang="ar" dir="rtl">
@@ -4003,202 +4592,199 @@ function printReceipt(id){
 
 <style>
 
+@page{
+    size:A4;
+    margin:0;
+}
+
 *{
     box-sizing:border-box;
 }
 
-@page{
-    size:A4;
-    margin:12mm;
+html,
+body{
+    margin:0;
+    padding:0;
+    width:210mm;
+    height:297mm;
 }
 
 body{
-    margin:0;
+    font-family:Tahoma,Arial,sans-serif;
     background:#fff;
     color:#111;
-    font-family:Tahoma,Arial,sans-serif;
-    direction:rtl;
 }
 
-.receipt{
-    width:100%;
-    max-width:190mm;
-    margin:0 auto;
-    border:2px solid #b38a20;
-    padding:20px;
+.receipt-page{
+    width:210mm;
+    height:297mm;
+    min-width:210mm;
+    max-width:210mm;
+    min-height:297mm;
+    max-height:297mm;
+    background:#fff;
+    color:#111;
+    padding:15mm;
     position:relative;
+    overflow:hidden;
 }
 
-.header{
+.receipt-header{
+    border:2px solid #b28b22;
+    padding:10mm 8mm;
     text-align:center;
-    border-bottom:2px solid #b38a20;
-    padding-bottom:15px;
-    margin-bottom:18px;
+    margin-bottom:7mm;
 }
 
-.logo{
-    width:85px;
-    height:85px;
+.receipt-logo{
+    width:28mm;
+    height:28mm;
     object-fit:contain;
-    margin-bottom:8px;
+    margin-bottom:3mm;
 }
 
-.title{
+.receipt-header h1{
+    color:#8c6915;
     font-size:25px;
-    font-weight:bold;
-    color:#8b6a16;
-    margin-bottom:4px;
+    margin:0 0 3mm;
 }
 
-.subtitle{
-    font-size:14px;
+.receipt-header h2{
+    font-size:17px;
+    margin:0 0 2mm;
+}
+
+.receipt-header p{
+    font-size:12px;
     color:#555;
+    margin:0;
 }
 
 .receipt-title{
-    margin-top:12px;
+    text-align:center;
     font-size:21px;
     font-weight:bold;
+    color:#8c6915;
+    border-bottom:2px solid #b28b22;
+    padding-bottom:4mm;
+    margin-bottom:6mm;
 }
 
-.receipt-number{
-    margin-top:6px;
-    font-size:12px;
-    color:#555;
-}
-
-.info-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:18px;
-    margin-bottom:20px;
-}
-
-.info-table td{
-    border:1px solid #cfcfcf;
-    padding:10px;
-    font-size:13px;
-}
-
-.info-table td.label{
-    background:#f6f1df;
-    font-weight:bold;
-    width:24%;
-    color:#604b10;
-}
-
-.price-box{
-    border:2px solid #b38a20;
-    background:#fbf7e9;
-    padding:13px;
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.price-label{
-    font-size:13px;
-    color:#555;
-    margin-bottom:5px;
-}
-
-.price{
-    font-size:25px;
-    font-weight:bold;
-    color:#7d5d0e;
-}
-
-.rules-title{
-    text-align:right;
-    font-size:18px;
-    font-weight:bold;
-    color:#8b6a16;
-    border-bottom:1px solid #b38a20;
-    padding-bottom:7px;
-    margin-bottom:10px;
-}
-
-.rules{
-    padding:0;
-    margin:0 0 15px 0;
-    list-style:none;
-}
-
-.rules li{
-    display:flex;
-    gap:8px;
-    align-items:flex-start;
-    margin-bottom:7px;
-    font-size:11.5px;
-    line-height:1.65;
-}
-
-.rule-number{
-    flex:none;
-    width:20px;
-    height:20px;
-    border:1px solid #b38a20;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#806010;
-    font-weight:bold;
-    font-size:10px;
-}
-
-.agreement{
-    text-align:center;
-    font-size:11px;
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
-    padding:9px;
-    margin:15px 0;
-    line-height:1.7;
-}
-
-.signatures{
+.receipt-info{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:30px;
-    margin-top:25px;
+    gap:3mm;
+    margin-bottom:6mm;
+}
+
+.receipt-info-box{
+    border:1px solid #ccc;
+    padding:4mm;
+    min-height:17mm;
+}
+
+.receipt-info-box strong{
+    display:block;
+    color:#777;
+    font-size:10px;
+    margin-bottom:2mm;
+}
+
+.receipt-info-box span{
+    font-size:13px;
+    font-weight:bold;
+}
+
+.receipt-payment{
+    border:1.5px solid #b28b22;
+    margin-bottom:6mm;
+}
+
+.receipt-payment-title{
+    background:#f5ecd1;
+    color:#72550e;
+    padding:3mm;
+    font-weight:bold;
+    text-align:center;
+    border-bottom:1px solid #b28b22;
+}
+
+.receipt-payment-row{
+    display:flex;
+    justify-content:space-between;
+    padding:3.5mm 5mm;
+    border-bottom:1px solid #ddd;
+    font-size:12px;
+}
+
+.receipt-payment-row:last-child{
+    border-bottom:0;
+}
+
+.receipt-payment-row.total{
+    background:#faf7ed;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.receipt-conditions{
+    border:1px solid #ccc;
+    padding:5mm;
+    margin-bottom:5mm;
+}
+
+.receipt-conditions h3{
+    color:#8c6915;
+    font-size:15px;
+    border-bottom:1px solid #d5bd75;
+    padding-bottom:2mm;
+    margin:0 0 3mm;
+}
+
+.receipt-conditions ol{
+    padding-right:6mm;
+    margin:0;
+}
+
+.receipt-conditions li{
+    font-size:10.5px;
+    line-height:1.65;
+    margin-bottom:1.2mm;
+}
+
+.receipt-signatures{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20mm;
+    margin-top:7mm;
+    padding-top:5mm;
 }
 
 .signature-box{
     text-align:center;
-    min-height:100px;
-}
-
-.signature-title{
-    font-weight:bold;
-    color:#604b10;
-    margin-bottom:55px;
-}
-
-.signature-line{
-    border-top:1px solid #222;
-    padding-top:7px;
     font-size:11px;
 }
 
-.footer{
-    text-align:center;
-    border-top:1px solid #ddd;
-    margin-top:25px;
-    padding-top:10px;
-    color:#777;
-    font-size:10px;
+.signature-line{
+    height:25mm;
+    border-bottom:1px solid #555;
+    margin-bottom:3mm;
 }
 
-@media print{
+.signature-name{
+    font-weight:bold;
+}
 
-    body{
-        background:#fff;
-    }
-
-    .receipt{
-        border:2px solid #b38a20;
-    }
-
+.receipt-footer{
+    position:absolute;
+    bottom:9mm;
+    right:15mm;
+    left:15mm;
+    text-align:center;
+    border-top:1px solid #ddd;
+    padding-top:3mm;
+    color:#777;
+    font-size:9px;
 }
 
 </style>
@@ -4207,196 +4793,26 @@ body{
 
 <body>
 
-<div class="receipt">
-
-    <div class="header">
-
-        <img
-            src="Logo-farms.PNG"
-            class="logo"
-            alt="مزارع الغيث"
-        >
-
-        <div class="title">
-            مزارع الغيث
-        </div>
-
-        <div class="subtitle">
-            ALGAITH FARMS
-        </div>
-
-        <div class="receipt-title">
-            وصل حجز رسمي
-        </div>
-
-        <div class="receipt-number">
-            رقم الوصل: ${escapeHtml(receiptNumber)}
-        </div>
-
-    </div>
-
-
-    <table class="info-table">
-
-        <tr>
-
-            <td class="label">
-                اسم الزبون
-            </td>
-
-            <td>
-                ${escapeHtml(customerName)}
-            </td>
-
-            <td class="label">
-                رقم الهاتف
-            </td>
-
-            <td>
-                ${escapeHtml(phone)}
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td class="label">
-                المزرعة
-            </td>
-
-            <td>
-                ${escapeHtml(farm)}
-            </td>
-
-            <td class="label">
-                التاريخ
-            </td>
-
-            <td>
-                ${escapeHtml(
-                    formatReceiptDate(date)
-                )}
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td class="label">
-                الشفت
-            </td>
-
-            <td>
-                ${escapeHtml(shift)}
-            </td>
-
-            <td class="label">
-                تاريخ إصدار الوصل
-            </td>
-
-            <td>
-                ${escapeHtml(
-                    new Date()
-                    .toLocaleDateString(
-                        "ar-IQ"
-                    )
-                )}
-            </td>
-
-        </tr>
-
-    </table>
-
-
-    <div class="price-box">
-
-        <div class="price-label">
-            قيمة الحجز
-        </div>
-
-        <div class="price">
-            ${escapeHtml(
-                formatPrice(price)
-            )}
-        </div>
-
-    </div>
-
-
-    <div class="rules-title">
-        شروط الحجز
-    </div>
-
-    <ul class="rules">
-
-        ${rulesHtml}
-
-    </ul>
-
-
-    <div class="agreement">
-
-        أقرّ الطرف الثاني باطلاعه على شروط الحجز
-        وقوانين المزرعة المذكورة أعلاه،
-        وموافقته عليها والالتزام بها.
-
-    </div>
-
-
-    <div class="signatures">
-
-        <div class="signature-box">
-
-            <div class="signature-title">
-                الطرف الأول
-                <br>
-                مزارع الغيث
-            </div>
-
-            <div class="signature-line">
-                التوقيع والختم
-            </div>
-
-        </div>
-
-
-        <div class="signature-box">
-
-            <div class="signature-title">
-                الطرف الثاني
-                <br>
-                ${escapeHtml(customerName)}
-            </div>
-
-            <div class="signature-line">
-                توقيع الزبون
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="footer">
-
-        مزارع الغيث | ALGAITH FARMS
-        <br>
-        هذا الوصل خاص بالحجز المذكور أعلاه.
-
-    </div>
-
-</div>
-
+${receipt.outerHTML}
 
 <script>
 
 window.onload = function(){
 
-    setTimeout(function(){
+    setTimeout(
+        function(){
 
-        window.print();
+            window.print();
 
-    },500);
+        },
+        500
+    );
+
+};
+
+window.onafterprint = function(){
+
+    window.close();
 
 };
 
@@ -4405,13 +4821,10 @@ window.onload = function(){
 </body>
 
 </html>
-
 `);
 
     printWindow.document.close();
-
 }
-
 
 /* =====================================================
    SECURITY
@@ -4421,18 +4834,31 @@ function escapeHtml(value){
 
     return String(value)
 
-        .replace(/&/g,"&amp;")
+        .replace(
+            /&/g,
+            "&amp;"
+        )
 
-        .replace(/</g,"&lt;")
+        .replace(
+            /</g,
+            "&lt;"
+        )
 
-        .replace(/>/g,"&gt;")
+        .replace(
+            />/g,
+            "&gt;"
+        )
 
-        .replace(/"/g,"&quot;")
+        .replace(
+            /"/g,
+            "&quot;"
+        )
 
-        .replace(/'/g,"&#039;");
-
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 }
-
 
 /* =====================================================
    MODAL
@@ -4444,15 +4870,31 @@ document
     "click",
     function(event){
 
-        if(event.target === this){
+        if(
+            event.target === this
+        ){
 
             closeEditModal();
-
         }
 
     }
 );
 
+document
+.getElementById("receiptOverlay")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === this
+        ){
+
+            closeReceipt();
+        }
+
+    }
+);
 
 /* =====================================================
    START
