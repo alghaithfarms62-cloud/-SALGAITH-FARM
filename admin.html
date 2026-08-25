@@ -5,12 +5,12 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-<title>
-إدارة حجوزات مزارع الغيث
-</title>
+<title>إدارة حجوزات مزارع الغيث</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -27,32 +27,22 @@
 }
 
 :root{
-
     --black:#080808;
     --black2:#101010;
     --card:#151515;
     --card2:#1b1b1b;
-
     --gold:#d4af37;
     --gold2:#f0d477;
     --gold-dark:#9d7b16;
-
     --white:#f7f7f7;
     --gray:#a7a7a7;
-
     --border:rgba(212,175,55,.22);
-
     --red:#b52a2a;
     --green:#2d8a52;
 }
 
 body{
-
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-
+    font-family:Tahoma,Arial,sans-serif;
     background:
         radial-gradient(
             circle at top right,
@@ -60,27 +50,19 @@ body{
             transparent 35%
         ),
         #080808;
-
     color:var(--white);
-
     min-height:100vh;
 }
-
 
 /* =====================================================
    LOGIN
 ===================================================== */
 
 #loginPage{
-
     min-height:100vh;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     padding:20px;
 
     background:
@@ -93,9 +75,7 @@ body{
 }
 
 .login-box{
-
     width:100%;
-
     max-width:430px;
 
     background:
@@ -106,7 +86,6 @@ body{
         );
 
     padding:38px 30px;
-
     border-radius:26px;
 
     border:1px solid var(--border);
@@ -118,17 +97,13 @@ body{
 }
 
 .login-logo{
-
     width:100px;
-
     height:100px;
 
     margin:0 auto 18px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:22px;
@@ -143,32 +118,23 @@ body{
 }
 
 .login-logo img{
-
     width:100%;
-
     height:100%;
-
     object-fit:contain;
 }
 
 .login-box h1{
-
     color:var(--gold2);
-
     margin-bottom:8px;
-
     font-size:26px;
 }
 
 .login-box p{
-
     color:var(--gray);
-
     margin-bottom:28px;
 }
 
 .login-box input{
-
     width:100%;
 
     padding:15px;
@@ -176,7 +142,6 @@ body{
     margin-bottom:13px;
 
     background:#0b0b0b;
-
     color:#fff;
 
     border:1px solid #333;
@@ -184,14 +149,12 @@ body{
     border-radius:12px;
 
     font-family:inherit;
-
     font-size:15px;
 
     outline:none;
 }
 
 .login-btn{
-
     width:100%;
 
     padding:15px;
@@ -212,14 +175,12 @@ body{
     font-family:inherit;
 
     font-weight:bold;
-
     font-size:16px;
 
     cursor:pointer;
 }
 
 .login-error{
-
     display:none;
 
     margin-top:15px;
@@ -236,31 +197,24 @@ body{
 }
 
 .login-error.show{
-
     display:block;
 }
-
 
 /* =====================================================
    ADMIN
 ===================================================== */
 
 #adminPage{
-
     display:none;
 }
-
 
 /* =====================================================
    HEADER
 ===================================================== */
 
 header{
-
     position:sticky;
-
     top:0;
-
     z-index:100;
 
     background:rgba(8,8,8,.94);
@@ -270,9 +224,7 @@ header{
     padding:20px 5%;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     gap:20px;
@@ -281,24 +233,17 @@ header{
 }
 
 .brand-area{
-
     display:flex;
-
     align-items:center;
-
     gap:14px;
 }
 
 .brand-icon{
-
     width:58px;
-
     height:58px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     border-radius:16px;
@@ -311,103 +256,76 @@ header{
 }
 
 .brand-icon img{
-
     width:100%;
-
     height:100%;
-
     object-fit:contain;
 }
 
 header h1{
-
     color:var(--gold2);
-
     margin-bottom:5px;
-
     font-size:22px;
 }
 
 header p{
-
     color:var(--gray);
-
     font-size:13px;
 }
 
 .header-buttons{
-
     display:flex;
-
     gap:9px;
 }
 
 .notification-btn,
 .logout-btn{
-
     border:0;
-
     border-radius:11px;
 
     padding:11px 15px;
 
     font-family:inherit;
-
     font-weight:bold;
 
     cursor:pointer;
 }
 
 .notification-btn{
-
     background:#1c1c1c;
-
     color:var(--gold2);
 
     border:1px solid var(--border);
 }
 
 .notification-btn.enabled{
-
     background:#16301f;
-
     color:#8de0aa;
-
     border-color:#2d6843;
 }
 
 .logout-btn{
-
     background:#641c1c;
-
     color:#fff;
 }
-
 
 /* =====================================================
    CONTAINER
 ===================================================== */
 
 .container{
-
     width:94%;
-
     max-width:1450px;
 
     margin:30px auto 50px;
 }
-
 
 /* =====================================================
    STATS
 ===================================================== */
 
 .stats{
-
     display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:16px;
 
@@ -415,7 +333,6 @@ header p{
 }
 
 .stat{
-
     background:
         linear-gradient(
             145deg,
@@ -433,7 +350,6 @@ header p{
 }
 
 .stat h3{
-
     color:#bdbdbd;
 
     margin-bottom:10px;
@@ -442,23 +358,18 @@ header p{
 }
 
 .stat strong{
-
     font-size:30px;
-
     color:var(--gold2);
 }
-
 
 /* =====================================================
    EXTRA STATS
 ===================================================== */
 
 .extra-stats{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:14px;
 
@@ -466,7 +377,6 @@ header p{
 }
 
 .extra-stat{
-
     background:#151515;
 
     border:1px solid rgba(212,175,55,.14);
@@ -479,7 +389,6 @@ header p{
 }
 
 .extra-stat span{
-
     display:block;
 
     color:#999;
@@ -490,19 +399,16 @@ header p{
 }
 
 .extra-stat strong{
-
     color:#eee;
 
     font-size:22px;
 }
-
 
 /* =====================================================
    MESSAGE
 ===================================================== */
 
 .message{
-
     display:none;
 
     margin-bottom:15px;
@@ -517,12 +423,10 @@ header p{
 }
 
 .message.show{
-
     display:block;
 }
 
 .success{
-
     background:#11251a;
 
     border:1px solid #2d6843;
@@ -531,7 +435,6 @@ header p{
 }
 
 .error{
-
     background:#2a1111;
 
     border:1px solid #6c2b2b;
@@ -539,17 +442,14 @@ header p{
     color:#ffabab;
 }
 
-
 /* =====================================================
    MANAGEMENT
 ===================================================== */
 
 .management-grid{
-
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:18px;
 
@@ -557,7 +457,6 @@ header p{
 }
 
 .panel{
-
     background:#151515;
 
     border:1px solid var(--border);
@@ -568,7 +467,6 @@ header p{
 }
 
 .panel h2{
-
     color:var(--gold2);
 
     margin-bottom:7px;
@@ -577,7 +475,6 @@ header p{
 }
 
 .panel-description{
-
     color:#888;
 
     font-size:13px;
@@ -585,29 +482,24 @@ header p{
     margin-bottom:20px;
 }
 
-
 /* =====================================================
    FIELDS
 ===================================================== */
 
 .price-grid,
 .closure-form{
-
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:12px;
 }
 
 .field{
-
     margin-bottom:12px;
 }
 
 .field label{
-
     display:block;
 
     color:#aaa;
@@ -621,7 +513,6 @@ header p{
 
 .field input,
 .field select{
-
     width:100%;
 
     padding:12px;
@@ -640,13 +531,11 @@ header p{
 }
 
 .field select option{
-
     background:#151515;
 }
 
 .save-prices,
 .close-day-btn{
-
     width:100%;
 
     padding:13px;
@@ -663,7 +552,6 @@ header p{
 }
 
 .save-prices{
-
     background:
         linear-gradient(
             135deg,
@@ -675,7 +563,6 @@ header p{
 }
 
 .close-day-btn{
-
     background:
         linear-gradient(
             135deg,
@@ -687,26 +574,21 @@ header p{
 }
 
 .closure-form .full{
-
     grid-column:1/-1;
 }
-
 
 /* =====================================================
    CLOSURES
 ===================================================== */
 
 .closures-list{
-
     margin-top:20px;
 }
 
 .closure-item{
-
     display:flex;
 
     justify-content:space-between;
-
     align-items:center;
 
     gap:12px;
@@ -723,22 +605,18 @@ header p{
 }
 
 .closure-info{
-
     line-height:1.7;
 }
 
 .closure-info strong{
-
     color:var(--gold2);
 }
 
 .closure-info small{
-
     color:#999;
 }
 
 .delete-closure{
-
     background:#451717;
 
     color:#ffb0b0;
@@ -756,13 +634,11 @@ header p{
     cursor:pointer;
 }
 
-
 /* =====================================================
    FILTERS
 ===================================================== */
 
 .filters{
-
     background:#151515;
 
     border:1px solid var(--border);
@@ -775,15 +651,13 @@ header p{
 
     display:grid;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:12px;
 }
 
 .filters input,
 .filters select{
-
     width:100%;
 
     padding:13px;
@@ -802,12 +676,10 @@ header p{
 }
 
 .filters select option{
-
     background:#151515;
 }
 
 .refresh{
-
     background:
         linear-gradient(
             135deg,
@@ -830,13 +702,11 @@ header p{
     cursor:pointer;
 }
 
-
 /* =====================================================
    FARM BOXES
 ===================================================== */
 
 .farms-title{
-
     color:var(--gold2);
 
     font-size:24px;
@@ -845,7 +715,6 @@ header p{
 }
 
 .farm-box{
-
     background:
         linear-gradient(
             145deg,
@@ -866,7 +735,6 @@ header p{
 }
 
 .farm-header{
-
     width:100%;
 
     background:transparent;
@@ -893,12 +761,10 @@ header p{
 }
 
 .farm-header:hover{
-
     background:#1d1d1d;
 }
 
 .farm-header-left{
-
     display:flex;
 
     align-items:center;
@@ -907,15 +773,12 @@ header p{
 }
 
 .farm-icon{
-
     width:48px;
-
     height:48px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     background:#0a0a0a;
@@ -928,7 +791,6 @@ header p{
 }
 
 .farm-name{
-
     color:var(--gold2);
 
     font-size:20px;
@@ -937,7 +799,6 @@ header p{
 }
 
 .farm-subtitle{
-
     color:#888;
 
     font-size:12px;
@@ -946,7 +807,6 @@ header p{
 }
 
 .farm-arrow{
-
     color:var(--gold2);
 
     font-size:24px;
@@ -955,24 +815,20 @@ header p{
 }
 
 .farm-box.open .farm-arrow{
-
     transform:rotate(180deg);
 }
 
 .farm-content{
-
     display:none;
 
     padding:0 18px 20px;
 }
 
 .farm-box.open .farm-content{
-
     display:block;
 }
 
 .farm-count{
-
     background:#24200f;
 
     border:1px solid rgba(212,175,55,.25);
@@ -986,13 +842,11 @@ header p{
     font-size:12px;
 }
 
-
 /* =====================================================
    TABLE
 ===================================================== */
 
 .table-box{
-
     background:#111;
 
     border-radius:17px;
@@ -1003,16 +857,14 @@ header p{
 }
 
 table{
-
     width:100%;
 
     border-collapse:collapse;
 
-    min-width:1050px;
+    min-width:1150px;
 }
 
 th{
-
     background:
         linear-gradient(
             135deg,
@@ -1032,7 +884,6 @@ th{
 }
 
 td{
-
     padding:14px;
 
     border-bottom:1px solid #252525;
@@ -1045,29 +896,24 @@ td{
 }
 
 tr:hover{
-
     background:#181818;
 }
 
 .price{
-
     color:var(--gold2);
 
     font-weight:bold;
 }
 
 .shift-morning{
-
     color:#f5d66c;
 }
 
 .shift-evening{
-
     color:#83bfff;
 }
 
 .action-buttons{
-
     display:flex;
 
     justify-content:center;
@@ -1077,65 +923,50 @@ tr:hover{
     flex-wrap:wrap;
 }
 
-.edit-btn{
+.edit-btn,
+.delete-btn,
+.receipt-btn{
+    border-radius:8px;
 
+    padding:8px 11px;
+
+    font-family:inherit;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.edit-btn{
     background:#27210d;
 
     color:var(--gold2);
 
     border:1px solid var(--gold-dark);
-
-    border-radius:8px;
-
-    padding:8px 12px;
-
-    font-family:inherit;
-
-    font-weight:bold;
-
-    cursor:pointer;
 }
 
 .delete-btn{
-
     background:#451717;
 
     color:#ffb0b0;
 
     border:1px solid #713030;
-
-    border-radius:8px;
-
-    padding:8px 12px;
-
-    font-family:inherit;
-
-    font-weight:bold;
-
-    cursor:pointer;
 }
 
 .receipt-btn{
+    background:
+        linear-gradient(
+            135deg,
+            #f0d477,
+            #d4af37
+        );
 
-    background:#12301f;
+    color:#111;
 
-    color:#8de0aa;
-
-    border:1px solid #2d6843;
-
-    border-radius:8px;
-
-    padding:8px 12px;
-
-    font-family:inherit;
-
-    font-weight:bold;
-
-    cursor:pointer;
+    border:1px solid #d4af37;
 }
 
 .empty{
-
     text-align:center;
 
     padding:45px !important;
@@ -1143,17 +974,14 @@ tr:hover{
     color:#888;
 }
 
-
 /* =====================================================
    ALERT
 ===================================================== */
 
 .new-booking-alert{
-
     position:fixed;
 
     top:90px;
-
     right:20px;
 
     width:350px;
@@ -1188,7 +1016,6 @@ tr:hover{
 }
 
 .new-booking-alert.show{
-
     transform:translateX(0);
 
     opacity:1;
@@ -1197,21 +1024,18 @@ tr:hover{
 }
 
 .new-booking-alert h3{
-
     color:var(--gold2);
 
     margin-bottom:12px;
 }
 
 .new-booking-alert p{
-
     margin:7px 0;
 
     color:#ddd;
 }
 
 .alert-close{
-
     margin-top:13px;
 
     width:100%;
@@ -1238,13 +1062,11 @@ tr:hover{
     cursor:pointer;
 }
 
-
 /* =====================================================
    EDIT MODAL
 ===================================================== */
 
 .modal-overlay{
-
     position:fixed;
 
     inset:0;
@@ -1265,15 +1087,17 @@ tr:hover{
 }
 
 .modal-overlay.show{
-
     display:flex;
 }
 
 .edit-modal{
-
     width:100%;
 
     max-width:500px;
+
+    max-height:90vh;
+
+    overflow:auto;
 
     background:
         linear-gradient(
@@ -1293,7 +1117,6 @@ tr:hover{
 }
 
 .edit-modal h2{
-
     color:var(--gold2);
 
     margin-bottom:20px;
@@ -1302,12 +1125,10 @@ tr:hover{
 }
 
 .edit-group{
-
     margin-bottom:14px;
 }
 
 .edit-group label{
-
     display:block;
 
     margin-bottom:6px;
@@ -1319,7 +1140,6 @@ tr:hover{
 
 .edit-group input,
 .edit-group select{
-
     width:100%;
 
     padding:12px;
@@ -1338,16 +1158,13 @@ tr:hover{
 }
 
 .edit-group select option{
-
     background:#151515;
 }
 
 .modal-buttons{
-
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:10px;
 
@@ -1355,7 +1172,6 @@ tr:hover{
 }
 
 .save-edit{
-
     background:
         linear-gradient(
             135deg,
@@ -1379,7 +1195,6 @@ tr:hover{
 }
 
 .cancel-edit{
-
     background:#333;
 
     color:#ddd;
@@ -1397,6 +1212,399 @@ tr:hover{
     cursor:pointer;
 }
 
+/* =====================================================
+   RECEIPT PREVIEW MODAL
+===================================================== */
+
+.receipt-overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    backdrop-filter:blur(7px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:20000;
+
+    overflow:auto;
+}
+
+.receipt-overlay.show{
+    display:flex;
+}
+
+.receipt-modal{
+    width:100%;
+
+    max-width:850px;
+
+    max-height:95vh;
+
+    overflow:auto;
+
+    background:#252525;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.8);
+}
+
+.receipt-toolbar{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:5;
+
+    background:#252525;
+
+    padding-bottom:10px;
+}
+
+.receipt-toolbar button{
+    border:0;
+
+    border-radius:10px;
+
+    padding:11px 18px;
+
+    font-family:inherit;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.print-receipt-btn{
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold2),
+            var(--gold)
+        );
+
+    color:#111;
+}
+
+.close-receipt-btn{
+    background:#444;
+
+    color:#fff;
+}
+
+/* =====================================================
+   OFFICIAL RECEIPT
+===================================================== */
+
+.receipt-page{
+    width:210mm;
+
+    min-height:297mm;
+
+    margin:0 auto;
+
+    background:#fff;
+
+    color:#222;
+
+    padding:13mm;
+
+    font-family:Tahoma,Arial,sans-serif;
+
+    direction:rtl;
+
+    position:relative;
+
+    box-shadow:
+        0 8px 35px rgba(0,0,0,.35);
+}
+
+.receipt-border{
+    min-height:270mm;
+
+    border:1.2px solid #b28a22;
+
+    padding:9mm;
+
+    position:relative;
+}
+
+.receipt-header{
+    text-align:center;
+
+    border-bottom:1px solid #d1b15b;
+
+    padding-bottom:8mm;
+
+    margin-bottom:7mm;
+}
+
+.receipt-logo{
+    width:82px;
+    height:82px;
+
+    object-fit:contain;
+
+    margin-bottom:3mm;
+}
+
+.receipt-farm-name{
+    font-size:27px;
+
+    font-weight:bold;
+
+    color:#a47c18;
+
+    margin-bottom:2mm;
+}
+
+.receipt-english{
+    direction:ltr;
+
+    font-family:Arial,sans-serif;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    color:#333;
+
+    margin-bottom:2mm;
+}
+
+.receipt-subtitle{
+    font-size:12px;
+
+    color:#777;
+}
+
+.receipt-title{
+    text-align:center;
+
+    font-size:23px;
+
+    font-weight:bold;
+
+    color:#a47c18;
+
+    margin:6mm 0 5mm;
+
+    padding-bottom:3mm;
+
+    border-bottom:1px solid #d8c58e;
+}
+
+.receipt-info-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:3mm;
+
+    margin-bottom:6mm;
+}
+
+.receipt-info-box{
+    border:1px solid #ddd;
+
+    min-height:20mm;
+
+    padding:4mm 5mm;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    background:#fff;
+}
+
+.receipt-label{
+    color:#888;
+
+    font-size:11px;
+
+    margin-bottom:2mm;
+}
+
+.receipt-value{
+    color:#222;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    word-break:break-word;
+}
+
+.receipt-money-title{
+    text-align:center;
+
+    color:#a47c18;
+
+    background:#faf6e8;
+
+    border:1px solid #d8c58e;
+
+    padding:3mm;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+.receipt-money-table{
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-bottom:6mm;
+}
+
+.receipt-money-table td{
+    border:1px solid #ddd;
+
+    padding:3.5mm 4mm;
+
+    font-size:12px;
+
+    color:#333;
+
+    white-space:normal;
+
+    text-align:right;
+}
+
+.receipt-money-table td:last-child{
+    text-align:left;
+
+    font-weight:bold;
+
+    color:#222;
+
+    direction:ltr;
+}
+
+.receipt-money-total td{
+    background:#faf6e8;
+
+    font-weight:bold !important;
+
+    color:#8e6a13 !important;
+}
+
+.receipt-terms{
+    border:1px solid #ddd;
+
+    padding:4mm 5mm;
+
+    margin-bottom:5mm;
+}
+
+.receipt-section-title{
+    color:#a47c18;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    padding-bottom:2mm;
+
+    margin-bottom:3mm;
+
+    border-bottom:1px solid #ddd;
+}
+
+.receipt-terms ol{
+    padding-right:6mm;
+
+    margin:0;
+}
+
+.receipt-terms li{
+    font-size:10.5px;
+
+    line-height:1.75;
+
+    margin-bottom:1.2mm;
+
+    color:#333;
+}
+
+.receipt-signatures{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18mm;
+
+    margin-top:8mm;
+
+    padding-top:4mm;
+}
+
+.signature-box{
+    text-align:center;
+
+    min-height:27mm;
+}
+
+.signature-title{
+    font-weight:bold;
+
+    font-size:12px;
+
+    color:#444;
+
+    margin-bottom:16mm;
+}
+
+.signature-line{
+    border-top:1px solid #777;
+
+    padding-top:2mm;
+
+    font-size:10px;
+
+    color:#777;
+}
+
+.receipt-footer{
+    text-align:center;
+
+    margin-top:6mm;
+
+    padding-top:3mm;
+
+    border-top:1px solid #ddd;
+
+    font-size:9px;
+
+    color:#888;
+}
 
 /* =====================================================
    MOBILE
@@ -1405,50 +1613,49 @@ tr:hover{
 @media(max-width:1000px){
 
     .stats{
-
         grid-template-columns:1fr;
     }
 
     .extra-stats{
-
         grid-template-columns:1fr;
     }
 
     .management-grid{
-
         grid-template-columns:1fr;
     }
 
     .filters{
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns:1fr 1fr;
     }
 
     header{
-
         flex-direction:column;
 
         text-align:center;
     }
 
     .brand-area{
-
         justify-content:center;
+    }
+
+    .receipt-modal{
+        padding:8px;
+    }
+
+    .receipt-page{
+        transform-origin:top center;
     }
 }
 
 @media(max-width:600px){
 
     .container{
-
         width:92%;
 
         margin-top:20px;
     }
 
     .filters{
-
         grid-template-columns:1fr;
 
         padding:15px;
@@ -1456,33 +1663,27 @@ tr:hover{
 
     .price-grid,
     .closure-form{
-
         grid-template-columns:1fr;
     }
 
     .closure-form .full{
-
         grid-column:auto;
     }
 
     .header-buttons{
-
         width:100%;
 
         display:grid;
 
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns:1fr 1fr;
     }
 
     .notification-btn,
     .logout-btn{
-
         width:100%;
     }
 
     .new-booking-alert{
-
         top:75px;
 
         right:10px;
@@ -1491,35 +1692,133 @@ tr:hover{
     }
 
     .login-box{
-
         padding:30px 22px;
     }
 
     .farm-header{
-
         padding:18px;
     }
 
     .farm-name{
-
         font-size:17px;
     }
+}
 
-    .action-buttons{
+/* =====================================================
+   PRINT
+   IMPORTANT:
+   A4 ONLY
+===================================================== */
 
-        flex-direction:column;
+@page{
+    size:A4 portrait;
+
+    margin:0;
+}
+
+@media print{
+
+    html,
+    body{
+        width:210mm;
+
+        min-width:210mm;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        background:#fff !important;
     }
 
-    .action-buttons button{
+    body *{
+        visibility:hidden;
+    }
 
-        width:100%;
+    #receiptOverlay,
+    #receiptOverlay *{
+        visibility:visible;
+    }
+
+    #receiptOverlay{
+        position:static !important;
+
+        display:block !important;
+
+        width:210mm !important;
+
+        height:auto !important;
+
+        min-height:297mm !important;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+        background:#fff !important;
+
+        overflow:visible !important;
+    }
+
+    .receipt-modal{
+        width:210mm !important;
+
+        max-width:none !important;
+
+        max-height:none !important;
+
+        overflow:visible !important;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+        background:#fff !important;
+
+        box-shadow:none !important;
+
+        border-radius:0 !important;
+    }
+
+    .receipt-toolbar{
+        display:none !important;
+    }
+
+    .receipt-page{
+        width:210mm !important;
+
+        min-height:297mm !important;
+
+        height:297mm !important;
+
+        margin:0 !important;
+
+        padding:13mm !important;
+
+        box-shadow:none !important;
+
+        overflow:hidden !important;
+
+        page-break-after:avoid !important;
+    }
+
+    .receipt-border{
+        min-height:270mm !important;
+
+        height:270mm !important;
+    }
+
+    .receipt-info-box,
+    .receipt-money-table td,
+    .receipt-terms{
+        -webkit-print-color-adjust:exact !important;
+
+        print-color-adjust:exact !important;
     }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
@@ -1586,7 +1885,6 @@ tr:hover{
 
 <div id="adminPage">
 
-
 <header>
 
     <div class="brand-area">
@@ -1613,7 +1911,6 @@ tr:hover{
         </div>
 
     </div>
-
 
     <div class="header-buttons">
 
@@ -1689,7 +1986,6 @@ tr:hover{
 
     </div>
 
-
     <div class="stat">
 
         <h3>
@@ -1701,7 +1997,6 @@ tr:hover{
         </strong>
 
     </div>
-
 
     <div class="stat">
 
@@ -1739,7 +2034,6 @@ tr:hover{
 
     </div>
 
-
     <div class="extra-stat">
 
         <span>
@@ -1751,7 +2045,6 @@ tr:hover{
         </strong>
 
     </div>
-
 
     <div class="extra-stat">
 
@@ -1809,7 +2102,6 @@ tr:hover{
 
         </div>
 
-
         <div class="field">
 
             <label>
@@ -1824,7 +2116,6 @@ tr:hover{
 
         </div>
 
-
         <div class="field">
 
             <label>
@@ -1838,7 +2129,6 @@ tr:hover{
             >
 
         </div>
-
 
         <div class="field">
 
@@ -1855,7 +2145,6 @@ tr:hover{
         </div>
 
     </div>
-
 
     <button
         class="save-prices"
@@ -1879,7 +2168,6 @@ tr:hover{
         يمكنك إغلاق يوم كامل أو مزرعة أو شفت محدد.
     </p>
 
-
     <div class="closure-form">
 
         <div class="field">
@@ -1894,7 +2182,6 @@ tr:hover{
             >
 
         </div>
-
 
         <div class="field">
 
@@ -1920,7 +2207,6 @@ tr:hover{
 
         </div>
 
-
         <div class="field">
 
             <label>
@@ -1945,7 +2231,6 @@ tr:hover{
 
         </div>
 
-
         <div class="field">
 
             <label>
@@ -1960,7 +2245,6 @@ tr:hover{
 
         </div>
 
-
         <div class="full">
 
             <button
@@ -1973,7 +2257,6 @@ tr:hover{
         </div>
 
     </div>
-
 
     <div
         id="closuresList"
@@ -1998,13 +2281,11 @@ tr:hover{
         oninput="renderAllTables()"
     >
 
-
     <input
         id="dateFilter"
         type="date"
         onchange="renderAllTables()"
     >
-
 
     <select
         id="farmFilter"
@@ -2024,7 +2305,6 @@ tr:hover{
         </option>
 
     </select>
-
 
     <button
         class="refresh"
@@ -2077,7 +2357,6 @@ tr:hover{
 
         </div>
 
-
         <div
             style="
                 display:flex;
@@ -2100,7 +2379,6 @@ tr:hover{
         </div>
 
     </button>
-
 
     <div class="farm-content">
 
@@ -2189,7 +2467,6 @@ tr:hover{
 
         </div>
 
-
         <div
             style="
                 display:flex;
@@ -2212,7 +2489,6 @@ tr:hover{
         </div>
 
     </button>
-
 
     <div class="farm-content">
 
@@ -2289,7 +2565,6 @@ tr:hover{
             ✏️ تعديل الحجز
         </h2>
 
-
         <div class="edit-group">
 
             <label>
@@ -2302,7 +2577,6 @@ tr:hover{
             >
 
         </div>
-
 
         <div class="edit-group">
 
@@ -2317,7 +2591,6 @@ tr:hover{
 
         </div>
 
-
         <div class="edit-group">
 
             <label>
@@ -2330,7 +2603,6 @@ tr:hover{
             >
 
         </div>
-
 
         <div class="edit-group">
 
@@ -2352,7 +2624,6 @@ tr:hover{
 
         </div>
 
-
         <div class="edit-group">
 
             <label>
@@ -2372,7 +2643,6 @@ tr:hover{
             </select>
 
         </div>
-
 
         <div class="modal-buttons">
 
@@ -2397,8 +2667,264 @@ tr:hover{
 </div>
 
 
-<script>
+<!-- =====================================================
+     RECEIPT
+===================================================== -->
 
+<div
+    id="receiptOverlay"
+    class="receipt-overlay"
+>
+
+    <div class="receipt-modal">
+
+        <div class="receipt-toolbar">
+
+            <button
+                class="print-receipt-btn"
+                onclick="printReceipt()"
+            >
+                🖨️ طباعة الوصل A4
+            </button>
+
+            <button
+                class="close-receipt-btn"
+                onclick="closeReceipt()"
+            >
+                إغلاق
+            </button>
+
+        </div>
+
+
+        <div
+            id="receiptPage"
+            class="receipt-page"
+        >
+
+            <div class="receipt-border">
+
+                <!-- HEADER -->
+
+                <div class="receipt-header">
+
+                    <img
+                        src="Logo-farms.PNG"
+                        class="receipt-logo"
+                        alt="مزارع الغيث"
+                    >
+
+                    <div class="receipt-farm-name">
+                        مزارع الغيث
+                    </div>
+
+                    <div class="receipt-english">
+                        ALGAITH FARMS
+                    </div>
+
+                    <div class="receipt-subtitle">
+                        إيصال تثبيت حجز رسمي
+                    </div>
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <div class="receipt-title">
+                    وصل تثبيت حجز
+                </div>
+
+
+                <!-- BOOKING INFO -->
+
+                <div
+                    id="receiptInfo"
+                    class="receipt-info-grid"
+                ></div>
+
+
+                <!-- MONEY -->
+
+                <div class="receipt-money-title">
+                    تفاصيل المبالغ
+                </div>
+
+                <table class="receipt-money-table">
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                قيمة الحجز
+                            </td>
+
+                            <td id="receiptBookingPrice">
+                                -
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                العربون المطلوب
+                            </td>
+
+                            <td id="receiptDeposit">
+                                -
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                التأمين عند الدخول
+                            </td>
+
+                            <td id="receiptInsurance">
+                                100,000 د.ع
+                            </td>
+
+                        </tr>
+
+                        <tr class="receipt-money-total">
+
+                            <td>
+                                إجمالي المبلغ المطلوب عند التثبيت
+                            </td>
+
+                            <td id="receiptTotalRequired">
+                                -
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- TERMS -->
+
+                <div class="receipt-terms">
+
+                    <div class="receipt-section-title">
+                        شروط الحجز
+                    </div>
+
+                    <ol>
+
+                        <li>
+                            لتثبيت الحجز يُدفع عربون قدره 100,000 دينار للأيام الاعتيادية، و200,000 دينار ليومي الخميس والجمعة — لا يمكن تثبيت أي حجز مسبق بدونه.
+                        </li>
+
+                        <li>
+                            في حال عدم الالتزام بموعد الحجز لا يُسترجع العربون.
+                        </li>
+
+                        <li>
+                            طلب الإلغاء للظروف القاهرة يجب أن يكون خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.
+                        </li>
+
+                        <li>
+                            تُدفع تأمينات قدرها 100,000 دينار عند الدخول وتُسترجع عند المغادرة بعد التأكد من عدم فقدان أو تلف أي شيء داخل المنتجع.
+                        </li>
+
+                    </ol>
+
+
+                    <div class="receipt-section-title">
+                        قوانين المزرعة
+                    </div>
+
+                    <ol>
+
+                        <li>
+                            الحجز للعوائل أو شباب فقط أو نساء فقط — يمنع الاختلاط إلا بعقد زواج.
+                        </li>
+
+                        <li>
+                            يمنع منعاً باتاً إدخال السلاح أو المشروبات الكحولية أو الممنوعات، وبخلافه يتم تبليغ الجهات المختصة.
+                        </li>
+
+                        <li>
+                            يمنع إطلاق العيارات النارية والألعاب النارية داخل المنتجع.
+                        </li>
+
+                        <li>
+                            يمنع رمي الأوساخ في المسبح أو في الأماكن غير المخصصة، وبخلافه يتحمل المستأجر كافة المسؤولية.
+                        </li>
+
+                        <li>
+                            الالتزام بأوقات بداية ونهاية الشفت — التأخير في المغادرة تُحتسب عليه رسوم إضافية.
+                        </li>
+
+                        <li>
+                            عدد الأشخاص يجب أن يطابق العدد المتفق عليه عند الحجز.
+                        </li>
+
+                        <li>
+                            السباحة على مسؤولية المستأجر، مع ضرورة مراقبة الأطفال قرب المسبح.
+                        </li>
+
+                    </ol>
+
+                </div>
+
+
+                <!-- SIGNATURES -->
+
+                <div class="receipt-signatures">
+
+                    <div class="signature-box">
+
+                        <div class="signature-title">
+                            توقيع الطرف الأول
+                            <br>
+                            إدارة مزارع الغيث
+                        </div>
+
+                        <div class="signature-line">
+                            التوقيع والختم
+                        </div>
+
+                    </div>
+
+
+                    <div class="signature-box">
+
+                        <div class="signature-title">
+                            توقيع الطرف الثاني
+                            <br>
+                            المستأجر
+                        </div>
+
+                        <div class="signature-line">
+                            توقيع المستأجر
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="receipt-footer">
+                    مزارع الغيث | ALGAITH FARMS — هذا الوصل يثبت تفاصيل الحجز والشروط المتفق عليها.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
 
 /* =====================================================
    SUPABASE
@@ -2438,6 +2964,8 @@ let editingBookingId = null;
 
 let audioContext = null;
 
+let receiptBooking = null;
+
 
 /* =====================================================
    LOGIN
@@ -2462,7 +2990,6 @@ async function login(){
     errorBox.className =
         "login-error";
 
-
     if(!email || !password){
 
         errorBox.textContent =
@@ -2473,7 +3000,6 @@ async function login(){
 
         return;
     }
-
 
     try{
 
@@ -2487,7 +3013,6 @@ async function login(){
                 password
             });
 
-
         if(error){
 
             errorBox.textContent =
@@ -2500,11 +3025,7 @@ async function login(){
             return;
         }
 
-
-        if(
-            !data ||
-            !data.session
-        ){
+        if(!data || !data.session){
 
             errorBox.textContent =
                 "لم يتم إنشاء جلسة دخول.";
@@ -2515,13 +3036,11 @@ async function login(){
             return;
         }
 
-
         initAudio();
 
         showAdmin();
 
     }
-
     catch(error){
 
         console.error(error);
@@ -2549,18 +3068,13 @@ async function checkSession(){
             await supabaseClient.auth
             .getSession();
 
-
-        if(
-            data &&
-            data.session
-        ){
+        if(data && data.session){
 
             initAudio();
 
             showAdmin();
 
         }
-
         else{
 
             showLogin();
@@ -2568,12 +3082,12 @@ async function checkSession(){
         }
 
     }
-
     catch(error){
 
         console.error(error);
 
         showLogin();
+
     }
 }
 
@@ -2582,14 +3096,12 @@ function showLogin(){
 
     document
     .getElementById("loginPage")
-    .style.display =
-        "flex";
-
+    .style.display = "flex";
 
     document
     .getElementById("adminPage")
-    .style.display =
-        "none";
+    .style.display = "none";
+
 }
 
 
@@ -2597,21 +3109,18 @@ function showAdmin(){
 
     document
     .getElementById("loginPage")
-    .style.display =
-        "none";
-
+    .style.display = "none";
 
     document
     .getElementById("adminPage")
-    .style.display =
-        "block";
-
+    .style.display = "block";
 
     updateNotificationButton();
 
     loadAll();
 
     startRealtime();
+
 }
 
 
@@ -2631,11 +3140,9 @@ async function logout(){
         realtimeChannel = null;
     }
 
-
     await supabaseClient
     .auth
     .signOut();
-
 
     bookings = [];
 
@@ -2649,23 +3156,15 @@ async function logout(){
    MESSAGE
 ===================================================== */
 
-function showMessage(
-    text,
-    type
-){
+function showMessage(text,type){
 
     const box =
-        document
-        .getElementById("message");
+        document.getElementById("message");
 
-
-    box.textContent =
-        text;
-
+    box.textContent = text;
 
     box.className =
         "message show " + type;
-
 
     setTimeout(
         function(){
@@ -2697,25 +3196,27 @@ function initAudio(){
 
                 audioContext =
                     new AudioContext();
-            }
-        }
 
+            }
+
+        }
 
         if(
             audioContext &&
-            audioContext.state ===
-            "suspended"
+            audioContext.state === "suspended"
         ){
 
             audioContext.resume();
+
         }
 
     }
-
     catch(error){
 
         console.log(error);
+
     }
+
 }
 
 
@@ -2726,90 +3227,70 @@ function playNotificationSound(){
         if(!audioContext){
 
             initAudio();
-        }
 
+        }
 
         if(!audioContext){
 
             return;
+
         }
 
-
         if(
-            audioContext.state ===
-            "suspended"
+            audioContext.state === "suspended"
         ){
 
             audioContext.resume();
-        }
 
+        }
 
         const now =
             audioContext.currentTime;
 
-
         const oscillator =
-            audioContext
-            .createOscillator();
-
+            audioContext.createOscillator();
 
         const gain =
-            audioContext
-            .createGain();
-
+            audioContext.createGain();
 
         oscillator.type =
             "sine";
 
-
-        oscillator.frequency
-        .setValueAtTime(
+        oscillator.frequency.setValueAtTime(
             880,
             now
         );
 
-
-        oscillator.frequency
-        .setValueAtTime(
+        oscillator.frequency.setValueAtTime(
             660,
             now + .15
         );
 
-
-        oscillator.frequency
-        .setValueAtTime(
+        oscillator.frequency.setValueAtTime(
             880,
             now + .30
         );
 
-
-        gain.gain
-        .setValueAtTime(
+        gain.gain.setValueAtTime(
             .0001,
             now
         );
 
-
-        gain.gain
-        .exponentialRampToValueAtTime(
+        gain.gain.exponentialRampToValueAtTime(
             .25,
             now + .03
         );
 
-
-        gain.gain
-        .exponentialRampToValueAtTime(
+        gain.gain.exponentialRampToValueAtTime(
             .0001,
             now + .50
         );
-
 
         oscillator.connect(gain);
 
         gain.connect(
             audioContext.destination
         );
-
 
         oscillator.start(now);
 
@@ -2818,11 +3299,12 @@ function playNotificationSound(){
         );
 
     }
-
     catch(error){
 
         console.log(error);
+
     }
+
 }
 
 
@@ -2837,6 +3319,7 @@ function notificationWasEnabled(){
             "algaith_notifications_enabled"
         ) === "true"
     );
+
 }
 
 
@@ -2845,8 +3328,7 @@ async function enableNotifications(){
     if(
         notificationWasEnabled() &&
         "Notification" in window &&
-        Notification.permission ===
-        "granted"
+        Notification.permission === "granted"
     ){
 
         updateNotificationButton();
@@ -2857,8 +3339,8 @@ async function enableNotifications(){
         );
 
         return;
-    }
 
+    }
 
     if(!("Notification" in window)){
 
@@ -2868,13 +3350,10 @@ async function enableNotifications(){
         );
 
         return;
+
     }
 
-
-    if(
-        Notification.permission ===
-        "granted"
-    ){
+    if(Notification.permission === "granted"){
 
         localStorage.setItem(
             "algaith_notifications_enabled",
@@ -2889,13 +3368,10 @@ async function enableNotifications(){
         );
 
         return;
+
     }
 
-
-    if(
-        Notification.permission ===
-        "denied"
-    ){
+    if(Notification.permission === "denied"){
 
         showMessage(
             "الإشعارات مرفوضة من إعدادات المتصفح.",
@@ -2903,15 +3379,13 @@ async function enableNotifications(){
         );
 
         return;
-    }
 
+    }
 
     try{
 
         const permission =
-            await Notification
-            .requestPermission();
-
+            await Notification.requestPermission();
 
         if(permission === "granted"){
 
@@ -2920,9 +3394,7 @@ async function enableNotifications(){
                 "true"
             );
 
-
             updateNotificationButton();
-
 
             new Notification(
                 "مزارع الغيث",
@@ -2932,19 +3404,20 @@ async function enableNotifications(){
                 }
             );
 
-
             showMessage(
                 "تم تفعيل الإشعارات بنجاح 🔔",
                 "success"
             );
+
         }
 
     }
-
     catch(error){
 
         console.error(error);
+
     }
+
 }
 
 
@@ -2955,17 +3428,15 @@ function updateNotificationButton(){
             "notificationButton"
         );
 
-
     if(!button){
 
         return;
-    }
 
+    }
 
     if(
         "Notification" in window &&
-        Notification.permission ===
-        "granted"
+        Notification.permission === "granted"
     ){
 
         button.classList.add(
@@ -2974,8 +3445,8 @@ function updateNotificationButton(){
 
         button.textContent =
             "🔔 الإشعارات مفعّلة";
-    }
 
+    }
     else{
 
         button.classList.remove(
@@ -2984,7 +3455,9 @@ function updateNotificationButton(){
 
         button.textContent =
             "🔔 تفعيل الإشعارات";
+
     }
+
 }
 
 
@@ -2992,38 +3465,27 @@ function updateNotificationButton(){
    ALERT
 ===================================================== */
 
-function notifyNewBooking(
-    booking
-){
+function notifyNewBooking(booking){
 
     const name =
         getCustomerName(booking) ||
         "زبون جديد";
 
-
     const farm =
-        getFarm(booking) ||
-        "-";
-
+        getFarm(booking) || "-";
 
     const shift =
-        getShift(booking) ||
-        "-";
-
+        getShift(booking) || "-";
 
     const date =
-        booking.booking_date ||
-        "-";
-
+        booking.booking_date || "-";
 
     playNotificationSound();
-
 
     document.getElementById(
         "alertCustomer"
     ).textContent =
         "👤 " + name;
-
 
     document.getElementById(
         "alertDetails"
@@ -3035,18 +3497,13 @@ function notifyNewBooking(
         " | " +
         shift;
 
-
     document.getElementById(
         "newBookingAlert"
-    )
-    .classList
-    .add("show");
-
+    ).classList.add("show");
 
     if(
         "Notification" in window &&
-        Notification.permission ===
-        "granted" &&
+        Notification.permission === "granted" &&
         notificationWasEnabled()
     ){
 
@@ -3071,36 +3528,35 @@ function notifyNewBooking(
             );
 
         }
-
         catch(error){
 
             console.log(error);
+
         }
+
     }
 
-
     showMessage(
-        "🔔 تم استلام حجز جديد من " +
-        name,
+        "🔔 تم استلام حجز جديد من " + name,
         "success"
     );
-
 
     setTimeout(
         closeBookingAlert,
         10000
     );
+
 }
 
 
 function closeBookingAlert(){
 
-    document
-    .getElementById(
+    document.getElementById(
         "newBookingAlert"
-    )
-    .classList
-    .remove("show");
+    ).classList.remove(
+        "show"
+    );
+
 }
 
 
@@ -3113,15 +3569,14 @@ function startRealtime(){
     if(realtimeChannel){
 
         return;
-    }
 
+    }
 
     realtimeChannel =
         supabaseClient
         .channel(
             "algaith-admin-realtime"
         )
-
 
         .on(
             "postgres_changes",
@@ -3130,26 +3585,22 @@ function startRealtime(){
                 schema:"public",
                 table:BOOKINGS_TABLE
             },
-
             function(payload){
 
                 const exists =
                     bookings.some(
                         item =>
                         String(item.id) ===
-                        String(
-                            payload.new.id
-                        )
+                        String(payload.new.id)
                     );
-
 
                 if(!exists){
 
                     bookings.push(
                         payload.new
                     );
-                }
 
+                }
 
                 renderAllTables();
 
@@ -3160,9 +3611,9 @@ function startRealtime(){
                 notifyNewBooking(
                     payload.new
                 );
+
             }
         )
-
 
         .on(
             "postgres_changes",
@@ -3171,18 +3622,14 @@ function startRealtime(){
                 schema:"public",
                 table:BOOKINGS_TABLE
             },
-
             function(payload){
 
                 const index =
                     bookings.findIndex(
                         item =>
                         String(item.id) ===
-                        String(
-                            payload.new.id
-                        )
+                        String(payload.new.id)
                     );
-
 
                 if(index !== -1){
 
@@ -3190,14 +3637,13 @@ function startRealtime(){
                         payload.new;
 
                 }
-
                 else{
 
                     bookings.push(
                         payload.new
                     );
-                }
 
+                }
 
                 renderAllTables();
 
@@ -3205,14 +3651,13 @@ function startRealtime(){
 
                 updateLastUpdate();
 
-
                 showMessage(
                     "✏️ تم تحديث الحجز",
                     "success"
                 );
+
             }
         )
-
 
         .on(
             "postgres_changes",
@@ -3221,27 +3666,23 @@ function startRealtime(){
                 schema:"public",
                 table:BOOKINGS_TABLE
             },
-
             function(payload){
 
                 bookings =
                     bookings.filter(
                         item =>
                         String(item.id) !==
-                        String(
-                            payload.old.id
-                        )
+                        String(payload.old.id)
                     );
-
 
                 renderAllTables();
 
                 updateStats();
 
                 updateLastUpdate();
+
             }
         )
-
 
         .on(
             "postgres_changes",
@@ -3250,7 +3691,6 @@ function startRealtime(){
                 schema:"public",
                 table:CLOSURES_TABLE
             },
-
             function(payload){
 
                 closures.push(
@@ -3260,9 +3700,9 @@ function startRealtime(){
                 renderClosures();
 
                 updateStats();
+
             }
         )
-
 
         .on(
             "postgres_changes",
@@ -3271,24 +3711,21 @@ function startRealtime(){
                 schema:"public",
                 table:CLOSURES_TABLE
             },
-
             function(payload){
 
                 closures =
                     closures.filter(
                         item =>
                         String(item.id) !==
-                        String(
-                            payload.old.id
-                        )
+                        String(payload.old.id)
                     );
 
                 renderClosures();
 
                 updateStats();
+
             }
         )
-
 
         .subscribe(
             status => {
@@ -3300,6 +3737,7 @@ function startRealtime(){
 
             }
         );
+
 }
 
 
@@ -3310,14 +3748,11 @@ function startRealtime(){
 async function loadAll(){
 
     await Promise.all([
-
         loadBookings(),
-
         loadSettings(),
-
         loadClosures()
-
     ]);
+
 }
 
 
@@ -3341,7 +3776,6 @@ async function loadBookings(){
             }
         );
 
-
     if(error){
 
         console.error(error);
@@ -3353,18 +3787,18 @@ async function loadBookings(){
         );
 
         return;
-    }
 
+    }
 
     bookings =
         data || [];
-
 
     renderAllTables();
 
     updateStats();
 
     updateLastUpdate();
+
 }
 
 
@@ -3384,7 +3818,6 @@ async function loadSettings(){
         .limit(1)
         .maybeSingle();
 
-
     if(error){
 
         console.error(error);
@@ -3396,38 +3829,35 @@ async function loadSettings(){
         );
 
         return;
-    }
 
+    }
 
     if(data){
 
-        settings =
-            data;
-
+        settings = data;
 
         document.getElementById(
             "morningPrice"
         ).value =
             data.morning_price ?? 0;
 
-
         document.getElementById(
             "eveningPrice"
         ).value =
             data.evening_price ?? 0;
-
 
         document.getElementById(
             "specialMorningPrice"
         ).value =
             data.special_morning_price ?? 0;
 
-
         document.getElementById(
             "specialEveningPrice"
         ).value =
             data.special_evening_price ?? 0;
+
     }
+
 }
 
 
@@ -3444,14 +3874,12 @@ async function savePrices(){
             ).value
         );
 
-
     const evening =
         Number(
             document.getElementById(
                 "eveningPrice"
             ).value
         );
-
 
     const specialMorning =
         Number(
@@ -3460,14 +3888,12 @@ async function savePrices(){
             ).value
         );
 
-
     const specialEvening =
         Number(
             document.getElementById(
                 "specialEveningPrice"
             ).value
         );
-
 
     if(
         morning < 0 ||
@@ -3482,38 +3908,23 @@ async function savePrices(){
         );
 
         return;
-    }
 
+    }
 
     let result;
 
-
-    if(
-        settings &&
-        settings.id
-    ){
+    if(settings && settings.id){
 
         result =
             await supabaseClient
             .from(SETTINGS_TABLE)
             .update({
-
-                morning_price:
-                    morning,
-
-                evening_price:
-                    evening,
-
-                special_morning_price:
-                    specialMorning,
-
-                special_evening_price:
-                    specialEvening,
-
+                morning_price:morning,
+                evening_price:evening,
+                special_morning_price:specialMorning,
+                special_evening_price:specialEvening,
                 updated_at:
-                    new Date()
-                    .toISOString()
-
+                    new Date().toISOString()
             })
             .eq(
                 "id",
@@ -3523,31 +3934,21 @@ async function savePrices(){
             .single();
 
     }
-
     else{
 
         result =
             await supabaseClient
             .from(SETTINGS_TABLE)
             .insert({
-
-                morning_price:
-                    morning,
-
-                evening_price:
-                    evening,
-
-                special_morning_price:
-                    specialMorning,
-
-                special_evening_price:
-                    specialEvening
-
+                morning_price:morning,
+                evening_price:evening,
+                special_morning_price:specialMorning,
+                special_evening_price:specialEvening
             })
             .select()
             .single();
-    }
 
+    }
 
     if(result.error){
 
@@ -3558,22 +3959,21 @@ async function savePrices(){
         );
 
         return;
-    }
 
+    }
 
     settings =
         result.data;
-
 
     renderAllTables();
 
     updateStats();
 
-
     showMessage(
         "تم حفظ الأسعار بنجاح ✅",
         "success"
     );
+
 }
 
 
@@ -3597,7 +3997,6 @@ async function loadClosures(){
             }
         );
 
-
     if(error){
 
         console.error(error);
@@ -3609,16 +4008,16 @@ async function loadClosures(){
         );
 
         return;
-    }
 
+    }
 
     closures =
         data || [];
 
-
     renderClosures();
 
     updateStats();
+
 }
 
 
@@ -3629,25 +4028,21 @@ async function addClosure(){
             "closureDate"
         ).value;
 
-
     const farm =
         document.getElementById(
             "closureFarm"
         ).value;
-
 
     const shift =
         document.getElementById(
             "closureShift"
         ).value;
 
-
     const reason =
         document.getElementById(
             "closureReason"
         ).value
         .trim();
-
 
     if(!date){
 
@@ -3657,8 +4052,8 @@ async function addClosure(){
         );
 
         return;
-    }
 
+    }
 
     const exists =
         closures.some(
@@ -3668,7 +4063,6 @@ async function addClosure(){
             (item.shift || "") === shift
         );
 
-
     if(exists){
 
         showMessage(
@@ -3677,8 +4071,8 @@ async function addClosure(){
         );
 
         return;
-    }
 
+    }
 
     const {
         data,
@@ -3687,23 +4081,13 @@ async function addClosure(){
         await supabaseClient
         .from(CLOSURES_TABLE)
         .insert({
-
-            closure_date:
-                date,
-
-            farm:
-                farm || null,
-
-            shift:
-                shift || null,
-
-            reason:
-                reason || null
-
+            closure_date:date,
+            farm:farm || null,
+            shift:shift || null,
+            reason:reason || null
         })
         .select()
         .single();
-
 
     if(error){
 
@@ -3714,28 +4098,26 @@ async function addClosure(){
         );
 
         return;
-    }
 
+    }
 
     closures.push(
         data
     );
 
-
     renderClosures();
 
     updateStats();
-
 
     document.getElementById(
         "closureReason"
     ).value = "";
 
-
     showMessage(
         "تم إغلاق اليوم/الشفت بنجاح 🔒",
         "success"
     );
+
 }
 
 
@@ -3746,134 +4128,103 @@ function renderClosures(){
             "closuresList"
         );
 
-
     box.innerHTML = "";
 
-
-    if(
-        closures.length === 0
-    ){
+    if(closures.length === 0){
 
         box.innerHTML = `
-
-            <div
-                style="
-                    text-align:center;
-                    color:#777;
-                    padding:15px;
-                "
-            >
+            <div style="
+                text-align:center;
+                color:#777;
+                padding:15px;
+            ">
                 لا توجد إغلاقات حالياً
             </div>
-
         `;
 
         return;
-    }
 
+    }
 
     closures
     .slice()
     .sort(
         (a,b) =>
-        String(
-            a.closure_date
-        )
+        String(a.closure_date)
         .localeCompare(
-            String(
-                b.closure_date
-            )
+            String(b.closure_date)
         )
     )
-    .forEach(
-        item => {
+    .forEach(item => {
 
-            const farm =
-                item.farm ||
-                "كل المزارع";
+        const farm =
+            item.farm ||
+            "كل المزارع";
 
+        const shift =
+            item.shift ||
+            "اليوم كامل";
 
-            const shift =
-                item.shift ||
-                "اليوم كامل";
+        const reason =
+            item.reason ||
+            "بدون سبب";
 
-
-            const reason =
-                item.reason ||
-                "بدون سبب";
-
-
-            const div =
-                document
-                .createElement("div");
-
-
-            div.className =
-                "closure-item";
-
-
-            div.innerHTML = `
-
-                <div
-                    class="closure-info"
-                >
-
-                    <strong>
-                        🔒
-                        ${escapeHtml(
-                            item.closure_date
-                        )}
-                    </strong>
-
-                    <br>
-
-                    <small>
-                        ${escapeHtml(farm)}
-                        |
-                        ${escapeHtml(shift)}
-                    </small>
-
-                    <br>
-
-                    <small>
-                        السبب:
-                        ${escapeHtml(reason)}
-                    </small>
-
-                </div>
-
-
-                <button
-                    class="delete-closure"
-                    onclick="deleteClosure('${item.id}')"
-                >
-                    🗑️ حذف
-                </button>
-
-            `;
-
-
-            box.appendChild(
-                div
+        const div =
+            document.createElement(
+                "div"
             );
-        }
-    );
+
+        div.className =
+            "closure-item";
+
+        div.innerHTML = `
+            <div class="closure-info">
+
+                <strong>
+                    🔒 ${escapeHtml(item.closure_date)}
+                </strong>
+
+                <br>
+
+                <small>
+                    ${escapeHtml(farm)}
+                    |
+                    ${escapeHtml(shift)}
+                </small>
+
+                <br>
+
+                <small>
+                    السبب:
+                    ${escapeHtml(reason)}
+                </small>
+
+            </div>
+
+            <button
+                class="delete-closure"
+                onclick="deleteClosure('${item.id}')"
+            >
+                🗑️ حذف
+            </button>
+        `;
+
+        box.appendChild(div);
+
+    });
+
 }
 
 
-async function deleteClosure(
-    id
-){
+async function deleteClosure(id){
 
-    if(
-        !confirm(
-            "هل تريد حذف هذا الإغلاق؟"
-        )
-    ){
+    if(!confirm(
+        "هل تريد حذف هذا الإغلاق؟"
+    )){
 
         return;
-    }
 
+    }
 
     const {
         error
@@ -3886,7 +4237,6 @@ async function deleteClosure(
             id
         );
 
-
     if(error){
 
         showMessage(
@@ -3896,8 +4246,8 @@ async function deleteClosure(
         );
 
         return;
-    }
 
+    }
 
     closures =
         closures.filter(
@@ -3906,16 +4256,15 @@ async function deleteClosure(
             String(id)
         );
 
-
     renderClosures();
 
     updateStats();
-
 
     showMessage(
         "تم حذف الإغلاق ✅",
         "success"
     );
+
 }
 
 
@@ -3928,16 +4277,16 @@ function toggleFarm(id){
     const box =
         document.getElementById(id);
 
-
     if(!box){
 
         return;
-    }
 
+    }
 
     box.classList.toggle(
         "open"
     );
+
 }
 
 
@@ -3945,55 +4294,55 @@ function toggleFarm(id){
    HELPERS
 ===================================================== */
 
-function getCustomerName(
-    booking
-){
+function getCustomerName(booking){
 
     return (
-
         booking["Customer name"] ||
-
         booking["customer_name"] ||
-
         booking.customer_name_ar ||
-
         booking.customerName ||
-
         ""
-
     );
+
 }
 
 
-function getFarm(
-    booking
-){
+function getFarm(booking){
 
     return (
-
         booking["Farm"] ||
-
         booking["farm"] ||
-
         ""
-
     );
+
 }
 
 
-function getShift(
-    booking
-){
+function getShift(booking){
 
     return (
-
         booking["Shift"] ||
-
         booking["shift"] ||
-
         ""
-
     );
+
+}
+
+
+/* =====================================================
+   PHONE
+===================================================== */
+
+function getPhone(booking){
+
+    return (
+        booking.customer_phone ||
+        booking["customer_phone"] ||
+        booking.phone ||
+        booking["Phone"] ||
+        ""
+    );
+
 }
 
 
@@ -4001,130 +4350,183 @@ function getShift(
    PRICE
 ===================================================== */
 
-function getPrice(
-    date,
-    shift
-){
+function getPrice(date,shift){
 
     if(!date){
 
         return 0;
-    }
 
+    }
 
     const normalMorning =
         settings
-        ? Number(
-            settings.morning_price
-        )
+        ? Number(settings.morning_price)
         : 250000;
-
 
     const normalEvening =
         settings
-        ? Number(
-            settings.evening_price
-        )
+        ? Number(settings.evening_price)
         : 300000;
-
 
     const specialMorning =
         settings
-        ? Number(
-            settings.special_morning_price
-        )
+        ? Number(settings.special_morning_price)
         : 350000;
-
 
     const specialEvening =
         settings
-        ? Number(
-            settings.special_evening_price
-        )
+        ? Number(settings.special_evening_price)
         : 400000;
-
 
     const parts =
         String(date).split("-");
 
-
     const dateObject =
         new Date(
-
             Number(parts[0]),
-
             Number(parts[1]) - 1,
-
             Number(parts[2])
-
         );
-
 
     const day =
         dateObject.getDay();
 
+    /*
+       الخميس = 4
+       الجمعة = 5
+
+       حسب شروط المزرعة
+       الأيام الخاصة للعربون هي الخميس والجمعة.
+    */
 
     const expensiveDays =
         day === 4 ||
-        day === 5 ||
-        day === 6;
-
+        day === 5;
 
     if(expensiveDays){
 
-        if(
-            shift ===
-            "شفت صباحي"
-        ){
+        if(shift === "شفت صباحي"){
 
             return specialMorning;
+
         }
 
-
-        if(
-            shift ===
-            "شفت مسائي"
-        ){
+        if(shift === "شفت مسائي"){
 
             return specialEvening;
+
         }
+
     }
 
-
-    if(
-        shift ===
-        "شفت صباحي"
-    ){
+    if(shift === "شفت صباحي"){
 
         return normalMorning;
+
     }
 
-
-    if(
-        shift ===
-        "شفت مسائي"
-    ){
+    if(shift === "شفت مسائي"){
 
         return normalEvening;
+
     }
 
-
     return 0;
+
 }
 
 
-function formatPrice(
-    price
-){
+function formatPrice(price){
 
     return (
-
         Number(price)
         .toLocaleString("en-US") +
-
         " د.ع"
-
     );
+
+}
+
+
+/* =====================================================
+   DEPOSIT
+===================================================== */
+
+function getDeposit(date){
+
+    if(!date){
+
+        return 100000;
+
+    }
+
+    const parts =
+        String(date).split("-");
+
+    const dateObject =
+        new Date(
+            Number(parts[0]),
+            Number(parts[1]) - 1,
+            Number(parts[2])
+        );
+
+    const day =
+        dateObject.getDay();
+
+    /*
+       الخميس = 4
+       الجمعة = 5
+    */
+
+    if(
+        day === 4 ||
+        day === 5
+    ){
+
+        return 200000;
+
+    }
+
+    return 100000;
+
+}
+
+
+function getInsurance(){
+
+    return 100000;
+
+}
+
+
+/* =====================================================
+   FORMAT DATE
+===================================================== */
+
+function formatReceiptDate(date){
+
+    if(!date){
+
+        return "-";
+
+    }
+
+    const parts =
+        String(date).split("-");
+
+    if(parts.length !== 3){
+
+        return date;
+
+    }
+
+    return (
+        parts[2] +
+        "-" +
+        parts[1] +
+        "-" +
+        parts[0]
+    );
+
 }
 
 
@@ -4141,86 +4543,61 @@ function getFilteredBookings(){
         .trim()
         .toLowerCase();
 
-
     const date =
         document
         .getElementById("dateFilter")
         .value;
-
 
     const farm =
         document
         .getElementById("farmFilter")
         .value;
 
-
     return bookings.filter(
         booking => {
 
             const name =
                 String(
-                    getCustomerName(
-                        booking
-                    )
+                    getCustomerName(booking)
                 )
                 .toLowerCase();
-
 
             const phone =
                 String(
-
-                    booking.customer_phone ||
-
-                    booking["customer_phone"] ||
-
-                    ""
-
+                    getPhone(booking)
                 )
                 .toLowerCase();
-
 
             const bookingFarm =
                 getFarm(booking);
 
-
             return (
 
                 (
-
                     !search ||
-
                     name.includes(search) ||
-
                     phone.includes(search)
-
                 )
 
                 &&
 
                 (
-
                     !date ||
-
-                    booking.booking_date ===
-                    date
-
+                    booking.booking_date === date
                 )
 
                 &&
 
                 (
-
                     !farm ||
-
-                    bookingFarm ===
-                    farm
-
+                    bookingFarm === farm
                 )
 
             );
 
         }
     );
+
 }
 
 
@@ -4233,14 +4610,12 @@ function renderAllTables(){
     const filtered =
         getFilteredBookings();
 
-
     const farmOneBookings =
         filtered.filter(
             booking =>
             getFarm(booking) ===
             "المزرعة الأولى"
         );
-
 
     const farmTwoBookings =
         filtered.filter(
@@ -4249,18 +4624,15 @@ function renderAllTables(){
             "المزرعة الثانية"
         );
 
-
     renderFarmTable(
         "farmOneTable",
         farmOneBookings
     );
 
-
     renderFarmTable(
         "farmTwoTable",
         farmTwoBookings
     );
-
 
     document.getElementById(
         "farmOneTableCount"
@@ -4268,12 +4640,12 @@ function renderAllTables(){
         farmOneBookings.length +
         " حجز";
 
-
     document.getElementById(
         "farmTwoTableCount"
     ).textContent =
         farmTwoBookings.length +
         " حجز";
+
 }
 
 
@@ -4291,16 +4663,11 @@ function renderFarmTable(
             tableId
         );
 
-
     tbody.innerHTML = "";
 
-
-    if(
-        list.length === 0
-    ){
+    if(list.length === 0){
 
         tbody.innerHTML = `
-
             <tr>
 
                 <td
@@ -4311,12 +4678,11 @@ function renderFarmTable(
                 </td>
 
             </tr>
-
         `;
 
         return;
-    }
 
+    }
 
     list
     .slice()
@@ -4334,10 +4700,8 @@ function renderFarmTable(
     .forEach(
         (booking,index) => {
 
-
             const shift =
                 getShift(booking);
-
 
             const price =
                 getPrice(
@@ -4345,36 +4709,23 @@ function renderFarmTable(
                     shift
                 );
 
-
             const tr =
-                document
-                .createElement("tr");
-
+                document.createElement(
+                    "tr"
+                );
 
             const shiftHtml =
-                shift ===
-                "شفت صباحي"
-
+                shift === "شفت صباحي"
                 ? `
-
-                    <span
-                        class="shift-morning"
-                    >
+                    <span class="shift-morning">
                         ☀️ صباحي
                     </span>
-
                   `
-
                 : `
-
-                    <span
-                        class="shift-evening"
-                    >
+                    <span class="shift-evening">
                         🌙 مسائي
                     </span>
-
                   `;
-
 
             tr.innerHTML = `
 
@@ -4382,57 +4733,42 @@ function renderFarmTable(
                     ${index + 1}
                 </td>
 
-
                 <td>
                     ${escapeHtml(
-                        booking.booking_date ||
-                        "-"
+                        booking.booking_date || "-"
                     )}
                 </td>
-
 
                 <td>
                     ${shiftHtml}
                 </td>
 
-
                 <td>
                     ${escapeHtml(
-                        getCustomerName(
-                            booking
-                        ) ||
-                        "-"
+                        getCustomerName(booking) || "-"
                     )}
                 </td>
 
-
                 <td>
                     ${escapeHtml(
-
-                        booking.customer_phone ||
-
-                        booking["customer_phone"] ||
-
-                        "-"
-
+                        getPhone(booking) || "-"
                     )}
                 </td>
-
 
                 <td class="price">
-
-                    ${formatPrice(
-                        price
-                    )}
-
+                    ${formatPrice(price)}
                 </td>
-
 
                 <td>
 
-                    <div
-                        class="action-buttons"
-                    >
+                    <div class="action-buttons">
+
+                        <button
+                            class="receipt-btn"
+                            onclick="openReceipt('${booking.id}')"
+                        >
+                            🧾 وصل
+                        </button>
 
                         <button
                             class="edit-btn"
@@ -4441,20 +4777,11 @@ function renderFarmTable(
                             ✏️ تعديل
                         </button>
 
-
                         <button
                             class="delete-btn"
                             onclick="cancelBooking('${booking.id}')"
                         >
                             🗑️ إلغاء
-                        </button>
-
-
-                        <button
-                            class="receipt-btn"
-                            onclick="printBookingReceipt('${booking.id}')"
-                        >
-                            🧾 طباعة الوصل
                         </button>
 
                     </div>
@@ -4463,13 +4790,11 @@ function renderFarmTable(
 
             `;
 
-
-            tbody.appendChild(
-                tr
-            );
+            tbody.appendChild(tr);
 
         }
     );
+
 }
 
 
@@ -4484,9 +4809,7 @@ function updateStats(){
     ).textContent =
         bookings.length;
 
-
     let total = 0;
-
 
     bookings.forEach(
         booking => {
@@ -4500,12 +4823,10 @@ function updateStats(){
         }
     );
 
-
     document.getElementById(
         "totalAmount"
     ).textContent =
         formatPrice(total);
-
 
     const farmOne =
         bookings.filter(
@@ -4514,7 +4835,6 @@ function updateStats(){
             "المزرعة الأولى"
         ).length;
 
-
     const farmTwo =
         bookings.filter(
             booking =>
@@ -4522,23 +4842,21 @@ function updateStats(){
             "المزرعة الثانية"
         ).length;
 
-
     document.getElementById(
         "farmOneCount"
     ).textContent =
         farmOne;
-
 
     document.getElementById(
         "farmTwoCount"
     ).textContent =
         farmTwo;
 
-
     document.getElementById(
         "closureCount"
     ).textContent =
         closures.length;
+
 }
 
 
@@ -4551,11 +4869,10 @@ function updateLastUpdate(){
     document.getElementById(
         "lastUpdate"
     ).textContent =
-
-        new Date()
-        .toLocaleTimeString(
+        new Date().toLocaleTimeString(
             "ar-IQ"
         );
+
 }
 
 
@@ -4563,9 +4880,7 @@ function updateLastUpdate(){
    EDIT
 ===================================================== */
 
-function openEditModal(
-    id
-){
+function openEditModal(id){
 
     const booking =
         bookings.find(
@@ -4574,7 +4889,6 @@ function openEditModal(
             String(id)
         );
 
-
     if(!booking){
 
         alert(
@@ -4582,56 +4896,41 @@ function openEditModal(
         );
 
         return;
-    }
 
+    }
 
     editingBookingId =
         id;
 
-
     document.getElementById(
         "editCustomerName"
     ).value =
-        getCustomerName(
-            booking
-        );
-
+        getCustomerName(booking);
 
     document.getElementById(
         "editPhone"
     ).value =
-
-        booking.customer_phone ||
-
-        booking["customer_phone"] ||
-
-        "";
-
+        getPhone(booking);
 
     document.getElementById(
         "editDate"
     ).value =
-        booking.booking_date ||
-        "";
-
+        booking.booking_date || "";
 
     document.getElementById(
         "editFarm"
     ).value =
         getFarm(booking);
 
-
     document.getElementById(
         "editShift"
     ).value =
         getShift(booking);
 
-
     document.getElementById(
         "editModal"
-    )
-    .classList
-    .add("show");
+    ).classList.add("show");
+
 }
 
 
@@ -4640,12 +4939,12 @@ function closeEditModal(){
     editingBookingId =
         null;
 
-
     document.getElementById(
         "editModal"
-    )
-    .classList
-    .remove("show");
+    ).classList.remove(
+        "show"
+    );
+
 }
 
 
@@ -4658,8 +4957,8 @@ async function saveEdit(){
     if(!editingBookingId){
 
         return;
-    }
 
+    }
 
     const customerName =
         document
@@ -4669,7 +4968,6 @@ async function saveEdit(){
         .value
         .trim();
 
-
     const phone =
         document
         .getElementById(
@@ -4678,14 +4976,12 @@ async function saveEdit(){
         .value
         .trim();
 
-
     const date =
         document
         .getElementById(
             "editDate"
         )
         .value;
-
 
     const farm =
         document
@@ -4694,14 +4990,12 @@ async function saveEdit(){
         )
         .value;
 
-
     const shift =
         document
         .getElementById(
             "editShift"
         )
         .value;
-
 
     if(
         !customerName ||
@@ -4716,8 +5010,8 @@ async function saveEdit(){
         );
 
         return;
-    }
 
+    }
 
     const conflict =
         bookings.find(
@@ -4726,9 +5020,7 @@ async function saveEdit(){
                 return (
 
                     String(item.id) !==
-                    String(
-                        editingBookingId
-                    )
+                    String(editingBookingId)
 
                     &&
 
@@ -4750,7 +5042,6 @@ async function saveEdit(){
             }
         );
 
-
     if(conflict){
 
         alert(
@@ -4758,8 +5049,8 @@ async function saveEdit(){
         );
 
         return;
-    }
 
+    }
 
     const updateData = {
 
@@ -4780,7 +5071,6 @@ async function saveEdit(){
 
     };
 
-
     const {
         data,
         error
@@ -4795,7 +5085,6 @@ async function saveEdit(){
         .select()
         .single();
 
-
     if(error){
 
         showMessage(
@@ -4805,25 +5094,22 @@ async function saveEdit(){
         );
 
         return;
-    }
 
+    }
 
     const index =
         bookings.findIndex(
             item =>
             String(item.id) ===
-            String(
-                editingBookingId
-            )
+            String(editingBookingId)
         );
-
 
     if(index !== -1){
 
         bookings[index] =
             data;
-    }
 
+    }
 
     renderAllTables();
 
@@ -4833,11 +5119,11 @@ async function saveEdit(){
 
     closeEditModal();
 
-
     showMessage(
         "تم تعديل الحجز بنجاح ✅",
         "success"
     );
+
 }
 
 
@@ -4845,9 +5131,7 @@ async function saveEdit(){
    CANCEL BOOKING
 ===================================================== */
 
-async function cancelBooking(
-    id
-){
+async function cancelBooking(id){
 
     const booking =
         bookings.find(
@@ -4856,7 +5140,6 @@ async function cancelBooking(
             String(id)
         );
 
-
     if(!booking){
 
         alert(
@@ -4864,12 +5147,11 @@ async function cancelBooking(
         );
 
         return;
-    }
 
+    }
 
     const confirmed =
         confirm(
-
 `هل أنت متأكد من إلغاء الحجز؟
 
 الاسم:
@@ -4883,15 +5165,13 @@ ${booking.booking_date}
 
 الشفت:
 ${getShift(booking)}`
-
         );
-
 
     if(!confirmed){
 
         return;
-    }
 
+    }
 
     const {
         error
@@ -4904,7 +5184,6 @@ ${getShift(booking)}`
             id
         );
 
-
     if(error){
 
         showMessage(
@@ -4914,8 +5193,8 @@ ${getShift(booking)}`
         );
 
         return;
-    }
 
+    }
 
     bookings =
         bookings.filter(
@@ -4924,18 +5203,278 @@ ${getShift(booking)}`
             String(id)
         );
 
-
     renderAllTables();
 
     updateStats();
 
     updateLastUpdate();
 
-
     showMessage(
         "تم إلغاء الحجز بنجاح ✅",
         "success"
     );
+
+}
+
+
+/* =====================================================
+   RECEIPT
+===================================================== */
+
+function openReceipt(id){
+
+    const booking =
+        bookings.find(
+            item =>
+            String(item.id) ===
+            String(id)
+        );
+
+    if(!booking){
+
+        alert(
+            "لم يتم العثور على الحجز."
+        );
+
+        return;
+
+    }
+
+    receiptBooking =
+        booking;
+
+    const price =
+        getPrice(
+            booking.booking_date,
+            getShift(booking)
+        );
+
+    const deposit =
+        getDeposit(
+            booking.booking_date
+        );
+
+    const insurance =
+        getInsurance();
+
+    const totalRequired =
+        deposit +
+        insurance;
+
+    const customerName =
+        getCustomerName(
+            booking
+        ) || "-";
+
+    const phone =
+        getPhone(
+            booking
+        ) || "-";
+
+    const farm =
+        getFarm(
+            booking
+        ) || "-";
+
+    const shift =
+        getShift(
+            booking
+        ) || "-";
+
+    const bookingDate =
+        formatReceiptDate(
+            booking.booking_date
+        );
+
+    const createdDate =
+        booking.created_at
+        ? new Date(
+            booking.created_at
+        ).toLocaleDateString(
+            "ar-IQ"
+        )
+        : new Date().toLocaleDateString(
+            "ar-IQ"
+        );
+
+
+    /* =================================================
+       INFO
+    ================================================= */
+
+    document.getElementById(
+        "receiptInfo"
+    ).innerHTML = `
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                اسم الزبون
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(customerName)}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                رقم الهاتف
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(phone)}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                المزرعة
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(farm)}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                الشفت
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(shift)}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                تاريخ الحجز
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(bookingDate)}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                رقم الحجز
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(String(
+                    booking.id || "-"
+                ))}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                تاريخ إصدار الوصل
+            </span>
+
+            <span class="receipt-value">
+                ${escapeHtml(createdDate)}
+            </span>
+
+        </div>
+
+
+        <div class="receipt-info-box">
+
+            <span class="receipt-label">
+                حالة الحجز
+            </span>
+
+            <span class="receipt-value">
+                مثبت
+            </span>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "receiptBookingPrice"
+    ).textContent =
+        formatPrice(price);
+
+
+    document.getElementById(
+        "receiptDeposit"
+    ).textContent =
+        formatPrice(deposit);
+
+
+    document.getElementById(
+        "receiptInsurance"
+    ).textContent =
+        formatPrice(insurance);
+
+
+    document.getElementById(
+        "receiptTotalRequired"
+    ).textContent =
+        formatPrice(totalRequired);
+
+
+    document.getElementById(
+        "receiptOverlay"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+function closeReceipt(){
+
+    receiptBooking =
+        null;
+
+    document.getElementById(
+        "receiptOverlay"
+    ).classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   PRINT RECEIPT
+===================================================== */
+
+function printReceipt(){
+
+    if(!receiptBooking){
+
+        return;
+
+    }
+
+    window.print();
+
 }
 
 
@@ -4943,9 +5482,7 @@ ${getShift(booking)}`
    SECURITY
 ===================================================== */
 
-function escapeHtml(
-    value
-){
+function escapeHtml(value){
 
     return String(value)
 
@@ -4973,11 +5510,12 @@ function escapeHtml(
             /'/g,
             "&#039;"
         );
+
 }
 
 
 /* =====================================================
-   EDIT MODAL CLICK OUTSIDE
+   MODAL EVENTS
 ===================================================== */
 
 document
@@ -4992,6 +5530,26 @@ document
         ){
 
             closeEditModal();
+
+        }
+
+    }
+);
+
+
+document
+.getElementById("receiptOverlay")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            this
+        ){
+
+            closeReceipt();
+
         }
 
     }
@@ -4999,1146 +5557,25 @@ document
 
 
 /* =====================================================
-   RECEIPT HELPERS
+   ESC KEY
 ===================================================== */
 
-function formatPrintPrice(
-    price
-){
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    return (
+        if(
+            event.key === "Escape"
+        ){
 
-        Number(price || 0)
-        .toLocaleString("en-US") +
+            closeEditModal();
 
-        " د.ع"
+            closeReceipt();
 
-    );
-}
+        }
 
-
-function escapePrintHtml(
-    value
-){
-
-    return String(
-        value ?? ""
-    )
-
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-
-    .replace(
-        /</g,
-        "&lt;"
-    )
-
-    .replace(
-        />/g,
-        "&gt;"
-    )
-
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-
-    .replace(
-        /'/g,
-        "&#039;"
-    );
-}
-
-
-function isSpecialDay(
-    date
-){
-
-    if(!date){
-
-        return false;
     }
-
-
-    const parts =
-        String(date).split("-");
-
-
-    if(
-        parts.length !== 3
-    ){
-
-        return false;
-    }
-
-
-    const dateObject =
-        new Date(
-
-            Number(parts[0]),
-
-            Number(parts[1]) - 1,
-
-            Number(parts[2])
-
-        );
-
-
-    const day =
-        dateObject.getDay();
-
-
-    /*
-        الخميس = 4
-        الجمعة = 5
-    */
-
-    return (
-
-        day === 4 ||
-        day === 5
-
-    );
-}
-
-
-/* =====================================================
-   PRINT BOOKING RECEIPT - A4
-===================================================== */
-
-function printBookingReceipt(
-    id
-){
-
-    const booking =
-        bookings.find(
-            item =>
-            String(item.id) ===
-            String(id)
-        );
-
-
-    if(!booking){
-
-        alert(
-            "لم يتم العثور على الحجز."
-        );
-
-        return;
-    }
-
-
-    const customerName =
-        getCustomerName(
-            booking
-        ) || "-";
-
-
-    const phone =
-        booking.customer_phone ||
-
-        booking["customer_phone"] ||
-
-        "-";
-
-
-    const farm =
-        getFarm(
-            booking
-        ) || "-";
-
-
-    const shift =
-        getShift(
-            booking
-        ) || "-";
-
-
-    const date =
-        booking.booking_date ||
-        "-";
-
-
-    const price =
-        getPrice(
-            date,
-            shift
-        );
-
-
-    /*
-        الخميس والجمعة:
-        200,000 عربون
-
-        باقي الأيام:
-        100,000 عربون
-    */
-
-    const deposit =
-        isSpecialDay(date)
-        ? 200000
-        : 100000;
-
-
-    const securityDeposit =
-        100000;
-
-
-    const receiptNumber =
-        "AG-" +
-        String(
-            booking.id ||
-            Date.now()
-        ).slice(-8);
-
-
-    const printDate =
-        new Date()
-        .toLocaleDateString(
-            "ar-IQ",
-            {
-                year:"numeric",
-                month:"long",
-                day:"numeric"
-            }
-        );
-
-
-    const printWindow =
-        window.open(
-            "",
-            "_blank",
-            "width=900,height=1000"
-        );
-
-
-    if(!printWindow){
-
-        alert(
-            "تعذر فتح نافذة الطباعة. يرجى السماح بالنوافذ المنبثقة."
-        );
-
-        return;
-    }
-
-
-    printWindow.document.open();
-
-
-    printWindow.document.write(`
-
-<!DOCTYPE html>
-
-<html
-    lang="ar"
-    dir="rtl"
->
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>
-وصل حجز - مزارع الغيث
-</title>
-
-
-<style>
-
-
-@page{
-
-    size:A4;
-
-    margin:12mm;
-}
-
-
-*{
-
-    box-sizing:border-box;
-}
-
-
-html,
-body{
-
-    margin:0;
-
-    padding:0;
-
-    background:#fff;
-
-    color:#111;
-
-    font-family:
-        Tahoma,
-        Arial,
-        sans-serif;
-}
-
-
-body{
-
-    width:100%;
-}
-
-
-.receipt{
-
-    width:100%;
-
-    max-width:186mm;
-
-    min-height:273mm;
-
-    margin:0 auto;
-
-    padding:7mm;
-
-    border:1.5px solid #222;
-
-    position:relative;
-
-    background:#fff;
-}
-
-
-.header{
-
-    text-align:center;
-
-    border-bottom:
-        2px solid #111;
-
-    padding-bottom:12px;
-
-    margin-bottom:14px;
-}
-
-
-.logo-box{
-
-    width:78px;
-
-    height:78px;
-
-    margin:
-        0 auto 8px;
-
-    border:1px solid #222;
-
-    border-radius:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    overflow:hidden;
-}
-
-
-.logo-box img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:contain;
-}
-
-
-.farm-title{
-
-    font-size:25px;
-
-    font-weight:bold;
-
-    margin-bottom:4px;
-}
-
-
-.farm-title-en{
-
-    font-size:14px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-
-    margin-bottom:8px;
-}
-
-
-.receipt-title{
-
-    display:inline-block;
-
-    padding:7px 25px;
-
-    border:1px solid #222;
-
-    border-radius:7px;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    margin-top:5px;
-}
-
-
-.receipt-number{
-
-    margin-top:9px;
-
-    font-size:12px;
-
-    color:#444;
-}
-
-
-.section-title{
-
-    font-size:16px;
-
-    font-weight:bold;
-
-    background:#eeeeee;
-
-    border:1px solid #aaa;
-
-    padding:7px 10px;
-
-    margin-top:12px;
-
-    margin-bottom:8px;
-}
-
-
-.info-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-}
-
-
-.info-table td{
-
-    border:1px solid #aaa;
-
-    padding:8px 9px;
-
-    font-size:13px;
-}
-
-
-.info-table td:first-child{
-
-    width:27%;
-
-    font-weight:bold;
-
-    background:#f5f5f5;
-}
-
-
-.price-box{
-
-    margin-top:10px;
-
-    border:1.5px solid #222;
-
-    padding:10px;
-}
-
-
-.price-row{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    padding:6px 0;
-
-    border-bottom:
-        1px solid #ddd;
-
-    font-size:13px;
-}
-
-
-.price-row:last-child{
-
-    border-bottom:0;
-}
-
-
-.price-total{
-
-    font-size:16px;
-
-    font-weight:bold;
-}
-
-
-.rules{
-
-    font-size:11px;
-
-    line-height:1.75;
-}
-
-
-.rules h3{
-
-    font-size:14px;
-
-    margin:
-        8px 0 5px;
-}
-
-
-.rules ol{
-
-    margin:0;
-
-    padding-right:20px;
-}
-
-
-.rules li{
-
-    margin-bottom:2px;
-}
-
-
-.note{
-
-    margin-top:8px;
-
-    padding:7px;
-
-    border:1px solid #aaa;
-
-    background:#fafafa;
-
-    font-size:10px;
-
-    line-height:1.6;
-}
-
-
-.signatures{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:30px;
-
-    margin-top:18px;
-}
-
-
-.signature-box{
-
-    text-align:center;
-
-    min-height:75px;
-}
-
-
-.signature-title{
-
-    font-weight:bold;
-
-    font-size:13px;
-
-    margin-bottom:42px;
-}
-
-
-.signature-line{
-
-    border-top:
-        1px solid #222;
-
-    padding-top:6px;
-
-    font-size:11px;
-}
-
-
-.footer{
-
-    margin-top:12px;
-
-    padding-top:8px;
-
-    border-top:
-        1px solid #aaa;
-
-    text-align:center;
-
-    font-size:10px;
-
-    color:#555;
-}
-
-
-@media print{
-
-    html,
-    body{
-
-        width:210mm;
-
-        min-height:297mm;
-    }
-
-
-    .receipt{
-
-        border:
-            1.5px solid #222;
-
-        page-break-inside:
-            avoid;
-    }
-
-}
-
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="receipt">
-
-
-<!-- =====================================================
-     RECEIPT HEADER
-===================================================== -->
-
-<div class="header">
-
-
-    <div class="logo-box">
-
-        <img
-            src="Logo-farms.PNG"
-            alt="مزارع الغيث"
-        >
-
-    </div>
-
-
-    <div class="farm-title">
-
-        مزارع الغيث
-
-    </div>
-
-
-    <div class="farm-title-en">
-
-        ALGAITH FARMS
-
-    </div>
-
-
-    <div class="receipt-title">
-
-        وصل تثبيت حجز
-
-    </div>
-
-
-    <div class="receipt-number">
-
-        رقم الوصل:
-
-        ${escapePrintHtml(
-            receiptNumber
-        )}
-
-        |
-
-        تاريخ الإصدار:
-
-        ${escapePrintHtml(
-            printDate
-        )}
-
-    </div>
-
-
-</div>
-
-
-<!-- =====================================================
-     BOOKING INFORMATION
-===================================================== -->
-
-<div class="section-title">
-
-    بيانات الحجز
-
-</div>
-
-
-<table class="info-table">
-
-
-<tr>
-
-    <td>
-        اسم المستأجر
-    </td>
-
-    <td>
-        ${escapePrintHtml(
-            customerName
-        )}
-    </td>
-
-</tr>
-
-
-<tr>
-
-    <td>
-        رقم الهاتف
-    </td>
-
-    <td>
-        ${escapePrintHtml(
-            phone
-        )}
-    </td>
-
-</tr>
-
-
-<tr>
-
-    <td>
-        المزرعة
-    </td>
-
-    <td>
-        ${escapePrintHtml(
-            farm
-        )}
-    </td>
-
-</tr>
-
-
-<tr>
-
-    <td>
-        تاريخ الحجز
-    </td>
-
-    <td>
-        ${escapePrintHtml(
-            date
-        )}
-    </td>
-
-</tr>
-
-
-<tr>
-
-    <td>
-        الشفت
-    </td>
-
-    <td>
-        ${escapePrintHtml(
-            shift
-        )}
-    </td>
-
-</tr>
-
-
-</table>
-
-
-<!-- =====================================================
-     PAYMENT
-===================================================== -->
-
-<div class="section-title">
-
-    تفاصيل المبلغ
-
-</div>
-
-
-<div class="price-box">
-
-
-<div class="price-row">
-
-    <span>
-        قيمة الحجز
-    </span>
-
-    <strong>
-
-        ${formatPrintPrice(
-            price
-        )}
-
-    </strong>
-
-</div>
-
-
-<div class="price-row">
-
-    <span>
-        العربون المطلوب لتثبيت الحجز
-    </span>
-
-    <strong>
-
-        ${formatPrintPrice(
-            deposit
-        )}
-
-    </strong>
-
-</div>
-
-
-<div class="price-row">
-
-    <span>
-        مبلغ التأمين عند الدخول
-    </span>
-
-    <strong>
-
-        ${formatPrintPrice(
-            securityDeposit
-        )}
-
-    </strong>
-
-</div>
-
-
-<div class="price-row price-total">
-
-    <span>
-        إجمالي قيمة الحجز
-    </span>
-
-    <strong>
-
-        ${formatPrintPrice(
-            price
-        )}
-
-    </strong>
-
-</div>
-
-
-</div>
-
-
-<!-- =====================================================
-     BOOKING RULES
-===================================================== -->
-
-<div class="section-title">
-
-    شروط الحجز
-
-</div>
-
-
-<div class="rules">
-
-<ol>
-
-
-<li>
-
-لتثبيت الحجز يُدفع عربون قدره
-100,000 دينار للأيام الاعتيادية،
-و200,000 دينار ليومي الخميس والجمعة
-— لا يمكن تثبيت أي حجز مسبق بدونه.
-
-</li>
-
-
-<li>
-
-في حال عدم الالتزام بموعد الحجز
-لا يُسترجع العربون.
-
-</li>
-
-
-<li>
-
-طلب الإلغاء للظروف القاهرة يجب أن يكون
-خلال مدة لا تتجاوز 24 ساعة من وقت دفع العربون.
-
-</li>
-
-
-<li>
-
-تُدفع تأمينات قدرها 100,000 دينار عند الدخول
-وتُسترجع عند المغادرة بعد التأكد من عدم فقدان
-أو تلف أي شيء داخل المنتجع.
-
-</li>
-
-
-</ol>
-
-</div>
-
-
-<!-- =====================================================
-     FARM RULES
-===================================================== -->
-
-<div class="section-title">
-
-    قوانين المزرعة
-
-</div>
-
-
-<div class="rules">
-
-<ol>
-
-
-<li>
-
-الحجز للعوائل أو شباب فقط أو نساء فقط
-— يمنع الاختلاط إلا بعقد زواج.
-
-</li>
-
-
-<li>
-
-يمنع منعاً باتاً إدخال السلاح أو المشروبات
-الكحولية أو الممنوعات، وبخلافه يتم تبليغ
-الجهات المختصة.
-
-</li>
-
-
-<li>
-
-يمنع إطلاق العيارات النارية والألعاب النارية
-داخل المنتجع.
-
-</li>
-
-
-<li>
-
-يمنع رمي الأوساخ في المسبح أو في الأماكن
-غير المخصصة، وبخلافه يتحمل المستأجر
-كافة المسؤولية.
-
-</li>
-
-
-<li>
-
-الالتزام بأوقات بداية ونهاية الشفت
-— التأخير في المغادرة تُحتسب عليه رسوم إضافية.
-
-</li>
-
-
-<li>
-
-عدد الأشخاص يجب أن يطابق العدد المتفق عليه
-عند الحجز.
-
-</li>
-
-
-<li>
-
-السباحة على مسؤولية المستأجر، مع ضرورة
-مراقبة الأطفال قرب المسبح.
-
-</li>
-
-
-</ol>
-
-</div>
-
-
-<!-- =====================================================
-     AGREEMENT
-===================================================== -->
-
-<div class="note">
-
-أقرّ الطرف الثاني (المستأجر) باطلاعه على جميع
-شروط الحجز وقوانين المزرعة المذكورة أعلاه،
-وموافقته عليها والتزامه بها طوال مدة الحجز.
-
-</div>
-
-
-<!-- =====================================================
-     SIGNATURES
-===================================================== -->
-
-<div class="signatures">
-
-
-<div class="signature-box">
-
-
-    <div class="signature-title">
-
-        توقيع الطرف الأول
-
-        <br>
-
-        إدارة مزارع الغيث
-
-    </div>
-
-
-    <div class="signature-line">
-
-        التوقيع والختم
-
-    </div>
-
-
-</div>
-
-
-<div class="signature-box">
-
-
-    <div class="signature-title">
-
-        توقيع الطرف الثاني
-
-        <br>
-
-        المستأجر
-
-    </div>
-
-
-    <div class="signature-line">
-
-        ${escapePrintHtml(
-            customerName
-        )}
-
-    </div>
-
-
-</div>
-
-
-</div>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<div class="footer">
-
-    مزارع الغيث | ALGAITH FARMS
-
-    <br>
-
-    وصل حجز رسمي — يرجى الاحتفاظ بالوصل
-
-</div>
-
-
-</div>
-
-
-<script>
-
-window.onload = function(){
-
-    setTimeout(
-        function(){
-
-            window.print();
-
-        },
-        500
-    );
-
-};
-
-
-window.onafterprint = function(){
-
-    setTimeout(
-        function(){
-
-            window.close();
-
-        },
-        300
-    );
-
-};
-
-</script>
-
-
-</body>
-
-</html>
-
-    `);
-
-
-    printWindow.document.close();
-
-}
+);
 
 
 /* =====================================================
@@ -6150,5 +5587,4 @@ checkSession();
 </script>
 
 </body>
-
 </html>
