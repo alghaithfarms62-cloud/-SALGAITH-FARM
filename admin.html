@@ -3921,7 +3921,7 @@ function printReceipt(id){
         window.open(
             "",
             "_blank",
-            "width=1000,height=750"
+            "width=1000,height=900"
         );
 
     if(!printWindow){
@@ -3968,11 +3968,12 @@ body{
 
 .receipt{
     width:100%;
-    max-width:190mm;
+    max-width:186;
     margin:0 auto;
-    border:2px solid #b38a20;
-    padding:20px;
+    border:1px solid #b38a20;
+    padding:8mm;
     position:relative;
+    box-sizing: border-box;
 }
 
 .header{
