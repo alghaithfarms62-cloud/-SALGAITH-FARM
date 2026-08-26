@@ -4218,22 +4218,46 @@ body{
 
     @page{
         size:A4 portrait;
-        margin:12mm;
+        margin:0;
     }
 
     html,
     body{
         width:210mm;
+        height:297mm;
         margin:0;
         padding:0;
+        background:#fff;
     }
 
     .receipt{
+        position:absolute;
+
+        top:12mm;
+        left:12mm;
+
         width:186mm;
-        max-width:186mm;
-        margin-left:auto;
-        margin-right:auto;
+        height:273mm;
+
+        max-width:none;
+        max-height:none;
+
+        margin:0;
+
+        border:2px solid #b38a20;
+        padding:6mm;
+
+        overflow:hidden;
+
+        page-break-before:avoid;
+        page-break-after:avoid;
+        page-break-inside:avoid;
+
+        break-before:avoid;
+        break-after:avoid;
+        break-inside:avoid;
     }
+
 }
 </style>
 
