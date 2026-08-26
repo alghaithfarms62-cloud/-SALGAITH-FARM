@@ -3977,18 +3977,27 @@ body{
 ===================================================== */
 
 .receipt{
-    width:100%;
+    width:186mm;
     max-width:186mm;
     height:273mm;
-    margin:0 auto;
+    max-height:273mm;
 
-    border:1px solid #b38a20;
+    margin-left:auto;
+    margin-right:auto;
+
+    border:2px solid #b38a20;
     padding:6mm;
 
     position:relative;
-    box-sizing:border-box;
-
     overflow:hidden;
+
+    page-break-before:avoid;
+    page-break-after:avoid;
+    page-break-inside:avoid;
+
+    break-before:avoid;
+    break-after:avoid;
+    break-inside:avoid;
 }
 
 /* =====================================================
@@ -4207,44 +4216,25 @@ body{
 
 @media print{
 
+    @page{
+        size:A4 portrait;
+        margin:12mm;
+    }
+
     html,
     body{
         width:210mm;
-        height:297mm;
-
         margin:0;
         padding:0;
-
-        background:#fff;
     }
 
     .receipt{
-
         width:186mm;
         max-width:186mm;
-
-        height:273mm;
-        max-height:273mm;
-
-        margin:0 auto;
-
-        padding:6mm;
-
-        border:2px solid #b38a20;
-
-        overflow:hidden;
-
-        page-break-before:avoid;
-        page-break-after:avoid;
-        page-break-inside:avoid;
-
-        break-before:avoid;
-        break-after:avoid;
-        break-inside:avoid;
+        margin-left:auto;
+        margin-right:auto;
     }
-
 }
-
 </style>
 
 </head>
