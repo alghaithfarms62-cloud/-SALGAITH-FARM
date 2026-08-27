@@ -1716,7 +1716,556 @@ let settings = null;
 let realtimeChannel = null;
 let editingBookingId = null;
 let audioContext = null;
+/* =====================================================
+   DISCOUNT CODES
+===================================================== */
 
+const DISCOUNT_TABLE = "DiscountCodes";
+
+let discountCodes = [];
+let editingDiscountId = null;
+
+
+/* =====================================================
+   LOAD DISCOUNT CODES
+===================================================== */
+
+async function loadDiscountCodes(){
+
+    const {
+        data,
+        error
+    } = await supabaseClient
+        .from(DISCOUNT_TABLE)
+        .select("*")
+        .order("created_at", {
+            ascending:false
+        });
+
+    if(error){
+
+        console.error(
+            "Discount codes error:",
+            error
+        );
+
+        return;
+    }
+
+    discountCodes = data || [];
+
+    renderDiscountCodes();
+}
+
+
+/* =====================================================
+   ADD DISCOUNT CODE
+===================================================== */
+
+async function saveDiscountCode(){
+
+    const code =
+        document
+        .getElementById("discountCode")
+        .value
+        .trim()
+        .toUpperCase();
+
+    const percentage =
+        Number(
+            document
+            .getElementById("discountPercentage")
+            .value
+        );
+
+    const startDate =
+        document
+        .getElementById("discountStart")
+        .value;
+
+    const endDate =
+        document
+        .getElementById("discountEnd")
+        .value;
+
+    if(!code){
+
+        alert("اكتب اسم كود الخصم.");
+        return;
+    }
+
+    if(
+        !percentage ||
+        percentage <= 0 ||
+        percentage > 100
+    ){
+
+        alert(
+            "اكتب نسبة خصم صحيحة من 1 إلى 100."
+        );
+
+        return;
+    }
+
+    if(!startDate || !endDate){
+
+        alert(
+            "حدد تاريخ بداية ونهاية الكود."
+        );
+
+        return;
+    }
+
+    if(
+        new Date(endDate) <
+        new Date(startDate)
+    ){
+
+        alert(
+            "تاريخ النهاية يجب أن يكون بعد تاريخ البداية."
+        );
+
+        return;
+    }
+
+    try{
+
+        let result;
+
+        if(editingDiscountId){
+
+            result =
+                await supabaseClient
+                .from(DISCOUNT_TABLE)
+                .update({
+
+                    code:
+                        code,
+
+                    discount_percentage:
+                        percentage,
+
+                    start_date:
+                        startDate,
+
+                    end_date:
+                        endDate
+
+                })
+                .eq(
+                    "id",
+                    editingDiscountId
+                );
+
+        }
+        else{
+
+            result =
+                await supabaseClient
+                .from(DISCOUNT_TABLE)
+                .insert({
+
+                    code:
+                        code,
+
+                    discount_percentage:
+                        percentage,
+
+                    start_date:
+                        startDate,
+
+                    end_date:
+                        endDate,
+
+                    active:
+                        true
+
+                });
+
+        }
+
+        if(result.error){
+
+            console.error(
+                result.error
+            );
+
+            alert(
+                "حدث خطأ أثناء حفظ كود الخصم."
+            );
+
+            return;
+        }
+
+        alert(
+            editingDiscountId
+                ? "تم تعديل الكود بنجاح ✅"
+                : "تم إضافة كود الخصم بنجاح ✅"
+        );
+
+        editingDiscountId = null;
+
+        clearDiscountForm();
+
+        await loadDiscountCodes();
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "حدث خطأ أثناء حفظ الكود."
+        );
+    }
+}
+
+
+/* =====================================================
+   TOGGLE DISCOUNT
+===================================================== */
+
+async function toggleDiscount(
+    id,
+    currentState
+){
+
+    const {
+        error
+    } =
+        await supabaseClient
+        .from(DISCOUNT_TABLE)
+        .update({
+
+            active:
+                !currentState
+
+        })
+        .eq(
+            "id",
+            id
+        );
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "تعذر تغيير حالة الكود."
+        );
+
+        return;
+    }
+
+    loadDiscountCodes();
+}
+
+
+/* =====================================================
+   DELETE DISCOUNT
+===================================================== */
+
+async function deleteDiscount(id){
+
+    if(
+        !confirm(
+            "هل أنت متأكد من حذف كود الخصم؟"
+        )
+    ){
+
+        return;
+    }
+
+    const {
+        error
+    } =
+        await supabaseClient
+        .from(DISCOUNT_TABLE)
+        .delete()
+        .eq(
+            "id",
+            id
+        );
+
+    if(error){
+
+        console.error(error);
+
+        alert(
+            "تعذر حذف الكود."
+        );
+
+        return;
+    }
+
+    loadDiscountCodes();
+}
+
+
+/* =====================================================
+   EDIT DISCOUNT
+===================================================== */
+
+function editDiscount(discount){
+
+    editingDiscountId =
+        discount.id;
+
+    document
+    .getElementById(
+        "discountCode"
+    )
+    .value =
+        discount.code || "";
+
+    document
+    .getElementById(
+        "discountPercentage"
+    )
+    .value =
+        discount.discount_percentage || "";
+
+    document
+    .getElementById(
+        "discountStart"
+    )
+    .value =
+        discount.start_date || "";
+
+    document
+    .getElementById(
+        "discountEnd"
+    )
+    .value =
+        discount.end_date || "";
+
+    document
+    .getElementById(
+        "discountSaveButton"
+    )
+    .textContent =
+        "حفظ التعديل";
+
+}
+
+
+/* =====================================================
+   CLEAR FORM
+===================================================== */
+
+function clearDiscountForm(){
+
+    editingDiscountId = null;
+
+    const code =
+        document.getElementById(
+            "discountCode"
+        );
+
+    const percentage =
+        document.getElementById(
+            "discountPercentage"
+        );
+
+    const start =
+        document.getElementById(
+            "discountStart"
+        );
+
+    const end =
+        document.getElementById(
+            "discountEnd"
+        );
+
+    if(code)
+        code.value = "";
+
+    if(percentage)
+        percentage.value = "";
+
+    if(start)
+        start.value = "";
+
+    if(end)
+        end.value = "";
+
+    const button =
+        document.getElementById(
+            "discountSaveButton"
+        );
+
+    if(button){
+
+        button.textContent =
+            "إضافة كود الخصم";
+
+    }
+}
+
+
+/* =====================================================
+   DISCOUNT STATUS
+===================================================== */
+
+function getDiscountStatus(discount){
+
+    if(!discount.active){
+
+        return {
+            text:"متوقف",
+            className:"disabled"
+        };
+    }
+
+    const now =
+        new Date();
+
+    const start =
+        new Date(
+            discount.start_date
+        );
+
+    const end =
+        new Date(
+            discount.end_date
+        );
+
+    end.setHours(
+        23,
+        59,
+        59,
+        999
+    );
+
+    if(now < start){
+
+        return {
+            text:"لم يبدأ بعد",
+            className:"waiting"
+        };
+
+    }
+
+    if(now > end){
+
+        return {
+            text:"منتهي",
+            className:"expired"
+        };
+
+    }
+
+    return {
+        text:"فعال الآن",
+        className:"active"
+    };
+}
+
+
+/* =====================================================
+   RENDER DISCOUNT TABLE
+===================================================== */
+
+function renderDiscountCodes(){
+
+    const container =
+        document.getElementById(
+            "discountCodesList"
+        );
+
+    if(!container)
+        return;
+
+    if(
+        discountCodes.length === 0
+    ){
+
+        container.innerHTML =
+            `
+            <div class="empty-discounts">
+                لا توجد أكواد خصم حالياً
+            </div>
+            `;
+
+        return;
+    }
+
+    container.innerHTML =
+        discountCodes
+        .map(
+            discount => {
+
+                const status =
+                    getDiscountStatus(
+                        discount
+                    );
+
+                return `
+                <div class="discount-row">
+
+                    <div class="discount-code">
+                        ${discount.code}
+                    </div>
+
+                    <div>
+                        ${discount.discount_percentage}%
+                    </div>
+
+                    <div>
+                        ${discount.start_date}
+                    </div>
+
+                    <div>
+                        ${discount.end_date}
+                    </div>
+
+                    <div>
+                        <span
+                            class="discount-status ${status.className}"
+                        >
+                            ${status.text}
+                        </span>
+                    </div>
+
+                    <div class="discount-actions">
+
+                        <button
+                            onclick='editDiscount(${JSON.stringify(discount)})'
+                        >
+                            ✏️
+                        </button>
+
+                        <button
+                            onclick="
+                                toggleDiscount(
+                                    '${discount.id}',
+                                    ${discount.active}
+                                )
+                            "
+                        >
+                            ${discount.active ? "⏸️" : "▶️"}
+                        </button>
+
+                        <button
+                            onclick="
+                                deleteDiscount(
+                                    '${discount.id}'
+                                )
+                            "
+                        >
+                            🗑️
+                        </button>
+
+                    </div>
+
+                </div>
+                `;
+
+            }
+        )
+        .join("");
+
+}
 /* =====================================================
    LOGIN
 ===================================================== */
