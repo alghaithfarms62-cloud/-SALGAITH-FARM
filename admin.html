@@ -39,10 +39,6 @@ body{
     min-height:100vh;
 }
 
-/* =========================
-   LOGIN
-========================= */
-
 #loginPage{
     min-height:100vh;
     display:flex;
@@ -136,17 +132,9 @@ body{
     display:block;
 }
 
-/* =========================
-   ADMIN
-========================= */
-
 #adminPage{
     display:none;
 }
-
-/* =========================
-   HEADER
-========================= */
 
 header{
     position:sticky;
@@ -229,19 +217,11 @@ header p{
     color:#fff;
 }
 
-/* =========================
-   CONTAINER
-========================= */
-
 .container{
     width:94%;
     max-width:1450px;
     margin:30px auto 50px;
 }
-
-/* =========================
-   STATS
-========================= */
 
 .stats{
     display:grid;
@@ -268,10 +248,6 @@ header p{
     font-size:30px;
     color:var(--gold2);
 }
-
-/* =========================
-   EXTRA STATS
-========================= */
 
 .extra-stats{
     display:grid;
@@ -300,10 +276,6 @@ header p{
     font-size:22px;
 }
 
-/* =========================
-   MESSAGE
-========================= */
-
 .message{
     display:none;
     margin-bottom:15px;
@@ -328,10 +300,6 @@ header p{
     border:1px solid #6c2b2b;
     color:#ffabab;
 }
-
-/* =========================
-   MANAGEMENT
-========================= */
 
 .management-grid{
     display:grid;
@@ -358,10 +326,6 @@ header p{
     font-size:13px;
     margin-bottom:20px;
 }
-
-/* =========================
-   FIELDS
-========================= */
 
 .price-grid,
 .closure-form{
@@ -423,10 +387,6 @@ header p{
     grid-column:1/-1;
 }
 
-/* =========================
-   CLOSURES
-========================= */
-
 .closures-list{
     margin-top:20px;
 }
@@ -466,10 +426,6 @@ header p{
     cursor:pointer;
 }
 
-/* =========================
-   FILTERS
-========================= */
-
 .filters{
     background:#151515;
     border:1px solid var(--border);
@@ -507,10 +463,6 @@ header p{
     font-weight:bold;
     cursor:pointer;
 }
-
-/* =========================
-   FARM BOXES
-========================= */
 
 .farms-title{
     color:var(--gold2);
@@ -604,10 +556,6 @@ header p{
     font-size:12px;
 }
 
-/* =========================
-   TABLE
-========================= */
-
 .table-box{
     background:#111;
     border-radius:17px;
@@ -684,7 +632,6 @@ tr:hover{
     border:1px solid #713030;
 }
 
-/* NEW */
 .print-receipt-btn{
     background:linear-gradient(135deg,#e8cf6b,#b99724);
     color:#111;
@@ -696,10 +643,6 @@ tr:hover{
     padding:45px !important;
     color:#888;
 }
-
-/* =========================
-   ALERT
-========================= */
 
 .new-booking-alert{
     position:fixed;
@@ -747,10 +690,6 @@ tr:hover{
     font-weight:bold;
     cursor:pointer;
 }
-
-/* =========================
-   EDIT MODAL
-========================= */
 
 .modal-overlay{
     position:fixed;
@@ -839,10 +778,6 @@ tr:hover{
     font-weight:bold;
     cursor:pointer;
 }
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:1000px){
 
@@ -936,10 +871,6 @@ tr:hover{
 
 <body>
 
-<!-- =====================================================
-     LOGIN
-===================================================== -->
-
 <div id="loginPage">
 
     <div class="login-box">
@@ -981,10 +912,6 @@ tr:hover{
     </div>
 
 </div>
-
-<!-- =====================================================
-     ADMIN
-===================================================== -->
 
 <div id="adminPage">
 
@@ -1031,8 +958,6 @@ tr:hover{
 
 </header>
 
-<!-- ALERT -->
-
 <div
     id="newBookingAlert"
     class="new-booking-alert"
@@ -1054,10 +979,6 @@ tr:hover{
 </div>
 
 <div class="container">
-
-<!-- =====================================================
-     STATS
-===================================================== -->
 
 <div class="stats">
 
@@ -1102,8 +1023,6 @@ tr:hover{
 
 </div>
 
-<!-- EXTRA STATS -->
-
 <div class="extra-stats">
 
     <div class="extra-stat">
@@ -1121,7 +1040,7 @@ tr:hover{
     <div class="extra-stat">
 
         <span>
-         حجوزات PINK BEERY
+            حجوزات PINK BEERY
         </span>
 
         <strong id="farmTwoCount">
@@ -1149,13 +1068,7 @@ tr:hover{
     class="message"
 ></div>
 
-<!-- =====================================================
-     MANAGEMENT
-===================================================== -->
-
 <div class="management-grid">
-
-<!-- PRICES -->
 
 <div class="panel">
 
@@ -1235,8 +1148,6 @@ tr:hover{
     </button>
 
 </div>
-
-<!-- CLOSURES -->
 
 <div class="panel">
 
@@ -1347,10 +1258,6 @@ tr:hover{
 
 </div>
 
-<!-- =====================================================
-     FILTERS
-===================================================== -->
-
 <div class="filters">
 
     <input
@@ -1394,15 +1301,9 @@ tr:hover{
 
 </div>
 
-<!-- =====================================================
-     FARMS
-===================================================== -->
-
 <h2 class="farms-title">
     📋 حجوزات المزارع
 </h2>
-
-<!-- FARM ONE -->
 
 <div
     id="farmBox1"
@@ -1482,8 +1383,6 @@ tr:hover{
     </div>
 
 </div>
-
-<!-- FARM TWO -->
 
 <div
     id="farmBox2"
@@ -1566,10 +1465,6 @@ tr:hover{
 
 </div>
 </div>
-
-<!-- =====================================================
-     EDIT MODAL
-===================================================== -->
 
 <div
     id="editModal"
@@ -2983,13 +2878,55 @@ function getCustomerName(booking){
     );
 }
 
+/*
+   توحيد أسماء المزارع
+   حتى لو قاعدة البيانات تحتوي:
+   Pistachio
+   PISTACHIO
+   Pink Berry
+   PINK BEERY
+   أو الأسماء القديمة
+*/
+
 function getFarm(booking){
 
-    return (
+    const farm = String(
         booking["Farm"] ||
         booking["farm"] ||
         ""
-    );
+    ).trim();
+
+    const normalized =
+        farm.toLowerCase();
+
+    if(normalized === "pistachio"){
+
+        return "PISTACHIO";
+
+    }
+
+    if(
+        normalized === "pink beery" ||
+        normalized === "pink berry"
+    ){
+
+        return "PINK BEERY";
+
+    }
+
+    if(farm === "المزرعة الأولى"){
+
+        return "PISTACHIO";
+
+    }
+
+    if(farm === "المزرعة الثانية"){
+
+        return "PINK BEERY";
+
+    }
+
+    return farm;
 }
 
 function getShift(booking){
@@ -3173,14 +3110,14 @@ function renderAllTables(){
         filtered.filter(
             booking =>
             getFarm(booking) ===
-            "المزرعة الأولى"
+            "PISTACHIO"
         );
 
     const farmTwoBookings =
         filtered.filter(
             booking =>
             getFarm(booking) ===
-            "المزرعة الثانية"
+            "PINK BEERY"
         );
 
     renderFarmTable(
@@ -3389,14 +3326,14 @@ function updateStats(){
         bookings.filter(
             booking =>
             getFarm(booking) ===
-            "المزرعة الأولى"
+            "PISTACHIO"
         ).length;
 
     const farmTwo =
         bookings.filter(
             booking =>
             getFarm(booking) ===
-            "المزرعة الثانية"
+            "PINK BEERY"
         ).length;
 
     document.getElementById(
@@ -3758,12 +3695,7 @@ ${getShift(booking)}`
    RECEIPT / PRINT
 ===================================================== */
 
-/*
-   شروط الحجز والاستخدام
-*/
-
 const FARM_RULES = [
-
 
     "💰 تثبيت الحجز: لا يُعتبر الحجز مثبتاً إلا بعد دفع العربون المتفق عليه.",
 
@@ -3793,10 +3725,6 @@ const FARM_RULES = [
 
 ];
 
-/*
-   تحويل التاريخ إلى شكل عربي
-*/
-
 function formatReceiptDate(date){
 
     if(!date){
@@ -3823,10 +3751,6 @@ function formatReceiptDate(date){
     );
 }
 
-/*
-   إنشاء رقم وصل
-*/
-
 function getReceiptNumber(booking){
 
     const raw =
@@ -3848,10 +3772,6 @@ function getReceiptNumber(booking){
         )
     );
 }
-
-/*
-   طباعة الوصل
-*/
 
 function printReceipt(id){
 
@@ -3972,10 +3892,6 @@ body{
     direction:rtl;
 }
 
-/* =====================================================
-   RECEIPT
-===================================================== */
-
 .receipt{
     width:186mm;
     max-width:186mm;
@@ -3999,10 +3915,6 @@ body{
     break-after:avoid;
     break-inside:avoid;
 }
-
-/* =====================================================
-   HEADER
-===================================================== */
 
 .header{
     text-align:center;
@@ -4042,10 +3954,6 @@ body{
     color:#555;
 }
 
-/* =====================================================
-   INFO TABLE
-===================================================== */
-
 .info-table{
     width:100%;
     border-collapse:collapse;
@@ -4066,10 +3974,6 @@ body{
     color:#604b10;
 }
 
-/* =====================================================
-   PRICE
-===================================================== */
-
 .price-box{
     border:2px solid #b38a20;
     background:#fbf7e9;
@@ -4089,10 +3993,6 @@ body{
     font-weight:bold;
     color:#7d5d0e;
 }
-
-/* =====================================================
-   RULES
-===================================================== */
 
 .rules-title{
     text-align:right;
@@ -4141,10 +4041,6 @@ body{
     font-size:9px;
 }
 
-/* =====================================================
-   AGREEMENT
-===================================================== */
-
 .agreement{
     text-align:center;
 
@@ -4159,10 +4055,6 @@ body{
 
     line-height:1.5;
 }
-
-/* =====================================================
-   SIGNATURES
-===================================================== */
 
 .signatures{
     display:grid;
@@ -4192,10 +4084,6 @@ body{
     font-size:10px;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
 .footer{
     text-align:center;
 
@@ -4209,10 +4097,6 @@ body{
 
     font-size:9px;
 }
-
-/* =====================================================
-   PRINT
-===================================================== */
 
 @media print{
 
@@ -4509,3 +4393,5 @@ checkSession();
 
 </script>
 
+</body>
+</html>
